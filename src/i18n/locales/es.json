@@ -1,0 +1,103 @@
+{
+  "navbar": {
+    "home": "Home",
+    "nuestraIdentidad": "Nuestra Identidad",
+    "quienesSomos": "¿Quiénes Somos?",
+    "vision": "Nuestra Visión",
+    "valores": "Nuestros Valores",
+    "proyectos": "Proyectos Estratégicos",
+    "programas": "Programas",
+    "convenios": "Convenios Vigentes",
+    "espacios": "Espacios Comunitarios",
+    "areasVerdes": "Áreas Verdes",
+    "quincho": "Quincho",
+    "pileta": "Pileta – Vestuarios",
+    "gym": "Gym",
+    "cafe": "Café",
+    "salonEventos": "Salón de Eventos",
+    "salonConferencia": "Salón de Conferencia",
+    "posada": "La Posada",
+    "comedor": "Comedor – Cocina",
+    "estudio": "Estudio de Grabación",
+    "aliados": "Aliados Corporativos",
+    "contacto": "Contacto",
+    "donar": "Donar",
+    "idioma": "Idioma", 
+    "espanol": "Español",
+    "ingles": "Ingles",
+    "portugues": "Portugues"
+  },
+  "hero": {
+    "slide1": {
+      "title": "Únete a nuestro compromiso por un mañana mejor",
+      "subtitle": "Descubre cómo nuestros proyectos y tu apoyo pueden cambiar vidas y construir comunidades fuertes",
+      "button": "Descubre Más"
+    },
+    "slide2": {
+      "title": "Transformando vidas a través de la acción",
+      "subtitle": "Participa en programas que generan un impacto real en nuestra comunidad",
+      "button": "Conoce Cómo"
+    },
+    "slide3": {
+      "title": "Juntos por un futuro sostenible",
+      "subtitle": "Creamos espacios donde el crecimiento personal y comunitario van de la mano",
+      "button": "Participa"
+    },
+    "asociacion": "Asociacion Civil Valores Sinaí"
+  },
+  "about":{
+    "title": "Sobre Nosotros",
+    "text": "En Valores Sinaí, nuestra misión es impactar de manera positiva a las comunidades a través de proyectos inclusivos y sostenibles. Creemos en la solidaridad como motor de cambio e innovamos para construir un entorno donde cada persona pueda prosperar. Nuestro enfoque se centra en crear oportunidades y facilitar el desarrollo social, promoviendo una cultura de colaboración y apoyo mutuo entre todos los miembros de la sociedad.",
+    "subtitle1": "Misión",
+    "text1": "Nuestra misión es promover la dignidad social y el bienestar humano a través de la unidad mediante acciones concretas y el compromiso de todos.",
+    "subtitle2": "Visión",
+    "text2": "Visualizamos un futuro donde cada persona tiene acceso a recursos y oportunidades que le permitan mejorar su calidad de vida."
+  },
+  "donation":{
+    "title": "¡Actúa ahora para hacer la diferencia!",
+    "text": "Nuestra misión es transformar comunidades a través de la solidaridad y el apoyo mutuo.",
+    "button": "Donar Ahora"
+  },
+  "community":{
+    "title": "Valores Sinai",
+    "subtitle": "Un espacio para el desarrollo y el espacio comunitario",
+    "text": "En Valores Sinai, trabajamos juntos para fortalecer una comunidad unida y en crecimiento. Nuestros programas están centrados en proyectos y espacios que fomentan el crecimiento y la participación. Aquí, cada acción cuenta, cada voz importa.",
+    "button": "Explora"
+  },
+  "contact":{
+    "title": "Contáctanos",
+    "text": "Estamos aquí para ayudarte. Si deseas información sobre nuestros programas y servicios, no dudes en contactarnos:",
+    "link": " contacto@valores-sinai.com",
+    "button": "Envíanos tu consulta",
+    "subtitle1": "Correo electrónico",
+    "text1": "info@valores-sinai.com",
+    "subtitle2": "Teléfono",
+    "text2": "54 (987 654 321)",
+    "subtitle3": "Dirección",
+    "text3": "Avenida Juan Domingo Perón 3251 Pres. Derqui"
+  },
+  "our_identity":{
+    "who_we_are":{
+      "title": "Nuestros principios fundamentales",
+      "title_2": "¿Quiénes Somos?",
+      "description": "En Valores Sinai, estamos guiados por principios claros que orientan nuestro quehacer. Nuestra labor se centra en implementar estrategias, programas, iniciativas educativas y culturales que impulsen el crecimiento comunitario.",
+      "mission": {
+        "title": "Misión",
+        "description": "Impactar positivamente en la comunidad."
+      },
+      "vision": {
+        "title": "Visión",
+        "description": "Ser un referente de transformación social."
+      },
+      "values": {
+        "title": "Valores",
+        "description": "Integridad, Transparencia, Excelencia, Confianza, Esfuerzo, Respeto, Honor, Bondad, Paz, Integridad, Solidaridad y Compromiso."
+      },
+      "imageAlt": "Edificio de Valores Sinai"
+    }
+  },
+  "footer":{
+    "text": "© 2025 Valores Sinai. Todos los derechos reservados.",
+    "social-text": "Síguenos en nuestras redes sociales"
+  }
+}

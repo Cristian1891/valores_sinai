@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,800;1,700&family=IBM+Plex+Sans:wght@500&display=swap');
+
+
+@import "tailwindcss";
+
+
+
+@layer base {
+  html {
+    font-family: Montserrat, sans-serif;
+  }
+}
+
+@layer theme {
+  :root {
+    --color-primary: #74AADB;
+    --color-accent: #FEC40D;
+    --color-greenLight: #8FBF73;
+    --color-brown: #70615A;
+    --color-orange: #D28A2B;
+    --color-neutralLight: #E4E2D1;
+    --color-beige: #DBCDB7;
+    --color-grayLight: #D2D6DF;
+    --color-grayDark: #3F3E3E;
+    --color-dark: #010101;
+    --color-grayDarkv1: #302E2E;
+  }
+}
+
+/* Define fuentes personalizadas */
+.font-montserrat {
+  font-family: Montserrat, sans-serif;
+}
+
+.font-ibm {
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+/* Define tamaños para escritorio */
+.text-title {
+  font-size: 32px;
+  font-weight: 400;
+}
+
+.text-section {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.text-subtitle {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.text-paragraph {
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.text-highlight {
+  font-size: 16px;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.text-button {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* Media query para móviles */
+@media (max-width: 768px) {
+  .text-title {
+    font-size: 20px;
+  }
+  
+  .text-section {
+    font-size: 18px;
+  }
+  
+  .text-subtitle {
+    font-size: 14px;
+  }
+  
+  .text-paragraph {
+    font-size: 10px;
+  }
+  
+  .text-highlight {
+    font-size: 10px;
+  }
+  
+  .text-button {
+    font-size: 12px;
+  }
+}
+
+@custom-variant dark (&:is(.dark *));
