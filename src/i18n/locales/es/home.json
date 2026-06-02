@@ -1,0 +1,63 @@
+{
+  "hero": {
+    "kicker": "Asociación Civil Valores Sinaí",
+    "title": "Valores que transforman vidas",
+    "subtitle": "Acompañamos a las personas y a sus familias construyendo un lugar donde el amor al prójimo y el compromiso social guían cada día.",
+    "primaryCta": "Conocé nuestro predio",
+    "secondaryCta": "Conocenos",
+    "points": {
+      "point1Title": "Fe y servicio",
+      "point1Text": "Guiados por principios cristianos en cada acción.",
+      "point2Title": "Impacto real",
+      "point2Text": "Acciones concretas para necesidades concretas.",
+      "point3Title": "Comunidad",
+      "point3Text": "Trabajamos junto a personas, familias y organizaciones."
+    }
+  },
+  "aboutPreview": {
+    "kicker": "Espacio destacado",
+    "title": "REC Pilar",
+    "text": "Descubrí nuestro moderno estudio de grabación, equipado con tecnología de vanguardia para capturar tus ideas creativas. Desde música hasta producciones audiovisuales, ofrecemos un espacio inspirador para artistas y profesionales.",
+    "cta": "Visita nuestro estudio"
+  },
+  "donation": {
+    "kicker": "Tu aporte importa",
+    "title": "Tu donación cambia vidas",
+    "text": "Cada aporte hace posible que más personas desarrollen sus proyectos de vida.",
+    "cta_text": "Con tu donación financiamos programas educativos, espacios de encuentro y acciones de servicio comunitario.",
+    "button": "Donar Ahora",
+    "stat1": "8 cursos",
+    "stat1Label": "disponibles en la Academia",
+    "stat2": "1 predio",
+    "stat2Label": "abierto para toda la comunidad",
+    "stat3": "100%",
+    "stat3Label": "sin fines de lucro",
+    "photoQuote": "\"Amarás a tu prójimo como a ti mismo\" — Marcos 12:31"
+  },
+  "community": {
+    "kicker": "Nuestra comunidad",
+    "title": "Asociación Civil Valores Sinaí",
+    "subtitle": "Donde la comunidad crece y se conecta",
+    "text": "Descubrí nuestros espacios diseñados para el desarrollo personal y comunitario: áreas verdes, instalaciones deportivas, salones de eventos y opciones de hospedaje.",
+    "button": "Explorá nuestros espacios"
+  },
+  "cta": {
+    "title": "¿Querés sumarte a esta misión?",
+    "description": "Tu apoyo ayuda a sostener programas, encuentros y acciones de servicio.",
+    "button": "Contactarnos"
+  },
+  "contact": {
+    "ariaLabel": "Sección de contacto",
+    "kicker":    "Estamos para vos",
+    "title":     "Contactanos",
+    "text":      "Si necesitás información sobre nuestros programas y servicios, no dudes en comunicarte con nosotros.",
+    "button":    "Envíanos tu consulta",
+    "mapTitle":  "Ubicación de Valores Sinaí en Google Maps",
+    "subtitle1": "Correo electrónico",
+    "text1":     "valoressinai@gmail.com",
+    "subtitle2": "Teléfono",
+    "text2":     "+54 9 11 6012-2363",
+    "subtitle3": "Dirección",
+    "text3":     "Av. Juan Domingo Perón 3251, Pres. Derqui"
+  }
+}

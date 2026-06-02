@@ -1,0 +1,71 @@
+{
+  "hero": {
+    "title": "Conectá con Valores Sinaí",
+    "subtitle": "Estamos para ayudarte con tus proyectos educativos, eventos especiales y todo lo relacionado con nuestros servicios comunitarios."
+  },
+  "methods": {
+    "heading": "Múltiples formas de contacto",
+    "subheading": "Elegí la forma que más te convenga para comunicarte con nosotros.",
+    "ariaLabel": "Métodos de contacto",
+    "ctaLabel": "Contactanos",
+    "email": {
+      "label": "Email Principal",
+      "value": "valoressinai@gmail.com"
+    },
+    "phone": {
+      "label": "Teléfono",
+      "value": "+54 9 11 6012-2363"
+    },
+    "whatsapp": {
+      "label": "WhatsApp",
+      "value": "+54 9 11 6012-2363",
+      "description": "Nos gusta atenderte de manera cercana. Escribinos por WhatsApp y gestionamos juntos tu consulta."
+    },
+    "location": {
+      "label": "Ubicación",
+      "value": "Pres. Derqui, Buenos Aires",
+      "description": "Visitanos con cita previa."
+    }
+  },
+  "form": {
+    "kicker": "Escribinos",
+    "title": "Contactanos",
+    "subtitle": "Queremos escucharte. Construyamos juntos un futuro con valores.",
+    "fields": {
+      "fullName": "Nombre Completo",
+      "email": "Email",
+      "phone": "Teléfono",
+      "organization": "Organización/Empresa",
+      "queryType": "Tipo de Consulta",
+      "message": "Mensaje"
+    },
+    "placeholders": {
+      "fullName": "Tu nombre completo",
+      "email": "tu@email.com",
+      "organization": "Nombre de tu organización",
+      "queryType": "Seleccioná una opción",
+      "message": "Describí tu consulta o proyecto en detalle..."
+    },
+    "queryTypes": {
+      "Información general": "Información general",
+      "Retiros y campamentos": "Retiros y campamentos",
+      "REC Pilar": "REC Pilar",
+      "Voluntariado": "Voluntariado",
+      "Donaciones": "Donaciones",
+      "Otro": "Otro"
+    },
+    "privacy": "Al enviar este formulario aceptás que usemos tus datos para responder tu consulta. No compartimos tu información con terceros.",
+    "submit": "Enviar Mensaje",
+    "sending": "Enviando...",
+    "successTitle": "¡Mensaje enviado!",
+    "successText": "Recibimos tu consulta y nos vamos a comunicar con vos a la brevedad.",
+    "sendAnother": "Enviar otro mensaje",
+    "errorTitle": "Algo salió mal",
+    "errorText": "No pudimos enviar tu mensaje. Por favor intentá de nuevo o contactanos por WhatsApp.",
+    "retry": "Intentar de nuevo",
+    "mapTitle": "Ubicación de Valores Sinaí en Google Maps",
+    "addressLabel": "Nuestra dirección",
+    "address": "Av. Juan Domingo Perón 3251, Pres. Derqui, Buenos Aires",
+    "openInMaps": "Abrir en Google Maps"
+  }
+}

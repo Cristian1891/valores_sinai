@@ -1,0 +1,29 @@
+{
+  "navbar": {
+    "home": "Home",
+    "aboutUs": "About Us",
+    "academy": "Academy",
+    "whatWeOffer": "What We Offer",
+    "contactUs": "Contact",
+    "donate": "Donate",
+    "language": "Language",
+    "languages": {
+      "es": "Spanish",
+      "en": "English",
+      "pt": "Portuguese"
+    }
+  },
+  "footer": {
+    "verse": "\"Never let loyalty and kindness leave you\" Prov. 3:3 NLT",
+    "copyright": "© {{year}} Valores Sinaí. All rights reserved.",
+    "followUs": "Follow us on social media"
+  },
+  "buttons": {
+    "learnMore": "Learn More",
+    "discover": "Discover More",
+    "requestInfo": "Request Info",
+    "donateNow": "Donate Now",
+    "explore": "Explore",
+    "sendQuery": "Send Us Your Query"
+  }
+}

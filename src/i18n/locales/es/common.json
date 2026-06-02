@@ -1,0 +1,29 @@
+{
+  "navbar": {
+    "home": "Inicio",
+    "aboutUs": "¿Quiénes Somos?",
+    "academy": "Academia",
+    "whatWeOffer": "¿Qué Ofrecemos?",
+    "contactUs": "Contacto",
+    "donate": "Donar",
+    "language": "Idioma",
+    "languages": {
+      "es": "Español",
+      "en": "Inglés",
+      "pt": "Portugués"
+    }
+  },
+  "footer": {
+    "verse": "\"Nunca permitas que la lealtad y la bondad te abandonen\" Prov. 3:3 NTV",
+    "copyright": "© {{year}} Valores Sinaí. Todos los derechos reservados.",
+    "followUs": "Síguenos en nuestras redes sociales"
+  },
+  "buttons": {
+    "learnMore": "Conocé más",
+    "discover": "Descubrí más",
+    "requestInfo": "Solicitá info",
+    "donateNow": "Donar Ahora",
+    "explore": "Explorá",
+    "sendQuery": "Envíanos tu consulta"
+  }
+}

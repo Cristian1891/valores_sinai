@@ -1,0 +1,41 @@
+{
+  "hero": {
+    "kicker": "Associação Civil Cristã",
+    "title": "Valores que transformam vidas",
+    "subtitle": "Apoiamos, servimos e desenvolvemos projetos com propósito para abençoar nossa comunidade.",
+    "primaryCta": "Quero ajudar",
+    "secondaryCta": "Conheça nossa missão",
+    "points": {
+      "point1Title": "Fé e serviço",
+      "point1Text": "Guiados por princípios cristãos em cada ação.",
+      "point2Title": "Impacto real",
+      "point2Text": "Projetos concretos para necessidades concretas.",
+      "point3Title": "Comunidade",
+      "point3Text": "Trabalhamos junto com pessoas e famílias."
+    }
+  },
+  "about": {
+    "kicker": "Quem somos",
+    "title": "Uma comunidade comprometida em servir",
+    "description": "Somos uma associação civil cristã com uma visão humana, próxima e voltada ao bem comum.",
+    "cta": "Saiba mais",
+    "card1Title": "Nossa visão",
+    "card1Text": "Construir espaços de esperança, crescimento e acompanhamento.",
+    "card2Title": "Nosso propósito",
+    "card2Text": "Servir com amor, integridade e excelência."
+  },
+  "programs": {
+    "kicker": "O que fazemos",
+    "title": "Programas pensados para apoiar",
+    "description": "Desenvolvemos iniciativas que conectam valores, formação e ação social."
+  },
+  "stats": {
+    "kicker": "Nosso alcance",
+    "title": "Pequenas ações, grande impacto"
+  },
+  "cta": {
+    "title": "Quer fazer parte desta missão?",
+    "description": "Seu apoio ajuda a sustentar programas, encontros e ações de serviço.",
+    "button": "Fale conosco"
+  }
+}

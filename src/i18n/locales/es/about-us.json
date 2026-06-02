@@ -1,0 +1,36 @@
+{
+    "hero": {
+        "ariaLabel": "Presentación de Valores Sinaí",
+        "kicker": "Asociación Civil · Valores Sinaí",
+        "title": "Educación, cultura, deporte",
+        "titleAccent": "y espiritualidad para todos",
+        "subtitle": "Somos una Asociación Civil que desarrolla propuestas educativas, culturales, sociales, deportivas y espirituales, guiadas por valores humanísticos, para acompañar a las personas en la transformación de sus realidades.",
+        "verse": "\"Amarás a tu prójimo como a ti mismo.\""
+    },
+    "team": {
+        "kicker": "Las personas detrás de Sinaí",
+        "title": "Nuestro equipo",
+        "imageAlt": "Equipo de trabajo de Valores Sinaí reunido",
+        "description1": "Somos un grupo de colaboradores y profesionales que compartimos una misma visión: construir una comunidad más solidaria, humana y unida.",
+        "description2": "Cada integrante aporta su conocimiento y dedicación para hacer realidad nuestros proyectos, guiados por valores humanísticos y por el deseo genuino de ver vidas transformadas.",
+        "valuesLabel": "Valores del equipo",
+        "value1": "Compromiso",
+        "value2": "Servicio",
+        "value3": "Solidaridad",
+        "value4": "Fe",
+        "value5": "Excelencia"
+    },
+    "president": {
+        "kicker": "Una palabra de nuestro presidente",
+        "title": "Mensaje de Hugo Alegre",
+        "name": "Hugo Alegre",
+        "role": "Presidente · Asociación Civil Valores Sinaí",
+        "messageLabel": "Mensaje del Presidente",
+        "greeting": "Querida comunidad:",
+        "message1": "Valores Sinaí nació de un sueño que Dios puso en mi corazón: ser un puente para que más personas puedan conocer el amor de Jesús de manera real, práctica y cercana.",
+        "message2": "Cada proyecto, cada actividad y cada encuentro son posibles gracias al compromiso de un equipo apasionado y al apoyo de quienes confían en esta visión.",
+        "message3": "Te invito a sumarte a esta familia, a compartir tus dones y a ser parte de una historia donde Dios sigue obrando cada día.",
+        "signature": "Con gratitud y esperanza, Hugo Alegre",
+        "closingVerse": "\"Amar al prójimo como a ti mismo.\" — Nuestro versículo guía"
+    }
+}

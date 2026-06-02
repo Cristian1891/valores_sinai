@@ -1,0 +1,167 @@
+{
+  "page": {
+    "kicker": "Tu aporte importa",
+    "title": "Elegí cómo querés ayudar",
+    "subtitle": "Cada donación, sin importar el monto, hace una diferencia real en la vida de nuestra comunidad."
+  },
+  "hero": {
+    "verse": "\"Amarás a tu prójimo como a ti mismo\" — Marcos 12:31",
+    "title": "Tu donación",
+    "titleAccent": "transforma vidas",
+    "subtitle": "Cada aporte hace posible que más personas desarrollen sus proyectos de vida, reciban educación y sean parte de nuestra comunidad.",
+    "stat1": "Familias acompañadas",
+    "stat2": "Cursos en la Academia",
+    "stat3": "Sin fines de lucro"
+  },
+  "category": {
+    "academy": {
+      "title": "Academia Valores Sinaí",
+      "desc": "Financiá becas para que jóvenes accedan a cursos de producción audiovisual, música, marketing y más.",
+      "impact1": "Becas para estudiantes con recursos limitados",
+      "impact2": "Acceso a equipamiento y tecnología profesional",
+      "impact3": "Formación que genera oportunidades laborales"
+    },
+    "solidarity": {
+      "title": "Fondo Solidario",
+      "desc": "Apoyá eventos comunitarios, asistencia a personas en situación vulnerable y proyectos del predio.",
+      "impact1": "Organización de eventos y retiros",
+      "impact2": "Asistencia directa a familias necesitadas",
+      "impact3": "Mantenimiento del predio comunitario"
+    },
+    "selected": "✓ Seleccionado — completá el formulario abajo",
+    "select": "Seleccionar →"
+  },
+  "academy": {
+    "kicker": "Academia Valores Sinaí",
+    "title": "Financiá becas para jóvenes",
+    "desc": "Tu donación va al fondo de becas general de la Academia. La asociación distribuye los recursos según la necesidad de cada estudiante y cada curso.",
+    "notice": "Sobre la distribución de fondos",
+    "noticeText": "Tu donación se destina a la Academia en general. Los cursos que ves a continuación son solo informativos: la junta directiva de Valores Sinaí asigna las becas según los criterios y necesidades vigentes.",
+    "coursesTitle": "Cursos que impulsás con tu donación",
+    "courses": {
+      "video": "Edición de Video",
+      "photo": "Fotografía Básica",
+      "audio": "Grabación y Mezcla de Sonido",
+      "direction": "Dirección Audiovisual",
+      "marketing": "Marketing Digital",
+      "streaming": "Streaming y Transmisión",
+      "photoCine": "Dirección de Fotografía para Cine",
+      "production": "Producción Audiovisual"
+    },
+    "stat1": "Cursos disponibles",
+    "stat2": "Estudiantes activos"
+  },
+  "solidarity": {
+    "kicker": "Fondo Solidario",
+    "title": "Apoyá la comunidad directamente",
+    "desc": "El Fondo Solidario financia eventos comunitarios, asistencia a personas en situación vulnerable y proyectos de infraestructura del predio. La asociación decide la distribución según las necesidades más urgentes.",
+    "destinationsTitle": "¿A qué puede ir tu aporte?",
+    "dest": {
+      "events": {
+        "title": "Eventos y retiros comunitarios",
+        "desc": "Financiamiento de campamentos, retiros, eventos culturales y encuentros que fortalecen los lazos comunitarios y la fe."
+      },
+      "assistance": {
+        "title": "Asistencia a personas vulnerables",
+        "desc": "Ayuda directa a familias en situación de necesidad: alimentos, ropa, materiales escolares y apoyo económico de emergencia."
+      },
+      "infrastructure": {
+        "title": "Mantenimiento del predio",
+        "desc": "Obras de mejora, mantenimiento de instalaciones deportivas, salones de eventos y espacios verdes del complejo."
+      }
+    },
+    "quote": "\"Cada uno según el don que ha recibido, minístrelo a los otros, como buenos administradores de la multiforme gracia de Dios.\" — 1 Pedro 4:10"
+  },
+  "form": {
+    "amountLabel": "¿Cuánto querés donar?",
+    "customAmount": "Otro monto",
+    "customAmountLabel": "Ingresar monto personalizado",
+    "frequencyLabel": "Frecuencia de donación",
+    "recommended": "Recomendado",
+    "monthly": "Mensual",
+    "monthlyHint": "Mayor impacto sostenido",
+    "once": "Una vez",
+    "onceHint": "Donación única",
+    "coverFee": "Cubrir el costo de procesamiento",
+    "coverFeeHint": "Al activar esta opción, tu donación aumenta ~{{fee}} para cubrir la comisión de la plataforma, y el 100% de {{original}} llega a Valores Sinaí.",
+    "messageLabel": "Mensaje o dedicatoria (opcional)",
+    "messagePlaceholder": "Contanos por qué decidiste donar...",
+    "summary": "Resumen",
+    "selectAmount": "Seleccioná un monto para continuar.",
+    "processing": "Procesando...",
+    "donate": "Donar ahora",
+    "seeBankInfo": "Ver instrucciones de transferencia ↓",
+    "securityNote": "Serás redirigido a la plataforma de pago segura. Valores Sinaí no almacena datos de tu tarjeta.",
+    "donatePaypal": "Donar con PayPal"
+  },
+  "payment": {
+    "label": "Método de pago",
+    "mercadopago": "MercadoPago",
+    "mercadopagoHint": "Tarjetas AR + Pix (Brasil) + LATAM",
+    "bank": "Transferencia bancaria",
+    "bankHint": "Sin comisiones · 100% llega",
+    "feeNote": "Podés cubrir la comisión de procesamiento en el paso siguiente para que el 100% llegue a Valores Sinaí.",
+    "mercadopagoBadge": "AR · BR · LATAM",
+    "mpNote": "Acepta tarjetas argentinas, Pix (Brasil) y más medios LATAM. Comisión: ~6.3% tarjeta de crédito / ~3.3% débito.",
+    "mpMonthlyNote": "MercadoPago procesará tu donación como pago único. Para hacerla mensual, podés repetirla cada mes o elegir PayPal, que sí soporta donaciones recurrentes automáticas.",
+    "paypal": "PayPal",
+    "paypalHint": "USA, Europa y resto del mundo",
+    "paypalBadge": "Internacional",
+    "paypalNote": "Ideal para donantes de USA, Europa y el resto del mundo. Comisión: ~3.9% + USD 0.30 por transacción.",
+    "bankNote": "Sin comisiones. El 100% de tu donación llega a Valores Sinaí. Ver instrucciones abajo."
+  },
+  "bank": {
+    "kicker": "Sin comisiones",
+    "title": "Transferencia bancaria",
+    "desc": "Si preferís transferir directamente, el 100% de tu donación llega a Valores Sinaí sin comisiones de plataforma. Envianos el comprobante por email o WhatsApp para registrar tu aporte.",
+    "argentina": "Argentina",
+    "international": "Internacional",
+    "alias": "Alias",
+    "cbu": "CBU",
+    "cuit": "CUIT",
+    "bank": "Banco",
+    "account": "Titular",
+    "beneficiary": "Beneficiario",
+    "swift": "SWIFT/BIC",
+    "iban": "IBAN",
+    "copy": "Copiar",
+    "copied": "¡Copiado!",
+    "afterTransfer": "Después de transferir",
+    "afterTransferText": "Envianos el comprobante a valoressinai@gmail.com o por WhatsApp al +54 9 11 6012-2363 con tu nombre y el destino (Academia / Fondo Solidario). Tu donación quedará registrada y te enviaremos un acuse de recibo.",
+    "sendEmail": "Enviar por email",
+    "sendWhatsapp": "Enviar por WhatsApp"
+  },
+  "impact": {
+    "kicker": "Lo que lográs con tu aporte",
+    "student": {
+      "amount": "$3.000/mes",
+      "desc": "Cubre materiales de un estudiante de la Academia por un mes"
+    },
+    "family": {
+      "amount": "$5.000",
+      "desc": "Asistencia de emergencia para una familia en situación vulnerable"
+    },
+    "event": {
+      "amount": "$10.000",
+      "desc": "Contribuye a organizar un evento o retiro comunitario"
+    }
+  },
+  "success": {
+    "title": "¡Gracias por tu donación!",
+    "subtitle": "Tu aporte a {{category}} ya está en camino. Cada contribución hace posible que sigamos transformando vidas.",
+    "verse": "\"Dios ama al que da con alegría.\" — 2 Corintios 9:7",
+    "categoryAcademy": "Academia Valores Sinaí",
+    "categorySolidarity": "Fondo Solidario",
+    "categoryGeneral": "Valores Sinaí",
+    "shareLabel": "Compartí tu gesto",
+    "step1Title": "Revisá tu email",
+    "step1Desc": "Te enviamos un recibo de tu donación. Si no lo encontrás, revisá la carpeta de spam.",
+    "step2Title": "Tu donación queda registrada",
+    "step2Desc": "El equipo de Valores Sinaí la procesa y la asigna al destino que elegiste.",
+    "step3Title": "¿Querés saber el impacto?",
+    "step3Desc": "Seguínos en redes sociales para ver cómo tu aporte transforma vidas reales.",
+    "goHome": "Volver al inicio",
+    "donateAgain": "Hacer otra donación",
+    "support": "¿Algún problema con tu donación?"
+  }
+}

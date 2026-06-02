@@ -1,0 +1,41 @@
+{
+  "hero": {
+    "kicker": "Christian Civil Association",
+    "title": "Values that transform lives",
+    "subtitle": "We support, serve, and develop purpose-driven projects to bless our community.",
+    "primaryCta": "I want to help",
+    "secondaryCta": "Learn about our mission",
+    "points": {
+      "point1Title": "Faith and service",
+      "point1Text": "Guided by Christian principles in everything we do.",
+      "point2Title": "Real impact",
+      "point2Text": "Concrete projects for concrete needs.",
+      "point3Title": "Community",
+      "point3Text": "We work alongside people and families."
+    }
+  },
+  "about": {
+    "kicker": "Who we are",
+    "title": "A community committed to serving",
+    "description": "We are a Christian civil association with a human, close, and socially responsible approach.",
+    "cta": "Learn more",
+    "card1Title": "Our vision",
+    "card1Text": "To build spaces of hope, growth, and support.",
+    "card2Title": "Our purpose",
+    "card2Text": "To serve with love, integrity, and excellence."
+  },
+  "programs": {
+    "kicker": "What we do",
+    "title": "Programs designed to support",
+    "description": "We develop initiatives that connect values, education, and social action."
+  },
+  "stats": {
+    "kicker": "Our reach",
+    "title": "Small actions, big impact"
+  },
+  "cta": {
+    "title": "Want to join this mission?",
+    "description": "Your support helps sustain programs, gatherings, and service actions.",
+    "button": "Contact us"
+  }
+}

@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@400;700&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", sans-serif;
+  --font-serif: "Merriweather", serif;
+
+  /* Primarios — colores de marca */
+  --color-brand-accent:   #FEC40D;
+  --color-brand-amber:    #D28A2B;
+  --color-brand-blue:     #74AADB;
+  /* Oscuros */
+  --color-dark:           #010101;
+  --color-dark-soft:      #3F3E3E;
+  /* Neutros claros */
+  --color-surface-cream:  #E4E2D1;
+  --color-surface-warm:   #DBCDB7;
+  --color-gray-mid:       #A1A8AB;
+  /* Funcional */
+  --color-success:        #8FBF73;
+}
+
+html {
+  font-family: var(--font-sans);
+}
+
+body {
+  @apply bg-white text-dark antialiased;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.sponsors-animate {
+  animation: marquee 36s linear infinite;
+}
+.sponsors-track:hover .sponsors-animate {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .sponsors-animate { animation: none; }
+}
