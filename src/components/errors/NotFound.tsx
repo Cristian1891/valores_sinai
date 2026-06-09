@@ -1,8 +1,8 @@
 import { Link, useLocation } from 'react-router';
-import { useTranslation } from 'react-i18next';
+// import { useTranslation } from 'react-i18next';
 
 export const NotFound = () => {
-  const { t } = useTranslation('common');
+  // const { t } = useTranslation('common');
   const location = useLocation();
 
   return (

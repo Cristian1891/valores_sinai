@@ -9,7 +9,6 @@ import { useSearchParams } from 'react-router';
 import { useTranslation } from 'react-i18next';
 import { DonationHero } from './components/DonationHero';
 import { DonationCategorySelector } from './components/DonationCategorySelector';
-import { DonationImpactSummary } from './components/DonationImpactSummary';
 import { AcademyDonationPanel } from './components/AcademyDonationPanel';
 import { GeneralDonationPanel } from './components/GeneralDonationPanel';
 import { BankTransferInfo } from './components/BankTransferInfo';
