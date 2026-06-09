@@ -49,11 +49,11 @@ export const HeroAbout: React.FC = () => {
           </p>
 
           {/* Versículo guía — brevísimo, identidad cristiana */}
-          <blockquote className="mt-7 border-l-2 border-brand-accent pl-4">
+          {/* <blockquote className="mt-7 border-l-2 border-brand-accent pl-4">
             <p className="font-serif text-sm italic leading-6 text-white/70 sm:text-base">
               {t('hero.verse', '"Amarás a tu prójimo como a ti mismo."')}
             </p>
-          </blockquote>
+          </blockquote> */}
 
         </div>
       </div>

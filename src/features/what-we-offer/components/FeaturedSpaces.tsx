@@ -137,7 +137,7 @@ const ESPACIOS: EspacioCardProps[] = [
   {
     nombre: 'Sala de conferencias',
     descripcion: 'Sala equipada para reuniones, seminarios y capacitaciones de grupos medianos.',
-    imagen: '/img/mejores_fotos_salas_conferencias/sala_conferencia_gente_1.heic',
+    imagen: '/img/mejores_fotos_salas_conferencias/sala_conferencia_2.jpeg',
     alt: 'Sala de conferencias de Valores Sinaí',
     tag: 'Eventos',
   },
@@ -174,7 +174,7 @@ export const FeaturedSpaces: React.FC = () => {
             id="espacios-heading"
             className="text-3xl font-bold tracking-tight text-dark sm:text-4xl"
           >
-            Nuestras instalaciones
+            Predio Valores Sinaí
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-dark-soft">
             Más de dos hectáreas y media en Pres. Derqui, Buenos Aires,

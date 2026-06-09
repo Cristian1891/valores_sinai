@@ -1,6 +1,6 @@
 // src/components/layout/Navbar.tsx
-import { useNavbar } from '../../hooks/useNavbar';
 import { Link, NavLink } from 'react-router';
+import { useNavbar } from '../../hooks/useNavbar';
 import { MENU_ITEMS } from '../../constants/navigation';
 import { LANGUAGES } from '../../constants/languages';
 
@@ -16,9 +16,9 @@ export const Navbar = () => {
     toggleDropdown,
     changeLang,
     toggleTheme,
+    closeMobileMenu,
   } = useNavbar();
 
-  // Clases base optimizadas con flexbox para la alineación perfecta del badge
   const navLinkClass =
     'font-sans text-sm font-semibold text-white inline-flex items-center gap-1.5 ' +
     'hover:text-brand-accent transition-colors duration-200 ' +
@@ -43,7 +43,6 @@ export const Navbar = () => {
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
-          
           {/* LOGO */}
           <Link
             to="/"
@@ -68,8 +67,7 @@ export const Navbar = () => {
                 }
               >
                 <span>{t(`navbar.${item.key}`)}</span>
-                
-                {/* Inyección semántica del Badge para Academia en Escritorio */}
+
                 {item.key === 'academy' && (
                   <span className="rounded-full bg-brand-accent/20 px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-brand-amber select-none">
                     {t('navbar.soon', 'Pronto')}
@@ -155,15 +153,14 @@ export const Navbar = () => {
                 <NavLink
                   key={item.key}
                   to={item.url}
-                  onClick={() => setIsMobileOpen(false)}
+                  onClick={closeMobileMenu}
                   className={({ isActive }) =>
                     `${mobileLinkClass} ${isActive ? 'text-brand-accent' : ''}`
                   }
                 >
                   <span>{t(`navbar.${item.key}`)}</span>
 
-                  {/* Inyección semántica del Badge para Academia en Móvil */}
-                  {item.key === 'academia' && (
+                  {item.key === 'academy' && (
                     <span className="rounded-md bg-brand-accent/20 px-2 py-0.5 text-xs font-bold uppercase tracking-wider text-brand-amber select-none">
                       {t('navbar.soon', 'Pronto')}
                     </span>
@@ -173,7 +170,7 @@ export const Navbar = () => {
 
               <Link
                 to="/donar"
-                onClick={() => setIsMobileOpen(false)}
+                onClick={closeMobileMenu}
                 className="mt-2 inline-flex items-center justify-center rounded-xl bg-brand-accent px-4 py-3 font-sans text-base font-bold text-dark transition-colors hover:bg-brand-amber"
               >
                 {t('navbar.donate')}

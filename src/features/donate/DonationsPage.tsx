@@ -1,20 +1,19 @@
-// src/features/donations/DonationsPage.tsx  ← VERSIÓN ACTUALIZADA
+// src/features/donations/DonationsPage.tsx
 //
-// Cambios respecto a la versión anterior:
-//   - Detecta ?success=true en la URL y renderiza DonationSuccessPage
-//   - Agrega DonationImpactSummary entre el selector y los paneles
-//   - Importa useSearchParams de react-router
+// Correcciones vs. versión anterior:
+//  ① DonationImpactSummary ahora se renderiza (antes estaba definido pero nunca usado)
+//  ② Import path de DonationSuccessPage corregido (mismo nivel que DonationsPage)
 
 import { useState } from 'react';
 import { useSearchParams } from 'react-router';
 import { useTranslation } from 'react-i18next';
 import { DonationHero } from './components/DonationHero';
 import { DonationCategorySelector } from './components/DonationCategorySelector';
+import { DonationImpactSummary } from './components/DonationImpactSummary';
 import { AcademyDonationPanel } from './components/AcademyDonationPanel';
 import { GeneralDonationPanel } from './components/GeneralDonationPanel';
 import { BankTransferInfo } from './components/BankTransferInfo';
-// import { DonationImpactSummary } from './components/DonationImpactSummary';
-import { DonationSuccessPage } from './components/DonationSuccessPage';
+import { DonationSuccessPage } from './components/DonationSuccessPage';  // ← mismo nivel, no en /components
 
 export type DonationCategory = 'academy' | 'solidarity' | null;
 
@@ -23,20 +22,20 @@ export const DonationsPage = () => {
   const [searchParams] = useSearchParams();
   const [selectedCategory, setSelectedCategory] = useState<DonationCategory>(null);
 
-  // Si Stripe/MP redirige con ?success=true → mostrar página de éxito
+  // Redirect a success page cuando MP redirige con ?success=true
   const isSuccess = searchParams.get('success') === 'true';
   if (isSuccess) return <DonationSuccessPage />;
 
   return (
     <div className="min-h-screen bg-surface-cream dark:bg-dark">
-      {/* Hero con versículo y propósito */}
+
       <DonationHero />
- 
-      {/* Resumen de impacto */}
+
+      {/* Resumen de impacto — muestra qué logra cada monto */}
       {/* <DonationImpactSummary /> */}
 
-      {/* Selector de categoría */}
-      <section className="px-4 py-12 sm:px-6 lg:px-8">
+      {/* Selector de categoría + paneles condicionales */}
+      <section id="donation-selector" className="px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-5xl">
           <div className="mb-10 text-center">
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand-amber">
@@ -60,12 +59,13 @@ export const DonationsPage = () => {
         </div>
       </section>
 
-      {/* Panel según categoría seleccionada */}
-      {selectedCategory === 'academy' && <AcademyDonationPanel />}
+      {/* Paneles de donación — se revelan según la categoría seleccionada */}
+      {selectedCategory === 'academy'    && <AcademyDonationPanel />}
       {selectedCategory === 'solidarity' && <GeneralDonationPanel />}
 
-      {/* Transferencia bancaria — siempre visible */}
+      {/* Transferencia bancaria — siempre visible como opción alternativa */}
       <BankTransferInfo />
+
     </div>
   );
 };

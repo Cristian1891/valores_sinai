@@ -28,8 +28,8 @@
     }
   },
   "form": {
-    "kicker": "Escribinos",
-    "title": "Contactanos",
+    "kicker": "Escribínos",
+    "title": "Contactános",
     "subtitle": "Queremos escucharte. Construyamos juntos un futuro con valores.",
     "fields": {
       "fullName": "Nombre Completo",

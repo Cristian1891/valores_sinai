@@ -61,28 +61,39 @@
 //
 // ═══════════════════════════════════════════════════════════════
 
+// export const PAYMENT_LINKS = {
+//   academy: {
+//     // MercadoPago — link único para la Academia (AR + BR + LATAM)
+//     mp: import.meta.env.VITE_MP_ACADEMY ?? '#',
+
+//     // PayPal — donación única para la Academia (internacional)
+//     paypal_once: import.meta.env.VITE_PAYPAL_ACADEMY_ONCE ?? '#',
+
+//     // PayPal — suscripción mensual para la Academia (internacional)
+//     paypal_monthly: import.meta.env.VITE_PAYPAL_ACADEMY_MONTHLY ?? '#',
+//   },
+//   solidarity: {
+//     // MercadoPago — link único para el Fondo Solidario
+//     mp: import.meta.env.VITE_MP_SOLIDARITY ?? '#',
+
+//     // PayPal — donación única para el Fondo Solidario
+//     paypal_once: import.meta.env.VITE_PAYPAL_SOLIDARITY_ONCE ?? '#',
+
+//     // PayPal — suscripción mensual para el Fondo Solidario
+//     paypal_monthly: import.meta.env.VITE_PAYPAL_SOLIDARITY_MONTHLY ?? '#',
+//   },
+// } as const;
+
+
 export const PAYMENT_LINKS = {
   academy: {
-    // MercadoPago — link único para la Academia (AR + BR + LATAM)
-    mp: import.meta.env.VITE_MP_ACADEMY ?? '#',
-
-    // PayPal — donación única para la Academia (internacional)
-    paypal_once: import.meta.env.VITE_PAYPAL_ACADEMY_ONCE ?? '#',
-
-    // PayPal — suscripción mensual para la Academia (internacional)
-    paypal_monthly: import.meta.env.VITE_PAYPAL_ACADEMY_MONTHLY ?? '#',
+    mp: import.meta.env.VITE_MP_ACADEMY ?? 'https://link.mercadopago.com.ar/valoressinai',
   },
   solidarity: {
-    // MercadoPago — link único para el Fondo Solidario
-    mp: import.meta.env.VITE_MP_SOLIDARITY ?? '#',
-
-    // PayPal — donación única para el Fondo Solidario
-    paypal_once: import.meta.env.VITE_PAYPAL_SOLIDARITY_ONCE ?? '#',
-
-    // PayPal — suscripción mensual para el Fondo Solidario
-    paypal_monthly: import.meta.env.VITE_PAYPAL_SOLIDARITY_MONTHLY ?? '#',
+    mp: import.meta.env.VITE_MP_SOLIDARITY ?? 'https://link.mercadopago.com.ar/valoressinai',
   },
 } as const;
+
 
 // ═══════════════════════════════════════════════════════════════
 //  ARCHIVO .env — variables de entorno (NO subir a git)

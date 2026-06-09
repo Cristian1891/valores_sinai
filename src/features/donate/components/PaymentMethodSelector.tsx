@@ -20,39 +20,39 @@ interface Props {
 }
 
 // Ícono oficial de PayPal (wordmark simplificado en SVG)
-const PayPalIcon = () => (
-  <svg
-    viewBox="0 0 80 20"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    className="h-4 w-auto"
-    aria-hidden="true"
-  >
-    {/* P azul oscuro */}
-    <path
-      d="M7.5 0h5.8c2.6 0 4.3 1.3 3.9 4-.5 3.3-2.7 4.5-5.3 4.5H9.8L8.7 14H5.3L7.5 0z"
-      fill="#003087"
-    />
-    <path
-      d="M9.9 6.8h1.7c1.2 0 2-.4 2.2-1.6.2-1-.4-1.6-1.6-1.6H10.6L9.9 6.8z"
-      fill="#003087"
-    />
-    {/* P celeste */}
-    <path
-      d="M18.2 3.2h5.8c2.6 0 4.3 1.3 3.9 4-.5 3.3-2.7 4.5-5.3 4.5h-2.1L19.4 17h-3.4l2.2-13.8z"
-      fill="#009CDE"
-    />
-    <path
-      d="M20.6 10h1.7c1.2 0 2-.4 2.2-1.6.2-1-.4-1.6-1.6-1.6h-1.6L20.6 10z"
-      fill="#009CDE"
-    />
-    {/* "al" text */}
-    <path
-      d="M30.5 5.5c1.4 0 2.5.4 3 1.1l-.7 2.1c-.4-.6-1.1-.9-2-.9-.5 0-.9.1-1.2.4-.3.2-.5.5-.6.9h3.5l-.3 1.6h-3.4c0 .5.2.8.5 1 .3.2.8.3 1.4.3.8 0 1.6-.2 2.2-.7l-.6 2c-.7.4-1.6.6-2.6.6-1.2 0-2.2-.3-2.8-.9-.7-.6-1-1.4-.9-2.5.1-.9.4-1.7.9-2.3.5-.7 1.1-1.2 1.9-1.5.7-.1 1.4-.2 1.7-.2zM35.5 5.6h2.7l.2 5.8 2.9-5.8h2.7l-5 8.3h-2.9l-.6-8.3z"
-      fill="#003087"
-    />
-  </svg>
-);
+// const PayPalIcon = () => (
+//   <svg
+//     viewBox="0 0 80 20"
+//     fill="none"
+//     xmlns="http://www.w3.org/2000/svg"
+//     className="h-4 w-auto"
+//     aria-hidden="true"
+//   >
+//     {/* P azul oscuro */}
+//     <path
+//       d="M7.5 0h5.8c2.6 0 4.3 1.3 3.9 4-.5 3.3-2.7 4.5-5.3 4.5H9.8L8.7 14H5.3L7.5 0z"
+//       fill="#003087"
+//     />
+//     <path
+//       d="M9.9 6.8h1.7c1.2 0 2-.4 2.2-1.6.2-1-.4-1.6-1.6-1.6H10.6L9.9 6.8z"
+//       fill="#003087"
+//     />
+//     {/* P celeste */}
+//     <path
+//       d="M18.2 3.2h5.8c2.6 0 4.3 1.3 3.9 4-.5 3.3-2.7 4.5-5.3 4.5h-2.1L19.4 17h-3.4l2.2-13.8z"
+//       fill="#009CDE"
+//     />
+//     <path
+//       d="M20.6 10h1.7c1.2 0 2-.4 2.2-1.6.2-1-.4-1.6-1.6-1.6h-1.6L20.6 10z"
+//       fill="#009CDE"
+//     />
+//     {/* "al" text */}
+//     <path
+//       d="M30.5 5.5c1.4 0 2.5.4 3 1.1l-.7 2.1c-.4-.6-1.1-.9-2-.9-.5 0-.9.1-1.2.4-.3.2-.5.5-.6.9h3.5l-.3 1.6h-3.4c0 .5.2.8.5 1 .3.2.8.3 1.4.3.8 0 1.6-.2 2.2-.7l-.6 2c-.7.4-1.6.6-2.6.6-1.2 0-2.2-.3-2.8-.9-.7-.6-1-1.4-.9-2.5.1-.9.4-1.7.9-2.3.5-.7 1.1-1.2 1.9-1.5.7-.1 1.4-.2 1.7-.2zM35.5 5.6h2.7l.2 5.8 2.9-5.8h2.7l-5 8.3h-2.9l-.6-8.3z"
+//       fill="#003087"
+//     />
+//   </svg>
+// );
 
 // Ícono de MercadoPago (círculo azul MP)
 const MercadoPagoIcon = () => (
@@ -76,22 +76,22 @@ const MercadoPagoIcon = () => (
 );
 
 // Ícono de banco
-const BankIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 24 24"
-    fill="currentColor"
-    className="h-5 w-5"
-    aria-hidden="true"
-  >
-    <path d="M11.584 2.376a.75.75 0 0 1 .832 0l9 6a.75.75 0 1 1-.832 1.248L12 3.901 3.416 9.624a.75.75 0 0 1-.832-1.248l9-6Z" />
-    <path
-      fillRule="evenodd"
-      d="M20.25 10.332v9.918H21a.75.75 0 0 1 0 1.5H3a.75.75 0 0 1 0-1.5h.75v-9.918a.75.75 0 0 1 0-1.5h16.5a.75.75 0 0 1 0 1.5Zm-3 .418v9.5h1.5v-9.5h-1.5Zm-3.75 0v9.5h1.5v-9.5h-1.5Zm-3.75 0v9.5h1.5v-9.5H9.75Zm-3.75 0v9.5H7.5v-9.5H6Z"
-      clipRule="evenodd"
-    />
-  </svg>
-);
+// const BankIcon = () => (
+//   <svg
+//     xmlns="http://www.w3.org/2000/svg"
+//     viewBox="0 0 24 24"
+//     fill="currentColor"
+//     className="h-5 w-5"
+//     aria-hidden="true"
+//   >
+//     <path d="M11.584 2.376a.75.75 0 0 1 .832 0l9 6a.75.75 0 1 1-.832 1.248L12 3.901 3.416 9.624a.75.75 0 0 1-.832-1.248l9-6Z" />
+//     <path
+//       fillRule="evenodd"
+//       d="M20.25 10.332v9.918H21a.75.75 0 0 1 0 1.5H3a.75.75 0 0 1 0-1.5h.75v-9.918a.75.75 0 0 1 0-1.5h16.5a.75.75 0 0 1 0 1.5Zm-3 .418v9.5h1.5v-9.5h-1.5Zm-3.75 0v9.5h1.5v-9.5h-1.5Zm-3.75 0v9.5h1.5v-9.5H9.75Zm-3.75 0v9.5H7.5v-9.5H6Z"
+//       clipRule="evenodd"
+//     />
+//   </svg>
+// );
 
 const methods: {
   id: PaymentMethod;
@@ -106,20 +106,20 @@ const methods: {
     hintKey: 'payment.mercadopagoHint',
     badgeKey: 'payment.mercadopagoBadge',
     icon: <MercadoPagoIcon />,
-  },
-  {
-    id: 'paypal',
-    labelKey: 'payment.paypal',
-    hintKey: 'payment.paypalHint',
-    badgeKey: 'payment.paypalBadge',
-    icon: <PayPalIcon />,
-  },
-  {
-    id: 'bank',
-    labelKey: 'payment.bank',
-    hintKey: 'payment.bankHint',
-    icon: <BankIcon />,
-  },
+  }
+  // {
+  //   id: 'paypal',
+  //   labelKey: 'payment.paypal',
+  //   hintKey: 'payment.paypalHint',
+  //   badgeKey: 'payment.paypalBadge',
+  //   icon: <PayPalIcon />,
+  // },
+  // {
+  //   id: 'bank',
+  //   labelKey: 'payment.bank',
+  //   hintKey: 'payment.bankHint',
+  //   icon: <BankIcon />,
+  // },
 ];
 
 export const PaymentMethodSelector = ({ value, onChange }: Props) => {
@@ -181,7 +181,7 @@ export const PaymentMethodSelector = ({ value, onChange }: Props) => {
       </div>
 
       {/* Nota contextual según método seleccionado */}
-      <div className="mt-3 min-h-[2.5rem]">
+      <div className="mt-3 min-h-10">
         {value === 'mercadopago' && (
           <p className="text-xs leading-5 text-dark-soft dark:text-gray-mid">
             💳 {t('payment.mpNote', 'Acepta tarjetas argentinas, Pix (Brasil) y más medios LATAM. Comisión: ~6.3% tarjeta de crédito / ~3.3% débito.')}

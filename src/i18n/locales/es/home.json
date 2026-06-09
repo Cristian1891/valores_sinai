@@ -1,41 +1,43 @@
 {
   "hero": {
     "kicker": "Asociación Civil Valores Sinaí",
-    "title": "Valores que transforman vidas",
-    "subtitle": "Acompañamos a las personas y a sus familias construyendo un lugar donde el amor al prójimo y el compromiso social guían cada día.",
-    "primaryCta": "Conocé nuestro predio",
-    "secondaryCta": "Conocenos",
+    "titleLine1": "Fe, cultura y comunidad al servicio del",
+    "titleAccent": "prójimo",
+    "subtitle": "Somos Valores Sinaí, una asociación civil cristiana que utiliza la educación, el deporte, la tecnología y el arte para extender el amor de Jesús a toda la comunidad.",    "primaryCta": "Explorá el predio",
+    "secondaryCta": "¿Quiénes somos?",
     "points": {
-      "point1Title": "Fe y servicio",
-      "point1Text": "Guiados por principios cristianos en cada acción.",
-      "point2Title": "Impacto real",
-      "point2Text": "Acciones concretas para necesidades concretas.",
-      "point3Title": "Comunidad",
-      "point3Text": "Trabajamos junto a personas, familias y organizaciones."
+        "point1Title": "Predio Sinaí",
+        "point1Text": "Retiros, campamentos y eventos para toda la comunidad.",
+        "point2Title": "REC Pilar Sinaí",
+        "point2Text": "Estudio multimedial para música, streaming y podcast.",
+        "point3Title": "Sin distinción",
+        "point3Text": "Todas las personas son bienvenidas, sin importar su historia."
     }
   },
   "aboutPreview": {
     "kicker": "Espacio destacado",
     "title": "REC Pilar",
     "text": "Descubrí nuestro moderno estudio de grabación, equipado con tecnología de vanguardia para capturar tus ideas creativas. Desde música hasta producciones audiovisuales, ofrecemos un espacio inspirador para artistas y profesionales.",
-    "cta": "Visita nuestro estudio"
+    "cta": "Visitá nuestro estudio"
   },
   "donation": {
-    "kicker": "Tu aporte importa",
-    "title": "Tu donación cambia vidas",
-    "text": "Cada aporte hace posible que más personas desarrollen sus proyectos de vida.",
-    "cta_text": "Con tu donación financiamos programas educativos, espacios de encuentro y acciones de servicio comunitario.",
-    "button": "Donar Ahora",
-    "stat1": "8 cursos",
-    "stat1Label": "disponibles en la Academia",
-    "stat2": "1 predio",
-    "stat2Label": "abierto para toda la comunidad",
-    "stat3": "100%",
-    "stat3Label": "sin fines de lucro",
-    "photoQuote": "\"Amarás a tu prójimo como a ti mismo\" — Marcos 12:31"
+    "kicker": "Sumate a la misión",
+    "title": "Tu donación transforma vidas en la comunidad",
+    "text": "Cada aporte sostiene el predio, los programas educativos y el estudio multimedial para que más personas accedan a formación, arte y deporte sin importar su historia.",
+    "stat1": "1 predio",
+    "stat1Label": "Campus propio con espacio para eventos, retiros y actividades para toda la comunidad",
+    "stat2": "Sin fines de lucro",
+    "stat2Label": "Asociación civil que reinvierte cada peso en programas comunitarios gratuitos",
+    "stat3": "Estudio REC Pilar",
+    "stat3Label": "Multimedia profesional para música, streaming y podcast al servicio de la comunidad",
+    "cta_text": "Cada aporte, grande o pequeño, sostiene directamente los programas, el predio y el estudio de la comunidad.",
+    "button": "Quiero donar",
+    "secondaryButton": "Conocé el predio",
+    "photoQuote": "\"Amarás a tu prójimo como a ti mismo\" — Marcos 12:31",
+    "trustBadge": "Asociación civil inscripta · CUIT verificado"
   },
   "community": {
-    "kicker": "Nuestra comunidad",
+    "kicker": "Nuestro predio",
     "title": "Asociación Civil Valores Sinaí",
     "subtitle": "Donde la comunidad crece y se conecta",
     "text": "Descubrí nuestros espacios diseñados para el desarrollo personal y comunitario: áreas verdes, instalaciones deportivas, salones de eventos y opciones de hospedaje.",
@@ -49,9 +51,9 @@
   "contact": {
     "ariaLabel": "Sección de contacto",
     "kicker":    "Estamos para vos",
-    "title":     "Contactanos",
+    "title":     "Contactános",
     "text":      "Si necesitás información sobre nuestros programas y servicios, no dudes en comunicarte con nosotros.",
-    "button":    "Envíanos tu consulta",
+    "button":    "Envianos tu consulta",
     "mapTitle":  "Ubicación de Valores Sinaí en Google Maps",
     "subtitle1": "Correo electrónico",
     "text1":     "valoressinai@gmail.com",

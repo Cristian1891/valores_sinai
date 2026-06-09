@@ -32,7 +32,7 @@ export const ContactOffer: React.FC = () => {
 
         {/* Bajada */}
         <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-white/75">
-          Contactanos para consultar disponibilidad, armar un presupuesto o conocer más
+          Contactános para consultar disponibilidad, armar un presupuesto o conocer más
           sobre cómo podés reservar el predio para tu iglesia, ministerio, grupo o evento.
         </p>
 

@@ -20,3 +20,11 @@ export interface SocialLink {
   label: string;
   icon: ReactNode;
 }
+
+export interface SocialLinkConfig {
+  key: 'instagram' | 'facebook' | 'x';
+  href: string;
+  label: string;
+  // Color de hover específico de cada red — valor fijo de marca
+  hoverColorClass: string;
+}

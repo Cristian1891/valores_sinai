@@ -2,16 +2,26 @@
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router';
 import { FOOTER_NAV_LINKS } from '../../constants/navigation';
-import { SOCIAL_LINKS } from '../../constants/social-media';
+import { SOCIAL_LINKS_CONFIG } from '../../features/home/constants/socialLinks';
+import { InstagramIcon, FacebookIcon, XIcon } from '../ui/icons/index';
 
-export const Footer: React.FC = () => {
+// Íconos instanciados con el tamaño correcto para el footer (h-5 w-5 default).
+// Si el día de mañana el footer necesita otro tamaño, se cambia acá
+// sin tocar los componentes de ícono.
+const ICON_MAP: Record<string, React.ReactNode> = {
+  instagram: <InstagramIcon />,
+  facebook:  <FacebookIcon />,
+  x:         <XIcon />,
+};
+
+export const Footer = () => {
   const { t } = useTranslation('common');
   const currentYear = new Date().getFullYear();
 
   return (
     <footer
       role="contentinfo"
-      className="border-t border-white/10 bg-dark-soft transition-colors duration-300 dark:bg-dark"
+      className="border-t border-white/10 bg-dark transition-colors duration-300"
     >
       {/* Versículo destacado */}
       <div className="border-b border-brand-accent/30 px-4 py-4">
@@ -23,7 +33,8 @@ export const Footer: React.FC = () => {
       {/* Cuerpo principal */}
       <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-3">
-          {/* Columna 1 — Logo */}
+
+          {/* Columna 1 — Logo + descripción */}
           <div className="flex flex-col items-center gap-3 sm:items-start">
             <Link
               to="/"
@@ -66,22 +77,23 @@ export const Footer: React.FC = () => {
               {t('footer.followUs')}
             </p>
 
-            <div className="flex gap-4" role="list" aria-label="Redes sociales">
-              {SOCIAL_LINKS.map(({ key, href, label, icon }) => (
-                <a
-                  key={key}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={label}
-                  role="listitem"
-                  className="rounded font-sans text-gray-mid transition-colors duration-200 hover:text-brand-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
-                >
-                  {icon}
-                </a>
+            <ul className="flex gap-4" aria-label="Redes sociales de Valores Sinaí">
+              {SOCIAL_LINKS_CONFIG.map(({ key, href, label }) => (
+                <li key={key}>
+                  <a
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={label}
+                    className="rounded text-gray-mid transition-colors duration-200 hover:text-brand-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
+                  >
+                    {ICON_MAP[key]}
+                  </a>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
+
         </div>
       </div>
 

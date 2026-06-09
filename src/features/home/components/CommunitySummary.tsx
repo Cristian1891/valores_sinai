@@ -1,13 +1,8 @@
 // src/features/home/components/CommunitySummary/CommunitySummary.tsx
 import { Link } from 'react-router';
 import { useTranslation } from 'react-i18next';
+import { VALUES } from '../constants/values';
 
-// Valores que aparecen en el logo original — extraídos del JSON de valores
-const VALUES = [
-  'Respeto', 'Compromiso', 'Solidaridad', 'Integridad',
-  'Bondad', 'Paz', 'Honor', 'Confianza', 'Esfuerzo', 'Tolerancia', 
-  'Responsabilidad', 'Amor', 'Honradez', 'Lealtad'
-];
 
 export const CommunitySummary = () => {
   const { t } = useTranslation('home');
@@ -33,11 +28,11 @@ export const CommunitySummary = () => {
       {/* Anillo decorativo — derivado del círculo del logo */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -right-40 -bottom-40 h-[500px] w-[500px] rounded-full border border-brand-accent/10 hidden lg:block"
+        className="pointer-events-none absolute -right-40 -bottom-40 h-125 w-125 rounded-full border border-brand-accent/10 hidden lg:block"
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -right-24 -bottom-24 h-[320px] w-[320px] rounded-full border border-brand-accent/10 hidden lg:block"
+        className="pointer-events-none absolute -right-24 -bottom-24 h-80 w-[320px] rounded-full border border-brand-accent/10 hidden lg:block"
       />
 
       {/* Contenido */}

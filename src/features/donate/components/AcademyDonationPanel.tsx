@@ -1,27 +1,25 @@
 // src/features/donations/components/AcademyDonationPanel.tsx
-//
-// Panel de donación para la Academia Valores Sinaí.
-// Muestra los cursos disponibles de forma informativa, pero la donación
-// es al fondo de becas general de la Academia.
-
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { DonationForm } from './DonationForm';
 import { PAYMENT_LINKS } from '../config/paymentLinks';
 
-// Cursos de la Academia — solo informativos
 const ACADEMY_COURSES = [
-  { id: 'video', emoji: '🎬', nameKey: 'academy.courses.video' },
-  { id: 'photo', emoji: '📷', nameKey: 'academy.courses.photo' },
-  { id: 'audio', emoji: '🎵', nameKey: 'academy.courses.audio' },
-  { id: 'direction', emoji: '🎥', nameKey: 'academy.courses.direction' },
-  { id: 'marketing', emoji: '📱', nameKey: 'academy.courses.marketing' },
-  { id: 'streaming', emoji: '📡', nameKey: 'academy.courses.streaming' },
+  { id: 'video',      emoji: '🎬', nameKey: 'academy.courses.video' },
+  { id: 'photo',      emoji: '📷', nameKey: 'academy.courses.photo' },
+  { id: 'audio',      emoji: '🎵', nameKey: 'academy.courses.audio' },
+  { id: 'direction',  emoji: '🎥', nameKey: 'academy.courses.direction' },
+  { id: 'marketing',  emoji: '📱', nameKey: 'academy.courses.marketing' },
+  { id: 'streaming',  emoji: '📡', nameKey: 'academy.courses.streaming' },
   { id: 'photo_cine', emoji: '🎞️', nameKey: 'academy.courses.photoCine' },
   { id: 'production', emoji: '🎙️', nameKey: 'academy.courses.production' },
 ];
 
 export const AcademyDonationPanel = () => {
   const { t } = useTranslation('donations');
+  // El mensaje del donante se puede usar en el flujo de confirmación
+  // (ej: pre-llenar un WhatsApp o email con el comprobante)
+  const [donorMessage, setDonorMessage] = useState('');
 
   return (
     <section
@@ -31,7 +29,7 @@ export const AcademyDonationPanel = () => {
       <div className="mx-auto max-w-5xl">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
 
-          {/* Columna izquierda — info sobre la Academia */}
+          {/* ── Columna izquierda — info ── */}
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand-accent">
               {t('academy.kicker', 'Academia Valores Sinaí')}
@@ -46,7 +44,7 @@ export const AcademyDonationPanel = () => {
               )}
             </p>
 
-            {/* Aviso importante */}
+            {/* Aviso sobre distribución */}
             <div className="mt-5 rounded-xl border border-brand-accent/30 bg-brand-accent/5 p-4">
               <p className="text-xs font-semibold text-brand-amber">
                 ℹ️ {t('academy.notice', 'Sobre la distribución de fondos')}
@@ -59,7 +57,7 @@ export const AcademyDonationPanel = () => {
               </p>
             </div>
 
-            {/* Cursos — solo informativos */}
+            {/* Cursos */}
             <div className="mt-6">
               <p className="mb-3 text-sm font-semibold text-dark dark:text-white">
                 {t('academy.coursesTitle', 'Cursos que impulsás con tu donación')}
@@ -77,10 +75,10 @@ export const AcademyDonationPanel = () => {
               </div>
             </div>
 
-            {/* Impacto visual */}
-            <div className="mt-8 grid grid-cols-2 gap-3">
+            {/* Stats */}
+            {/* <div className="mt-8 grid grid-cols-2 gap-3">
               {[
-                { value: '8', labelKey: 'academy.stat1', label: 'Cursos disponibles' },
+                { value: '8',    labelKey: 'academy.stat1', label: 'Cursos disponibles' },
                 { value: '+120', labelKey: 'academy.stat2', label: 'Estudiantes activos' },
               ].map((stat) => (
                 <div
@@ -93,17 +91,47 @@ export const AcademyDonationPanel = () => {
                   </p>
                 </div>
               ))}
-            </div>
+            </div> */}
+
+            {/* Acceso rápido para enviar comprobante con el mensaje */}
+            {donorMessage.trim().length > 0 && (
+              <div className="mt-6 rounded-xl border border-brand-accent/20 bg-surface-cream p-4 dark:border-white/10 dark:bg-dark">
+                <p className="text-xs font-semibold text-dark dark:text-white">
+                  💬 Envianos tu mensaje junto al comprobante
+                </p>
+                <p className="mt-1 text-xs text-dark-soft dark:text-gray-mid italic">
+                  "{donorMessage}"
+                </p>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  <a
+                    href={`https://wa.me/5491160122363?text=${encodeURIComponent(`Hola, hice una donación a la Academia.\n\nMi mensaje: "${donorMessage}"`)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 rounded-lg bg-brand-accent px-3 py-1.5 text-xs font-bold text-dark transition-colors hover:bg-brand-amber"
+                  >
+                    💬 Enviar por WhatsApp
+                  </a>
+                  <a
+                    href={`mailto:valoressinai@gmail.com?subject=Donaci%C3%B3n%20Academia&body=${encodeURIComponent(`Hola, hice una donación a la Academia.\n\nMi mensaje: "${donorMessage}"`)}`}
+                    className="inline-flex items-center gap-1.5 rounded-lg border border-black/10 bg-white px-3 py-1.5 text-xs font-bold text-dark transition-colors hover:border-brand-accent dark:border-white/10 dark:bg-dark-soft dark:text-white"
+                  >
+                    ✉️ Enviar por email
+                  </a>
+                </div>
+              </div>
+            )}
           </div>
 
-          {/* Columna derecha — formulario */}
+          {/* ── Columna derecha — formulario ── */}
           <div>
             <DonationForm
               category="academy"
               accentColor="yellow"
-              paymentLinks={PAYMENT_LINKS.academy}
+              paymentLinks={{ mp: PAYMENT_LINKS.academy.mp }}
+              onMessage={setDonorMessage}
             />
           </div>
+
         </div>
       </div>
     </section>

@@ -1,147 +1,270 @@
-// src/features/about-us/components/NuestrosValores.tsx
+// src/features/about-us/components/OrganizationalValues.tsx
 //
-// Sección 3 de "Quiénes Somos": los 6 valores institucionales de Valores Sinaí.
-// Separado de HistoriaMisionVision — una idea por sección es la regla de oro en UX.
-// Fondo: bg-surface-cream — contrasta con HistoriaMisionVision (bg-white) y Team (bg-white).
+// Grilla de 14 cards con imagen de fondo, una por cada valor institucional.
+// Comportamiento hover:
+//   — La imagen hace zoom suave (scale 1.08)
+//   — El overlay gradiente se reemplaza por un fondo oscuro sólido
+//   — El nombre del valor sube levemente y aparece la descripción
+//   — Una línea brand-accent se expande desde la izquierda en el borde inferior
 //
-// ¿Qué valores se usan?
-// Se usan los 6 valores del PDF oficial "Nuestra Historia", que tienen título Y descripción
-// propia: Amor al prójimo, Inclusión, Servicio, Unidad, Creatividad, Excelencia.
-// La imagen de nube de palabras (Lealtad, Bondad, Honor, Respeto, etc.) refleja valores
-// del logo/identidad visual de la asociación pero no tienen descripción institucional,
-// por lo que no se incorporan como tarjetas — quedarían sin contexto.
-// Si en el futuro la asociación redacta descripciones para esos valores adicionales,
-// se pueden agregar fácilmente al array `valores`.
+// Las imágenes son placeholders de Unsplash.
+// Reemplazalas por imágenes propias de la asociación.
+// Búsquedas sugeridas en unsplash.com o pexels.com:
+//   Amor            → "hands together community warm light"
+//   Respeto         → "people listening conversation generations"
+//   Honradez        → "handshake trust natural light"
+//   Paz             → "serene landscape sunrise calm"
+//   Honor           → "elder recognition community dignity"
+//   Lealtad         → "friends walking together back"
+//   Confianza       → "hand extended support help"
+//   Integridad      → "person working focused concentration"
+//   Compromiso      → "volunteers working together project"
+//   Tolerancia      → "diverse people sitting conversation"
+//   Responsabilidad → "person leading task careful"
+//   Bondad          → "person giving food generosity smile"
+//   Solidaridad     → "hands stacked teamwork unity"
+//   Esfuerzo        → "person physical activity determination"
+
+interface Valor {
+  id: string;
+  name: string;
+  description: string;
+  imageUrl: string;
+  imageAlt: string;
+}
+
+const VALORES: Valor[] = [
+  {
+    id: 'amor',
+    name: 'Amor',
+    description:
+      'Nuestro principio rector. Cada actividad nace del amor genuino hacia las personas y sus familias.',
+    imageUrl:
+      'https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=600&q=80',
+    imageAlt: 'Personas tomadas de la mano en señal de unión',
+  },
+  {
+    id: 'respeto',
+    name: 'Respeto',
+    description:
+      'Valoramos a cada persona como es, escuchando con atención y sin juzgar.',
+    imageUrl:
+      'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&q=80',
+    imageAlt: 'Personas de distintas generaciones conversando con atención',
+  },
+  {
+    id: 'honradez',
+    name: 'Honradez',
+    description:
+      'Actuamos con transparencia y coherencia en cada decisión y compromiso.',
+    imageUrl:
+      'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&q=80',
+    imageAlt: 'Apretón de manos firme entre dos personas',
+  },
+  {
+    id: 'paz',
+    name: 'Paz',
+    description:
+      'Promovemos ambientes de diálogo y armonía donde cada persona puede crecer.',
+    imageUrl:
+      'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80',
+    imageAlt: 'Paisaje sereno al amanecer con cielo claro',
+  },
+  {
+    id: 'honor',
+    name: 'Honor',
+    description:
+      'Reconocemos la dignidad de cada persona y la integridad de nuestra misión.',
+    imageUrl:
+      'https://images.unsplash.com/photo-1609220136736-443140cffec6?w=600&q=80',
+    imageAlt: 'Persona mayor siendo reconocida con dignidad por su comunidad',
+  },
+  {
+    id: 'lealtad',
+    name: 'Lealtad',
+    description:
+      'Permanecemos junto a nuestra comunidad en los momentos difíciles y en los de celebración.',
+    imageUrl:
+      'https://images.unsplash.com/photo-1543269865-cbf427effbad?w=600&q=80',
+    imageAlt: 'Grupo de personas caminando juntas',
+  },
+  {
+    id: 'confianza',
+    name: 'Confianza',
+    description:
+      'Construimos relaciones sólidas basadas en la palabra cumplida y el compromiso real.',
+    imageUrl:
+      'https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=600&q=80',
+    imageAlt: 'Mano extendida en señal de apoyo y confianza',
+  },
+  {
+    id: 'integridad',
+    name: 'Integridad',
+    description:
+      'Hacemos lo correcto incluso cuando nadie observa. Es el cimiento de todo lo que hacemos.',
+    imageUrl:
+      'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80',
+    imageAlt: 'Persona trabajando con concentración y determinación',
+  },
+  {
+    id: 'compromiso',
+    name: 'Compromiso',
+    description:
+      'Nos involucramos de lleno en cada proyecto, porque sabemos que el servicio verdadero cuesta.',
+    imageUrl:
+      'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&q=80',
+    imageAlt: 'Voluntarios trabajando juntos en un proyecto comunitario',
+  },
+  {
+    id: 'tolerancia',
+    name: 'Tolerancia',
+    description:
+      'Celebramos las diferencias como una riqueza y hacemos espacio para todas las historias.',
+    imageUrl:
+      'https://images.unsplash.com/photo-1573497620053-ea5300f94f21?w=600&q=80',
+    imageAlt: 'Personas de distintos orígenes sentadas juntas en conversación',
+  },
+  {
+    id: 'responsabilidad',
+    name: 'Responsabilidad',
+    description:
+      'Asumimos las consecuencias de nuestras acciones y cuidamos los recursos que nos son confiados.',
+    imageUrl:
+      'https://images.unsplash.com/photo-1531545514256-b1400bc00f31?w=600&q=80',
+    imageAlt: 'Persona liderando una tarea con cuidado y atención',
+  },
+  {
+    id: 'bondad',
+    name: 'Bondad',
+    description:
+      'Elegimos la generosidad como forma de vida, sin esperar nada a cambio.',
+    imageUrl:
+      'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=600&q=80',
+    imageAlt: 'Persona entregando comida con generosidad y calidez',
+  },
+  {
+    id: 'solidaridad',
+    name: 'Solidaridad',
+    description:
+      'Nos ponemos del lado de quien más necesita, porque ninguna persona debería enfrentar sola sus desafíos.',
+    imageUrl:
+      'https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=600&q=80',
+    imageAlt: 'Muchas manos superpuestas en señal de unión y solidaridad',
+  },
+  {
+    id: 'esfuerzo',
+    name: 'Esfuerzo',
+    description:
+      'Damos lo mejor en cada tarea porque honrar a Dios y a nuestra comunidad merece lo máximo.',
+    imageUrl:
+      'https://images.unsplash.com/photo-1594882645126-14ac19a3b5b5?w=600&q=80',
+    imageAlt: 'Persona en plena actividad con determinación y esfuerzo',
+  },
+];
 
 export const OrganizationalValues = () => {
-  const valores = [
-    {
-      title: 'Amor al prójimo',
-      text: 'Nuestro principio rector, basado en el mandato de Jesús de amar a otros como a nosotros mismos.',
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5 text-dark">
-          <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
-        </svg>
-      ),
-    },
-    {
-      title: 'Inclusión',
-      text: 'Abrimos nuestras puertas y corazones a toda persona, sin importar su trasfondo, creencias o situación.',
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5 text-dark">
-          <path fillRule="evenodd" d="M8.25 6.75a3.75 3.75 0 117.5 0 3.75 3.75 0 01-7.5 0zM15.75 9.75a3 3 0 116 0 3 3 0 01-6 0zM2.25 9.75a3 3 0 116 0 3 3 0 01-6 0zM6.31 15.117A6.745 6.745 0 0112 12a6.745 6.745 0 016.709 7.498.75.75 0 01-.372.568A12.696 12.696 0 0112 21.75c-2.305 0-4.47-.612-6.337-1.684a.75.75 0 01-.372-.568 6.787 6.787 0 011.019-4.38z" clipRule="evenodd" />
-          <path d="M5.082 14.254a8.287 8.287 0 00-1.308 5.135 9.687 9.687 0 01-1.764-.44l-.115-.04a.563.563 0 01-.373-.487l-.01-.121a3.75 3.75 0 013.57-4.047zM20.226 19.389a8.287 8.287 0 00-1.308-5.135 3.75 3.75 0 013.57 4.047l-.01.121a.563.563 0 01-.373.486l-.115.04c-.567.2-1.156.349-1.764.441z" />
-        </svg>
-      ),
-    },
-    {
-      title: 'Servicio',
-      text: 'El amor se demuestra en acciones concretas. Trabajamos para servir a la comunidad en sus diferentes necesidades.',
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5 text-dark">
-          <path d="M11.25 3v4.046a3 3 0 00-4.277 4.204H1.5v-6A2.25 2.25 0 013.75 3h7.5zM12.75 3v4.011a3 3 0 014.239 4.239H22.5v-6A2.25 2.25 0 0020.25 3h-7.5zM22.5 12.75h-8.983a4.125 4.125 0 004.108 3.75.75.75 0 010 1.5 5.623 5.623 0 01-4.875-2.817V21h7.5a2.25 2.25 0 002.25-2.25v-6zM1.5 12.75v6A2.25 2.25 0 003.75 21h7.5v-5.817A5.623 5.623 0 016.375 18a.75.75 0 010-1.5 4.126 4.126 0 004.108-3.75H1.5z" />
-        </svg>
-      ),
-    },
-    {
-      title: 'Unidad',
-      text: 'Fomentamos la colaboración entre iglesias, ministerios, organizaciones y personas, buscando la unidad en la diversidad.',
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5 text-dark">
-          <path fillRule="evenodd" d="M15.75 4.5a3 3 0 11.825 2.066l-8.421 4.679a3.002 3.002 0 010 1.51l8.421 4.679a3 3 0 11-.729 1.31l-8.421-4.678a3 3 0 110-4.132l8.421-4.679a3 3 0 01-.096-.755z" clipRule="evenodd" />
-        </svg>
-      ),
-    },
-    {
-      title: 'Creatividad',
-      text: 'Valoramos el arte, la innovación y la tecnología como herramientas para comunicar el mensaje de esperanza y fe.',
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5 text-dark">
-          <path d="M11.644 1.59a.75.75 0 01.712 0l9.75 5.25a.75.75 0 010 1.32l-9.75 5.25a.75.75 0 01-.712 0l-9.75-5.25a.75.75 0 010-1.32l9.75-5.25z" />
-          <path d="M3.265 10.602l7.668 4.129a2.25 2.25 0 002.134 0l7.668-4.13 1.37.739a.75.75 0 010 1.32l-9.75 5.25a.75.75 0 01-.71 0l-9.75-5.25a.75.75 0 010-1.32l1.37-.738z" />
-          <path d="M10.933 19.231l-7.668-4.13-1.37.739a.75.75 0 000 1.32l9.75 5.25c.221.12.489.12.71 0l9.75-5.25a.75.75 0 000-1.32l-1.37-.738-7.668 4.13a2.25 2.25 0 01-2.134-.001z" />
-        </svg>
-      ),
-    },
-    {
-      title: 'Excelencia',
-      text: 'Nos esforzamos en dar lo mejor en cada proyecto, actividad y servicio, honrando a Dios a través de nuestro compromiso.',
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5 text-dark">
-          <path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clipRule="evenodd" />
-        </svg>
-      ),
-    },
-  ];
-
   return (
     <section
-      className="bg-surface-cream px-4 py-20 sm:px-6 lg:px-8"
+      className="bg-surface-cream px-4 py-16 sm:px-6 sm:py-20 lg:px-8"
       aria-labelledby="valores-heading"
     >
-      <div className="mx-auto max-w-5xl">
+      <div className="mx-auto max-w-6xl">
 
         {/* ── Encabezado ── */}
-        <div className="mb-12 text-center">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-brand-amber">
+        <div className="mb-12">
+          <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-brand-amber">
             Lo que nos guía
           </p>
           <h2
             id="valores-heading"
-            className="text-3xl font-bold tracking-tight text-dark sm:text-4xl"
+            className="mt-2 font-serif text-4xl font-bold tracking-tight text-dark"
           >
             Nuestros valores
           </h2>
-          <div className="mx-auto mt-4 h-px w-16 bg-brand-accent" aria-hidden="true" />
+          <div
+            className="mt-3 h-0.75 w-10 bg-brand-accent"
+            aria-hidden="true"
+          />
+          <p className="mt-5 max-w-xl text-sm leading-7 text-dark-soft">
+            Creemos que los valores no son aspiraciones abstractas: son decisiones
+            que tomamos cada día en cada actividad, retiro y proyecto junto a
+            nuestra comunidad.
+            Estos catorce principios dan forma a quiénes somos y a cómo servimos. No son reglas impuestas, 
+            sino el carácter que elegimos cultivar como asociación.
+          </p>
         </div>
 
-        {/* ── Grilla de 6 valores ── */}
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {valores.map((valor) => (
-            <div
-              key={valor.title}
-              className="flex gap-4 rounded-2xl border border-black/5 bg-white p-5 shadow-sm"
+        {/* ── Grilla de cards ── */}
+        <ul
+          className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4"
+          role="list"
+          aria-label="Valores de Valores Sinaí"
+        >
+          {VALORES.map((valor) => (
+            <li
+              key={valor.id}
+              className="group relative aspect-3/4 overflow-hidden rounded-2xl bg-dark"
             >
-              {/* Ícono */}
+              {/* Imagen de fondo */}
+              <img
+                src={valor.imageUrl}
+                alt={valor.imageAlt}
+                loading="lazy"
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 ease-out will-change-transform group-hover:scale-[1.08]"
+              />
+
+              {/* Overlay gradiente — visible en reposo, desaparece en hover */}
               <div
-                className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-brand-accent"
+                className="absolute inset-0 bg-linear-to-t from-black/80 via-black/25 to-black/5 transition-opacity duration-300 group-hover:opacity-0"
                 aria-hidden="true"
-              >
-                {valor.icon}
+              />
+
+              {/* Overlay sólido — invisible en reposo, aparece en hover */}
+              <div
+                className="absolute inset-0 bg-black/68 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                aria-hidden="true"
+              />
+
+              {/* Línea brand-accent inferior */}
+              <div
+                className="absolute bottom-0 left-0 right-0 h-0.75 origin-left scale-x-0 bg-brand-accent transition-transform duration-500 ease-out group-hover:scale-x-100"
+                aria-hidden="true"
+              />
+
+              {/* Contenido de texto */}
+              <div className="absolute inset-0 flex flex-col justify-end p-4 sm:p-5">
+                <p className="font-serif text-base font-bold leading-snug text-white transition-all duration-300 group-hover:-translate-y-1 group-hover:mb-2 sm:text-[17px]">
+                  {valor.name}
+                </p>
+                <p className="max-h-0 overflow-hidden text-[11.5px] leading-[1.55] text-white/80 opacity-0 transition-all duration-300 ease-out group-hover:max-h-28 group-hover:opacity-100 sm:text-xs">
+                  {valor.description}
+                </p>
               </div>
-              {/* Texto */}
-              <div>
-                <p className="text-sm font-bold text-dark">{valor.title}</p>
-                <p className="mt-1 text-xs leading-5 text-dark-soft">{valor.text}</p>
-              </div>
-            </div>
+            </li>
           ))}
-        </div>
+        </ul>
+
+        {/* ── Stat cards ── */}
+        {/* <div className="mt-10 grid max-w-sm grid-cols-2 gap-3">
+          <div className="rounded-2xl bg-dark p-5">
+            <span className="block font-serif text-[34px] font-bold leading-none text-brand-accent">
+              {VALORES.length}
+            </span>
+            <span className="mt-2 block text-[10px] font-semibold uppercase tracking-[0.12em] text-surface-cream/60">
+              Valores que nos definen
+            </span>
+          </div>
+          <div className="rounded-2xl bg-dark p-5">
+            <span className="block font-serif text-[34px] font-bold leading-none text-brand-accent">
+              1
+            </span>
+            <span className="mt-2 block text-[10px] font-semibold uppercase tracking-[0.12em] text-surface-cream/60">
+              Propósito que los une
+            </span>
+          </div>
+        </div> */}
 
       </div>
     </section>
   );
 };
-
-/*
-──────────────────────────────────────────────────────────────
-NOTA: valores de la nube de palabras (imagen 3)
-──────────────────────────────────────────────────────────────
-La nube incluye: Tolerancia, Responsabilidad, Confianza,
-Esfuerzo, Respeto, Lealtad, Compromiso, Amor, Solidaridad,
-Paz, Honor, Honradez, Bondad, Integridad.
-
-Estos forman parte de la identidad visual/logo de la asociación
-pero no tienen descripción institucional propia en el material
-oficial. Se recomienda pedirle al cliente que redacte una frase
-para cada uno si desea incorporarlos como tarjetas adicionales.
-──────────────────────────────────────────────────────────────
-
-Secuencia de fondos:
-  HeroAbout            → bg-dark
-  HistoriaMisionVision → bg-white
-  NuestrosValores      → bg-surface-cream  ← este componente
-  Team                 → bg-white 
-  PresidentMessage     → bg-dark-soft
-──────────────────────────────────────────────────────────────
-*/

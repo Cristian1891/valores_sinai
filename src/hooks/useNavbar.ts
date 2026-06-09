@@ -6,6 +6,7 @@ import { useTheme } from './useTheme';
 export const useNavbar = () => {
   const { t, i18n } = useTranslation('common');
   const { isDark, toggleTheme } = useTheme();
+  
 
   const [isMobileOpen, setIsMobileOpen] = useState<boolean>(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);

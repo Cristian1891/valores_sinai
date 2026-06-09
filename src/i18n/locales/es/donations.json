@@ -11,7 +11,8 @@
     "subtitle": "Cada aporte hace posible que más personas desarrollen sus proyectos de vida, reciban educación y sean parte de nuestra comunidad.",
     "stat1": "Familias acompañadas",
     "stat2": "Cursos en la Academia",
-    "stat3": "Sin fines de lucro"
+    "stat3": "Sin fines de lucro",
+    "cta": "Donar ahora"
   },
   "category": {
     "academy": {
@@ -82,17 +83,20 @@
     "monthlyHint": "Mayor impacto sostenido",
     "once": "Una vez",
     "onceHint": "Donación única",
-    "coverFee": "Cubrir el costo de procesamiento",
-    "coverFeeHint": "Al activar esta opción, tu donación aumenta ~{{fee}} para cubrir la comisión de la plataforma, y el 100% de {{original}} llega a Valores Sinaí.",
-    "messageLabel": "Mensaje o dedicatoria (opcional)",
-    "messagePlaceholder": "Contanos por qué decidiste donar...",
     "summary": "Resumen",
     "selectAmount": "Seleccioná un monto para continuar.",
     "processing": "Procesando...",
     "donate": "Donar ahora",
     "seeBankInfo": "Ver instrucciones de transferencia ↓",
-    "securityNote": "Serás redirigido a la plataforma de pago segura. Valores Sinaí no almacena datos de tu tarjeta.",
-    "donatePaypal": "Donar con PayPal"
+    "donatePaypal": "Donar con PayPal",
+    "amountHint": "El monto exacto lo ingresás en MercadoPago de forma segura.",
+    "donateMP": "Donar con MercadoPago",
+    "messageLabel": "Mensaje o dedicatoria (opcional)",
+    "messagePlaceholder": "Contanos por qué decidiste donar...",
+    "securityNote": "Serás redirigido a MercadoPago. El monto lo ingresás allá de forma segura.",
+    "coverFee": "Cubrir el costo de procesamiento",
+    "coverFeeHint": "MercadoPago descuenta una comisión por cada pago. Al activar esta opción, agregás un monto extra para que el 100% de tu donación llegue a Valores Sinaí.",
+    "coverFeeNote": "La comisión varía según tu país y método de pago. MercadoPago te mostrará el total final antes de confirmar."
   },
   "payment": {
     "label": "Método de pago",
@@ -115,7 +119,9 @@
     "title": "Transferencia bancaria",
     "desc": "Si preferís transferir directamente, el 100% de tu donación llega a Valores Sinaí sin comisiones de plataforma. Envianos el comprobante por email o WhatsApp para registrar tu aporte.",
     "argentina": "Argentina",
-    "international": "Internacional",
+    "usd": "Cuenta en dólares (USD)",
+    "usdNote": "Esta cuenta recibe transferencias en dólares desde cualquier banco o billetera. Al ingresar dólares, el banco destino aparece como Banco Industrial (BIND).",
+    "international": "Internacional", 
     "alias": "Alias",
     "cbu": "CBU",
     "cuit": "CUIT",

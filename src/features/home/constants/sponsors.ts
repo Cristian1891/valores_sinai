@@ -1,0 +1,16 @@
+export const sponsors = [
+  { name: 'Banco Provincia',              logo: '/img/logos/banco-provincia-seeklogo.png' },
+  { name: 'YPF',                          logo: '/img/logos/ypf-seeklogo.png' },
+  { name: 'Eczane Pharma S.A',            logo: '/img/logos/eczane-logo-2.png' },
+  { name: 'Mazzieri S.A',                 logo: '/img/logos/Logo-Escudo_Mazzieri-1.webp' },
+  { name: 'Bolsarpil S.A',               logo: '/img/logos/Bolsarpil.jpeg' },
+  { name: 'Sansoni S.A',                  logo: '/img/logos/Sansoni.jpeg' },
+  { name: 'Cestari Ind. Metalúrgica',     logo: '/img/logos/Cestari.png' },
+  { name: 'Plegamex S.A.',                logo: '/img/logos/Plegamex.png' },
+  { name: 'MG Ind. Metalúrgica S.A',     logo: '/img/logos/industria_metalurgica_sin_fondo.png' },
+  { name: 'Mega Energía S.A',             logo: '/img/logos/Mega Energía S.A 1.jpeg' },
+  { name: 'Ingeniería Mega S.A',          logo: '/img/logos/Ingenieria-MEGA.png' },
+  { name: 'Bracco',                       logo: '/img/logos/Bracco_Logo.png' },
+  { name: 'Agrícola Noroeste S.R.L',     logo: '/img/logos/agricola_noroeste_1.jpg' },
+  { name: 'SH Metalúrgica',              logo: '/img/logos/SH Metalúrgica.jpeg' },
+];

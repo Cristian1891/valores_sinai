@@ -2,6 +2,8 @@ import { createContext, useState, useEffect} from 'react';
 import type { ReactNode } from 'react';
 import type { ThemeContextType } from '../types/global';
 
+// Extendemos la interfaz para soportar la carga global
+
 // Tenemos que exportar el Contexto para que el hook lo pueda importar
 export const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
@@ -10,7 +12,8 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
     if (typeof window !== 'undefined') {
       const savedTheme = localStorage.getItem('theme');
       if (savedTheme) return savedTheme === 'dark';
-      return window.matchMedia('(prefers-color-scheme: dark)').matches;
+      // return window.matchMedia('(prefers-color-scheme: dark)').matches;
+      return false;
     }
     return false;
   });
@@ -23,7 +26,7 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   const toggleTheme = () => setIsDark((prev) => !prev);
 
   return (
-    <ThemeContext.Provider value={{ isDark, toggleTheme }}>
+    <ThemeContext.Provider value={{ isDark, toggleTheme}}>
       {children}
     </ThemeContext.Provider>
   );
