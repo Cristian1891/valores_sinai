@@ -1,0 +1,69 @@
+{
+  "hero": {
+    "eyebrow": "Academia Valores Sinaí",
+    "badgeAriaLabel": "Status: em construção",
+    "badge": "Em construção",
+    "titleLine1": "Formação real",
+    "titleLine2": "para o mundo",
+    "titleLine3": "digital.",
+    "subtitle": "Estamos a construir uma formação em ofícios e competências digitais pensada para transformar o teu talento em trabalho. Queres saber antes de todos? Deixa os teus dados e aguarda novidades em breve.",
+    "areasLabel": "Próximas áreas de formação",
+    "areasHeader": "O que está por vir",
+    "footerAriaLabel": "Rodapé do hero",
+    "footerCopy": "Valores Sinaí — Lançamento em breve",
+    "area1": {
+      "name": "Produção Audiovisual",
+      "tag": "Vídeo · Edição · Conteúdo"
+    },
+    "area2": {
+      "name": "Marketing Digital",
+      "tag": "Redes sociais · Estratégia · Marca"
+    },
+    "area3": {
+      "name": "Fotografia Digital",
+      "tag": "Câmara · Composição · Edição Digital"
+    },
+    "area4": {
+      "name": "Áudio e Som",
+      "tag": "Gravação · Mistura · Pós‑produção"
+    },
+    "area5": {
+      "name": "Gestão Cultural",
+      "tag": "Comunidade · Eventos · Projetos"
+    },
+    "area6": {
+      "name": "Streaming e Mídia",
+      "tag": "Ao vivo · Broadcast · Plataformas"
+    }
+  },
+  "form": {
+    "badge": "Fique a saber antes de todos",
+    "title": "Faça parte da nossa academia",
+    "subtitle": "Deixe os seus dados e avisaremos quando lançarmos os nossos cursos",
+    "labelNombre": "Nome completo",
+    "placeholderNombre": "Ex: Maria Silva",
+    "labelEmail": "E‑mail",
+    "placeholderEmail": "seu@email.com",
+    "labelTelefono": "Telefone / WhatsApp",
+    "placeholderTelefono": "Ex: +351 912 345 678",
+    "labelArea": "O que gostaria de aprender?",
+    "areaPlaceholder": "Escolha uma área…",
+    "consentimiento": "Aceito receber informações sobre os cursos e autorizo a utilização dos meus dados.",
+    "submit": "Quero receber informações",
+    "sending": "Enviando…",
+    "successTitle": "Consulta recebida!",
+    "successText": "Avisaremos assim que houver novidades sobre os cursos. Obrigado pelo seu interesse na Academia Valores Sinaí!",
+    "errorTitle": "Algo correu mal",
+    "errorText": "Não conseguimos enviar a sua mensagem. Por favor, tente novamente ou contacte‑nos pelo WhatsApp.",
+    "retry": "Tentar novamente",
+    "areaOptions": {
+      "produccion-audiovisual": "Produção Audiovisual",
+      "audio-sonido": "Áudio e Som",
+      "fotografia-digital": "Fotografia Digital",
+      "marketing-digital": "Marketing Digital",
+      "streaming-medios": "Streaming e Mídia",
+      "gestion-cultural": "Gestão Cultural",
+      "no-seguro": "Ainda não tenho certeza"
+    }
+  }
+}

@@ -12,10 +12,10 @@ export const Home = () => {
     <>
       <Hero />
       <AboutPreview />
-      <DonationSummary />
       <CommunitySummary />
       <TestimonialesImpactoSection />
       <SponsorsSlider />
+      <DonationSummary />
       <SocialMediaSection />
       <Contact />
     </>

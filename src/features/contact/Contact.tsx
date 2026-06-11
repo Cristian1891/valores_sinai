@@ -6,8 +6,8 @@ export const Contact = () => {
   return (
     <>
       <ContactHero />
-      <ContactMethods />
       <ContactForm/>
+      <ContactMethods />
     </>
   );
 };

@@ -1,36 +1,63 @@
 {
-    "hero": {
-        "ariaLabel": "Presentación de Valores Sinaí",
-        "kicker": "Asociación Civil · Valores Sinaí",
-        "title": "Educación, cultura, deporte",
-        "titleAccent": "y espiritualidad para todos",
-        "subtitle": "Somos una Asociación Civil que desarrolla propuestas educativas, culturales, sociales, deportivas y espirituales, guiadas por valores humanísticos, para acompañar a las personas en la transformación de sus realidades.",
-        "verse": "\"Amarás a tu prójimo como a ti mismo.\""
-    },
-    "team": {
-        "kicker": "Las personas detrás de Sinaí",
-        "title": "Nuestro equipo",
-        "imageAlt": "Equipo de trabajo de Valores Sinaí reunido",
-        "description1": "Somos un grupo de colaboradores y profesionales que compartimos una misma visión: construir una comunidad más solidaria, humana y unida.",
-        "description2": "Cada integrante aporta su conocimiento y dedicación para hacer realidad nuestros proyectos, guiados por valores humanísticos y por el deseo genuino de ver vidas transformadas.",
-        "valuesLabel": "Valores del equipo",
-        "value1": "Compromiso",
-        "value2": "Servicio",
-        "value3": "Solidaridad",
-        "value4": "Fe",
-        "value5": "Excelencia"
-    },
-    "president": {
-        "kicker": "Una palabra de nuestro presidente",
-        "title": "Mensaje de Hugo Alegre",
-        "name": "Hugo Alegre",
-        "role": "Presidente · Asociación Civil Valores Sinaí",
-        "messageLabel": "Mensaje del Presidente",
-        "greeting": "Querida comunidad:",
-        "message1": "Valores Sinaí nació de un sueño que Dios puso en mi corazón: ser un puente para que más personas puedan conocer el amor de Jesús de manera real, práctica y cercana.",
-        "message2": "Cada proyecto, cada actividad y cada encuentro son posibles gracias al compromiso de un equipo apasionado y al apoyo de quienes confían en esta visión.",
-        "message3": "Te invito a sumarte a esta familia, a compartir tus dones y a ser parte de una historia donde Dios sigue obrando cada día.",
-        "signature": "Con gratitud y esperanza, Hugo Alegre",
-        "closingVerse": "\"Amar al prójimo como a ti mismo.\" — Nuestro versículo guía"
+  "hero": {
+    "ariaLabel": "Presentación de Valores Sinaí",
+    "kicker": "Asociación Civil · Valores Sinaí",
+    "title": "Educación, cultura, deporte",
+    "titleAccent": "y espiritualidad para todos",
+    "subtitle": "Somos una Asociación Civil que desarrolla propuestas educativas, culturales, sociales, deportivas y espirituales, guiadas por valores humanísticos, para acompañar a las personas en la transformación de sus realidades.",
+    "verse": "\"Amarás a tu prójimo como a ti mismo.\""
+  },
+  "mission": {
+    "kicker": "Nuestra historia",
+    "title": "Un sueño que se convirtió en misión",
+    "history": "Valores Sinaí nació con un propósito claro: predicar el evangelio de Jesús y extender Su amor a todos, utilizando como herramientas la cultura, la educación, el deporte y lo espiritual. Soñamos con ser un espacio abierto y transformador, donde cada persona pueda experimentar la gracia, la misericordia y el amor de Dios — no solo en palabras, sino a través de acciones concretas.",
+    "missionLabel": "Misión",
+    "missionText": "Predicar el evangelio de Jesús a través de la cultura, la educación, el deporte, la espiritualidad y los medios de comunicación, generando espacios de encuentro y servicio para que cada persona pueda experimentar el amor, la gracia y la misericordia de Dios de manera tangible.",
+    "visionLabel": "Visión",
+    "visionText": "Ser un referente en la comunidad donde el mensaje transformador de Jesús se transmita a todas las personas sin distinción, utilizando todos los recursos disponibles — desde los encuentros presenciales en nuestro predio hasta las más modernas plataformas tecnológicas.",
+    "quote": "\"Las acciones de hoy serán el testimonio del mañana. Lo que hagamos en nuestro día a día podrá ser luz y transformación para bendecir a otros.\"",
+    "quoteAuthor": "Valores Sinaí"
+  },
+  "team": {
+    "kicker": "Las personas detrás de Sinaí",
+    "title": "Nuestro equipo",
+    "imageAlt": "Equipo de trabajo de Valores Sinaí reunido",
+    "description1": "Somos un grupo de colaboradores y profesionales que compartimos una misma visión: construir una comunidad más solidaria, humana y unida.",
+    "description2": "Cada integrante aporta su conocimiento y dedicación para hacer realidad nuestros proyectos, guiados por valores humanísticos y por el deseo genuino de ver vidas transformadas."
+  },
+  "president": {
+    "kicker": "Una palabra de nuestro presidente",
+    "title": "Mensaje de Hugo Alegre",
+    "name": "Hugo Alegre",
+    "role": "Presidente · Asociación Civil Valores Sinaí",
+    "messageLabel": "Mensaje del Presidente",
+    "greeting": "Querida comunidad:",
+    "message1": "Valores Sinaí nació de un sueño que Dios puso en mi corazón: ser un puente para que más personas puedan conocer el amor de Jesús de manera real, práctica y cercana.",
+    "message2": "Cada proyecto, cada actividad y cada encuentro son posibles gracias al compromiso de un equipo apasionado y al apoyo de quienes confían en esta visión.",
+    "message3": "Te invito a sumarte a esta familia, a compartir tus dones y a ser parte de una historia donde Dios sigue obrando cada día.",
+    "signature": "Con gratitud y esperanza, Hugo Alegre",
+    "closingVerse": "\"Amar al prójimo como a ti mismo.\" — Nuestro versículo guía"
+  },
+  "values": {
+    "kicker": "Lo que nos guía",
+    "title": "Nuestros valores",
+    "description": "Creemos que los valores no son aspiraciones abstractas: son decisiones que tomamos cada día en cada actividad, retiro y proyecto junto a nuestra comunidad. Estos catorce principios dan forma a quiénes somos y a cómo servimos. No son reglas impuestas, sino el carácter que elegimos cultivar como asociación.",
+    "ariaLabel": "Valores de Valores Sinaí",
+    "items": {
+      "amor":            { "name": "Amor",            "description": "Nuestro principio rector. Cada actividad nace del amor genuino hacia las personas y sus familias." },
+      "respeto":         { "name": "Respeto",         "description": "Valoramos a cada persona como es, escuchando con atención y sin juzgar." },
+      "honradez":        { "name": "Honradez",        "description": "Actuamos con transparencia y coherencia en cada decisión y compromiso." },
+      "paz":             { "name": "Paz",             "description": "Promovemos ambientes de diálogo y armonía donde cada persona puede crecer." },
+      "honor":           { "name": "Honor",           "description": "Reconocemos la dignidad de cada persona y la integridad de nuestra misión." },
+      "lealtad":         { "name": "Lealtad",         "description": "Permanecemos junto a nuestra comunidad en los momentos difíciles y en los de celebración." },
+      "confianza":       { "name": "Confianza",       "description": "Construimos relaciones sólidas basadas en la palabra cumplida y el compromiso real." },
+      "integridad":      { "name": "Integridad",      "description": "Hacemos lo correcto incluso cuando nadie observa. Es el cimiento de todo lo que realizamos." },
+      "compromiso":      { "name": "Compromiso",      "description": "Nos involucramos de lleno en cada proyecto, porque sabemos que el servicio verdadero cuesta." },
+      "tolerancia":      { "name": "Tolerancia",      "description": "Celebramos las diferencias como una riqueza y hacemos espacio para todas las historias." },
+      "responsabilidad": { "name": "Responsabilidad", "description": "Asumimos las consecuencias de nuestras acciones y cuidamos los recursos que nos son confiados." },
+      "bondad":          { "name": "Bondad",          "description": "Elegimos la generosidad como forma de vida, sin esperar nada a cambio." },
+      "solidaridad":     { "name": "Solidaridad",     "description": "Nos ponemos del lado de quien más necesita, porque ninguna persona debería enfrentar sola sus desafíos." },
+      "esfuerzo":        { "name": "Esfuerzo",        "description": "Damos lo mejor en cada tarea porque honrar a Dios y a nuestra comunidad merece lo máximo." }
     }
+  }
 }

@@ -1,41 +1,84 @@
 {
   "hero": {
-    "kicker": "Christian Civil Association",
-    "title": "Values that transform lives",
-    "subtitle": "We support, serve, and develop purpose-driven projects to bless our community.",
-    "primaryCta": "I want to help",
-    "secondaryCta": "Learn about our mission",
+    "kicker": "Valores Sinaí Civil Association",
+    "titleLine1": "Faith, culture and community in service of",
+    "titleAccent": "others",
+    "subtitle": "We are Valores Sinaí, a Christian civil association that uses education, sports, technology and art to spread the love of Jesus throughout our community.",
+    "primaryCta": "Explore our grounds",
+    "secondaryCta": "Who are we?",
     "points": {
-      "point1Title": "Faith and service",
-      "point1Text": "Guided by Christian principles in everything we do.",
-      "point2Title": "Real impact",
-      "point2Text": "Concrete projects for concrete needs.",
-      "point3Title": "Community",
-      "point3Text": "We work alongside people and families."
+      "point1Title": "REC Pilar Sinaí",
+      "point1Text": "Multimedia studio for music, streaming and podcasting.",
+      "point2Title": "Sinaí Grounds",
+      "point2Text": "Retreats, camps and events open to the whole community."
     }
   },
-  "about": {
-    "kicker": "Who we are",
-    "title": "A community committed to serving",
-    "description": "We are a Christian civil association with a human, close, and socially responsible approach.",
-    "cta": "Learn more",
-    "card1Title": "Our vision",
-    "card1Text": "To build spaces of hope, growth, and support.",
-    "card2Title": "Our purpose",
-    "card2Text": "To serve with love, integrity, and excellence."
+  "aboutPreview": {
+    "kicker": "Featured space",
+    "title": "REC Pilar",
+    "text": "Discover our modern recording studio, equipped with cutting-edge technology to bring your creative ideas to life. From music to audiovisual productions, we offer an inspiring space for artists and professionals.",
+    "cta": "Visit our studio"
   },
-  "programs": {
-    "kicker": "What we do",
-    "title": "Programs designed to support",
-    "description": "We develop initiatives that connect values, education, and social action."
+  "donation": {
+    "kicker": "Join the mission",
+    "title": "Your donation transforms lives in the community",
+    "text": "Every contribution sustains our grounds, educational programs and multimedia studio so that more people can access training, art and sports regardless of their background.",
+    "stat1": "1 campus",
+    "stat1Label": "Our own grounds with space for events, retreats and activities for the whole community",
+    "stat2": "Non-profit",
+    "stat2Label": "Civil association that reinvests every peso into community programs",
+    "stat3": "REC Pilar Studio",
+    "stat3Label": "Professional multimedia for music, streaming and podcasting in service of the community",
+    "ctaText": "Every contribution, big or small, directly sustains the programs, the grounds and the community studio.",
+    "button": "I want to donate",
+    "secondaryButton": "Discover our grounds",
+    "photoQuote": "\"Love your neighbor as yourself\" — Mark 12:31",
+    "trustBadge": "Registered civil association · Verified tax ID"
   },
-  "stats": {
-    "kicker": "Our reach",
-    "title": "Small actions, big impact"
+  "community": {
+    "kicker": "Our grounds",
+    "title": "Valores Sinaí Civil Association",
+    "subtitle": "Where community grows and connects",
+    "text": "Discover our spaces designed for personal and community development: green areas, sports facilities, event halls and accommodation options.",
+    "button": "Explore our spaces"
+  },
+  "testimonials": {
+    "kicker": "Voices from our community",
+    "title": "What those who choose us say",
+    "reviewButton": "Leave your review"
+  },
+  "social": {
+    "kicker": "Community",
+    "title": "Follow us on social media",
+    "subtitle": "Connect with Valores Sinaí. Discover our activities, events and projects that transform lives. Join our community!",
+    "instagram": "Instagram",
+    "facebook": "Facebook",
+    "x": "X (Twitter)"
+  },
+  "sponsors": {
+    "ariaLabel": "Companies that support us",
+    "title": "Companies that support us"
+  },
+  "contact": {
+    "ariaLabel": "Contact section",
+    "kicker": "We are here for you",
+    "title": "Contact us",
+    "text": "If you need information about our programs and services, don't hesitate to reach out.",
+    "button": "Send us your inquiry",
+    "mapTitle": "Valores Sinaí location on Google Maps",
+    "subtitle1": "Email",
+    "text1": "valoressinai@gmail.com",
+    "href1": "mailto:valoressinai@gmail.com",
+    "subtitle2": "Phone",
+    "text2": "+54 9 11 6012-2363",
+    "href2": "tel:+5491160122363",
+    "subtitle3": "Address",
+    "text3": "Av. Juan Domingo Perón 3251, Pres. Derqui",
+    "href3": "https://maps.google.com/?q=Avenida+Juan+Domingo+Peron+3251+Presidente+Derqui"
   },
   "cta": {
     "title": "Want to join this mission?",
-    "description": "Your support helps sustain programs, gatherings, and service actions.",
+    "description": "Your support helps sustain programs, gatherings and service actions.",
     "button": "Contact us"
   }
 }

@@ -1,38 +1,89 @@
 {
   "hero": {
-    "kicker": "Associação Civil Cristã",
-    "title": "Valores que transformam vidas",
-    "subtitle": "Apoiamos, servimos e desenvolvemos projetos com propósito para abençoar nossa comunidade.",
-    "primaryCta": "Quero ajudar",
-    "secondaryCta": "Conheça nossa missão",
+    "kicker": "Associação Civil Valores Sinaí",
+    "titleLine1": "Fé, cultura e comunidade a serviço do",
+    "titleAccent": "próximo",
+    "subtitle": "Somos Valores Sinaí, uma associação civil cristã que usa a educação, o esporte, a tecnologia e a arte para estender o amor de Jesus a toda a comunidade.",
+    "primaryCta": "Conheça o espaço",
+    "secondaryCta": "Quem somos?",
     "points": {
-      "point1Title": "Fé e serviço",
-      "point1Text": "Guiados por princípios cristãos em cada ação.",
-      "point2Title": "Impacto real",
-      "point2Text": "Projetos concretos para necessidades concretas.",
-      "point3Title": "Comunidade",
-      "point3Text": "Trabalhamos junto com pessoas e famílias."
+      "point1Title": "REC Pilar Sinaí",
+      "point1Text": "Estúdio multimídia para música, streaming e podcast.",
+      "point2Title": "Espaço Sinaí",
+      "point2Text": "Retiros, acampamentos e eventos para toda a comunidade."
     }
   },
-  "about": {
-    "kicker": "Quem somos",
-    "title": "Uma comunidade comprometida em servir",
-    "description": "Somos uma associação civil cristã com uma visão humana, próxima e voltada ao bem comum.",
-    "cta": "Saiba mais",
-    "card1Title": "Nossa visão",
-    "card1Text": "Construir espaços de esperança, crescimento e acompanhamento.",
-    "card2Title": "Nosso propósito",
-    "card2Text": "Servir com amor, integridade e excelência."
+
+  "aboutPreview": {
+    "kicker": "Espaço em destaque",
+    "title": "REC Pilar",
+    "text": "Descubra nosso moderno estúdio de gravação, equipado com tecnologia de ponta para dar vida às suas ideias criativas. De música a produções audiovisuais, oferecemos um espaço inspirador para artistas e profissionais.",
+    "cta": "Visite nosso estúdio"
   },
-  "programs": {
-    "kicker": "O que fazemos",
-    "title": "Programas pensados para apoiar",
-    "description": "Desenvolvemos iniciativas que conectam valores, formação e ação social."
+
+  "donation": {
+    "kicker": "Faça parte da missão",
+    "title": "Sua doação transforma vidas na comunidade",
+    "text": "Cada contribuição sustenta o espaço, os programas educativos e o estúdio multimídia para que mais pessoas possam acessar formação, arte e esporte independentemente de sua história.",
+    "stat1": "1 espaço",
+    "stat1Label": "Campus próprio com espaço para eventos, retiros e atividades para toda a comunidade",
+    "stat2": "Sem fins lucrativos",
+    "stat2Label": "Associação civil que reinveste cada recurso em programas comunitários",
+    "stat3": "Estúdio REC Pilar",
+    "stat3Label": "Multimídia profissional para música, streaming e podcast a serviço da comunidade",
+    "ctaText": "Cada contribuição, grande ou pequena, sustenta diretamente os programas, o espaço e o estúdio da comunidade.",
+    "button": "Quero doar",
+    "secondaryButton": "Conheça o espaço",
+    "photoQuote": "\"Amarás o teu próximo como a ti mesmo\" — Marcos 12:31",
+    "trustBadge": "Associação civil registrada · CNPJ verificado"
   },
-  "stats": {
-    "kicker": "Nosso alcance",
-    "title": "Pequenas ações, grande impacto"
+
+  "community": {
+    "kicker": "Nosso espaço",
+    "title": "Associação Civil Valores Sinaí",
+    "subtitle": "Onde a comunidade cresce e se conecta",
+    "text": "Descubra nossos espaços projetados para o desenvolvimento pessoal e comunitário: áreas verdes, instalações esportivas, salões de eventos e opções de hospedagem.",
+    "button": "Explore nossos espaços"
   },
+
+  "testimonials": {
+    "kicker": "Vozes da nossa comunidade",
+    "title": "O que dizem quem nos escolhe",
+    "reviewButton": "Deixe seu depoimento"
+  },
+
+  "social": {
+    "kicker": "Comunidade",
+    "title": "Siga-nos nas redes sociais",
+    "subtitle": "Conecte-se com Valores Sinaí. Descubra nossas atividades, eventos e projetos que transformam vidas. Junte-se à nossa comunidade!",
+    "instagram": "Instagram",
+    "facebook": "Facebook",
+    "x": "X (Twitter)"
+  },
+
+  "sponsors": {
+    "ariaLabel": "Empresas que nos apoiam",
+    "title": "Empresas que nos apoiam"
+  },
+
+  "contact": {
+    "ariaLabel": "Seção de contato",
+    "kicker": "Estamos aqui para você",
+    "title": "Entre em contato",
+    "text": "Se você precisar de informações sobre nossos programas e serviços, não hesite em nos contactar.",
+    "button": "Envie sua consulta",
+    "mapTitle": "Localização de Valores Sinaí no Google Maps",
+    "subtitle1": "E-mail",
+    "text1": "valoressinai@gmail.com",
+    "href1": "mailto:valoressinai@gmail.com",
+    "subtitle2": "Telefone",
+    "text2": "+54 9 11 6012-2363",
+    "href2": "tel:+5491160122363",
+    "subtitle3": "Endereço",
+    "text3": "Av. Juan Domingo Perón 3251, Pres. Derqui",
+    "href3": "https://maps.google.com/?q=Avenida+Juan+Domingo+Peron+3251+Presidente+Derqui"
+  },
+
   "cta": {
     "title": "Quer fazer parte desta missão?",
     "description": "Seu apoio ajuda a sustentar programas, encontros e ações de serviço.",

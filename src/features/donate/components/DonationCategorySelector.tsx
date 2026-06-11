@@ -1,5 +1,14 @@
 // src/features/donations/components/DonationCategorySelector.tsx
+
 import { useTranslation } from 'react-i18next';
+import type { LucideIcon } from 'lucide-react';
+import {
+  GraduationCap,
+  HandHeart,
+  CircleCheck,
+  Check,
+  ChevronRight,
+} from 'lucide-react';
 import type { DonationCategory } from '../DonationsPage';
 
 interface Props {
@@ -9,7 +18,7 @@ interface Props {
 
 const categories: {
   id: Exclude<DonationCategory, null>;
-  emoji: string;
+  Icon: LucideIcon;
   titleKey: string;
   descKey: string;
   impactKey: string[];
@@ -19,7 +28,7 @@ const categories: {
 }[] = [
   {
     id: 'academy',
-    emoji: '🎓',
+    Icon: GraduationCap,
     titleKey: 'category.academy.title',
     descKey: 'category.academy.desc',
     impactKey: [
@@ -33,7 +42,7 @@ const categories: {
   },
   {
     id: 'solidarity',
-    emoji: '🤝',
+    Icon: HandHeart,
     titleKey: 'category.solidarity.title',
     descKey: 'category.solidarity.desc',
     impactKey: [
@@ -54,6 +63,7 @@ export const DonationCategorySelector = ({ selected, onSelect }: Props) => {
     <div className="grid gap-5 sm:grid-cols-2">
       {categories.map((cat) => {
         const isActive = selected === cat.id;
+        const Icon = cat.Icon;
 
         return (
           <button
@@ -62,48 +72,41 @@ export const DonationCategorySelector = ({ selected, onSelect }: Props) => {
             onClick={() => onSelect(isActive ? null : cat.id)}
             aria-pressed={isActive}
             className={`
-              group relative w-full rounded-3xl border-2 p-7 text-left
-              transition-all duration-300
+              group relative w-full cursor-pointer rounded-3xl border-2 p-7 text-left
+              transition-all duration-200
               focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent
               ${
                 isActive
-                  ? `${cat.borderActive} ${cat.bgActive} shadow-lg`
-                  : 'border-black/10 bg-white hover:-translate-y-0.5 hover:shadow-md dark:border-white/10 dark:bg-dark-soft'
+                  ? `${cat.borderActive} ${cat.bgActive} scale-[1.01] shadow-lg`
+                  : `border-surface-warm bg-white
+                     hover:-translate-y-1 hover:border-brand-amber/60 hover:shadow-lg
+                     dark:border-white/10 dark:bg-dark-soft dark:hover:border-white/30`
               }
             `}
           >
-            {/* Badge seleccionado */}
             {isActive && (
               <span className="absolute right-4 top-4 flex h-6 w-6 items-center justify-center rounded-full bg-brand-accent">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
+                <CircleCheck
                   className="h-3.5 w-3.5 text-dark"
                   aria-hidden="true"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
-                    clipRule="evenodd"
-                  />
-                </svg>
+                  strokeWidth={2.4}
+                />
               </span>
             )}
 
-            {/* Ícono */}
+            {/* Ícono — estilo fijo amber, igual a la sección "A qué puede ir tu aporte" */}
             <span
-              className={`
-                flex h-14 w-14 items-center justify-center rounded-2xl text-2xl
-                transition-transform duration-300 group-hover:scale-110
-                ${isActive ? 'bg-brand-accent/20' : 'bg-surface-cream dark:bg-dark'}
-              `}
+              className="
+                flex h-14 w-14 items-center justify-center rounded-2xl
+                border border-brand-amber/30 bg-brand-amber/10
+                text-brand-amber transition-all duration-200
+                group-hover:scale-110
+              "
               aria-hidden="true"
             >
-              {cat.emoji}
+              <Icon className="h-7 w-7" strokeWidth={1.9} />
             </span>
 
-            {/* Título */}
             <h3
               className={`mt-4 text-xl font-bold tracking-tight ${
                 isActive ? cat.color : 'text-dark dark:text-white'
@@ -112,43 +115,56 @@ export const DonationCategorySelector = ({ selected, onSelect }: Props) => {
               {t(cat.titleKey)}
             </h3>
 
-            {/* Descripción */}
             <p className="mt-2 text-sm leading-6 text-dark-soft dark:text-gray-mid">
               {t(cat.descKey)}
             </p>
 
-            {/* Lista de impacto */}
             <ul className="mt-4 space-y-1.5">
               {cat.impactKey.map((key) => (
-                <li key={key} className="flex items-center gap-2 text-sm text-dark-soft dark:text-gray-mid">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
+                <li
+                  key={key}
+                  className="flex items-center gap-2 text-sm text-dark-soft dark:text-gray-mid"
+                >
+                  <Check
                     className={`h-4 w-4 shrink-0 ${cat.color}`}
                     aria-hidden="true"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
+                    strokeWidth={2.25}
+                  />
                   {t(key)}
                 </li>
               ))}
             </ul>
 
-            {/* CTA inline */}
-            <p
-              className={`mt-5 text-sm font-semibold ${
-                isActive ? cat.color : 'text-dark-soft dark:text-gray-mid'
-              }`}
-            >
-              {isActive
-                ? t('category.selected', '✓ Seleccionado — completá el formulario abajo')
-                : t('category.select', 'Seleccionar →')}
-            </p>
+            <div className="mt-5">
+              {isActive ? (
+                <span
+                  className={`inline-flex items-center gap-1.5 text-sm font-semibold ${cat.color}`}
+                >
+                  <CircleCheck className="h-4 w-4" aria-hidden="true" strokeWidth={2.25} />
+                  {t(
+                    'category.selected',
+                    'Seleccionado — completá el formulario abajo',
+                  )}
+                </span>
+              ) : (
+                <span
+                  className="
+                    inline-flex items-center gap-1.5 rounded-full
+                    border border-brand-amber/40 bg-brand-accent/10
+                    px-4 py-1.5 text-sm font-semibold text-brand-amber
+                    transition-all duration-200
+                    group-hover:border-brand-accent group-hover:bg-brand-accent group-hover:text-dark
+                  "
+                >
+                  {t('category.select', 'Seleccionar')}
+                  <ChevronRight
+                    className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5"
+                    aria-hidden="true"
+                    strokeWidth={2.25}
+                  />
+                </span>
+              )}
+            </div>
           </button>
         );
       })}

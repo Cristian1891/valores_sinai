@@ -9,9 +9,9 @@ export const WhatWeOffer = () => {
   return (
     <>
         <HeroOffer />
+        <Beneficiaries />
         <FeaturedSpaces />
         <ImageGallery />
-        <Beneficiaries />
         <ContactOffer />
     </>
   );

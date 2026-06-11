@@ -10,8 +10,9 @@ export const ContactHero: React.FC = () => {
   return (
     <section
       aria-labelledby="contact-hero-heading"
-      // Se cambia bg-dark por un tono levemente más claro o se añade un borde superior
-      className="relative isolate overflow-hidden bg-[#0A0A0A] border-t border-white/5 px-4 py-24 text-center sm:px-6 sm:py-32 lg:px-8"
+      className="relative isolate overflow-hidden bg-[#0A0A0A] border-t border-white/5
+                px-4 py-24 text-center sm:px-6 lg:px-8
+                min-h-[55svh] flex flex-col items-center justify-center" // ← cambios acá
     >
       {/* Gradiente radial de fondo — Sincronizado con el sistema de diseño mediante opacidad */}
       <div
@@ -65,3 +66,4 @@ export const ContactHero: React.FC = () => {
     </section>
   );
 };
+

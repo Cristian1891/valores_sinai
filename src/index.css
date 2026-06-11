@@ -1,46 +1,223 @@
+/* src/index.css
+ *
+ * Sistema tipográfico centralizado — Valores Sinaí
+ * ─────────────────────────────────────────────────────────────────────────────
+ * ESTRUCTURA:
+ *   1. Imports externos (Google Fonts + Tailwind)
+ *   2. @theme — tokens de diseño (colores, fuentes, z-index)
+ *   3. @utility — clases tipográficas compuestas reutilizables
+ *   4. Base styles
+ *   5. Animaciones globales
+ *
+ * REGLA DE USO:
+ *   Usá las clases @utility en los componentes en lugar de repetir
+ *   combinaciones de Tailwind. Si la tipografía cambia, se actualiza
+ *   acá y se propaga automáticamente a todo el proyecto.
+ * ─────────────────────────────────────────────────────────────────────────────
+ */
+
+/* ── 1. Imports ────────────────────────────────────────────────────────────── */
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@400;700&display=swap');
 
 @import "tailwindcss";
 
 @variant dark (&:where(.dark, .dark *));
 
+
+/* ── 2. @theme — tokens de diseño ─────────────────────────────────────────── */
+
 @theme {
-  --font-sans: "Inter", sans-serif;
+  /* Tipografías */
+  --font-sans:  "Inter", sans-serif;
   --font-serif: "Merriweather", serif;
 
-  /* Primarios — colores de marca */
-  --color-brand-accent:   #FEC40D;
-  --color-brand-amber:    #D28A2B;
-  --color-brand-blue:     #74AADB;
-  /* Oscuros */
-  --color-dark:           #010101;
-  --color-dark-soft:      #3F3E3E;
-  /* Neutros claros */
-  --color-surface-cream:  #E4E2D1;
-  --color-surface-warm:   #DBCDB7;
-  --color-gray-mid:       #A1A8AB;
+  /* Colores de marca */
+  --color-brand-accent:  #FEC40D;
+  --color-brand-amber:   #D28A2B;
+  --color-brand-blue:    #74AADB;
+
+  /* Escala de oscuros */
+  --color-dark:          #010101;
+  --color-dark-soft:     #3F3E3E;
+
+  /* Superficies claras */
+  --color-surface-cream: #E4E2D1;
+  --color-surface-warm:  #DBCDB7;
+  --color-gray-mid:      #A1A8AB;
+
   /* Funcional */
-  --color-success:        #8FBF73;
+  --color-success:       #8FBF73;
+  --color-whatsapp:      #25D366;
+
+  /* Z-index — evita magic numbers en los componentes */
+  --z-index-navbar:      50;
+  --z-index-loader:      100;
+  --z-index-whatsapp:    50;
 }
+
+
+/* ── 3. @utility — sistema tipográfico ────────────────────────────────────── */
+/*
+ * JERARQUÍA VISUAL:
+ *
+ *   type-display   → H1 del Hero (solo una vez por página)
+ *   type-h2        → Títulos de sección
+ *   type-h3        → Subtítulos dentro de sección
+ *   type-kicker    → Etiqueta pequeña sobre el título (ej: "Sumate a la misión")
+ *   type-body      → Párrafos de contenido
+ *   type-body-sm   → Párrafos secundarios, descripciones de tarjetas
+ *   type-caption   → Badges, pie de tarjeta, copyright, meta info
+ *   type-label     → Links de nav, footer, labels de formulario
+ *   type-cta       → Texto de botones CTA
+ *
+ * RESPONSIVE:
+ *   Las utilidades definen el tamaño base (mobile-first).
+ *   Los breakpoints se aplican con los prefijos sm: lg: en el componente
+ *   cuando el contexto lo requiere (ej: un H2 en un hero necesita más
+ *   tamaño que un H2 en una card pequeña — el componente lo decide).
+ */
+
+/* H1 — Solo el hero. Serif, máximo impacto. */
+@utility type-display {
+  font-family: var(--font-serif);
+  font-size: 2.25rem;        /* 36px mobile */
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  color: white;
+}
+
+/* H2 — Títulos de todas las secciones. Serif para autoridad. */
+@utility type-h2 {
+  font-family: var(--font-serif);
+  font-size: 1.875rem;       /* 30px mobile → sm:text-4xl → lg:text-[2.75rem] en componente */
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+}
+
+/* H3 — Subtítulo dentro de sección (ej: community.subtitle). Sans para contraste con H2. */
+@utility type-h3 {
+  font-family: var(--font-sans);
+  font-size: 1.25rem;        /* 20px mobile → sm:text-2xl en componente */
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+}
+
+/* Kicker — etiqueta pequeña sobre el título. SIEMPRE mayúsculas, tracking amplio. */
+@utility type-kicker {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;      /* 11px — tamaño fijo, no responde a breakpoints */
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  line-height: 1.5;
+}
+
+/* Body — párrafos principales de contenido. */
+@utility type-body {
+  font-family: var(--font-sans);
+  font-size: 1rem;           /* 16px mobile → sm:text-lg en componente si necesita */
+  font-weight: 400;
+  line-height: 1.75;
+}
+
+/* Body SM — párrafos secundarios, descripciones de cards, textos de apoyo. */
+@utility type-body-sm {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;       /* 14px — no crece en breakpoints */
+  font-weight: 400;
+  line-height: 1.65;
+}
+
+/* Caption — badges, trust text, meta info, copyright. */
+@utility type-caption {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;        /* 12px */
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* Label — navbar links, footer links, labels de formulario. */
+@utility type-label {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;       /* 14px */
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+/* Label SM — footer links, navegación secundaria. */
+/*
+ * RESPUESTA A TU PREGUNTA SOBRE EL FOOTER:
+ * El footer anterior usaba text-xs (12px) para los links de navegación,
+ * que es demasiado pequeño para texto interactivo. Las WCAG 2.2 y las
+ * mejores prácticas de UX recomiendan mínimo 14px para links en footer.
+ * type-label-sm usa 13px como compromiso entre densidad visual del footer
+ * y legibilidad real, especialmente en mobile.
+ */
+@utility type-label-sm {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;      /* 13px — más legible que 12px para links de footer */
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* CTA — texto de botones de acción. */
+@utility type-cta {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;       /* 14px base → sm:text-base en componente */
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.01em;
+}
+
+/* Versículo / cita — blockquotes sobre imágenes, footer verse. Serif itálica. */
+@utility type-verse {
+  font-family: var(--font-serif);
+  font-size: 0.875rem;       /* 14px */
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+
+/* ── 4. Base styles ────────────────────────────────────────────────────────── */
 
 html {
   font-family: var(--font-sans);
+  /* Mejora el renderizado de fuentes en todos los sistemas operativos */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 body {
-  @apply bg-white text-dark antialiased;
+  @apply bg-white text-dark;
 }
 
-@keyframes marquee {
+
+/* ── 5. Animaciones globales ───────────────────────────────────────────────── */
+
+/*
+ * marquee: usada por SponsorsSlider.tsx
+ * Se define acá para evitar que el componente inyecte <style> tags en el DOM
+ * (patrón que puede causar problemas con SSR o React Strict Mode).
+ */
+@keyframes sponsors-marquee {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
 }
+
 .sponsors-animate {
-  animation: marquee 36s linear infinite;
+  animation: sponsors-marquee 40s linear infinite;
 }
+
 .sponsors-track:hover .sponsors-animate {
   animation-play-state: paused;
 }
+
 @media (prefers-reduced-motion: reduce) {
   .sponsors-animate { animation: none; }
 }

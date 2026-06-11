@@ -12,15 +12,20 @@ import esHome from './locales/es/home.json';
 import esAboutUs from './locales/es/about-us.json';
 import esContact from './locales/es/contact.json';
 import esDonations from './locales/es/donations.json';
+import esAcademy from './locales/es/academy.json';
 
 // EN
 import enCommon from './locales/en/common.json';
 import enHome from './locales/en/home.json';
+import enAboutUs from './locales/en/about-us.json';
+import enAcademy from './locales/en/academy.json';
 
 
 // PT
 import ptCommon from './locales/pt/common.json';
 import ptHome from './locales/pt/home.json';
+import ptAboutUs from './locales/pt/about-us.json';
+import ptAcademy from './locales/pt/academy.json';
 
 
 i18n
@@ -28,11 +33,11 @@ i18n
   .use(initReactI18next)
   .init({
     resources: {
-      es: { common: esCommon, home: esHome, 'about-us': esAboutUs, 'contact': esContact, 'donations': esDonations },
-      en: { common: enCommon, home: enHome},
-      pt: { common: ptCommon, home: ptHome},
+      es: { common: esCommon, home: esHome, 'about-us': esAboutUs, 'academy': esAcademy, 'contact': esContact, 'donations': esDonations },
+      en: { common: enCommon, home: enHome, 'about-us': enAboutUs, 'academy': enAcademy},
+      pt: { common: ptCommon, home: ptHome, 'about-us': ptAboutUs, 'academy': ptAcademy},
     },
-    ns: ['common', 'home', 'about-us', 'contact', 'donations'],  // ← todos los namespaces
+    ns: ['home', 'about-us', 'academy', 'common', 'contact', 'donations'],  // ← todos los namespaces
     defaultNS: 'common',                             // ← el que se usa si no especificás
     supportedLngs: ['es', 'en', 'pt'],  // ← lista explícita de idiomas válidos
     fallbackLng: 'es',

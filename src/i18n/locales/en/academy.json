@@ -1,0 +1,69 @@
+{
+  "hero": {
+    "eyebrow": "Valores Sinaí Academy",
+    "badgeAriaLabel": "Status: under construction",
+    "badge": "Under construction",
+    "titleLine1": "Real training",
+    "titleLine2": "for the",
+    "titleLine3": "digital world.",
+    "subtitle": "We are building a program in digital trades and skills designed to turn your talent into work. Want to be the first to know? Leave us your details and stay tuned.",
+    "areasLabel": "Upcoming training areas",
+    "areasHeader": "What’s coming",
+    "footerAriaLabel": "Hero footer",
+    "footerCopy": "Valores Sinaí — Launching soon",
+    "area1": {
+      "name": "Audiovisual Production",
+      "tag": "Video · Editing · Content"
+    },
+    "area2": {
+      "name": "Digital Marketing",
+      "tag": "Social Media · Strategy · Branding"
+    },
+    "area3": {
+      "name": "Digital Photography",
+      "tag": "Camera · Composition · Digital Editing"
+    },
+    "area4": {
+      "name": "Audio & Sound",
+      "tag": "Recording · Mixing · Post‑production"
+    },
+    "area5": {
+      "name": "Cultural Management",
+      "tag": "Community · Events · Projects"
+    },
+    "area6": {
+      "name": "Streaming & Media",
+      "tag": "Live · Broadcast · Platforms"
+    }
+  },
+  "form": {
+    "badge": "Be the first to know",
+    "title": "Join our academy",
+    "subtitle": "Leave your details and we’ll let you know when our courses launch",
+    "labelNombre": "Full name",
+    "placeholderNombre": "e.g. Mary Johnson",
+    "labelEmail": "Email",
+    "placeholderEmail": "you@email.com",
+    "labelTelefono": "Phone / WhatsApp",
+    "placeholderTelefono": "e.g. +1 555 1234 5678",
+    "labelArea": "What would you like to learn?",
+    "areaPlaceholder": "Choose an area…",
+    "consentimiento": "I agree to receive information about the courses and authorize the use of my data.",
+    "submit": "I want to receive information",
+    "sending": "Sending…",
+    "successTitle": "Inquiry received!",
+    "successText": "We’ll notify you as soon as there’s news about the courses. Thank you for your interest in Valores Sinaí Academy!",
+    "errorTitle": "Something went wrong",
+    "errorText": "We couldn’t send your message. Please try again or contact us via WhatsApp.",
+    "retry": "Try again",
+    "areaOptions": {
+      "produccion-audiovisual": "Audiovisual Production",
+      "audio-sonido": "Audio & Sound",
+      "fotografia-digital": "Digital Photography",
+      "marketing-digital": "Digital Marketing",
+      "streaming-medios": "Streaming & Media",
+      "gestion-cultural": "Cultural Management",
+      "no-seguro": "I’m not sure yet"
+    }
+  }
+}

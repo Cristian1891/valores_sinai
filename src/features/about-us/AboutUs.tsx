@@ -8,10 +8,10 @@ export const AboutUs = () => {
   return (
     <>
       <HeroAbout />
+      <PresidentMessage />
       <MissionVision />
       <OrganizationalValues />
       <Team />
-      <PresidentMessage />
     </>
   );
 };

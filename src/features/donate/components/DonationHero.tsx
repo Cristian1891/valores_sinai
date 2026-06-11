@@ -6,13 +6,13 @@ export const DonationHero = () => {
 
   return (
     <section
-      className="relative isolate overflow-hidden bg-dark"
+      className="relative isolate overflow-hidden bg-dark min-h-svh flex items-center" // ← los cambios están acá
       aria-labelledby="donation-hero-heading"
     >
       {/* Imagen de fondo */}
       <div
         className="absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: 'url(/img/mejores_fotos_salon/salon_gente_8.jpg)' }}
+        style={{ backgroundImage: 'url(/img/mejores_fotos_salon/salon_gente_opcional.jpg)' }}
         role="presentation"
       />
       {/* Overlay: más denso abajo para que el texto respire */}

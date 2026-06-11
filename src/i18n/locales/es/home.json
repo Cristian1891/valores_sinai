@@ -3,15 +3,14 @@
     "kicker": "Asociación Civil Valores Sinaí",
     "titleLine1": "Fe, cultura y comunidad al servicio del",
     "titleAccent": "prójimo",
-    "subtitle": "Somos Valores Sinaí, una asociación civil cristiana que utiliza la educación, el deporte, la tecnología y el arte para extender el amor de Jesús a toda la comunidad.",    "primaryCta": "Explorá el predio",
+    "subtitle": "Somos Valores Sinaí, una asociación civil cristiana que utiliza la educación, el deporte, la tecnología y el arte para extender el amor de Jesús a toda la comunidad.",
+    "primaryCta": "Explorá el predio",
     "secondaryCta": "¿Quiénes somos?",
     "points": {
-        "point1Title": "Predio Sinaí",
-        "point1Text": "Retiros, campamentos y eventos para toda la comunidad.",
-        "point2Title": "REC Pilar Sinaí",
-        "point2Text": "Estudio multimedial para música, streaming y podcast.",
-        "point3Title": "Sin distinción",
-        "point3Text": "Todas las personas son bienvenidas, sin importar su historia."
+      "point1Title": "REC Pilar Sinaí",
+      "point1Text": "Estudio multimedial para música, streaming y podcast.",
+      "point2Title": "Predio Sinaí",
+      "point2Text": "Retiros, campamentos y eventos para toda la comunidad."
     }
   },
   "aboutPreview": {
@@ -27,10 +26,10 @@
     "stat1": "1 predio",
     "stat1Label": "Campus propio con espacio para eventos, retiros y actividades para toda la comunidad",
     "stat2": "Sin fines de lucro",
-    "stat2Label": "Asociación civil que reinvierte cada peso en programas comunitarios gratuitos",
+    "stat2Label": "Asociación civil que reinvierte cada peso en programas comunitarios",
     "stat3": "Estudio REC Pilar",
     "stat3Label": "Multimedia profesional para música, streaming y podcast al servicio de la comunidad",
-    "cta_text": "Cada aporte, grande o pequeño, sostiene directamente los programas, el predio y el estudio de la comunidad.",
+    "ctaText": "Cada aporte, grande o pequeño, sostiene directamente los programas, el predio y el estudio de la comunidad.",
     "button": "Quiero donar",
     "secondaryButton": "Conocé el predio",
     "photoQuote": "\"Amarás a tu prójimo como a ti mismo\" — Marcos 12:31",
@@ -43,23 +42,38 @@
     "text": "Descubrí nuestros espacios diseñados para el desarrollo personal y comunitario: áreas verdes, instalaciones deportivas, salones de eventos y opciones de hospedaje.",
     "button": "Explorá nuestros espacios"
   },
-  "cta": {
-    "title": "¿Querés sumarte a esta misión?",
-    "description": "Tu apoyo ayuda a sostener programas, encuentros y acciones de servicio.",
-    "button": "Contactarnos"
+  "testimonials": {
+    "kicker": "Voces de nuestra comunidad",
+    "title": "Lo que dicen quienes nos eligen",
+    "reviewButton": "Dejá tu reseña"
+  },
+  "social": {
+    "kicker": "Comunidad",
+    "title": "Seguínos en nuestras redes sociales",
+    "subtitle": "Conectá con Valores Sinaí. Descubrí nuestras actividades, eventos y proyectos que transforman vidas. ¡Uníte a nuestra comunidad!",
+    "instagram": "Instagram",
+    "facebook": "Facebook",
+    "x": "X (Twitter)"
+  },
+  "sponsors": {
+    "ariaLabel": "Empresas que nos apoyan",
+    "title": "Empresas que nos apoyan"
   },
   "contact": {
     "ariaLabel": "Sección de contacto",
-    "kicker":    "Estamos para vos",
-    "title":     "Contactános",
-    "text":      "Si necesitás información sobre nuestros programas y servicios, no dudes en comunicarte con nosotros.",
-    "button":    "Envianos tu consulta",
-    "mapTitle":  "Ubicación de Valores Sinaí en Google Maps",
+    "kicker": "Estamos para vos",
+    "title": "Contactanos",
+    "text": "Si necesitás información sobre nuestros programas y servicios, no dudes en comunicarte con nosotros.",
+    "button": "Envianos tu consulta",
+    "mapTitle": "Ubicación de Valores Sinaí en Google Maps",
     "subtitle1": "Correo electrónico",
-    "text1":     "valoressinai@gmail.com",
+    "text1": "valoressinai@gmail.com",
+    "href1": "mailto:valoressinai@gmail.com",
     "subtitle2": "Teléfono",
-    "text2":     "+54 9 11 6012-2363",
+    "text2": "+54 9 11 6012 2363",
+    "href2": "tel:+5491160122363",
     "subtitle3": "Dirección",
-    "text3":     "Av. Juan Domingo Perón 3251, Pres. Derqui"
+    "text3": "Av. Juan Domingo Perón 3251, Pres. Derqui",
+    "href3": "https://maps.google.com/?q=Avenida+Juan+Domingo+Peron+3251+Presidente+Derqui"
   }
 }

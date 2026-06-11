@@ -24,10 +24,10 @@
     },
     "solidarity": {
       "title": "Fondo Solidario",
-      "desc": "Apoyá eventos comunitarios, asistencia a personas en situación vulnerable y proyectos del predio.",
-      "impact1": "Organización de eventos y retiros",
-      "impact2": "Asistencia directa a familias necesitadas",
-      "impact3": "Mantenimiento del predio comunitario"
+      "desc": "Tu aporte mantiene vivo nuestro predio y hace posibles los encuentros que transforman vidas.",
+      "impact1": "Mantenimiento de canchas, quincho y espacios verdes",
+      "impact2": "Realización de campamentos y retiros abiertos",
+      "impact3": "Mejoras en el estudio REC Pilar y salones"
     },
     "selected": "✓ Seleccionado — completá el formulario abajo",
     "select": "Seleccionar →"
@@ -55,20 +55,20 @@
   "solidarity": {
     "kicker": "Fondo Solidario",
     "title": "Apoyá la comunidad directamente",
-    "desc": "El Fondo Solidario financia eventos comunitarios, asistencia a personas en situación vulnerable y proyectos de infraestructura del predio. La asociación decide la distribución según las necesidades más urgentes.",
+    "desc": "El Fondo Solidario financia el mantenimiento del predio, mejoras de infraestructura y la organización de eventos comunitarios, campamentos y retiros. La asociación decide la distribución según las necesidades más urgentes del complejo y la comunidad que lo habita.",
     "destinationsTitle": "¿A qué puede ir tu aporte?",
     "dest": {
       "events": {
         "title": "Eventos y retiros comunitarios",
-        "desc": "Financiamiento de campamentos, retiros, eventos culturales y encuentros que fortalecen los lazos comunitarios y la fe."
+        "desc": "Financiamos campamentos, retiros espirituales, encuentros culturales y actividades que unen a nuestra comunidad."
       },
-      "assistance": {
-        "title": "Asistencia a personas vulnerables",
-        "desc": "Ayuda directa a familias en situación de necesidad: alimentos, ropa, materiales escolares y apoyo económico de emergencia."
+      "maintenance": {
+        "title": "Mantenimiento del predio",
+        "desc": "Cuidamos y mejoramos nuestras instalaciones deportivas, salones, espacios verdes y equipamiento diario."
       },
       "infrastructure": {
-        "title": "Mantenimiento del predio",
-        "desc": "Obras de mejora, mantenimiento de instalaciones deportivas, salones de eventos y espacios verdes del complejo."
+        "title": "Obras de mejora",
+        "desc": "Ampliamos y renovamos el complejo para seguir recibiendo a más personas con comodidad y seguridad."
       }
     },
     "quote": "\"Cada uno según el don que ha recibido, minístrelo a los otros, como buenos administradores de la multiforme gracia de Dios.\" — 1 Pedro 4:10"

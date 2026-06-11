@@ -1,8 +1,11 @@
-// src/features/home/components/CommunitySummary/CommunitySummary.tsx
+// src/features/home/components/CommunitySummary.tsx
+//
+// Consumo i18n: namespace 'home' exclusivamente → community.*
+// Todas las claves viven en src/i18n/locales/{es,en,pt}/home.json
+
 import { Link } from 'react-router';
 import { useTranslation } from 'react-i18next';
 import { VALUES } from '../constants/values';
-
 
 export const CommunitySummary = () => {
   const { t } = useTranslation('home');
@@ -18,50 +21,52 @@ export const CommunitySummary = () => {
         {Array.from({ length: 6 }).flatMap(() => VALUES).map((value, i) => (
           <span
             key={i}
-            className="whitespace-nowrap text-4xl font-black uppercase tracking-widest text-white sm:text-5xl lg:text-6xl"
+            className="whitespace-nowrap font-sans text-4xl font-black uppercase tracking-widest text-white sm:text-5xl lg:text-6xl"
           >
             {value}
           </span>
         ))}
       </div>
 
-      {/* Anillo decorativo — derivado del círculo del logo */}
+      {/* Anillos decorativos derivados del círculo del logo */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -right-40 -bottom-40 h-125 w-125 rounded-full border border-brand-accent/10 hidden lg:block"
+        className="pointer-events-none absolute -bottom-40 -right-40 hidden h-[500px] w-[500px] rounded-full border border-brand-accent/10 lg:block"
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -right-24 -bottom-24 h-80 w-[320px] rounded-full border border-brand-accent/10 hidden lg:block"
+        className="pointer-events-none absolute -bottom-24 -right-24 hidden h-80 w-80 rounded-full border border-brand-accent/10 lg:block"
       />
 
       {/* Contenido */}
       <div className="relative mx-auto max-w-7xl">
         <div className="max-w-3xl">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand-accent">
+
+          <p className="font-sans text-[11px] font-bold uppercase tracking-[0.22em] text-brand-accent">
             {t('community.kicker')}
           </p>
 
-          <h2 className="mt-3 text-3xl font-bold text-white sm:text-4xl lg:text-5xl">
+          <h2 className="mt-3 font-serif text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-[2.75rem]">
             {t('community.title')}
           </h2>
 
-          <p className="mt-2 text-xl font-semibold text-brand-accent sm:text-2xl">
+          <p className="mt-2 font-sans text-xl font-semibold leading-[1.35] tracking-tight text-brand-accent sm:text-2xl">
             {t('community.subtitle')}
           </p>
 
-          <p className="mt-5 max-w-2xl text-base leading-7 text-white/75 sm:text-lg">
+          <p className="mt-5 max-w-2xl font-sans text-base leading-[1.75] text-white/75 sm:text-lg">
             {t('community.text')}
           </p>
 
           <div className="mt-8">
             <Link
               to="/que-ofrecemos"
-              className="inline-flex items-center justify-center rounded-xl bg-brand-accent px-6 py-3 text-sm font-bold text-dark transition-colors duration-200 hover:bg-brand-amber"
+              className="inline-flex items-center justify-center rounded-xl bg-brand-accent px-6 py-3 font-sans text-sm font-bold text-dark transition-colors duration-200 hover:bg-brand-amber focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
             >
               {t('community.button')}
             </Link>
           </div>
+
         </div>
       </div>
     </section>

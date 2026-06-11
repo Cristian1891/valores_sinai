@@ -1,0 +1,6 @@
+export * from './AudiovisualIcon'
+export * from './MarketingIcon'
+export * from './PhotographyIcon'
+export * from './AudioIcon'
+export * from './ManagementIcon'
+export * from './StreamingIcon'
