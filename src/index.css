@@ -208,7 +208,7 @@ body {
 @keyframes sponsors-marquee {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
-}
+} 
 
 .sponsors-animate {
   animation: sponsors-marquee 40s linear infinite;

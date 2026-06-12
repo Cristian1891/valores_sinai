@@ -19,12 +19,9 @@
 import { useEffect, useRef } from 'react';
 import { Link, useSearchParams } from 'react-router';
 import { useTranslation } from 'react-i18next';
+import { SUCCESS_NEXT_STEPS, CONFETTI_COLORS, CONFETTI_COUNT } from '../constants/donationConstants';
 
 // ─── Componente de confetti liviano (CSS puro, sin dependencias) ───────────
-// Genera partículas animadas con los colores de marca de Valores Sinaí
-const CONFETTI_COLORS = ['#FEC40D', '#D28A2B', '#FFFFFF', '#010101'];
-const CONFETTI_COUNT = 48;
-
 function Confetti() {
   return (
     <div
@@ -32,27 +29,27 @@ function Confetti() {
       className="pointer-events-none fixed inset-0 z-0 overflow-hidden"
     >
       {Array.from({ length: CONFETTI_COUNT }).map((_, i) => {
-        const color = CONFETTI_COLORS[i % CONFETTI_COLORS.length];
-        const left = `${Math.random() * 100}%`;
-        const delay = `${Math.random() * 3}s`;
+        const color    = CONFETTI_COLORS[i % CONFETTI_COLORS.length];
+        const left     = `${Math.random() * 100}%`;
+        const delay    = `${Math.random() * 3}s`;
         const duration = `${3 + Math.random() * 4}s`;
-        const size = `${6 + Math.random() * 8}px`;
-        const rotate = `${Math.random() * 360}deg`;
+        const size     = `${6 + Math.random() * 8}px`;
+        const rotate   = `${Math.random() * 360}deg`;
 
         return (
           <span
             key={i}
             style={{
-              position: 'absolute',
-              top: '-20px',
+              position:        'absolute',
+              top:             '-20px',
               left,
-              width: size,
-              height: size,
+              width:           size,
+              height:          size,
               backgroundColor: color,
-              borderRadius: Math.random() > 0.5 ? '50%' : '2px',
-              opacity: 0,
-              transform: `rotate(${rotate})`,
-              animation: `confettiFall ${duration} ${delay} ease-in forwards`,
+              borderRadius:    Math.random() > 0.5 ? '50%' : '2px',
+              opacity:         0,
+              transform:       `rotate(${rotate})`,
+              animation:       `confettiFall ${duration} ${delay} ease-in forwards`,
             }}
           />
         );
@@ -96,9 +93,9 @@ function AnimatedCheck() {
         className="relative z-10 h-12 w-12 text-brand-accent"
         aria-hidden="true"
         style={{
-          strokeDasharray: 100,
+          strokeDasharray:  100,
           strokeDashoffset: 0,
-          animation: 'drawCheck 0.6s 0.3s ease-out both',
+          animation:        'drawCheck 0.6s 0.3s ease-out both',
         }}
       >
         <style>{`
@@ -112,34 +109,6 @@ function AnimatedCheck() {
     </div>
   );
 }
-
-// ─── Próximos pasos ────────────────────────────────────────────────────────
-const NEXT_STEPS = [
-  {
-    icon: '✉️',
-    titleKey: 'success.step1Title',
-    descKey: 'success.step1Desc',
-    defaultTitle: 'Revisá tu email',
-    defaultDesc:
-      'Te enviamos un recibo de tu donación. Si no lo encontrás, revisá la carpeta de spam.',
-  },
-  {
-    icon: '📋',
-    titleKey: 'success.step2Title',
-    descKey: 'success.step2Desc',
-    defaultTitle: 'Tu donación queda registrada',
-    defaultDesc:
-      'El equipo de Valores Sinaí la procesa y la asigna al destino que elegiste.',
-  },
-  {
-    icon: '💬',
-    titleKey: 'success.step3Title',
-    descKey: 'success.step3Desc',
-    defaultTitle: '¿Querés saber el impacto?',
-    defaultDesc:
-      'Seguínos en redes sociales para ver cómo tu aporte transforma vidas reales.',
-  },
-];
 
 // ─── Componente principal ──────────────────────────────────────────────────
 export const DonationSuccessPage = () => {
@@ -157,10 +126,10 @@ export const DonationSuccessPage = () => {
 
   const categoryLabel =
     category === 'academy'
-      ? t('success.categoryAcademy', 'Academia Valores Sinaí')
+      ? t('success.categoryAcademy')
       : category === 'solidarity'
-        ? t('success.categorySolidarity', 'Fondo Solidario')
-        : t('success.categoryGeneral', 'Valores Sinaí');
+        ? t('success.categorySolidarity')
+        : t('success.categoryGeneral');
 
   return (
     <div ref={topRef} className="relative min-h-screen bg-dark overflow-hidden">
@@ -199,31 +168,25 @@ export const DonationSuccessPage = () => {
 
             {/* Título */}
             <h1 className="mt-6 text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              {t('success.title', '¡Gracias por tu donación!')}
+              {t('success.title')}
             </h1>
 
             {/* Subtítulo con categoría */}
             <p className="mt-3 text-base leading-7 text-white/70">
-              {t('success.subtitle', {
-                category: categoryLabel,
-                defaultValue: `Tu aporte a {{category}} ya está en camino. Cada contribución hace posible que sigamos transformando vidas.`,
-              })}
+              {t('success.subtitle', { category: categoryLabel })}
             </p>
 
             {/* Versículo */}
             <blockquote className="mx-auto mt-6 max-w-md rounded-2xl border border-brand-accent/20 bg-brand-accent/5 px-6 py-4">
               <p className="font-serif text-sm italic leading-7 text-brand-accent">
-                {t(
-                  'success.verse',
-                  '"Dios ama al que da con alegría." — 2 Corintios 9:7',
-                )}
+                {t('success.verse')}
               </p>
             </blockquote>
 
             {/* Compartir en redes */}
             <div className="mt-8">
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-white/50">
-                {t('success.shareLabel', 'Compartí tu gesto')}
+                {t('success.shareLabel')}
               </p>
               <div className="flex flex-wrap justify-center gap-3">
                 <a
@@ -233,7 +196,6 @@ export const DonationSuccessPage = () => {
                   aria-label="Compartir en Facebook"
                   className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-sm font-semibold text-white transition-all duration-200 hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
                 >
-                  {/* Facebook icon */}
                   <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path d="M22 12c0-5.523-4.477-10-10-10s-10 4.477-10 10c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54v-2.891h2.54v-2.203c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.459h-1.26c-1.243 0-1.63.771-1.63 1.562v1.875h2.773l-.443 2.891h-2.33v6.988c4.781-.75 8.437-4.887 8.437-9.877z" />
                   </svg>
@@ -241,13 +203,12 @@ export const DonationSuccessPage = () => {
                 </a>
 
                 <a
-                  href={`https://www.instagram.com/valores_sinai/`}
+                  href="https://www.instagram.com/valores_sinai/"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Ver Valores Sinaí en Instagram"
                   className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-sm font-semibold text-white transition-all duration-200 hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
                 >
-                  {/* Instagram icon */}
                   <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
                   </svg>
@@ -275,20 +236,20 @@ export const DonationSuccessPage = () => {
             className="mt-6 grid gap-4 sm:grid-cols-3"
             style={{ animation: 'fadeUp 0.5s 0.2s ease-out both' }}
           >
-            {NEXT_STEPS.map((step, i) => (
+            {SUCCESS_NEXT_STEPS.map((step, i) => (
               <div
-                key={step.titleKey}
+                key={step.id}
                 className="rounded-2xl border border-white/10 bg-dark-soft p-5 text-center"
                 style={{ animation: `fadeUp 0.4s ${0.3 + i * 0.1}s ease-out both` }}
               >
                 <span className="text-2xl" aria-hidden="true">
-                  {step.icon}
+                  {step.emoji}
                 </span>
                 <p className="mt-3 text-sm font-semibold text-white">
-                  {t(step.titleKey, step.defaultTitle)}
+                  {t(step.titleKey)}
                 </p>
                 <p className="mt-1.5 text-xs leading-5 text-white/60">
-                  {t(step.descKey, step.defaultDesc)}
+                  {t(step.descKey)}
                 </p>
               </div>
             ))}
@@ -303,14 +264,14 @@ export const DonationSuccessPage = () => {
               to="/"
               className="inline-flex items-center justify-center rounded-xl bg-brand-accent px-6 py-3 text-sm font-bold text-dark transition-colors hover:bg-brand-amber focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
             >
-              {t('success.goHome', 'Volver al inicio')}
+              {t('success.goHome')}
             </Link>
 
             <Link
               to="/donaciones"
               className="inline-flex items-center justify-center rounded-xl border border-white/10 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
             >
-              {t('success.donateAgain', 'Hacer otra donación')}
+              {t('success.donateAgain')}
             </Link>
           </div>
 
@@ -319,7 +280,7 @@ export const DonationSuccessPage = () => {
             className="mt-8 text-center text-xs text-white/40"
             style={{ animation: 'fadeUp 0.4s 0.7s ease-out both' }}
           >
-            {t('success.support', '¿Algún problema con tu donación?')}{' '}
+            {t('success.support')}{' '}
             <a
               href="mailto:valoressinai@gmail.com"
               className="underline transition-colors hover:text-brand-accent focus-visible:outline-none"

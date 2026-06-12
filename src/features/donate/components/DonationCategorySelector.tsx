@@ -1,69 +1,30 @@
-// src/features/donations/components/DonationCategorySelector.tsx
+// src/features/donate/components/DonationCategorySelector.tsx
 
 import { useTranslation } from 'react-i18next';
-import type { LucideIcon } from 'lucide-react';
-import {
-  GraduationCap,
-  HandHeart,
-  CircleCheck,
-  Check,
-  ChevronRight,
-} from 'lucide-react';
-import type { DonationCategory } from '../DonationsPage';
+import { GraduationCap, HandHeart, CircleCheck, Check, ChevronRight } from 'lucide-react';
+
+import { DONATION_CATEGORIES } from '../constants/donationConstants';
+import type { DonationCategory } from '../types/donations';
+
+// Mapa de nombre de ícono → componente (evita switch/if inline en el render)
+const ICON_MAP = {
+  graduationCap: GraduationCap,
+  handHeart:     HandHeart,
+} as const;
 
 interface Props {
   selected: DonationCategory;
   onSelect: (category: DonationCategory) => void;
 }
 
-const categories: {
-  id: Exclude<DonationCategory, null>;
-  Icon: LucideIcon;
-  titleKey: string;
-  descKey: string;
-  impactKey: string[];
-  color: string;
-  borderActive: string;
-  bgActive: string;
-}[] = [
-  {
-    id: 'academy',
-    Icon: GraduationCap,
-    titleKey: 'category.academy.title',
-    descKey: 'category.academy.desc',
-    impactKey: [
-      'category.academy.impact1',
-      'category.academy.impact2',
-      'category.academy.impact3',
-    ],
-    color: 'text-brand-accent',
-    borderActive: 'border-brand-accent',
-    bgActive: 'bg-brand-accent/10',
-  },
-  {
-    id: 'solidarity',
-    Icon: HandHeart,
-    titleKey: 'category.solidarity.title',
-    descKey: 'category.solidarity.desc',
-    impactKey: [
-      'category.solidarity.impact1',
-      'category.solidarity.impact2',
-      'category.solidarity.impact3',
-    ],
-    color: 'text-brand-amber',
-    borderActive: 'border-brand-amber',
-    bgActive: 'bg-brand-amber/10',
-  },
-];
-
 export const DonationCategorySelector = ({ selected, onSelect }: Props) => {
   const { t } = useTranslation('donations');
 
   return (
     <div className="grid gap-5 sm:grid-cols-2">
-      {categories.map((cat) => {
+      {DONATION_CATEGORIES.map((cat) => {
         const isActive = selected === cat.id;
-        const Icon = cat.Icon;
+        const Icon     = ICON_MAP[cat.iconName];
 
         return (
           <button
@@ -86,15 +47,10 @@ export const DonationCategorySelector = ({ selected, onSelect }: Props) => {
           >
             {isActive && (
               <span className="absolute right-4 top-4 flex h-6 w-6 items-center justify-center rounded-full bg-brand-accent">
-                <CircleCheck
-                  className="h-3.5 w-3.5 text-dark"
-                  aria-hidden="true"
-                  strokeWidth={2.4}
-                />
+                <CircleCheck className="h-3.5 w-3.5 text-dark" aria-hidden="true" strokeWidth={2.4} />
               </span>
             )}
 
-            {/* Ícono — estilo fijo amber, igual a la sección "A qué puede ir tu aporte" */}
             <span
               className="
                 flex h-14 w-14 items-center justify-center rounded-2xl
@@ -107,11 +63,7 @@ export const DonationCategorySelector = ({ selected, onSelect }: Props) => {
               <Icon className="h-7 w-7" strokeWidth={1.9} />
             </span>
 
-            <h3
-              className={`mt-4 text-xl font-bold tracking-tight ${
-                isActive ? cat.color : 'text-dark dark:text-white'
-              }`}
-            >
+            <h3 className={`mt-4 text-xl font-bold tracking-tight ${isActive ? cat.colorClass : 'text-dark dark:text-white'}`}>
               {t(cat.titleKey)}
             </h3>
 
@@ -120,16 +72,9 @@ export const DonationCategorySelector = ({ selected, onSelect }: Props) => {
             </p>
 
             <ul className="mt-4 space-y-1.5">
-              {cat.impactKey.map((key) => (
-                <li
-                  key={key}
-                  className="flex items-center gap-2 text-sm text-dark-soft dark:text-gray-mid"
-                >
-                  <Check
-                    className={`h-4 w-4 shrink-0 ${cat.color}`}
-                    aria-hidden="true"
-                    strokeWidth={2.25}
-                  />
+              {cat.impactKeys.map((key) => (
+                <li key={key} className="flex items-center gap-2 text-sm text-dark-soft dark:text-gray-mid">
+                  <Check className={`h-4 w-4 shrink-0 ${cat.colorClass}`} aria-hidden="true" strokeWidth={2.25} />
                   {t(key)}
                 </li>
               ))}
@@ -137,31 +82,20 @@ export const DonationCategorySelector = ({ selected, onSelect }: Props) => {
 
             <div className="mt-5">
               {isActive ? (
-                <span
-                  className={`inline-flex items-center gap-1.5 text-sm font-semibold ${cat.color}`}
-                >
+                <span className={`inline-flex items-center gap-1.5 text-sm font-semibold ${cat.colorClass}`}>
                   <CircleCheck className="h-4 w-4" aria-hidden="true" strokeWidth={2.25} />
-                  {t(
-                    'category.selected',
-                    'Seleccionado — completá el formulario abajo',
-                  )}
+                  {t('category.selected')}
                 </span>
               ) : (
-                <span
-                  className="
-                    inline-flex items-center gap-1.5 rounded-full
-                    border border-brand-amber/40 bg-brand-accent/10
-                    px-4 py-1.5 text-sm font-semibold text-brand-amber
-                    transition-all duration-200
-                    group-hover:border-brand-accent group-hover:bg-brand-accent group-hover:text-dark
-                  "
-                >
-                  {t('category.select', 'Seleccionar')}
-                  <ChevronRight
-                    className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5"
-                    aria-hidden="true"
-                    strokeWidth={2.25}
-                  />
+                <span className="
+                  inline-flex items-center gap-1.5 rounded-full
+                  border border-brand-amber/40 bg-brand-accent/10
+                  px-4 py-1.5 text-sm font-semibold text-brand-amber
+                  transition-all duration-200
+                  group-hover:border-brand-accent group-hover:bg-brand-accent group-hover:text-dark
+                ">
+                  {t('category.select')}
+                  <ChevronRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" aria-hidden="true" strokeWidth={2.25} />
                 </span>
               )}
             </div>

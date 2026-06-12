@@ -10,15 +10,19 @@ import pt from './locales/pt.json'; */
 import esCommon from './locales/es/common.json';
 import esHome from './locales/es/home.json';
 import esAboutUs from './locales/es/about-us.json';
-import esContact from './locales/es/contact.json';
 import esDonations from './locales/es/donations.json';
 import esAcademy from './locales/es/academy.json';
+import esOffer from './locales/es/what-we-offer.json';
+import esContact from './locales/es/contact.json';
 
 // EN
 import enCommon from './locales/en/common.json';
 import enHome from './locales/en/home.json';
 import enAboutUs from './locales/en/about-us.json';
 import enAcademy from './locales/en/academy.json';
+import enOffer from './locales/en/what-we-offer.json';
+import enContact from './locales/en/contact.json';
+import enDonations from './locales/en/donations.json';
 
 
 // PT
@@ -26,6 +30,9 @@ import ptCommon from './locales/pt/common.json';
 import ptHome from './locales/pt/home.json';
 import ptAboutUs from './locales/pt/about-us.json';
 import ptAcademy from './locales/pt/academy.json';
+import ptOffer from './locales/pt/what-we-offer.json';
+import ptContact from './locales/pt/contact.json';
+import ptDonations from './locales/pt/donations.json';
 
 
 i18n
@@ -33,12 +40,12 @@ i18n
   .use(initReactI18next)
   .init({
     resources: {
-      es: { common: esCommon, home: esHome, 'about-us': esAboutUs, 'academy': esAcademy, 'contact': esContact, 'donations': esDonations },
-      en: { common: enCommon, home: enHome, 'about-us': enAboutUs, 'academy': enAcademy},
-      pt: { common: ptCommon, home: ptHome, 'about-us': ptAboutUs, 'academy': ptAcademy},
+      es: { common: esCommon, home: esHome, 'about-us': esAboutUs, 'academy': esAcademy, 'what-we-offer': esOffer, 'contact': esContact, 'donations': esDonations },
+      en: { common: enCommon, home: enHome, 'about-us': enAboutUs, 'academy': enAcademy, 'what-we-offer': enOffer, 'contact': enContact, 'donations': enDonations},
+      pt: { common: ptCommon, home: ptHome, 'about-us': ptAboutUs, 'academy': ptAcademy, 'what-we-offer': ptOffer, 'contact': ptContact, 'donations': ptDonations},
     },
-    ns: ['home', 'about-us', 'academy', 'common', 'contact', 'donations'],  // ← todos los namespaces
-    defaultNS: 'common',                             // ← el que se usa si no especificás
+    ns: ['home', 'about-us', 'academy', 'what-we-offer', 'contact', 'donations'],  // ← todos los namespaces
+    defaultNS: 'home',                             // ← el que se usa si no especificás
     supportedLngs: ['es', 'en', 'pt'],  // ← lista explícita de idiomas válidos
     fallbackLng: 'es',
     load: 'languageOnly', 

@@ -1,0 +1,257 @@
+{
+  "hero": {
+    "eyebrow": "Our spaces · Pres. Derqui",
+    "titleLine1": "A place designed",
+    "titleLine2": "for",
+    "titleAccent": "you",
+    "description": "Discover the facilities of Valores Sinaí, designed for lodging, dining, recreation, events, and community gatherings.",
+    "location": "Av. Juan Domingo Perón 3251, Pres. Derqui",
+    "claimsAriaLabel": "Pillars of Valores Sinaí",
+    "video": {
+      "ariaLabel": "Ambient video of Valores Sinaí facilities",
+      "pauseLabel": "Pause",
+      "playLabel": "Play",
+      "pauseAriaLabel": "Pause background video",
+      "playAriaLabel": "Play background video"
+    },
+    "captionBar": {
+      "description": "Overview of our facilities",
+      "address": "Av. Juan Domingo Perón 3251"
+    },
+    "claims": {
+      "espacios": {
+        "label": "Spaces for everyone",
+        "text": "Children, youth, and families grow through education, culture, sports, and faith."
+      },
+      "crecimiento": {
+        "label": "A place to grow",
+        "text": "Transforming lives through loving our neighbors, solidarity, and peace."
+      }
+    }
+  },
+  "beneficiaries": {
+    "kicker": "Open doors",
+    "title": "Who is this space for?",
+    "subtitle": "At Valores Sinaí there are no barriers or distinctions. Everyone is welcome, regardless of their situation, background, or beliefs.",
+    "groups": {
+      "churches": {
+        "title": "Churches and ministries",
+        "description": "Spiritual retreats, camps, worship gatherings, and activities that strengthen faith and fellowship."
+      },
+      "families": {
+        "title": "Families",
+        "description": "Meeting, recreation, and resting spaces for families looking to share quality time in a safe and natural environment."
+      },
+      "youth": {
+        "title": "Youth groups",
+        "description": "Camps, sports activities, creative events, and gatherings that foster personal and spiritual growth."
+      },
+      "artists": {
+        "title": "Bands and artists",
+        "description": "REC Pilar Sinaí offers a professional recording studio, streaming, and podcasting space for musicians and creators who want to produce with excellence."
+      },
+      "events": {
+        "title": "Events and conferences",
+        "description": "The main hall with capacity for 400 people and the conference room are available for institutional events, talks, and large gatherings."
+      },
+      "volunteers": {
+        "title": "Volunteers and collaborators",
+        "description": "Those who wish to serve, learn, and grow will find in Valores Sinaí an open space to share their gifts and talents."
+      }
+    }
+  },
+  "spaces": {
+    "kicker": "Over 9,000 m² built",
+    "title": "Valores Sinaí Property",
+    "subtitle": "More than two and a half hectares in Pres. Derqui, Buenos Aires, with facilities designed for gathering, training, and growth.",
+    "servicesLabel": "Available services on site",
+    "legalContact": "Legal and judicial inquiries",
+    "legalCta": "Contact law firm",
+    "tags": {
+      "accommodation": "Accommodation",
+      "gastronomy": "Dining",
+      "gathering": "Gathering",
+      "sport": "Sports",
+      "events": "Events",
+      "multimedia": "Multimedia",
+      "training": "Training",
+      "safety": "Safety",
+      "services": "Services"
+    },
+    "items": {
+      "posada": {
+        "nombre": "La Posada (The Inn)",
+        "descripcion": "Main lodging of the grounds, designed to host groups for retreats, camps, and multi-day activities.",
+        "alt": "View of La Posada, main lodging at Valores Sinaí"
+      },
+      "dormitorios": {
+        "nombre": "Dormitories",
+        "descripcion": "Group dormitories for camps and retreats, comfortable and functional for different types of groups.",
+        "alt": "Group dormitories at Valores Sinaí grounds"
+      },
+      "casas": {
+        "nombre": "16 family houses",
+        "descripcion": "Independent units for families or small groups seeking privacy and comfort during their stay.",
+        "alt": "Family houses at Valores Sinaí grounds"
+      },
+      "comedor": {
+        "nombre": "Dining hall",
+        "descripcion": "Dining space with capacity for large groups, ideal for camps, retreats, and community events.",
+        "alt": "Dining hall at Valores Sinaí grounds"
+      },
+      "cafeteria": {
+        "nombre": "Coffee shop",
+        "descripcion": "Rest and informal gathering space, available for groups and visitors during the day.",
+        "alt": "Coffee shop at Valores Sinaí property"
+      },
+      "quincho": {
+        "nombre": "Barbecue area",
+        "descripcion": "Covered outdoor space, ideal for barbecues, social meetings, and celebrations in a natural setting.",
+        "alt": "Barbecue area at Valores Sinaí grounds"
+      },
+      "gimnasio": {
+        "nombre": "Gymnasium",
+        "descripcion": "Indoor sports facility for physical activities, tournaments, and group dynamics.",
+        "alt": "Gymnasium at Valores Sinaí grounds"
+      },
+      "pileta": {
+        "nombre": "Swimming pool",
+        "descripcion": "Pool available for groups during the summer season, with recreation areas around it.",
+        "alt": "Swimming pool at Valores Sinaí grounds"
+      },
+      "canchas": {
+        "nombre": "Sports courts",
+        "descripcion": "Soccer, volleyball, and other sports courts, available for groups of all ages.",
+        "alt": "Sports courts at Valores Sinaí grounds"
+      },
+      "paintball": {
+        "nombre": "Paintball area",
+        "descripcion": "Equipped space for teambuilding activities, group dynamics, and recreation for youth and adults.",
+        "alt": "Paintball area at Valores Sinaí"
+      },
+      "salon": {
+        "nombre": "Hall for 400 people",
+        "descripcion": "The largest capacity space on the grounds, equipped for conferences, worship services, music events, and large gatherings.",
+        "alt": "Event hall for 400 people at Valores Sinaí"
+      },
+      "conferencias": {
+        "nombre": "Conference room",
+        "descripcion": "Room equipped for meetings, seminars, and training sessions for medium-sized groups.",
+        "alt": "Conference room at Valores Sinaí grounds"
+      },
+      "rec": {
+        "nombre": "REC Pilar Sinaí",
+        "descripcion": "Multimedia building that functions as a recording studio, streaming, podcast, and video production place. Creative space for bands and artists.",
+        "alt": "REC Pilar Sinaí studio"
+      },
+      "taller": {
+        "nombre": "Vocational workshop",
+        "descripcion": "Practical training space for developing skills and trades, aimed at community education.",
+        "alt": "Vocational workshop at Valores Sinaí"
+      },
+      "dea": {
+        "nombre": "Automated External Defibrillator (AED)",
+        "descripcion": "The grounds have an AED available and trained staff in first aid: CPR, airway obstruction management, use of the defibrillator, and injury treatment, reaffirming our commitment to the well‑being and safety of the entire community.",
+        "alt": "Automated External Defibrillator available at Valores Sinaí grounds"
+      },
+      "juridico": {
+        "nombre": "Law Firm — Dr. Daniela Aramberri",
+        "descripcion": "Law firm located within the grounds, open to the entire community. You can stop by during your visit or contact Dr. Aramberri directly for legal advice and services.",
+        "alt": "Law firm of Dr. Daniela Aramberri at Valores Sinaí property"
+      }
+    }
+  },
+  "gallery": {
+    "kicker": "Gallery",
+    "title": "Explore the facilities",
+    "subtitle": "A space designed for gathering, rest, and growth.",
+    "viewAll": "View all photos",
+    "expandAriaLabel": "Expand image: {{titulo}}",
+    "photos": {
+      "exterior": {
+        "titulo": "Valores Sinaí",
+        "descripcion": "Panoramic view of Valores Sinaí grounds from the outside.",
+        "alt": "Panoramic view of Valores Sinaí grounds from the outside"
+      },
+      "posada": {
+        "titulo": "La Posada (The Inn)",
+        "descripcion": "Main lodging of the grounds, designed to host groups for retreats, camps, and multi-day activities.",
+        "alt": "La Posada — main lodging at Valores Sinaí grounds"
+      },
+      "casas": {
+        "titulo": "16 family houses",
+        "descripcion": "Independent units for families or small groups seeking privacy and comfort during their stay.",
+        "alt": "Family houses at Valores Sinaí grounds"
+      },
+      "dormitorios": {
+        "titulo": "Dormitories",
+        "descripcion": "Group dormitories for camps and retreats, comfortable and functional for different types of groups.",
+        "alt": "Group dormitories at Valores Sinaí grounds"
+      },
+      "comedor": {
+        "titulo": "Dining hall",
+        "descripcion": "Dining space with capacity for large groups, ideal for camps, retreats, and community events.",
+        "alt": "Dining hall with groups gathered around tables"
+      },
+      "cafeteria": {
+        "titulo": "Coffee shop",
+        "descripcion": "Rest and informal gathering space, available for groups and visitors during the day.",
+        "alt": "Coffee shop at Valores Sinaí grounds"
+      },
+      "gimnasio": {
+        "titulo": "Gymnasium",
+        "descripcion": "Indoor sports facility for physical activities, tournaments, and group dynamics.",
+        "alt": "Indoor gymnasium at Valores Sinaí grounds"
+      },
+      "pileta": {
+        "titulo": "Swimming pool",
+        "descripcion": "Pool available for groups during the summer season, with recreation areas around it.",
+        "alt": "Swimming pool at the grounds during summer season"
+      },
+      "canchas": {
+        "titulo": "Sports courts",
+        "descripcion": "Soccer, volleyball, and other sports courts, available for groups of all ages.",
+        "alt": "Sports courts at Valores Sinaí grounds"
+      },
+      "quincho": {
+        "titulo": "Barbecue area",
+        "descripcion": "Covered outdoor space, ideal for barbecues, social meetings, and celebrations in a natural setting.",
+        "alt": "Barbecue area for gatherings and outdoor events"
+      },
+      "salon": {
+        "titulo": "Hall for 400 people",
+        "descripcion": "The largest capacity space on the grounds, equipped for conferences, worship services, music events, and large gatherings.",
+        "alt": "Event hall with capacity for 400 people"
+      },
+      "conferencias": {
+        "titulo": "Conference room",
+        "descripcion": "Room equipped for meetings, seminars, and training sessions for medium-sized groups.",
+        "alt": "Conference room at Valores Sinaí grounds"
+      },
+      "rec": {
+        "titulo": "REC Pilar Sinaí",
+        "descripcion": "Multimedia building with recording studio, streaming, podcast, and video production — faith, creativity, and excellence at the service of the gospel.",
+        "alt": "REC Pilar Sinaí studio — recording and streaming room"
+      },
+      "verdes": {
+        "titulo": "Green spaces",
+        "descripcion": "Outdoor recreation and meeting areas, in a natural environment designed for rest and community.",
+        "alt": "Green area and outdoor meeting spaces at the grounds"
+      }
+    }
+  },
+  "contact": {
+    "kicker": "Reservations and questions",
+    "title": "Want to use our spaces?",
+    "subtitle": "Contact us to check availability, request a quote, or learn more about how you can book the place for your church, ministry, group, or event.",
+    "cta": "Send us your questions",
+    "items": {
+      "email": {
+        "label": "valoressinai@gmail.com"
+      },
+      "address": {
+        "label": "Av. Juan Domingo Perón 3251, Pres. Derqui"
+      }
+    }
+  }
+}

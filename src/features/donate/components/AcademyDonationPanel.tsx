@@ -1,24 +1,16 @@
-// src/features/donations/components/AcademyDonationPanel.tsx
+// src/features/donate/components/AcademyDonationPanel.tsx
+
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { DonationForm } from './DonationForm';
-import { PAYMENT_LINKS } from '../config/paymentLinks';
 
-const ACADEMY_COURSES = [
-  { id: 'video',      emoji: '🎬', nameKey: 'academy.courses.video' },
-  { id: 'photo',      emoji: '📷', nameKey: 'academy.courses.photo' },
-  { id: 'audio',      emoji: '🎵', nameKey: 'academy.courses.audio' },
-  { id: 'direction',  emoji: '🎥', nameKey: 'academy.courses.direction' },
-  { id: 'marketing',  emoji: '📱', nameKey: 'academy.courses.marketing' },
-  { id: 'streaming',  emoji: '📡', nameKey: 'academy.courses.streaming' },
-  { id: 'photo_cine', emoji: '🎞️', nameKey: 'academy.courses.photoCine' },
-  { id: 'production', emoji: '🎙️', nameKey: 'academy.courses.production' },
-];
+import { DonationForm }    from './DonationForm';
+import { ACADEMY_COURSES} from '../constants/donationConstants';
+
+// Re-export paymentLinks from the new location
+import { PAYMENT_LINKS as LINKS } from '../constants/paymentLinks';
 
 export const AcademyDonationPanel = () => {
   const { t } = useTranslation('donations');
-  // El mensaje del donante se puede usar en el flujo de confirmación
-  // (ej: pre-llenar un WhatsApp o email con el comprobante)
   const [donorMessage, setDonorMessage] = useState('');
 
   return (
@@ -29,38 +21,30 @@ export const AcademyDonationPanel = () => {
       <div className="mx-auto max-w-5xl">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
 
-          {/* ── Columna izquierda — info ── */}
+          {/* ── Columna izquierda ── */}
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand-accent">
-              {t('academy.kicker', 'Academia Valores Sinaí')}
+              {t('academy.kicker')}
             </p>
             <h2 className="mt-3 text-2xl font-bold tracking-tight text-dark dark:text-white sm:text-3xl">
-              {t('academy.title', 'Financiá becas para jóvenes')}
+              {t('academy.title')}
             </h2>
             <p className="mt-4 text-sm leading-7 text-dark-soft dark:text-gray-mid">
-              {t(
-                'academy.desc',
-                'Tu donación va al fondo de becas general de la Academia. La asociación distribuye los recursos según la necesidad de cada estudiante y cada curso.',
-              )}
+              {t('academy.desc')}
             </p>
 
-            {/* Aviso sobre distribución */}
             <div className="mt-5 rounded-xl border border-brand-accent/30 bg-brand-accent/5 p-4">
               <p className="text-xs font-semibold text-brand-amber">
-                ℹ️ {t('academy.notice', 'Sobre la distribución de fondos')}
+                ℹ️ {t('academy.notice')}
               </p>
               <p className="mt-1 text-xs leading-5 text-dark-soft dark:text-gray-mid">
-                {t(
-                  'academy.noticeText',
-                  'Tu donación se destina a la Academia en general. Los cursos que ves a continuación son solo informativos: la junta directiva de Valores Sinaí asigna las becas según los criterios y necesidades vigentes.',
-                )}
+                {t('academy.noticeText')}
               </p>
             </div>
 
-            {/* Cursos */}
             <div className="mt-6">
               <p className="mb-3 text-sm font-semibold text-dark dark:text-white">
-                {t('academy.coursesTitle', 'Cursos que impulsás con tu donación')}
+                {t('academy.coursesTitle')}
               </p>
               <div className="flex flex-wrap gap-2">
                 {ACADEMY_COURSES.map((course) => (
@@ -75,63 +59,43 @@ export const AcademyDonationPanel = () => {
               </div>
             </div>
 
-            {/* Stats */}
-            {/* <div className="mt-8 grid grid-cols-2 gap-3">
-              {[
-                { value: '8',    labelKey: 'academy.stat1', label: 'Cursos disponibles' },
-                { value: '+120', labelKey: 'academy.stat2', label: 'Estudiantes activos' },
-              ].map((stat) => (
-                <div
-                  key={stat.value}
-                  className="rounded-2xl border border-black/5 bg-surface-cream p-4 dark:border-white/5 dark:bg-dark"
-                >
-                  <p className="text-2xl font-bold text-brand-accent">{stat.value}</p>
-                  <p className="mt-1 text-xs text-dark-soft dark:text-gray-mid">
-                    {t(stat.labelKey, stat.label)}
-                  </p>
-                </div>
-              ))}
-            </div> */}
-
-            {/* Acceso rápido para enviar comprobante con el mensaje */}
             {donorMessage.trim().length > 0 && (
               <div className="mt-6 rounded-xl border border-brand-accent/20 bg-surface-cream p-4 dark:border-white/10 dark:bg-dark">
                 <p className="text-xs font-semibold text-dark dark:text-white">
-                  💬 Envianos tu mensaje junto al comprobante
+                  💬 {t('panel.sendReceiptTitle')}
                 </p>
-                <p className="mt-1 text-xs text-dark-soft dark:text-gray-mid italic">
+                <p className="mt-1 text-xs italic text-dark-soft dark:text-gray-mid">
                   "{donorMessage}"
                 </p>
                 <div className="mt-3 flex flex-wrap gap-2">
                   <a
-                    href={`https://wa.me/5491160122363?text=${encodeURIComponent(`Hola, hice una donación a la Academia.\n\nMi mensaje: "${donorMessage}"`)}`}
+                    href={`https://wa.me/5491160122363?text=${encodeURIComponent(t('panel.whatsappMessage', { message: donorMessage, category: t('academy.kicker') }))}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1.5 rounded-lg bg-brand-accent px-3 py-1.5 text-xs font-bold text-dark transition-colors hover:bg-brand-amber"
                   >
-                    💬 Enviar por WhatsApp
+                    💬 {t('panel.sendWhatsApp')}
                   </a>
                   <a
-                    href={`mailto:valoressinai@gmail.com?subject=Donaci%C3%B3n%20Academia&body=${encodeURIComponent(`Hola, hice una donación a la Academia.\n\nMi mensaje: "${donorMessage}"`)}`}
+                    href={`mailto:valoressinai@gmail.com?subject=${encodeURIComponent(t('panel.emailSubjectAcademy'))}&body=${encodeURIComponent(t('panel.emailBody', { message: donorMessage, category: t('academy.kicker') }))}`}
                     className="inline-flex items-center gap-1.5 rounded-lg border border-black/10 bg-white px-3 py-1.5 text-xs font-bold text-dark transition-colors hover:border-brand-accent dark:border-white/10 dark:bg-dark-soft dark:text-white"
                   >
-                    ✉️ Enviar por email
+                    ✉️ {t('panel.sendEmail')}
                   </a>
                 </div>
               </div>
             )}
           </div>
 
-          {/* ── Columna derecha — formulario ── */}
+          {/* ── Columna derecha ── */}
           <div>
             <DonationForm
               category="academy"
               accentColor="yellow"
-              paymentLinks={{ mp: PAYMENT_LINKS.academy.mp }}
+              paymentLinks={{ mp: LINKS.academy.mp }}
               onMessage={setDonorMessage}
             />
           </div>
-
         </div>
       </div>
     </section>

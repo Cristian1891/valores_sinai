@@ -1,0 +1,100 @@
+{
+  "hero": {
+    "title": "Conecte-se com Valores Sinaí",
+    "subtitle": "Estamos aqui para ajudá-lo com projetos educativos, eventos especiais e tudo relacionado aos nossos serviços comunitários."
+  },
+  "methods": {
+    "heading": "Várias formas de contato",
+    "subheading": "Escolha o canal mais conveniente para falar com a gente.",
+    "ariaLabel": "Métodos de contato",
+    "ctaLabel": "Fale conosco",
+    "email": {
+      "label": "E-mail Principal",
+      "value": "valoressinai@gmail.com"
+    },
+    "phone": {
+      "label": "Telefone",
+      "value": "+54 9 11 6012-2363"
+    },
+    "whatsapp": {
+      "label": "WhatsApp",
+      "value": "+54 9 11 6012-2363",
+      "description": "Gostamos de atendê-lo de forma próxima. Escreva-nos pelo WhatsApp e resolvemos sua consulta juntos."
+    },
+    "location": {
+      "label": "Localização",
+      "value": "Pres. Derqui, Buenos Aires",
+      "description": "Visite-nos com hora marcada."
+    }
+  },
+  "form": {
+    "kicker": "Escreva para nós",
+    "title": "Fale conosco",
+    "subtitle": "Queremos ouvir você. Vamos construir juntos um futuro com valores.",
+    "fields": {
+      "fullName": "Nome Completo",
+      "email": "E-mail",
+      "phone": "Telefone",
+      "organization": "Organização / Empresa",
+      "queryType": "Tipo de Consulta",
+      "message": "Mensagem"
+    },
+    "placeholders": {
+      "fullName": "Seu nome completo",
+      "email": "voce@email.com",
+      "phone": "+54 9 11 0000-0000",
+      "organization": "Nome da sua organização",
+      "queryType": "Selecione uma opção",
+      "message": "Descreva sua consulta ou projeto em detalhes..."
+    },
+    "queryTypes": {
+      "Información general": "Informações gerais",
+      "Retiros y campamentos": "Retiros e acampamentos",
+      "Eventos y salones": "Eventos e salões",
+      "REC Pilar": "REC Pilar",
+      "Administración": "Administração",
+      "Donaciones": "Doações",
+      "Consultas legales": "Consultas jurídicas",
+      "Otro": "Outro"
+    },
+    "charCount": "{{current}} de {{max}} caracteres",
+    "privacy": "Ao enviar este formulário você concorda que usemos seus dados para responder à sua consulta. Não compartilhamos suas informações com terceiros.",
+    "submit": "Enviar Mensagem",
+    "sending": "Enviando...",
+    "toastSuccess": "Mensagem enviada com sucesso!",
+    "toastError": "Não foi possível enviar sua mensagem. Por favor, tente novamente.",
+    "successTitle": "Mensagem enviada!",
+    "successText": "Recebemos sua consulta e entraremos em contato em breve.",
+    "sendAnother": "Enviar outra mensagem",
+    "errorTitle": "Algo deu errado",
+    "errorText": "Não foi possível enviar sua mensagem. Por favor, tente novamente ou entre em contato pelo WhatsApp.",
+    "retry": "Tentar novamente",
+    "mapTitle": "Localização de Valores Sinaí no Google Maps",
+    "addressLabel": "Nosso endereço",
+    "address": "Av. Juan Domingo Perón 3251, Pres. Derqui, Buenos Aires",
+    "openInMaps": "Abrir no Google Maps",
+    "validation": {
+      "fullNameMin": "O nome deve ter pelo menos 2 caracteres.",
+      "fullNameMax": "O nome é muito longo.",
+      "emailInvalid": "Insira um endereço de e-mail válido.",
+      "phoneInvalid": "Insira um telefone válido.",
+      "organizationMax": "O nome da organização é muito longo.",
+      "queryTypeRequired": "Selecione um tipo de consulta.",
+      "messageMin": "A mensagem deve ter pelo menos 10 caracteres.",
+      "messageMax": "A mensagem não pode ter mais de 1000 caracteres."
+    }
+  },
+  "email": {
+    "subject": "Nova consulta: {{queryType}} — {{fullName}}",
+    "fields": {
+      "fullName": "Nome completo",
+      "email": "Endereço de e-mail",
+      "phone": "Telefone",
+      "organization": "Organização",
+      "queryType": "Tipo de consulta",
+      "message": "Mensagem",
+      "sentAt": "Enviado em",
+      "notProvided": "Não informado"
+    }
+  }
+}

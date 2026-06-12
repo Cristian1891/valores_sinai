@@ -32,9 +32,9 @@ export const PresidentMessage = () => {
           <div className="flex items-center gap-5 border-b border-white/10 px-8 py-6">
             <InitialsAvatar initials="HA" size="lg" />
             <div>
-              <p className="type-h3 text-white">
+              {/* <p className="type-h3 text-white">
                 {t('president.name')}
-              </p>
+              </p> */}
               <p className="type-body-sm text-white/60">
                 {t('president.role')}
               </p>
@@ -52,9 +52,9 @@ export const PresidentMessage = () => {
               "
             </span>
 
-            <p className="mb-2 type-kicker text-brand-amber">
+            {/* <p className="mb-2 type-kicker text-brand-amber">
               {t('president.messageLabel')}
-            </p>
+            </p> */}
 
             <p className="mt-4 type-body text-white/80">
               {t('president.greeting')}

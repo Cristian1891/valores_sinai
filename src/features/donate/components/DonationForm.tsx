@@ -1,41 +1,16 @@
-// src/features/donations/components/DonationForm.tsx
+// src/features/donate/components/DonationForm.tsx
 //
-// Correcciones aplicadas vs. versión anterior:
-//  ① MP_FEES movido a donationConstants.ts (fuente única de verdad)
-//  ② Comisiones AR corregidas: débito y wallet ahora 6,60% (antes 3,3%)
-//     → Para Link de pago todos los medios en AR son 6,60% al instante
-//  ③ PRESET_AMOUNTS importado desde donationConstants (evita duplicación)
-//  ④ DEFAULT_FEE label cambiado a 'internacional' (antes 'tu país')
-//  ⑤ El mensaje/dedicatoria ahora se pasa al handler onMessage para que
-//     el padre pueda enviarlo junto al comprobante de transferencia
-//  ⑥ El estado "clicked" reemplazado por mensaje más honesto:
-//     "Te abrimos MercadoPago en otra pestaña"
-//  ⑦ AmountSelector eliminado como componente separado (estaba duplicado)
-//     — toda la lógica vive aquí, correctamente encapsulada
+// Este componente es puramente declarativo: solo renderiza.
+// Toda la lógica de estado vive en hooks/useDonationForm.ts
+// Todas las constantes de datos viven en constants/donationConstants.ts
 
-import { useState, useEffect } from 'react';
-import { useCountryCode } from '../../../hooks/useCountryCode';
-import {
-  MP_FEES,
-  DEFAULT_FEE,
-  PRESET_AMOUNTS,
-  MIN_DONATION_AMOUNT,
-  PAYMENT_TYPE_LABELS,
-  formatARS,
-  type PaymentType,
-  type CountryFee,
-} from '../config/donationConstants';
+import { useTranslation } from 'react-i18next';
 
-interface Props {
-  category:     'academy' | 'solidarity';
-  accentColor?: 'yellow' | 'amber';
-  paymentLinks: { mp: string };
-  /** Opcional: recibe el mensaje del donante para mostrarlo/enviarlo
-   *  en el flujo de confirmación post-pago (ej: email o WhatsApp). */
-  onMessage?:   (msg: string) => void;
-}
+import { useDonationForm }          from '../hooks/useDonationForm';
+import { PRESET_AMOUNTS, MIN_DONATION_AMOUNT, PAYMENT_TYPE_I18N_KEYS } from '../constants/donationConstants';
+import type { DonationFormProps, PaymentType } from '../types/donations';
 
-// ── Íconos de copy ───────────────────────────────────────────────
+// ── Íconos inline ─────────────────────────────────────────────────────────────
 const IconCopy = () => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-4 w-4" aria-hidden="true">
     <path d="M7 3.5A1.5 1.5 0 018.5 2h3.879a1.5 1.5 0 011.06.44l3.122 3.12A1.5 1.5 0 0117 6.622V12.5a1.5 1.5 0 01-1.5 1.5h-1v-3.379a3 3 0 00-.879-2.121L10.5 5.379A3 3 0 008.379 4.5H7v-1z" />
@@ -57,76 +32,41 @@ const IconMercadoPago = () => (
   </svg>
 );
 
-// ── Helpers ──────────────────────────────────────────────────────
-function getImpactMessage(amount: number): string {
-  if (amount >= 50000) return 'contribuís a organizar un evento o retiro comunitario.';
-  if (amount >= 20000) return 'financiás asistencia de emergencia para una familia.';
-  if (amount >= 10000) return 'cubrís materiales de un estudiante por un mes.';
-  return 'aportás al fondo de becas de la Academia.';
-}
+// ── Componente principal ──────────────────────────────────────────────────────
+export const DonationForm = ({ category, accentColor = 'yellow', paymentLinks, onMessage }: DonationFormProps) => {
+  const { t } = useTranslation('donations');
 
-export const DonationForm = ({ category, accentColor = 'yellow', paymentLinks, onMessage }: Props) => {
-  const { countryCode, loading: loadingCountry } = useCountryCode();
+  const {
+    selectedAmount,
+    customAmount,
+    customMode,
+    baseAmount,
+    coverFee,
+    paymentType,
+    countryFee,
+    loadingCountry,
+    countryCode,
+    amountWithFee,
+    feeAmount,
+    message,
+    mpOpened,
+    copied,
+    handleSelectPreset,
+    handleCustomAmountChange,
+    handleEnableCustomMode,
+    handleCoverFeeChange,
+    handlePaymentTypeChange,
+    handleMessageChange,
+    handleMpOpen,
+    handleCopyAmount,
+    formatARS,
+  } = useDonationForm({ onMessage });
 
-  const [countryFee,     setCountryFee]     = useState<CountryFee>(DEFAULT_FEE);
-  const [coverFee,       setCoverFee]       = useState(false);
-  const [paymentType,    setPaymentType]    = useState<PaymentType>('creditCard');
-  const [selectedAmount, setSelectedAmount] = useState<number | null>(null);
-  const [customAmount,   setCustomAmount]   = useState('');
-  const [customMode,     setCustomMode]     = useState(false);
-  const [message,        setMessage]        = useState('');
-  const [mpOpened,       setMpOpened]       = useState(false);
-  const [copied,         setCopied]         = useState(false);
-
-  useEffect(() => {
-    if (!countryCode) return;
-    setCountryFee(MP_FEES[countryCode] ?? DEFAULT_FEE);
-  }, [countryCode]);
-
-  // Propagar mensaje al padre cuando cambia
-  useEffect(() => {
-    onMessage?.(message);
-  }, [message, onMessage]);
-
-  // ── Cálculo del monto ─────────────────────────────────────────
-  const baseAmount: number | null = (() => {
-    if (customMode) {
-      const parsed = parseInt(customAmount.replace(/\D/g, ''), 10);
-      // Mínimo MIN_DONATION_AMOUNT: por debajo el redondeo de la comisión
-      // introduce errores significativos (ej:  → ceil →  → error del 84%)
-      return isNaN(parsed) || parsed < MIN_DONATION_AMOUNT ? null : parsed;
-    }
-    return selectedAmount;
-  })();
-
-  const feeRate = countryFee[paymentType];
-  // Math.round (no ceil): ceil siempre redondea arriba, lo que en montos
-  // pequeños hace que el donante pague de más y llegue dinero extra.
-  // round minimiza el error en ambas direcciones.
-  const amountWithFee = baseAmount && coverFee
-    ? Math.round(baseAmount / (1 - feeRate))
-    : baseAmount;
-  const feeAmount = amountWithFee && baseAmount ? amountWithFee - baseAmount : 0;
-
-  // ── Copiar monto ──────────────────────────────────────────────
-  const handleCopyAmount = async () => {
-    if (!amountWithFee) return;
-    await navigator.clipboard.writeText(String(amountWithFee));
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2500);
-  };
-
-  // ── Estilos ───────────────────────────────────────────────────
-  const isAmber  = accentColor === 'amber';
-  const btnBase  = isAmber
-    ? 'bg-brand-amber hover:bg-brand-accent text-dark'
-    : 'bg-brand-accent hover:bg-brand-amber text-dark';
-  const ringColor = isAmber
-    ? 'focus-visible:ring-brand-amber'
-    : 'focus-visible:ring-brand-accent';
-  const activePreset = isAmber
-    ? 'border-brand-amber bg-brand-amber text-dark shadow-sm'
-    : 'border-brand-accent bg-brand-accent text-dark shadow-sm';
+  // ── Estilos derivados del accentColor ─────────────────────────
+  const isAmber       = accentColor === 'amber';
+  const btnBase       = isAmber ? 'bg-brand-amber hover:bg-brand-accent text-dark' : 'bg-brand-accent hover:bg-brand-amber text-dark';
+  const ringColor     = isAmber ? 'focus-visible:ring-brand-amber' : 'focus-visible:ring-brand-accent';
+  const activePreset  = isAmber ? 'border-brand-amber bg-brand-amber text-dark shadow-sm' : 'border-brand-accent bg-brand-accent text-dark shadow-sm';
   const highlightText = isAmber ? 'text-brand-amber' : 'text-brand-accent';
 
   const paymentTypeOptions: { id: PaymentType; hint: string }[] = [
@@ -135,13 +75,24 @@ export const DonationForm = ({ category, accentColor = 'yellow', paymentLinks, o
     { id: 'wallet',     hint: `~${(countryFee.wallet     * 100).toFixed(1)}%` },
   ];
 
+  // Clave de impacto según el monto seleccionado
+  const impactKey = baseAmount
+    ? baseAmount >= 50000
+      ? 'form.impact.event'
+      : baseAmount >= 20000
+        ? 'form.impact.family'
+        : baseAmount >= 10000
+          ? 'form.impact.materials'
+          : 'form.impact.scholarship'
+    : null;
+
   return (
     <div className="space-y-6">
 
       {/* ── Selector de monto ─────────────────────────────────── */}
       <div>
         <p className="mb-3 text-sm font-semibold text-dark dark:text-white">
-          ¿Cuánto querés donar?
+          {t('form.amountLabel')}
         </p>
 
         <div className="flex flex-wrap gap-2">
@@ -149,7 +100,7 @@ export const DonationForm = ({ category, accentColor = 'yellow', paymentLinks, o
             <button
               key={amount}
               type="button"
-              onClick={() => { setSelectedAmount(amount); setCustomMode(false); setCustomAmount(''); }}
+              onClick={() => handleSelectPreset(amount)}
               aria-pressed={selectedAmount === amount && !customMode}
               className={`
                 rounded-xl border px-4 py-2.5 text-sm font-semibold
@@ -166,7 +117,7 @@ export const DonationForm = ({ category, accentColor = 'yellow', paymentLinks, o
 
           <button
             type="button"
-            onClick={() => { setCustomMode(true); setSelectedAmount(null); }}
+            onClick={handleEnableCustomMode}
             aria-pressed={customMode}
             className={`
               rounded-xl border px-4 py-2.5 text-sm font-semibold
@@ -177,7 +128,7 @@ export const DonationForm = ({ category, accentColor = 'yellow', paymentLinks, o
                 : 'border-black/10 bg-white text-dark hover:border-brand-accent dark:border-white/10 dark:bg-dark-soft dark:text-white'}
             `}
           >
-            Otro monto
+            {t('form.customAmount')}
           </button>
         </div>
 
@@ -190,9 +141,9 @@ export const DonationForm = ({ category, accentColor = 'yellow', paymentLinks, o
               type="text"
               inputMode="numeric"
               value={customAmount}
-              onChange={(e) => setCustomAmount(e.target.value.replace(/[^0-9]/g, ''))}
+              onChange={(e) => handleCustomAmountChange(e.target.value)}
               placeholder={String(MIN_DONATION_AMOUNT)}
-              aria-label="Ingresar monto personalizado en pesos argentinos"
+              aria-label={t('form.customAmountLabel')}
               className="
                 w-full rounded-xl border border-black/10 bg-white py-3 pl-8 pr-4
                 text-sm text-dark placeholder-dark-soft/40
@@ -202,20 +153,20 @@ export const DonationForm = ({ category, accentColor = 'yellow', paymentLinks, o
               "
             />
             {customAmount !== '' && parseInt(customAmount, 10) < MIN_DONATION_AMOUNT && (
-              <p className="mt-1.5 text-xs text-brand-amber">
-                El monto mínimo es {formatARS(MIN_DONATION_AMOUNT)}.
+              <p role="alert" className="mt-1.5 text-xs text-brand-amber">
+                {t('form.minAmountError', { min: formatARS(MIN_DONATION_AMOUNT) })}
               </p>
             )}
           </div>
         )}
 
-        {/* Referencia de impacto — solo cuando hay monto */}
-        {baseAmount && (
+        {/* Referencia de impacto */}
+        {baseAmount && impactKey && (
           <div className="mt-3 rounded-lg border border-black/5 bg-surface-cream px-3 py-2 dark:border-white/5 dark:bg-dark">
             <p className="text-xs text-dark-soft dark:text-gray-mid">
-              💡 Con{' '}
+              💡 {t('form.impactPrefix')}{' '}
               <span className={`font-bold ${highlightText}`}>{formatARS(baseAmount)}</span>{' '}
-              {getImpactMessage(baseAmount)}
+              {t(impactKey)}
             </p>
           </div>
         )}
@@ -227,16 +178,15 @@ export const DonationForm = ({ category, accentColor = 'yellow', paymentLinks, o
           <input
             type="checkbox"
             checked={coverFee}
-            onChange={(e) => setCoverFee(e.target.checked)}
+            onChange={(e) => handleCoverFeeChange(e.target.checked)}
             className="mt-0.5 h-4 w-4 accent-brand-accent"
           />
           <div className="flex-1">
             <p className="text-sm font-semibold text-dark dark:text-white">
-              Cubrir el costo de procesamiento
+              {t('form.coverFeeLabel')}
             </p>
             <p className="mt-0.5 text-xs leading-5 text-dark-soft dark:text-gray-mid">
-              MercadoPago descuenta una comisión al recibir el pago. Activando
-              esta opción, el 100% de tu donación llega a Valores Sinaí.
+              {t('form.coverFeeDesc')}
             </p>
           </div>
         </label>
@@ -244,11 +194,9 @@ export const DonationForm = ({ category, accentColor = 'yellow', paymentLinks, o
         {coverFee && (
           <div className="mt-4 border-t border-black/5 pt-4 dark:border-white/5">
             <p className="mb-2 text-xs font-semibold text-dark-soft dark:text-gray-mid">
-              ¿Con qué vas a pagar en MercadoPago?
+              {t('form.paymentTypeQuestion')}
             </p>
 
-            {/* En AR todos los medios son 6,60%, pero mantenemos el selector
-                para países con diferencias reales (BR, MX, CO, etc.) */}
             {loadingCountry ? (
               <div className="flex gap-2">
                 {[1, 2, 3].map((i) => (
@@ -261,7 +209,7 @@ export const DonationForm = ({ category, accentColor = 'yellow', paymentLinks, o
                   <button
                     key={opt.id}
                     type="button"
-                    onClick={() => setPaymentType(opt.id)}
+                    onClick={() => handlePaymentTypeChange(opt.id)}
                     aria-pressed={paymentType === opt.id}
                     className={`
                       flex flex-1 flex-col items-center rounded-xl border px-3 py-2.5 text-center
@@ -273,7 +221,7 @@ export const DonationForm = ({ category, accentColor = 'yellow', paymentLinks, o
                     `}
                   >
                     <span className="text-xs font-semibold text-dark dark:text-white">
-                      {PAYMENT_TYPE_LABELS[opt.id]}
+                      {t(PAYMENT_TYPE_I18N_KEYS[opt.id])}
                     </span>
                     <span className={`mt-0.5 text-xs font-bold ${paymentType === opt.id ? highlightText : 'text-dark-soft dark:text-gray-mid'}`}>
                       {opt.hint}
@@ -283,18 +231,16 @@ export const DonationForm = ({ category, accentColor = 'yellow', paymentLinks, o
               </div>
             )}
 
-            {/* Nota aclaratoria para Argentina — todos los medios son iguales */}
             {!loadingCountry && countryCode === 'AR' && (
               <p className="mt-2 text-[10px] leading-4 text-dark-soft/70 dark:text-gray-mid/70">
-                ℹ️ Para Link de pago en Argentina, MercadoPago cobra 6,60% en todos los medios.
+                ℹ️ {t('form.arRateNote')}
               </p>
             )}
 
-            {/* Resumen del cálculo */}
             {!loadingCountry && baseAmount && amountWithFee && (
               <div className="mt-3 rounded-xl border border-brand-accent/30 bg-brand-accent/5 p-4">
                 <p className="text-xs font-semibold text-dark dark:text-white">
-                  📋 Lo que vas a ingresar en MercadoPago
+                  📋 {t('form.amountSummaryTitle')}
                 </p>
                 <div className="mt-2 flex items-center justify-between gap-3">
                   <div>
@@ -302,7 +248,10 @@ export const DonationForm = ({ category, accentColor = 'yellow', paymentLinks, o
                       {formatARS(amountWithFee)}
                     </p>
                     <p className="mt-0.5 text-xs text-dark-soft dark:text-gray-mid">
-                      Tu donación: {formatARS(baseAmount)} + comisión: {formatARS(feeAmount)}
+                      {t('form.amountBreakdown', {
+                        donation: formatARS(baseAmount),
+                        fee:      formatARS(feeAmount),
+                      })}
                     </p>
                     {countryFee.disclaimer && (
                       <p className="mt-0.5 text-[10px] text-dark-soft/60 dark:text-gray-mid/60">
@@ -311,7 +260,6 @@ export const DonationForm = ({ category, accentColor = 'yellow', paymentLinks, o
                     )}
                   </div>
 
-                  {/* Botón copiar */}
                   <button
                     type="button"
                     onClick={handleCopyAmount}
@@ -324,8 +272,8 @@ export const DonationForm = ({ category, accentColor = 'yellow', paymentLinks, o
                     "
                   >
                     {copied
-                      ? <><IconCheck /> ¡Copiado!</>
-                      : <><IconCopy /> Copiar monto</>
+                      ? <><IconCheck /> {t('form.copied')}</>
+                      : <><IconCopy /> {t('form.copyAmount')}</>
                     }
                   </button>
                 </div>
@@ -338,7 +286,7 @@ export const DonationForm = ({ category, accentColor = 'yellow', paymentLinks, o
               rel="noopener noreferrer"
               className="mt-2 block text-[10px] text-brand-amber underline hover:text-brand-accent"
             >
-              Ver tarifas oficiales de MercadoPago →
+              {t('form.mpFeesLink')}
             </a>
           </div>
         )}
@@ -350,16 +298,18 @@ export const DonationForm = ({ category, accentColor = 'yellow', paymentLinks, o
           htmlFor={`message-${category}`}
           className="mb-1.5 block text-sm font-semibold text-dark dark:text-white"
         >
-          Mensaje o dedicatoria{' '}
-          <span className="font-normal text-dark-soft dark:text-gray-mid">(opcional)</span>
+          {t('form.messageLabel')}{' '}
+          <span className="font-normal text-dark-soft dark:text-gray-mid">
+            ({t('form.optional')})
+          </span>
         </label>
         <textarea
           id={`message-${category}`}
           value={message}
-          onChange={(e) => setMessage(e.target.value)}
+          onChange={(e) => handleMessageChange(e.target.value)}
           rows={3}
           maxLength={300}
-          placeholder="Contanos por qué decidiste donar…"
+          placeholder={t('form.messagePlaceholder')}
           className="
             w-full resize-none rounded-xl border border-black/10 bg-white px-4 py-3
             text-sm text-dark placeholder-dark-soft/40
@@ -370,7 +320,7 @@ export const DonationForm = ({ category, accentColor = 'yellow', paymentLinks, o
         />
         <div className="mt-1 flex items-center justify-between gap-2">
           <p className="text-xs text-dark-soft dark:text-gray-mid">
-            {message.length > 0 && '✍️ Podés enviarlo junto al comprobante por WhatsApp o email.'}
+            {message.length > 0 && t('form.messageHint')}
           </p>
           <p className="text-xs text-dark-soft dark:text-gray-mid">
             {message.length}/300
@@ -380,45 +330,45 @@ export const DonationForm = ({ category, accentColor = 'yellow', paymentLinks, o
 
       {/* ── CTA — MercadoPago ──────────────────────────────────── */}
       <div className="rounded-2xl bg-surface-cream p-5 dark:bg-dark">
-
-        {/* Recordatorio del monto si coverFee está activo */}
         {coverFee && amountWithFee && baseAmount && (
           <div className="mb-4 rounded-xl border border-brand-accent/20 bg-white p-3 dark:border-white/10 dark:bg-dark-soft">
             <p className="text-xs font-semibold text-dark dark:text-white">
-              📌 Recordá ingresar este monto en MercadoPago
+              📌 {t('form.amountReminderTitle')}
             </p>
             <p className={`mt-1 text-lg font-bold ${highlightText}`}>
               {formatARS(amountWithFee)}
             </p>
             <p className="text-xs text-dark-soft dark:text-gray-mid">
-              Así el 100% de tu donación ({formatARS(baseAmount)}) llega a Valores Sinaí.
+              {t('form.amountReminderDesc', {
+                donation: formatARS(baseAmount),
+              })}
             </p>
           </div>
         )}
 
-        {/* Instrucciones paso a paso */}
         <div className="mb-4 rounded-xl border border-black/5 bg-white p-3 dark:border-white/5 dark:bg-dark-soft">
-          <p className="text-xs font-semibold text-dark dark:text-white">¿Cómo funciona?</p>
+          <p className="text-xs font-semibold text-dark dark:text-white">
+            {t('form.howItWorksTitle')}
+          </p>
           <ol className="mt-1.5 space-y-1 text-xs leading-5 text-dark-soft dark:text-gray-mid">
-            <li>1. Hacé click en el botón — te abrimos MercadoPago en otra pestaña.</li>
+            <li>{t('form.step1')}</li>
             <li>
-              2. Ingresás{' '}
+              {t('form.step2Prefix')}{' '}
               {coverFee && amountWithFee
                 ? <span className={`font-bold ${highlightText}`}>{formatARS(amountWithFee)}</span>
-                : 'el monto que querés donar'
+                : t('form.step2Amount')
               }.
             </li>
-            <li>3. Elegís el método de pago y confirmás.</li>
-            <li>4. Tanto vos como Valores Sinaí reciben confirmación por email.</li>
+            <li>{t('form.step3')}</li>
+            <li>{t('form.step4')}</li>
           </ol>
         </div>
 
-        {/* Botón principal */}
         <a
           href={paymentLinks.mp}
           target="_blank"
           rel="noopener noreferrer"
-          onClick={() => setMpOpened(true)}
+          onClick={handleMpOpen}
           className={`
             inline-flex w-full items-center justify-center gap-2
             rounded-xl px-6 py-3.5 text-sm font-bold
@@ -428,19 +378,18 @@ export const DonationForm = ({ category, accentColor = 'yellow', paymentLinks, o
           `}
         >
           <IconMercadoPago />
-          Donar con MercadoPago
+          {t('form.donateButton')}
         </a>
 
-        {/* Confirmación honesta post-click */}
         {mpOpened && (
           <div className="mt-3 rounded-xl border border-brand-accent/30 bg-brand-accent/5 px-4 py-3">
             <p className="text-xs font-semibold text-dark dark:text-white">
-              🔗 Te abrimos MercadoPago en otra pestaña
+              🔗 {t('form.mpOpenedTitle')}
             </p>
             <p className="mt-0.5 text-xs leading-5 text-dark-soft dark:text-gray-mid">
-              Completá el pago allí y recibirás confirmación por email.
+              {t('form.mpOpenedDesc')}
               {coverFee && amountWithFee && (
-                <> Recordá ingresar{' '}
+                <> {t('form.mpOpenedReminder')}{' '}
                   <span className={`font-bold ${highlightText}`}>{formatARS(amountWithFee)}</span>.
                 </>
               )}
@@ -449,7 +398,7 @@ export const DonationForm = ({ category, accentColor = 'yellow', paymentLinks, o
         )}
 
         <p className="mt-3 text-center text-xs text-dark-soft dark:text-gray-mid">
-          🔒 Valores Sinaí no almacena datos de tu tarjeta.
+          🔒 {t('form.securityNote')}
         </p>
       </div>
     </div>

@@ -5,13 +5,9 @@
     "subtitle": "Cada donación, sin importar el monto, hace una diferencia real en la vida de nuestra comunidad."
   },
   "hero": {
-    "verse": "\"Amarás a tu prójimo como a ti mismo\" — Marcos 12:31",
-    "title": "Tu donación",
+    "titleLine1": "Tu donación",
     "titleAccent": "transforma vidas",
     "subtitle": "Cada aporte hace posible que más personas desarrollen sus proyectos de vida, reciban educación y sean parte de nuestra comunidad.",
-    "stat1": "Familias acompañadas",
-    "stat2": "Cursos en la Academia",
-    "stat3": "Sin fines de lucro",
     "cta": "Donar ahora"
   },
   "category": {
@@ -30,7 +26,7 @@
       "impact3": "Mejoras en el estudio REC Pilar y salones"
     },
     "selected": "✓ Seleccionado — completá el formulario abajo",
-    "select": "Seleccionar →"
+    "select": "Seleccionar"
   },
   "academy": {
     "kicker": "Academia Valores Sinaí",
@@ -48,9 +44,7 @@
       "streaming": "Streaming y Transmisión",
       "photoCine": "Dirección de Fotografía para Cine",
       "production": "Producción Audiovisual"
-    },
-    "stat1": "Cursos disponibles",
-    "stat2": "Estudiantes activos"
+    }
   },
   "solidarity": {
     "kicker": "Fondo Solidario",
@@ -77,59 +71,71 @@
     "amountLabel": "¿Cuánto querés donar?",
     "customAmount": "Otro monto",
     "customAmountLabel": "Ingresar monto personalizado",
-    "frequencyLabel": "Frecuencia de donación",
-    "recommended": "Recomendado",
-    "monthly": "Mensual",
-    "monthlyHint": "Mayor impacto sostenido",
-    "once": "Una vez",
-    "onceHint": "Donación única",
-    "summary": "Resumen",
-    "selectAmount": "Seleccioná un monto para continuar.",
-    "processing": "Procesando...",
-    "donate": "Donar ahora",
-    "seeBankInfo": "Ver instrucciones de transferencia ↓",
-    "donatePaypal": "Donar con PayPal",
-    "amountHint": "El monto exacto lo ingresás en MercadoPago de forma segura.",
-    "donateMP": "Donar con MercadoPago",
-    "messageLabel": "Mensaje o dedicatoria (opcional)",
+    "minAmountError": "El monto mínimo es {{min}}",
+    "impactPrefix": "Con",
+    "impact": {
+      "scholarship": "cubrís los materiales de un estudiante por un mes.",
+      "materials": "financiás equipamiento para un estudiante de la Academia.",
+      "family": "brindás asistencia a una familia en situación vulnerable.",
+      "event": "contribuís a organizar un evento o retiro comunitario."
+    },
+    "coverFeeLabel": "Cubrir el costo de procesamiento",
+    "coverFeeDesc": "MercadoPago descuenta una comisión por cada pago. Al activar esta opción, agregás un monto extra para que el 100% de tu donación llegue a Valores Sinaí.",
+    "paymentTypeQuestion": "¿Con qué vas a pagar?",
+    "paymentType": {
+      "creditCard": "Crédito",
+      "debitCard": "Débito",
+      "wallet": "Billetera"
+    },
+    "arRateNote": "Tasas verificadas para Argentina (2026). Pueden variar levemente según tu banco o tarjeta.",
+    "amountSummaryTitle": "Lo que vas a ingresar en MercadoPago",
+    "copyAmount": "Copiar",
+    "copied": "¡Copiado!",
+    "amountBreakdown": "{{donation}} de donación + {{fee}} de comisión",
+    "mpFeesLink": "Ver comisiones oficiales de MercadoPago →",
+    "messageLabel": "Mensaje o dedicatoria",
+    "optional": "opcional",
     "messagePlaceholder": "Contanos por qué decidiste donar...",
-    "securityNote": "Serás redirigido a MercadoPago. El monto lo ingresás allá de forma segura.",
-    "coverFee": "Cubrir el costo de procesamiento",
-    "coverFeeHint": "MercadoPago descuenta una comisión por cada pago. Al activar esta opción, agregás un monto extra para que el 100% de tu donación llegue a Valores Sinaí.",
-    "coverFeeNote": "La comisión varía según tu país y método de pago. MercadoPago te mostrará el total final antes de confirmar."
+    "messageHint": "Tu mensaje puede incluirse en el reporte de donaciones.",
+    "amountReminderTitle": "Recordá ingresar este monto en MercadoPago",
+    "amountReminderDesc": "Incluye la comisión para que lleguen {{donation}} a Valores Sinaí.",
+    "howItWorksTitle": "¿Cómo funciona?",
+    "step1": "1. Hacé click en el botón Donar con Mercado Pago y te abrimos Mercado Pago en otra pestaña.",
+    "step2Prefix": "2. En MercadoPago, ingresá",
+    "step2Amount": "el monto que elegiste",
+    "step3": "3. Completá el pago con tu método preferido.",
+    "step4": "4. ¡Listo! Recibirás un comprobante por email.",
+    "donateButton": "Donar con MercadoPago",
+    "mpOpenedTitle": "MercadoPago abierto",
+    "mpOpenedDesc": "Completá el pago en la ventana que se abrió.",
+    "mpOpenedReminder": "Recordá ingresar",
+    "securityNote": "Serás redirigido a MercadoPago. El monto lo ingresás allá de forma segura."
   },
   "payment": {
     "label": "Método de pago",
     "mercadopago": "MercadoPago",
     "mercadopagoHint": "Tarjetas AR + Pix (Brasil) + LATAM",
-    "bank": "Transferencia bancaria",
-    "bankHint": "Sin comisiones · 100% llega",
-    "feeNote": "Podés cubrir la comisión de procesamiento en el paso siguiente para que el 100% llegue a Valores Sinaí.",
     "mercadopagoBadge": "AR · BR · LATAM",
-    "mpNote": "Acepta tarjetas argentinas, Pix (Brasil) y más medios LATAM. Comisión: ~6.3% tarjeta de crédito / ~3.3% débito.",
-    "mpMonthlyNote": "MercadoPago procesará tu donación como pago único. Para hacerla mensual, podés repetirla cada mes o elegir PayPal, que sí soporta donaciones recurrentes automáticas.",
+    "mpNote": "Acepta tarjetas argentinas, Pix (Brasil) y más medios LATAM. Comisión: ~6.6% + IVA (Link de pago).",
     "paypal": "PayPal",
     "paypalHint": "USA, Europa y resto del mundo",
     "paypalBadge": "Internacional",
     "paypalNote": "Ideal para donantes de USA, Europa y el resto del mundo. Comisión: ~3.9% + USD 0.30 por transacción.",
+    "bank": "Transferencia bancaria",
+    "bankHint": "Sin comisiones · 100% llega",
     "bankNote": "Sin comisiones. El 100% de tu donación llega a Valores Sinaí. Ver instrucciones abajo."
   },
   "bank": {
     "kicker": "Sin comisiones",
     "title": "Transferencia bancaria",
-    "desc": "Si preferís transferir directamente, el 100% de tu donación llega a Valores Sinaí sin comisiones de plataforma. Envianos el comprobante por email o WhatsApp para registrar tu aporte.",
-    "argentina": "Argentina",
+    "desc": "Si preferís transferir directamente, el 100% de tu donación llega a Valores Sinaí sin comisiones. Envianos el comprobante por email o WhatsApp para registrar tu aporte.",
+    "argentina": "Argentina (ARS)",
     "usd": "Cuenta en dólares (USD)",
-    "usdNote": "Esta cuenta recibe transferencias en dólares desde cualquier banco o billetera. Al ingresar dólares, el banco destino aparece como Banco Industrial (BIND).",
-    "international": "Internacional", 
     "alias": "Alias",
     "cbu": "CBU",
     "cuit": "CUIT",
     "bank": "Banco",
     "account": "Titular",
-    "beneficiary": "Beneficiario",
-    "swift": "SWIFT/BIC",
-    "iban": "IBAN",
     "copy": "Copiar",
     "copied": "¡Copiado!",
     "afterTransfer": "Después de transferir",
@@ -137,11 +143,20 @@
     "sendEmail": "Enviar por email",
     "sendWhatsapp": "Enviar por WhatsApp"
   },
+  "panel": {
+    "sendReceiptTitle": "Tu mensaje se enviará junto con el comprobante",
+    "sendWhatsApp": "Enviar por WhatsApp",
+    "sendEmail": "Enviar por email",
+    "emailSubjectAcademy": "Donación a la Academia Valores Sinaí",
+    "emailSubjectSolidarity": "Donación al Fondo Solidario",
+    "emailBody": "Hola! Acabo de donar a {{category}}.\n\nMi mensaje: {{message}}\n\nAdjunto el comprobante de pago.",
+    "whatsappMessage": "Hola! Acabo de donar a {{category}}. Mi mensaje: {{message}}"
+  },
   "impact": {
     "kicker": "Lo que lográs con tu aporte",
     "student": {
-      "amount": "$3.000/mes",
-      "desc": "Cubre materiales de un estudiante de la Academia por un mes"
+      "amount": "$5.000",
+      "desc": "Cubre algunos materiales de un estudiante de la Academia por un mes"
     },
     "family": {
       "amount": "$5.000",

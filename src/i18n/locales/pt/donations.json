@@ -1,0 +1,188 @@
+{
+  "page": {
+    "kicker": "Sua contribuição importa",
+    "title": "Escolha como quer ajudar",
+    "subtitle": "Cada doação, independente do valor, faz uma diferença real na vida da nossa comunidade."
+  },
+  "hero": {
+    "titleLine1": "Sua doação",
+    "titleAccent": "transforma vidas",
+    "subtitle": "Cada contribuição torna possível que mais pessoas desenvolvam seus projetos de vida, recebam educação e façam parte da nossa comunidade.",
+    "cta": "Doar agora"
+  },
+  "category": {
+    "academy": {
+      "title": "Academia Valores Sinaí",
+      "desc": "Financie bolsas para que jovens acessem cursos de produção audiovisual, música, marketing e muito mais.",
+      "impact1": "Bolsas para estudantes com recursos limitados",
+      "impact2": "Acesso a equipamentos e tecnologia profissional",
+      "impact3": "Formação que gera oportunidades de trabalho"
+    },
+    "solidarity": {
+      "title": "Fundo Solidário",
+      "desc": "Sua contribuição mantém nossa sede viva e torna possíveis os encontros que transformam vidas.",
+      "impact1": "Manutenção de quadras, churrasqueira e áreas verdes",
+      "impact2": "Realização de acampamentos e retiros abertos",
+      "impact3": "Melhorias no estúdio REC Pilar e salões"
+    },
+    "selected": "✓ Selecionado — preencha o formulário abaixo",
+    "select": "Selecionar"
+  },
+  "academy": {
+    "kicker": "Academia Valores Sinaí",
+    "title": "Financie bolsas para jovens",
+    "desc": "Sua doação vai para o fundo geral de bolsas da Academia. A associação distribui os recursos conforme a necessidade de cada estudante e curso.",
+    "notice": "Sobre a distribuição dos fundos",
+    "noticeText": "Sua doação é destinada à Academia em geral. Os cursos abaixo são apenas informativos: a diretoria da Valores Sinaí atribui as bolsas conforme os critérios e necessidades vigentes.",
+    "coursesTitle": "Cursos que sua doação impulsiona",
+    "courses": {
+      "video": "Edição de Vídeo",
+      "photo": "Fotografia Básica",
+      "audio": "Gravação e Mixagem de Som",
+      "direction": "Direção Audiovisual",
+      "marketing": "Marketing Digital",
+      "streaming": "Streaming e Transmissão",
+      "photoCine": "Direção de Fotografia para Cinema",
+      "production": "Produção Audiovisual"
+    }
+  },
+  "solidarity": {
+    "kicker": "Fundo Solidário",
+    "title": "Apoie a comunidade diretamente",
+    "desc": "O Fundo Solidário financia a manutenção da sede, melhorias de infraestrutura e a organização de eventos comunitários, acampamentos e retiros. A associação decide a distribuição conforme as necessidades mais urgentes.",
+    "destinationsTitle": "Para onde pode ir sua contribuição?",
+    "dest": {
+      "events": {
+        "title": "Eventos e retiros comunitários",
+        "desc": "Financiamos acampamentos, retiros espirituais, encontros culturais e atividades que unem nossa comunidade."
+      },
+      "maintenance": {
+        "title": "Manutenção da sede",
+        "desc": "Cuidamos e melhoramos nossas instalações esportivas, salões, áreas verdes e equipamentos."
+      },
+      "infrastructure": {
+        "title": "Obras de melhoria",
+        "desc": "Ampliamos e renovamos o complexo para continuar recebendo mais pessoas com conforto e segurança."
+      }
+    },
+    "quote": "\"Cada um coloque ao serviço dos outros o dom que recebeu, como bons administradores da multiforme graça de Deus.\" — 1 Pedro 4:10"
+  },
+  "form": {
+    "amountLabel": "Quanto você quer doar?",
+    "customAmount": "Outro valor",
+    "customAmountLabel": "Inserir valor personalizado",
+    "minAmountError": "O valor mínimo é {{min}}",
+    "impactPrefix": "Com",
+    "impact": {
+      "scholarship": "você cobre os materiais de um estudante por um mês.",
+      "materials": "você financia equipamentos para um estudante da Academia.",
+      "family": "você oferece assistência a uma família em situação vulnerável.",
+      "event": "você contribui para organizar um evento ou retiro comunitário."
+    },
+    "coverFeeLabel": "Cobrir o custo de processamento",
+    "coverFeeDesc": "O MercadoPago desconta uma taxa de cada pagamento. Ao ativar esta opção, você adiciona um valor extra para que 100% da sua doação chegue à Valores Sinaí.",
+    "paymentTypeQuestion": "Como você vai pagar?",
+    "paymentType": {
+      "creditCard": "Cartão de crédito",
+      "debitCard": "Cartão de débito",
+      "wallet": "Carteira digital"
+    },
+    "arRateNote": "Taxas verificadas para a Argentina (2026). Podem variar levemente conforme seu banco ou cartão.",
+    "amountSummaryTitle": "Valor a inserir no MercadoPago",
+    "copyAmount": "Copiar",
+    "copied": "Copiado!",
+    "amountBreakdown": "{{donation}} de doação + {{fee}} de taxa",
+    "mpFeesLink": "Ver taxas oficiais do MercadoPago →",
+    "messageLabel": "Mensagem ou dedicatória",
+    "optional": "opcional",
+    "messagePlaceholder": "Conte-nos por que decidiu doar...",
+    "messageHint": "Sua mensagem pode ser incluída no relatório de doações.",
+    "amountReminderTitle": "Lembre-se de inserir este valor no MercadoPago",
+    "amountReminderDesc": "Inclui a taxa para que {{donation}} chegue à Valores Sinaí.",
+    "howItWorksTitle": "Como funciona?",
+    "step1": "1. Clique no botão \"Doar com Mercado Pago\" e abrimos o Mercado Pago em outra aba.",
+    "step2Prefix": "2. No MercadoPago, insira",
+    "step2Amount": "o valor escolhido",
+    "step3": "3. Conclua o pagamento com seu método preferido.",
+    "step4": "4. Pronto! Você receberá um comprovante por e-mail.",
+    "donateButton": "Doar com MercadoPago",
+    "mpOpenedTitle": "MercadoPago aberto",
+    "mpOpenedDesc": "Conclua o pagamento na janela que foi aberta.",
+    "mpOpenedReminder": "Lembre-se de inserir",
+    "securityNote": "Você será redirecionado ao MercadoPago. O valor é inserido lá com segurança."
+  },
+  "payment": {
+    "label": "Método de pagamento",
+    "mercadopago": "MercadoPago",
+    "mercadopagoHint": "Cartões AR + Pix (Brasil) + LATAM",
+    "mercadopagoBadge": "AR · BR · LATAM",
+    "mpNote": "Aceita cartões argentinos, Pix (Brasil) e outros meios LATAM. Taxa: ~6,6% + IVA (link de pagamento).",
+    "paypal": "PayPal",
+    "paypalHint": "EUA, Europa e o mundo todo",
+    "paypalBadge": "Internacional",
+    "paypalNote": "Ideal para doadores dos EUA, Europa e do mundo. Taxa: ~3,9% + USD 0,30 por transação.",
+    "bank": "Transferência bancária",
+    "bankHint": "Sem taxas · 100% chega",
+    "bankNote": "Sem taxas. 100% da sua doação chega à Valores Sinaí. Veja as instruções abaixo."
+  },
+  "bank": {
+    "kicker": "Sem taxas",
+    "title": "Transferência bancária",
+    "desc": "Se preferir transferir diretamente, 100% da sua doação chega à Valores Sinaí sem taxas de plataforma. Envie-nos o comprovante por e-mail ou WhatsApp para registrar sua contribuição.",
+    "argentina": "Argentina (ARS)",
+    "usd": "Conta em dólares (USD)",
+    "alias": "Alias",
+    "cbu": "CBU",
+    "cuit": "CUIT",
+    "bank": "Banco",
+    "account": "Titular da conta",
+    "copy": "Copiar",
+    "copied": "Copiado!",
+    "afterTransfer": "Após transferir",
+    "afterTransferText": "Envie o comprovante para valoressinai@gmail.com ou via WhatsApp para +54 9 11 6012-2363 com seu nome e destino (Academia / Fundo Solidário). Sua doação será registrada e enviaremos uma confirmação.",
+    "sendEmail": "Enviar por e-mail",
+    "sendWhatsapp": "Enviar via WhatsApp"
+  },
+  "panel": {
+    "sendReceiptTitle": "Sua mensagem será enviada junto com o comprovante",
+    "sendWhatsApp": "Enviar via WhatsApp",
+    "sendEmail": "Enviar por e-mail",
+    "emailSubjectAcademy": "Doação para a Academia Valores Sinaí",
+    "emailSubjectSolidarity": "Doação para o Fundo Solidário",
+    "emailBody": "Olá! Acabei de fazer uma doação para {{category}}.\n\nMinha mensagem: {{message}}\n\nSegue em anexo o comprovante de pagamento.",
+    "whatsappMessage": "Olá! Acabei de doar para {{category}}. Minha mensagem: {{message}}"
+  },
+  "impact": {
+    "kicker": "O que você conquista com sua contribuição",
+    "student": {
+      "amount": "ARS 3.000/mês",
+      "desc": "Cobre os materiais de um estudante da Academia por um mês"
+    },
+    "family": {
+      "amount": "ARS 5.000",
+      "desc": "Assistência de emergência para uma família em situação vulnerável"
+    },
+    "event": {
+      "amount": "ARS 10.000",
+      "desc": "Contribui para organizar um evento ou retiro comunitário"
+    }
+  },
+  "success": {
+    "title": "Obrigado pela sua doação!",
+    "subtitle": "Sua contribuição para {{category}} está a caminho. Cada doação torna possível continuarmos transformando vidas.",
+    "verse": "\"Deus ama quem doa com alegria.\" — 2 Coríntios 9:7",
+    "categoryAcademy": "Academia Valores Sinaí",
+    "categorySolidarity": "Fundo Solidário",
+    "categoryGeneral": "Valores Sinaí",
+    "shareLabel": "Compartilhe seu gesto",
+    "step1Title": "Verifique seu e-mail",
+    "step1Desc": "Enviamos um recibo da sua doação. Se não encontrar, verifique a pasta de spam.",
+    "step2Title": "Sua doação está registrada",
+    "step2Desc": "A equipe da Valores Sinaí processa e destina ao local que você escolheu.",
+    "step3Title": "Quer saber o impacto?",
+    "step3Desc": "Siga-nos nas redes sociais para ver como sua contribuição transforma vidas reais.",
+    "goHome": "Voltar ao início",
+    "donateAgain": "Fazer outra doação",
+    "support": "Algum problema com sua doação?"
+  }
+}

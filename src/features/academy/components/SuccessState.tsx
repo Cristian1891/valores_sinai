@@ -1,7 +1,21 @@
-// ── Estado de éxito ───────────────────────────────────────────────────────────
+// src/features/academy/components/SuccessState.tsx
+//
+// TIPOGRAFÍA — decisiones tomadas:
+//
+//   Título ("¡Consulta recibida!")  → type-h2  (serif 30px, 700) —
+//                                      es el único título de esta "pantalla",
+//                                      merece la autoridad del H2 serif.
+//   Cuerpo                          → type-body-sm (14px, 400, line-height 1.65) —
+//                                      mensaje de confirmación, tono cálido,
+//                                      no necesita más jerarquía que un párrafo.
 
-export const SuccessState: React.FC<{ title: string; body: string }> = ({ title, body }) => (
+export const SuccessState: React.FC<{ title: string; body: string }> = ({
+  title,
+  body,
+}) => (
   <div className="flex flex-col items-center gap-5 py-10 text-center">
+
+    {/* Ícono de confirmación */}
     <div
       className="flex h-16 w-16 items-center justify-center rounded-full bg-success/20 ring-1 ring-success/50"
       aria-hidden="true"
@@ -21,8 +35,12 @@ export const SuccessState: React.FC<{ title: string; body: string }> = ({ title,
     </div>
 
     <div>
+      {/* Título — type-h2: Merriweather serif 30px, 700 */}
       <h2 className="type-h2 text-white">{title}</h2>
-      <p className="type-body-sm mt-2 max-w-sm text-white/80">{body}</p>
+
+      {/* Cuerpo — type-body-sm: Inter 14px, 400 */}
+      <p className="type-body-sm mt-3 max-w-sm text-white/80">{body}</p>
     </div>
+
   </div>
-)
+);

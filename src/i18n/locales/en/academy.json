@@ -39,7 +39,7 @@
   "form": {
     "badge": "Be the first to know",
     "title": "Join our academy",
-    "subtitle": "Leave your details and we’ll let you know when our courses launch",
+    "subtitle": "Leave your details and we’ll let you know when our classes launch",
     "labelNombre": "Full name",
     "placeholderNombre": "e.g. Mary Johnson",
     "labelEmail": "Email",
@@ -52,7 +52,7 @@
     "submit": "I want to receive information",
     "sending": "Sending…",
     "successTitle": "Inquiry received!",
-    "successText": "We’ll notify you as soon as there’s news about the courses. Thank you for your interest in Valores Sinaí Academy!",
+    "successText": "We’ll notify you as soon as there’s news about the classes. Thank you for your interest in Valores Sinaí Academy!",
     "errorTitle": "Something went wrong",
     "errorText": "We couldn’t send your message. Please try again or contact us via WhatsApp.",
     "retry": "Try again",

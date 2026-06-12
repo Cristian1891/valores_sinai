@@ -1,11 +1,16 @@
-// ── Componente Field ─────────────────────────────────────────────────────────
+// src/features/academy/components/Field.tsx
 //
-// Extrae el campo de formulario a su propio componente para:
-//   1. Evitar repetición de clases (DRY).
-//   2. Encapsular la lógica de "validar al perder el foco" (onBlur).
-//   3. Hacer el JSX del formulario principal legible de un vistazo.
+// TIPOGRAFÍA — decisiones tomadas:
+//
+//   <label>          → type-label    (14px, 600) — label de formulario,
+//                       uso exacto documentado en el sistema tipográfico.
+//   <input>          → type-body-sm  (14px, 400) — texto que el usuario escribe;
+//                       mismo tamaño que el label pero weight normal,
+//                       crea jerarquía sin cambiar tamaño.
+//   Mensaje de error → type-caption  (12px, 500) — meta-info de estado,
+//                       menor que el campo para no competir visualmente.
 
-import type { FieldProps } from "../types/academy"
+import type { FieldProps } from '../types/academy';
 
 export const Field: React.FC<FieldProps & { onBlur?: () => void }> = ({
   id,
@@ -18,17 +23,20 @@ export const Field: React.FC<FieldProps & { onBlur?: () => void }> = ({
   onChange,
   onBlur,
 }) => {
-  const inputId    = String(id)
-  const errorId    = `${inputId}-error`
-  const hasError   = Boolean(error)
+  const inputId  = String(id);
+  const errorId  = `${inputId}-error`;
+  const hasError = Boolean(error);
 
   return (
     <div className="flex flex-col gap-1.5">
+
+      {/* Label — type-label: 14px, sans, 600 */}
       <label htmlFor={inputId} className="type-label text-white">
         {label}{' '}
         <span className="text-brand-accent" aria-hidden="true">*</span>
       </label>
 
+      {/* Input — type-body-sm: 14px, sans, 400, line-height 1.65 */}
       <input
         id={inputId}
         type={type}
@@ -51,8 +59,9 @@ export const Field: React.FC<FieldProps & { onBlur?: () => void }> = ({
         ].join(' ')}
       />
 
-      {/* El error se renderiza siempre en el DOM (hidden vía altura) para
-          evitar layout shifts que desorientan al usuario — técnica 2025+. */}
+      {/* Error — type-caption: 12px, 500.
+          Siempre en el DOM para evitar layout shifts — se oculta con sr-only
+          cuando no hay error activo. */}
       <p
         id={errorId}
         role={hasError ? 'alert' : undefined}
@@ -64,6 +73,7 @@ export const Field: React.FC<FieldProps & { onBlur?: () => void }> = ({
       >
         {error ?? ''}
       </p>
+
     </div>
-  )
-}
+  );
+};

@@ -1,0 +1,188 @@
+{
+  "page": {
+    "kicker": "Your support matters",
+    "title": "Choose how you want to help",
+    "subtitle": "Every donation, no matter the amount, makes a real difference in our community."
+  },
+  "hero": {
+    "titleLine1": "Your donation",
+    "titleAccent": "transforms lives",
+    "subtitle": "Every contribution makes it possible for more people to grow, receive education, and become part of our community.",
+    "cta": "Donate now"
+  },
+  "category": {
+    "academy": {
+      "title": "Valores Sinaí Academy",
+      "desc": "Fund scholarships so young people can access audiovisual production, music, marketing, and more.",
+      "impact1": "Scholarships for students with limited resources",
+      "impact2": "Access to professional equipment and technology",
+      "impact3": "Training that creates job opportunities"
+    },
+    "solidarity": {
+      "title": "Solidarity Fund",
+      "desc": "Your support keeps our campus alive and makes life-changing gatherings possible.",
+      "impact1": "Maintenance of fields, barbecue area, and green spaces",
+      "impact2": "Organizing camps and open retreats",
+      "impact3": "Improvements to REC Pilar studio and halls"
+    },
+    "selected": "✓ Selected — complete the form below",
+    "select": "Select"
+  },
+  "academy": {
+    "kicker": "Valores Sinaí Academy",
+    "title": "Fund scholarships for youth",
+    "desc": "Your donation goes to the Academy's general scholarship fund. The association distributes resources based on each student's and course's needs.",
+    "notice": "About fund distribution",
+    "noticeText": "Your donation is directed to the Academy in general. The courses below are for informational purposes only: the Valores Sinaí board assigns scholarships based on current criteria and needs.",
+    "coursesTitle": "Courses your donation supports",
+    "courses": {
+      "video": "Video Editing",
+      "photo": "Basic Photography",
+      "audio": "Recording & Sound Mixing",
+      "direction": "Audiovisual Direction",
+      "marketing": "Digital Marketing",
+      "streaming": "Streaming & Broadcasting",
+      "photoCine": "Cinematography Direction",
+      "production": "Audiovisual Production"
+    }
+  },
+  "solidarity": {
+    "kicker": "Solidarity Fund",
+    "title": "Support the community directly",
+    "desc": "The Solidarity Fund finances campus maintenance, infrastructure improvements, and community events, camps, and retreats. The association decides distribution based on the most urgent needs.",
+    "destinationsTitle": "Where can your contribution go?",
+    "dest": {
+      "events": {
+        "title": "Community events and retreats",
+        "desc": "We fund camps, spiritual retreats, cultural gatherings, and activities that unite our community."
+      },
+      "maintenance": {
+        "title": "Campus maintenance",
+        "desc": "We care for and improve our sports facilities, halls, green spaces, and daily equipment."
+      },
+      "infrastructure": {
+        "title": "Improvement works",
+        "desc": "We expand and renovate the complex to keep welcoming more people comfortably and safely."
+      }
+    },
+    "quote": "\"Each of you should use whatever gift you have received to serve others.\" — 1 Peter 4:10"
+  },
+  "form": {
+    "amountLabel": "How much would you like to donate?",
+    "customAmount": "Other amount",
+    "customAmountLabel": "Enter a custom amount",
+    "minAmountError": "The minimum amount is {{min}}",
+    "impactPrefix": "With",
+    "impact": {
+      "scholarship": "you cover a student's materials for one month.",
+      "materials": "you fund equipment for an Academy student.",
+      "family": "you provide assistance to a vulnerable family.",
+      "event": "you help organize a community event or retreat."
+    },
+    "coverFeeLabel": "Cover the processing fee",
+    "coverFeeDesc": "MercadoPago deducts a fee from each payment. By enabling this option, you add an extra amount so that 100% of your donation reaches Valores Sinaí.",
+    "paymentTypeQuestion": "How will you pay?",
+    "paymentType": {
+      "creditCard": "Credit card",
+      "debitCard": "Debit card",
+      "wallet": "Digital wallet"
+    },
+    "arRateNote": "Rates verified for Argentina (2026). May vary slightly depending on your bank or card.",
+    "amountSummaryTitle": "Amount to enter in MercadoPago",
+    "copyAmount": "Copy",
+    "copied": "Copied!",
+    "amountBreakdown": "{{donation}} donation + {{fee}} fee",
+    "mpFeesLink": "View official MercadoPago fees →",
+    "messageLabel": "Message or dedication",
+    "optional": "optional",
+    "messagePlaceholder": "Tell us why you decided to donate...",
+    "messageHint": "Your message may be included in the donation report.",
+    "amountReminderTitle": "Remember to enter this amount in MercadoPago",
+    "amountReminderDesc": "Includes the fee so that {{donation}} reaches Valores Sinaí.",
+    "howItWorksTitle": "How does it work?",
+    "step1": "1. Click the \"Donate with Mercado Pago\" button and we'll open Mercado Pago in another tab.",
+    "step2Prefix": "2. In MercadoPago, enter",
+    "step2Amount": "the amount you chose",
+    "step3": "3. Complete the payment with your preferred method.",
+    "step4": "4. Done! You'll receive a receipt by email.",
+    "donateButton": "Donate with MercadoPago",
+    "mpOpenedTitle": "MercadoPago opened",
+    "mpOpenedDesc": "Complete the payment in the window that just opened.",
+    "mpOpenedReminder": "Remember to enter",
+    "securityNote": "You'll be redirected to MercadoPago. You enter the amount there securely."
+  },
+  "payment": {
+    "label": "Payment method",
+    "mercadopago": "MercadoPago",
+    "mercadopagoHint": "AR cards + Pix (Brazil) + LATAM",
+    "mercadopagoBadge": "AR · BR · LATAM",
+    "mpNote": "Accepts Argentine cards, Pix (Brazil), and more LATAM payment methods. Fee: ~6.6% + VAT (payment link).",
+    "paypal": "PayPal",
+    "paypalHint": "USA, Europe, and worldwide",
+    "paypalBadge": "International",
+    "paypalNote": "Ideal for donors from the USA, Europe, and around the world. Fee: ~3.9% + USD 0.30 per transaction.",
+    "bank": "Bank transfer",
+    "bankHint": "No fees · 100% arrives",
+    "bankNote": "No fees. 100% of your donation reaches Valores Sinaí. See instructions below."
+  },
+  "bank": {
+    "kicker": "No fees",
+    "title": "Bank transfer",
+    "desc": "If you prefer to transfer directly, 100% of your donation reaches Valores Sinaí with no platform fees. Send us the receipt by email or WhatsApp to register your contribution.",
+    "argentina": "Argentina (ARS)",
+    "usd": "USD account",
+    "alias": "Alias",
+    "cbu": "CBU",
+    "cuit": "CUIT",
+    "bank": "Bank",
+    "account": "Account holder",
+    "copy": "Copy",
+    "copied": "Copied!",
+    "afterTransfer": "After transferring",
+    "afterTransferText": "Send the receipt to valoressinai@gmail.com or via WhatsApp at +54 9 11 6012-2363 with your name and destination (Academy / Solidarity Fund). Your donation will be registered and we'll send you a confirmation.",
+    "sendEmail": "Send by email",
+    "sendWhatsapp": "Send via WhatsApp"
+  },
+  "panel": {
+    "sendReceiptTitle": "Your message will be sent with the receipt",
+    "sendWhatsApp": "Send via WhatsApp",
+    "sendEmail": "Send by email",
+    "emailSubjectAcademy": "Donation to Valores Sinaí Academy",
+    "emailSubjectSolidarity": "Donation to the Solidarity Fund",
+    "emailBody": "Hi! I just donated to {{category}}.\n\nMy message: {{message}}\n\nPlease find the payment receipt attached.",
+    "whatsappMessage": "Hi! I just donated to {{category}}. My message: {{message}}"
+  },
+  "impact": {
+    "kicker": "What you achieve with your contribution",
+    "student": {
+      "amount": "ARS 3,000/mo",
+      "desc": "Covers an Academy student's materials for one month"
+    },
+    "family": {
+      "amount": "ARS 5,000",
+      "desc": "Emergency assistance for a family in a vulnerable situation"
+    },
+    "event": {
+      "amount": "ARS 10,000",
+      "desc": "Contributes to organizing a community event or retreat"
+    }
+  },
+  "success": {
+    "title": "Thank you for your donation!",
+    "subtitle": "Your contribution to {{category}} is on its way. Every gift makes it possible for us to keep transforming lives.",
+    "verse": "\"God loves a cheerful giver.\" — 2 Corinthians 9:7",
+    "categoryAcademy": "Valores Sinaí Academy",
+    "categorySolidarity": "Solidarity Fund",
+    "categoryGeneral": "Valores Sinaí",
+    "shareLabel": "Share your gesture",
+    "step1Title": "Check your email",
+    "step1Desc": "We sent you a donation receipt. If you don't find it, check your spam folder.",
+    "step2Title": "Your donation is registered",
+    "step2Desc": "The Valores Sinaí team processes it and assigns it to the destination you chose.",
+    "step3Title": "Want to see the impact?",
+    "step3Desc": "Follow us on social media to see how your contribution transforms real lives.",
+    "goHome": "Back to home",
+    "donateAgain": "Make another donation",
+    "support": "Having trouble with your donation?"
+  }
+}

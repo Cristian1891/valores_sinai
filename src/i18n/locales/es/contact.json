@@ -35,13 +35,14 @@
       "fullName": "Nombre Completo",
       "email": "Email",
       "phone": "Teléfono",
-      "organization": "Organización/Empresa",
+      "organization": "Organización / Empresa",
       "queryType": "Tipo de Consulta",
       "message": "Mensaje"
     },
     "placeholders": {
       "fullName": "Tu nombre completo",
       "email": "tu@email.com",
+      "phone": "+54 9 11 0000-0000",
       "organization": "Nombre de tu organización",
       "queryType": "Seleccioná una opción",
       "message": "Describí tu consulta o proyecto en detalle..."
@@ -49,14 +50,19 @@
     "queryTypes": {
       "Información general": "Información general",
       "Retiros y campamentos": "Retiros y campamentos",
+      "Eventos y salones": "Eventos y salones",
       "REC Pilar": "REC Pilar",
-      "Voluntariado": "Voluntariado",
+      "Administración": "Administración",
       "Donaciones": "Donaciones",
+      "Consultas legales": "Consultas legales",
       "Otro": "Otro"
     },
+    "charCount": "{{current}} de {{max}} caracteres",
     "privacy": "Al enviar este formulario aceptás que usemos tus datos para responder tu consulta. No compartimos tu información con terceros.",
     "submit": "Enviar Mensaje",
     "sending": "Enviando...",
+    "toastSuccess": "¡Mensaje enviado con éxito!",
+    "toastError": "No pudimos enviar tu mensaje. Por favor intentá de nuevo.",
     "successTitle": "¡Mensaje enviado!",
     "successText": "Recibimos tu consulta y nos vamos a comunicar con vos a la brevedad.",
     "sendAnother": "Enviar otro mensaje",
@@ -66,6 +72,29 @@
     "mapTitle": "Ubicación de Valores Sinaí en Google Maps",
     "addressLabel": "Nuestra dirección",
     "address": "Av. Juan Domingo Perón 3251, Pres. Derqui, Buenos Aires",
-    "openInMaps": "Abrir en Google Maps"
+    "openInMaps": "Abrir en Google Maps",
+    "validation": {
+      "fullNameMin": "El nombre debe tener al menos 2 caracteres.",
+      "fullNameMax": "El nombre es demasiado largo.",
+      "emailInvalid": "Ingresá un correo electrónico válido.",
+      "phoneInvalid": "Ingresá un teléfono válido.",
+      "organizationMax": "El nombre de la organización es demasiado largo.",
+      "queryTypeRequired": "Seleccioná un tipo de consulta.",
+      "messageMin": "El mensaje debe tener al menos 10 caracteres.",
+      "messageMax": "El mensaje no puede superar los 1000 caracteres."
+    }
+  },
+  "email": {
+    "subject": "Nueva consulta: {{queryType}} — {{fullName}}",
+    "fields": {
+      "fullName": "Nombre completo",
+      "email": "Correo electrónico",
+      "phone": "Teléfono",
+      "organization": "Organización",
+      "queryType": "Tipo de consulta",
+      "message": "Mensaje",
+      "sentAt": "Fecha de envío",
+      "notProvided": "No proporcionado"
+    }
   }
 }

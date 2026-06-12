@@ -17,7 +17,7 @@ export const HeroAbout = () => {
       <div className="absolute inset-0 -z-10 bg-linear-to-r from-black/80 via-black/55 to-black/25" />
 
       <div className="mx-auto flex min-h-[calc(100svh-4rem)] max-w-7xl items-center px-4 py-24 sm:px-6 lg:px-8">
-        <div className="max-w-2xl">
+        <div className="max-w-2xl"> 
 
           {/* Kicker */}
           <p className="mb-4 type-kicker text-brand-accent">

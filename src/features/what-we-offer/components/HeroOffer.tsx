@@ -1,59 +1,38 @@
-import { useEffect, useRef, useState } from 'react';
+// src/features/what-we-offer/components/HeroOffer.tsx
+//
+// Estado y efecto del video → useVideoPlayback
+// Datos (claims)            → construidos desde i18n con getHeroClaims(t)
+// Tipos                     → types/what-we-offer.ts
+// Este componente solo renderiza.
 
-interface Claim {
-  key: string;
-  label: string;
-  text: string;
-}
+import { useTranslation } from 'react-i18next'
+import { useVideoPlayback } from '../hooks/useVideoPlayback'
+import { getHeroClaims } from '../constants/hero'
 
-const CLAIMS: Claim[] = [
-  {
-    key: 'espacios',
-    label: 'Espacios para todos',
-    text: 'Niños, jóvenes y familias crecen en educación, cultura, deporte y espiritualidad.',
-  },
-  {
-    key: 'crecimiento',
-    label: 'Tu lugar de crecimiento',
-    text: 'Transformación de vidas a través del amor al prójimo, la solidaridad y la paz.',
-  },
-];
+// ── Íconos inline — son internos del componente, no se comparten ─────────────
 
 const IconPause = () => (
   <svg viewBox="0 0 24 24" fill="currentColor" className="h-3 w-3" aria-hidden="true">
     <rect x="6" y="4" width="4" height="16" rx="1" />
     <rect x="14" y="4" width="4" height="16" rx="1" />
   </svg>
-);
+)
 
 const IconPlay = () => (
   <svg viewBox="0 0 24 24" fill="currentColor" className="h-3 w-3" aria-hidden="true">
     <path d="M6 4.75a.75.75 0 0 1 1.14-.643l11.5 7.25a.75.75 0 0 1 0 1.286l-11.5 7.25A.75.75 0 0 1 6 19.25V4.75z" />
   </svg>
-);
+)
+
+// ── Componente ────────────────────────────────────────────────────────────────
 
 export const HeroOffer = () => {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [isPlaying, setIsPlaying] = useState(true);
+  const { t } = useTranslation('what-we-offer')
+  const { videoRef, isPlaying, togglePlayback } = useVideoPlayback()
 
-  useEffect(() => {
-    const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
-    if (mq.matches) {
-      videoRef.current?.pause();
-      setIsPlaying(false);
-    }
-    const handler = (e: MediaQueryListEvent) => {
-      if (e.matches) { videoRef.current?.pause(); setIsPlaying(false); }
-      else { videoRef.current?.play(); setIsPlaying(true); }
-    };
-    mq.addEventListener('change', handler);
-    return () => mq.removeEventListener('change', handler);
-  }, []);
-
-  const togglePlayback = () => {
-    if (isPlaying) { videoRef.current?.pause(); setIsPlaying(false); }
-    else { videoRef.current?.play(); setIsPlaying(true); }
-  };
+  // Se reconstruye solo cuando cambia el idioma (t es estable por referencia
+  // dentro del mismo locale, cambia al cambiar idioma → useMemo no agrega valor).
+  const claims = getHeroClaims(t)
 
   return (
     <div className="bg-[#111110]">
@@ -72,7 +51,7 @@ export const HeroOffer = () => {
           playsInline
           preload="metadata"
           poster="/img/mejores_fotos_canchas/cancha_futbol_vacia_2.jpg"
-          aria-label="Video ambiental de las instalaciones de Valores Sinaí"
+          aria-label={t('hero.video.ariaLabel')}
         >
           <source src="/img/video_sinai.mp4" type="video/mp4" />
         </video>
@@ -98,26 +77,30 @@ export const HeroOffer = () => {
             {/* Eyebrow */}
             <div className="mb-6 flex items-center gap-3" aria-hidden="true">
               <span className="h-px w-5 shrink-0 bg-brand-amber" />
-              <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-brand-amber">
-                Nuestros espacios · Pres. Derqui
+              <span className="type-kicker text-brand-amber">
+                {t('hero.eyebrow')}
               </span>
             </div>
 
-            {/* H1 */}
+            {/* H1
+                La construcción titleLine1 + titleLine2 + titleAccent permite
+                controlar el salto de línea y el color del acento desde el JSON,
+                sin necesidad de interpolación con componentes React (Trans).
+            */}
             <h1
               id="ofrece-hero-heading"
-              className="font-serif text-[2.3rem] font-bold leading-[1.1] tracking-tight text-white sm:text-5xl"
+              className="type-display sm:text-5xl"
             >
-              Un lugar diseñado<br />
-              para{' '}
-              <em className="not-italic text-brand-accent">vos</em>
+              {t('hero.titleLine1')}<br />
+              {t('hero.titleLine2')}{' '}
+              <em className="not-italic text-brand-accent">
+                {t('hero.titleAccent')}
+              </em>
             </h1>
 
             {/* Descripción */}
-            <p className="mt-5 text-[14px] leading-[1.8] text-white/70 lg:text-[13.5px]">
-              Descubrí las instalaciones de Valores Sinaí, diseñadas para
-              alojamiento, alimentación, recreación, eventos y encuentros
-              comunitarios.
+            <p className="type-body-sm mt-5 text-white/70 lg:text-[13.5px]">
+              {t('hero.description')}
             </p>
 
             {/* Ubicación */}
@@ -133,8 +116,8 @@ export const HeroOffer = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
                 <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0z" />
               </svg>
-              <span className="text-[11px] tracking-[0.06em] text-white/40">
-                Av. Juan Domingo Perón 3251, Pres. Derqui
+              <span className="type-caption text-white/40 tracking-[0.06em]">
+                {t('hero.location')}
               </span>
             </div>
 
@@ -142,20 +125,20 @@ export const HeroOffer = () => {
             <div
               className="mt-8 border-t border-white/[0.12] pt-6"
               role="list"
-              aria-label="Pilares de Valores Sinaí"
+              aria-label={t('hero.claimsAriaLabel')}
             >
               <div className="flex flex-col gap-5">
-                {CLAIMS.map((claim) => (
+                {claims.map((claim) => (
                   <div key={claim.key} className="flex gap-3" role="listitem">
                     <span
                       className="mt-[6px] h-1.5 w-1.5 shrink-0 rounded-full bg-brand-accent"
                       aria-hidden="true"
                     />
                     <div>
-                      <p className="mb-1 text-[10px] font-semibold uppercase tracking-[0.15em] text-white/40">
+                      <p className="type-kicker mb-1 text-white/40">
                         {claim.label}
                       </p>
-                      <p className="text-[12.5px] leading-[1.65] text-white/65">
+                      <p className="type-body-sm text-white/65">
                         {claim.text}
                       </p>
                     </div>
@@ -171,28 +154,28 @@ export const HeroOffer = () => {
         <button
           type="button"
           onClick={togglePlayback}
-          aria-label={isPlaying ? 'Pausar video de fondo' : 'Reproducir video de fondo'}
+          aria-label={isPlaying ? t('hero.video.pauseAriaLabel') : t('hero.video.playAriaLabel')}
           aria-pressed={!isPlaying}
-          className="absolute bottom-5 left-5 z-20 flex items-center gap-1.5 rounded-full border border-dark/15 bg-white/40 px-3 py-1.5 text-[10px] font-medium tracking-[0.08em] text-dark/55 backdrop-blur-sm transition-colors hover:border-dark/25 hover:text-dark/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-amber"
+          className="absolute bottom-5 left-5 z-20 flex items-center gap-1.5 rounded-full border border-dark/15 bg-white/40 px-3 py-1.5 backdrop-blur-sm transition-colors hover:border-dark/25 hover:text-dark/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-amber type-caption text-dark/55 font-medium tracking-[0.08em]"
         >
           {isPlaying ? <IconPause /> : <IconPlay />}
-          <span>{isPlaying ? 'Pausar' : 'Reproducir'}</span>
+          <span>{isPlaying ? t('hero.video.pauseLabel') : t('hero.video.playLabel')}</span>
         </button>
       </section>
 
       {/* Caption bar */}
       <div className="flex items-center justify-between border-t border-white/[0.05] bg-[#0e0e0d] px-6 py-2.5 sm:px-10">
-        <span className="text-[11px] tracking-[0.02em] text-white/25">
-          Vista general de nuestras instalaciones
+        <span className="type-caption text-white/25 tracking-[0.02em]">
+          {t('hero.captionBar.description')}
         </span>
-        <span className="flex items-center gap-1.5 text-[11px] text-white/25">
+        <span className="type-caption flex items-center gap-1.5 text-white/25">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-3 w-3 shrink-0 text-brand-amber/40" aria-hidden="true">
             <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
             <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0z" />
           </svg>
-          Av. Juan Domingo Perón 3251
+          {t('hero.captionBar.address')}
         </span>
       </div>
     </div>
-  );
-};
+  )
+}

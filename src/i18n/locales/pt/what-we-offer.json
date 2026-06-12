@@ -1,0 +1,257 @@
+{
+  "hero": {
+    "eyebrow": "Nossos espaços · Pres. Derqui",
+    "titleLine1": "Um lugar planejado",
+    "titleLine2": "para",
+    "titleAccent": "você",
+    "description": "Conheça as instalações do Valores Sinaí, projetadas para hospedagem, alimentação, recreação, eventos e encontros comunitários.",
+    "location": "Av. Juan Domingo Perón 3251, Pres. Derqui",
+    "claimsAriaLabel": "Pilares do Valores Sinaí",
+    "video": {
+      "ariaLabel": "Vídeo ambiental das instalações do Valores Sinaí",
+      "pauseLabel": "Pausar",
+      "playLabel": "Reproduzir",
+      "pauseAriaLabel": "Pausar vídeo de fundo",
+      "playAriaLabel": "Reproduzir vídeo de fundo"
+    },
+    "captionBar": {
+      "description": "Vista geral das nossas instalações",
+      "address": "Av. Juan Domingo Perón 3251"
+    },
+    "claims": {
+      "espacios": {
+        "label": "Espaços para todos",
+        "text": "Crianças, jovens e famílias crescem por meio da educação, cultura, esportes e fé."
+      },
+      "crecimiento": {
+        "label": "Seu lugar de crescimento",
+        "text": "Transformação de vidas por meio do amor ao próximo, solidariedade e paz."
+      }
+    }
+  },
+  "beneficiaries": {
+    "kicker": "Portas abertas",
+    "title": "Para quem é este espaço?",
+    "subtitle": "No Valores Sinaí não há barreiras nem distinções. Todas as pessoas são bem-vindas, independentemente de sua situação, história ou crença.",
+    "groups": {
+      "churches": {
+        "title": "Igrejas e ministérios",
+        "description": "Retiros espirituais, acampamentos, encontros de adoração e atividades que fortalecem a fé e o companheirismo."
+      },
+      "families": {
+        "title": "Famílias",
+        "description": "Espaços de encontro, recreação e descanso para famílias que buscam compartilhar tempo de qualidade em um ambiente seguro e natural."
+      },
+      "youth": {
+        "title": "Grupos de jovens",
+        "description": "Acampamentos, atividades esportivas, eventos criativos e encontros que impulsionam o crescimento pessoal e espiritual."
+      },
+      "artists": {
+        "title": "Bandas e artistas",
+        "description": "O REC Pilar Sinaí oferece estúdio profissional de gravação, streaming e podcast para músicos e criadores que desejam produzir com excelência."
+      },
+      "events": {
+        "title": "Eventos e conferências",
+        "description": "O salão principal com capacidade para 400 pessoas e a sala de conferências estão disponíveis para eventos institucionais, palestras e encontros de grande porte."
+      },
+      "volunteers": {
+        "title": "Voluntários e colaboradores",
+        "description": "Aqueles que desejam servir, aprender e crescer encontrarão no Valores Sinaí um espaço aberto para compartilhar seus dons e talentos."
+      }
+    }
+  },
+  "spaces": {
+    "kicker": "Mais de 9.000 m² construídos",
+    "title": "Terreno Valores Sinaí",
+    "subtitle": "Mais de dois hectares e meio em Pres. Derqui, Buenos Aires, com espaços planejados para o encontro, a formação e o crescimento.",
+    "servicesLabel": "Serviços disponíveis no terreno",
+    "legalContact": "Consultas legais e jurídicas",
+    "legalCta": "Contatar escritório de advocacia",
+    "tags": {
+      "accommodation": "Hospedagem",
+      "gastronomy": "Alimentação",
+      "gathering": "Encontro",
+      "sport": "Esportes",
+      "events": "Eventos",
+      "multimedia": "Multimídia",
+      "training": "Formação",
+      "safety": "Segurança",
+      "services": "Serviços"
+    },
+    "items": {
+      "posada": {
+        "nombre": "La Posada (A Pousada)",
+        "descripcion": "Hospedagem principal do terreno, projetada para receber grupos em retiros, acampamentos e atividades de vários dias.",
+        "alt": "Vista da La Posada, hospedagem principal do Valores Sinaí"
+      },
+      "dormitorios": {
+        "nombre": "Dormitórios",
+        "descripcion": "Dormitórios coletivos para acampamentos e retiros, confortáveis e funcionais para diferentes tipos de grupos.",
+        "alt": "Dormitórios coletivos do terreno do Valores Sinaí"
+      },
+      "casas": {
+        "nombre": "16 casas familiares",
+        "descripcion": "Unidades independentes para famílias ou pequenos grupos que buscam privacidade e conforto durante a estadia.",
+        "alt": "Casas familiares do terreno do Valores Sinaí"
+      },
+      "comedor": {
+        "nombre": "Refeitório",
+        "descripcion": "Espaço de alimentação com capacidade para grandes grupos, ideal para acampamentos, retiros e eventos comunitários.",
+        "alt": "Refeitório do terreno do Valores Sinaí"
+      },
+      "cafeteria": {
+        "nombre": "Cafeteria",
+        "descripcion": "Espaço de descanso e encontro informal, disponível para grupos e visitantes durante o dia.",
+        "alt": "Cafeteria do terreno do Valores Sinaí"
+      },
+      "quincho": {
+        "nombre": "Churrasqueira coberta",
+        "descripcion": "Espaço externo coberto, ideal para churrascos, reuniões sociais e celebrações em um ambiente natural.",
+        "alt": "Churrasqueira coberta do terreno do Valores Sinaí"
+      },
+      "gimnasio": {
+        "nombre": "Ginásio",
+        "descripcion": "Instalação esportiva coberta para atividades físicas, torneios e dinâmicas de grupo.",
+        "alt": "Ginásio do terreno do Valores Sinaí"
+      },
+      "pileta": {
+        "nombre": "Piscina",
+        "descripcion": "Piscina disponível para grupos durante a temporada de verão, com áreas de recreação ao redor.",
+        "alt": "Piscina do terreno do Valores Sinaí"
+      },
+      "canchas": {
+        "nombre": "Quadras",
+        "descripcion": "Quadras de futebol, vôlei e outros esportes, disponíveis para grupos de todas as idades.",
+        "alt": "Quadras esportivas do terreno do Valores Sinaí"
+      },
+      "paintball": {
+        "nombre": "Área de paintball",
+        "descripcion": "Espaço equipado para atividades de team building, dinâmicas de grupo e recreação para jovens e adultos.",
+        "alt": "Área de paintball do Valores Sinaí"
+      },
+      "salon": {
+        "nombre": "Salão para 400 pessoas",
+        "descripcion": "O espaço de maior capacidade do terreno, equipado para conferências, cultos, eventos musicais e encontros de grande porte.",
+        "alt": "Salão de eventos para 400 pessoas no Valores Sinaí"
+      },
+      "conferencias": {
+        "nombre": "Sala de conferências",
+        "descripcion": "Sala equipada para reuniões, seminários e capacitações para grupos médios.",
+        "alt": "Sala de conferências do terreno do Valores Sinaí"
+      },
+      "rec": {
+        "nombre": "REC Pilar Sinaí",
+        "descripcion": "Edifício multimídia que funciona como estúdio de gravação, streaming, podcast e produção de vídeo. Espaço criativo para bandas e artistas.",
+        "alt": "Estúdio REC Pilar Sinaí"
+      },
+      "taller": {
+        "nombre": "Oficina de ofícios",
+        "descripcion": "Espaço de formação prática para o desenvolvimento de habilidades e ofícios, voltado para a capacitação comunitária.",
+        "alt": "Oficina de ofícios do Valores Sinaí"
+      },
+      "dea": {
+        "nombre": "Desfibrilador Externo Automático (DEA)",
+        "descripcion": "O terreno conta com DEA disponível e pessoal treinado em primeiros socorros: RCP, obstrução de vias aéreas, uso do desfibrilador e tratamento de lesões, reafirmando nosso compromisso com o bem-estar e a segurança de toda a comunidade.",
+        "alt": "Desfibrilador Externo Automático disponível no terreno do Valores Sinaí"
+      },
+      "juridico": {
+        "nombre": "Escritório de Advocacia — Dra. Daniela Aramberri",
+        "descripcion": "Escritório jurídico localizado dentro do terreno, aberto a toda a comunidade. Você pode comparecer durante sua visita ou contatar diretamente a Dra. Aramberri para consultas e serviços legais.",
+        "alt": "Escritório de advocacia da Dra. Daniela Aramberri no terreno do Valores Sinaí"
+      }
+    }
+  },
+  "gallery": {
+    "kicker": "Galeria",
+    "title": "Conheça as instalações",
+    "subtitle": "Um espaço pensado para o encontro, o descanso e o crescimento.",
+    "viewAll": "Ver todas as fotos",
+    "expandAriaLabel": "Ampliar imagem: {{titulo}}",
+    "photos": {
+      "exterior": {
+        "titulo": "Valores Sinaí",
+        "descripcion": "Vista panorâmica do terreno do Valores Sinaí a partir do exterior.",
+        "alt": "Vista panorâmica do terreno do Valores Sinaí a partir do exterior"
+      },
+      "posada": {
+        "titulo": "La Posada (A Pousada)",
+        "descripcion": "Hospedagem principal do terreno, projetada para receber grupos em retiros, acampamentos e atividades de vários dias.",
+        "alt": "La Posada — hospedagem principal do terreno do Valores Sinaí"
+      },
+      "casas": {
+        "titulo": "16 casas familiares",
+        "descripcion": "Unidades independentes para famílias ou pequenos grupos que buscam privacidade e conforto durante a estadia.",
+        "alt": "Casas familiares do terreno do Valores Sinaí"
+      },
+      "dormitorios": {
+        "titulo": "Dormitórios",
+        "descripcion": "Dormitórios coletivos para acampamentos e retiros, confortáveis e funcionais para diferentes tipos de grupos.",
+        "alt": "Dormitórios coletivos do terreno do Valores Sinaí"
+      },
+      "comedor": {
+        "titulo": "Refeitório",
+        "descripcion": "Espaço de alimentação com capacidade para grandes grupos, ideal para acampamentos, retiros e eventos comunitários.",
+        "alt": "Refeitório com grupos reunidos ao redor das mesas"
+      },
+      "cafeteria": {
+        "titulo": "Cafeteria",
+        "descripcion": "Espaço de descanso e encontro informal, disponível para grupos e visitantes durante o dia.",
+        "alt": "Cafeteria do terreno do Valores Sinaí"
+      },
+      "gimnasio": {
+        "titulo": "Ginásio",
+        "descripcion": "Instalação esportiva coberta para atividades físicas, torneios e dinâmicas de grupo.",
+        "alt": "Ginásio coberto do terreno do Valores Sinaí"
+      },
+      "pileta": {
+        "titulo": "Piscina",
+        "descripcion": "Piscina disponível para grupos durante a temporada de verão, com áreas de recreação ao redor.",
+        "alt": "Piscina do terreno durante a temporada de verão"
+      },
+      "canchas": {
+        "titulo": "Quadras",
+        "descripcion": "Quadras de futebol, vôlei e outros esportes, disponíveis para grupos de todas as idades.",
+        "alt": "Quadras esportivas do terreno do Valores Sinaí"
+      },
+      "quincho": {
+        "titulo": "Churrasqueira coberta",
+        "descripcion": "Espaço externo coberto, ideal para churrascos, reuniões sociais e celebrações em um ambiente natural.",
+        "alt": "Churrasqueira coberta para encontros e eventos ao ar livre"
+      },
+      "salon": {
+        "titulo": "Salão para 400 pessoas",
+        "descripcion": "O espaço de maior capacidade do terreno, equipado para conferências, cultos, eventos musicais e encontros de grande porte.",
+        "alt": "Salão de eventos com capacidade para 400 pessoas"
+      },
+      "conferencias": {
+        "titulo": "Sala de conferências",
+        "descripcion": "Sala equipada para reuniões, seminários e capacitações para grupos médios.",
+        "alt": "Sala de conferências do terreno do Valores Sinaí"
+      },
+      "rec": {
+        "titulo": "REC Pilar Sinaí",
+        "descripcion": "Edifício multimídia com estúdio de gravação, streaming, podcast e produção de vídeo — fé, criatividade e excelência a serviço do evangelho.",
+        "alt": "Estúdio REC Pilar Sinaí — sala de gravação e streaming"
+      },
+      "verdes": {
+        "titulo": "Espaços verdes",
+        "descripcion": "Áreas de lazer e encontro ao ar livre, em um ambiente natural pensado para o descanso e a comunidade.",
+        "alt": "Área verde e espaços de encontro ao ar livre do terreno"
+      }
+    }
+  },
+  "contact": {
+    "kicker": "Reservas e consultas",
+    "title": "Quer usar nossos espaços?",
+    "subtitle": "Entre em contato para verificar a disponibilidade, solicitar um orçamento ou saber mais sobre como reservar o terreno para sua igreja, ministério, grupo ou evento.",
+    "cta": "Envie sua consulta",
+    "items": {
+      "email": {
+        "label": "valoressinai@gmail.com"
+      },
+      "address": {
+        "label": "Av. Juan Domingo Perón 3251, Pres. Derqui"
+      }
+    }
+  }
+}

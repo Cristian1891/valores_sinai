@@ -1,0 +1,100 @@
+{
+  "hero": {
+    "title": "Connect with Valores Sinaí",
+    "subtitle": "We're here to help you with educational projects, special events, and everything related to our community services."
+  },
+  "methods": {
+    "heading": "Multiple ways to reach us",
+    "subheading": "Choose the channel that works best for you.",
+    "ariaLabel": "Contact methods",
+    "ctaLabel": "Contact us",
+    "email": {
+      "label": "Main Email",
+      "value": "valoressinai@gmail.com"
+    },
+    "phone": {
+      "label": "Phone",
+      "value": "+54 9 11 6012-2363"
+    },
+    "whatsapp": {
+      "label": "WhatsApp",
+      "value": "+54 9 11 6012-2363",
+      "description": "We love connecting personally. Message us on WhatsApp and we'll handle your inquiry together."
+    },
+    "location": {
+      "label": "Location",
+      "value": "Pres. Derqui, Buenos Aires",
+      "description": "Visit us by appointment."
+    }
+  },
+  "form": {
+    "kicker": "Get in touch",
+    "title": "Contact us",
+    "subtitle": "We want to hear from you. Let's build a future grounded in values together.",
+    "fields": {
+      "fullName": "Full Name",
+      "email": "Email",
+      "phone": "Phone",
+      "organization": "Organization / Company",
+      "queryType": "Query Type",
+      "message": "Message"
+    },
+    "placeholders": {
+      "fullName": "Your full name",
+      "email": "you@email.com",
+      "phone": "+54 9 11 0000-0000",
+      "organization": "Your organization name",
+      "queryType": "Select an option",
+      "message": "Describe your inquiry or project in detail..."
+    },
+    "queryTypes": {
+      "Información general": "General information",
+      "Retiros y campamentos": "Retreats & camps",
+      "Eventos y salones": "Events & venues",
+      "REC Pilar": "REC Pilar",
+      "Administración": "Administration",
+      "Donaciones": "Donations",
+      "Consultas legales": "Legal inquiries",
+      "Otro": "Other"
+    },
+    "charCount": "{{current}} of {{max}} characters",
+    "privacy": "By submitting this form you agree that we may use your data to respond to your inquiry. We do not share your information with third parties.",
+    "submit": "Send Message",
+    "sending": "Sending...",
+    "toastSuccess": "Message sent successfully!",
+    "toastError": "We couldn't send your message. Please try again.",
+    "successTitle": "Message sent!",
+    "successText": "We received your inquiry and will get back to you shortly.",
+    "sendAnother": "Send another message",
+    "errorTitle": "Something went wrong",
+    "errorText": "We couldn't send your message. Please try again or contact us via WhatsApp.",
+    "retry": "Try again",
+    "mapTitle": "Valores Sinaí location on Google Maps",
+    "addressLabel": "Our address",
+    "address": "Av. Juan Domingo Perón 3251, Pres. Derqui, Buenos Aires",
+    "openInMaps": "Open in Google Maps",
+    "validation": {
+      "fullNameMin": "Name must be at least 2 characters.",
+      "fullNameMax": "Name is too long.",
+      "emailInvalid": "Please enter a valid email address.",
+      "phoneInvalid": "Please enter a valid phone number.",
+      "organizationMax": "Organization name is too long.",
+      "queryTypeRequired": "Please select a query type.",
+      "messageMin": "Message must be at least 10 characters.",
+      "messageMax": "Message cannot exceed 1000 characters."
+    }
+  },
+  "email": {
+    "subject": "New inquiry: {{queryType}} — {{fullName}}",
+    "fields": {
+      "fullName": "Full name",
+      "email": "Email address",
+      "phone": "Phone",
+      "organization": "Organization",
+      "queryType": "Query type",
+      "message": "Message",
+      "sentAt": "Sent at",
+      "notProvided": "Not provided"
+    }
+  }
+}

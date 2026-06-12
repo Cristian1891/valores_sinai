@@ -1,21 +1,21 @@
 {
   "hero": {
     "ariaLabel": "About Valores Sinaí",
-    "kicker": "Civil Association · Valores Sinaí",
-    "title": "Education, culture, sport",
-    "titleAccent": "and spirituality for everyone",
-    "subtitle": "We are a Civil Association that develops educational, cultural, social, sports and spiritual initiatives, guided by humanistic values, to walk alongside people in the transformation of their lives.",
+    "kicker": "Non-profit Community Organization · Valores Sinaí",
+    "title": "Education, culture, sports",
+    "titleAccent": "and Christian education for everyone",
+    "subtitle": "We are a Non-profit Organization that develops educational, cultural, social, sports initiatives, guided by Christian values, to walk alongside people in the transformation of their realities.",
     "verse": "\"Love your neighbor as yourself.\""
   },
   "mission": {
     "kicker": "Our story",
     "title": "A dream that became a mission",
-    "history": "Valores Sinaí was born with a clear purpose: to share the gospel of Jesus and extend His love to everyone, using culture, education, sport and spirituality as tools. We dream of being an open and transformative space where every person can experience the grace, mercy and love of God — not just in words, but through concrete action.",
+    "history": "Valores Sinaí was born with a clear purpose: to share the gospel of Jesus and extend His love to everyone, using culture, education, sports and faith as tools. We dream of being an open and transformative place where every person can experience the grace, mercy and love of God — not only by words, but through specific actions.",
     "missionLabel": "Mission",
-    "missionText": "To share the gospel of Jesus through culture, education, sport, spirituality and media, creating spaces for encounter and service so that every person can tangibly experience the love, grace and mercy of God.",
+    "missionText": "To share the gospel of Jesus through culture, education, sport, faith and media, providing spaces to encounter and serve so that every person can experience firsthand the love, grace and mercy of God.",
     "visionLabel": "Vision",
-    "visionText": "To be a community reference where the transforming message of Jesus reaches every person without distinction, using all available resources — from in-person gatherings at our grounds to the most modern digital platforms.",
-    "quote": "\"The actions of today will be the testimony of tomorrow. What we do each day can be light and transformation to bless others.\"",
+    "visionText": "To be a community reference where the transforming message of Jesus reaches every person without distinction, using all available resources — from in-person gatherings at our property to the most modern digital platforms.",
+    "quote": "\"The actions of today will be tomorrow’s testimony. What we do each day can be light and transformation to bless others.\"",
     "quoteAuthor": "Valores Sinaí"
   },
   "team": {
@@ -23,13 +23,13 @@
     "title": "Our team",
     "imageAlt": "Valores Sinaí work team gathered together",
     "description1": "We are a group of collaborators and professionals who share a common vision: building a more united, compassionate and human community.",
-    "description2": "Each member brings their knowledge and dedication to bring our projects to life, guided by humanistic values and a genuine desire to see lives transformed."
+    "description2": "Each member brings their knowledge and efforts to breathe life into our projects, guided by Christian values and a genuine desire to see lives transformed."
   },
   "president": {
     "kicker": "A word from our president",
     "title": "Message from Hugo Alegre",
     "name": "Hugo Alegre",
-    "role": "President · Valores Sinaí Civil Association",
+    "role": "President · Valores Sinaí Non-profit Organization",
     "messageLabel": "President's Message",
     "greeting": "Dear community,",
     "message1": "Valores Sinaí was born from a dream God placed in my heart: to be a bridge so that more people can experience the love of Jesus in a real, practical and personal way.",
@@ -41,20 +41,20 @@
   "values": {
     "kicker": "What guides us",
     "title": "Our values",
-    "description": "We believe values are not abstract ideals — they are decisions we make every day in every activity, retreat and project alongside our community. These fourteen principles shape who we are and how we serve. They are not imposed rules, but the character we choose to cultivate as an association.",
+    "description": "We believe values are not abstract ideals — they are decisions we make every day in every activity, retreat and project alongside our community. These fourteen principles shape who we are and how we serve. They are not imposed rules, but the character we choose to cultivate as an organization.",
     "ariaLabel": "Valores Sinaí organizational values",
     "items": {
       "amor":            { "name": "Love",           "description": "Our guiding principle. Every activity is born from genuine love for people and their families." },
-      "respeto":         { "name": "Respect",        "description": "We value each person as they are, listening with care and without judgment." },
-      "honradez":        { "name": "Honesty",        "description": "We act with transparency and consistency in every decision and commitment." },
+      "respeto":         { "name": "Respect",        "description": "We value each person as they are, listening to them with care and without judgment." },
+      "honradez":        { "name": "Honesty",        "description": "We act with transparency, consistency and commitment in every decision." },
       "paz":             { "name": "Peace",          "description": "We foster environments of dialogue and harmony where every person can grow." },
       "honor":           { "name": "Honor",          "description": "We recognize the dignity of every person and the integrity of our mission." },
       "lealtad":         { "name": "Loyalty",        "description": "We stand by our community in difficult moments and in times of celebration." },
       "confianza":       { "name": "Trust",          "description": "We build strong relationships grounded in kept promises and real commitment." },
       "integridad":      { "name": "Integrity",      "description": "We do what is right even when no one is watching. It is the foundation of everything we do." },
-      "compromiso":      { "name": "Commitment",     "description": "We give ourselves fully to every project, because true service comes at a cost." },
-      "tolerancia":      { "name": "Tolerance",      "description": "We celebrate differences as a source of richness and make space for every story." },
-      "responsabilidad": { "name": "Responsibility", "description": "We own the consequences of our actions and care for the resources entrusted to us." },
+      "compromiso":      { "name": "Commitment",     "description": "We give ourselves fully to every project, because true service is sacrificial." },
+      "tolerancia":      { "name": "Tolerance",      "description": "We celebrate differences as a source of richness and we make space for every story." },
+      "responsabilidad": { "name": "Responsibility", "description": "We own the consequences of our actions and we care for the resources entrusted to us." },
       "bondad":          { "name": "Kindness",       "description": "We choose generosity as a way of life, expecting nothing in return." },
       "solidaridad":     { "name": "Solidarity",     "description": "We stand with those who need it most, because no one should face their challenges alone." },
       "esfuerzo":        { "name": "Dedication",     "description": "We give our best in every task because honoring God and our community deserves nothing less." }
