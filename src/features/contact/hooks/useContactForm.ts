@@ -24,7 +24,7 @@
 // ─────────────────────────────────────────────────────────────────────────────
 
 import { useMemo, useState } from 'react'
-import { useForm } from 'react-hook-form'
+import { useForm, type UseFormHandleSubmit } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { toast } from 'react-toastify'
 import { useTranslation } from 'react-i18next'
@@ -32,6 +32,8 @@ import { useTranslation } from 'react-i18next'
 import { DESTINATION_MAP } from '../constants/contact'
 import { getContactSchema } from '../utils/contactSchema'
 import type { ContactFormData, SubmitState } from '../types/contact'
+
+type ContactOnSubmit = ReturnType<UseFormHandleSubmit<ContactFormData>>
 
 export interface UseContactFormReturn {
   // — react-hook-form
@@ -42,7 +44,7 @@ export interface UseContactFormReturn {
   messageValue: string
   // — estado de envío
   submitState:      SubmitState
-  onSubmit:         ReturnType<typeof useForm<ContactFormData>>['handleSubmit'] extends (fn: infer F) => infer R ? R : never
+  onSubmit: ContactOnSubmit
   handleResetError: () => void
 }
 
