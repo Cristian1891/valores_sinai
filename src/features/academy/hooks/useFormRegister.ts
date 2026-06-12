@@ -123,7 +123,7 @@ export function useFormRegister(): UseFormRegisterReturn {
             body: JSON.stringify({
             'Nombre completo':     formData.nombre,
             'Correo electrónico':  formData.email,
-            'Teléfono / WhatsApp': formData.telefono,
+            'Teléfono': formData.telefono,
             'Área de interés':     areaLabel,
             'Fecha de envío': new Date().toLocaleString('es-AR', {
                 dateStyle: 'full',

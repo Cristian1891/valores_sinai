@@ -1,6 +1,6 @@
 // src/features/academia/constants/areas-form.ts
 
-export const FORM_DESTINATION_EMAIL = 'cristianovejero1891@gmail.com';
+export const FORM_DESTINATION_EMAIL = 'valoressinai@gmail.com';
 
 export const FORM_AREAS: string[] = [
   'produccion-audiovisual',

@@ -322,7 +322,7 @@ export const ContactForm: React.FC = () => {
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3289.00885192582!2d-58.85255979999999!3d-34.47729969999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bc9b8caf5bdb71%3A0x54d80dea5c4c0762!2sAv.%20Pres.%20Juan%20Domingo%20Peron%203251%2C%20B1635%20Pres.%20Derqui%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1746035437303!5m2!1ses!2sar"
                 title={t('form.mapTitle')}
-                className="h-72 w-full sm:h-96 lg:h-[520px]"
+                className="h-72 w-full sm:h-96 lg:h-130"
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
