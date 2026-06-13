@@ -35,49 +35,49 @@ export const MP_FEES: Record<string, CountryFee> = {
     wallet:     0.07986,
     label: 'Argentina',
     disclaimer: 'Incluye 6,60% de comisión + IVA. Puede variar levemente según tu provincia.',
-  },
-  BR: {
-    creditCard: 0.0499,
-    debitCard:  0.0,
-    wallet:     0.0,
-    label: 'Brasil',
-    disclaimer: 'Pix no tiene comisión para quien paga.',
-  },
-  MX: {
-    creditCard: 0.0399,
-    debitCard:  0.0399,
-    wallet:     0.0,
-    label: 'México',
-    disclaimer: 'Más IVA según corresponda.',
-  },
-  CO: {
-    creditCard: 0.0499,
-    debitCard:  0.0299,
-    wallet:     0.0,
-    label: 'Colombia',
-    disclaimer: '',
-  },
-  CL: {
-    creditCard: 0.0399,
-    debitCard:  0.0399,
-    wallet:     0.0,
-    label: 'Chile',
-    disclaimer: '',
-  },
-  UY: {
-    creditCard: 0.0499,
-    debitCard:  0.0299,
-    wallet:     0.0,
-    label: 'Uruguay',
-    disclaimer: '',
-  },
-  PE: {
-    creditCard: 0.0499,
-    debitCard:  0.0299,
-    wallet:     0.0,
-    label: 'Perú',
-    disclaimer: '',
-  },
+  }
+  // BR: {
+  //   creditCard: 0.0499,
+  //   debitCard:  0.0,
+  //   wallet:     0.0,
+  //   label: 'Brasil',
+  //   disclaimer: 'Pix no tiene comisión para quien paga.',
+  // },
+  // MX: {
+  //   creditCard: 0.0399,
+  //   debitCard:  0.0399,
+  //   wallet:     0.0,
+  //   label: 'México',
+  //   disclaimer: 'Más IVA según corresponda.',
+  // },
+  // CO: {
+  //   creditCard: 0.0499,
+  //   debitCard:  0.0299,
+  //   wallet:     0.0,
+  //   label: 'Colombia',
+  //   disclaimer: '',
+  // },
+  // CL: {
+  //   creditCard: 0.0399,
+  //   debitCard:  0.0399,
+  //   wallet:     0.0,
+  //   label: 'Chile',
+  //   disclaimer: '',
+  // },
+  // UY: {
+  //   creditCard: 0.0499,
+  //   debitCard:  0.0299,
+  //   wallet:     0.0,
+  //   label: 'Uruguay',
+  //   disclaimer: '',
+  // },
+  // PE: {
+  //   creditCard: 0.0499,
+  //   debitCard:  0.0299,
+  //   wallet:     0.0,
+  //   label: 'Perú',
+  //   disclaimer: '',
+  // },
 };
 
 // Fallback para países no detectados (usa tasa AR por ser el 99% de donantes)
@@ -109,14 +109,14 @@ export function formatARS(n: number): string {
 
 // ── Cursos de la Academia ───────────────────────────────────────
 export const ACADEMY_COURSES = [
-  { id: 'video',      emoji: '🎬', nameKey: 'academy.courses.video' },
-  { id: 'photo',      emoji: '📷', nameKey: 'academy.courses.photo' },
-  { id: 'audio',      emoji: '🎵', nameKey: 'academy.courses.audio' },
-  { id: 'direction',  emoji: '🎥', nameKey: 'academy.courses.direction' },
-  { id: 'marketing',  emoji: '📱', nameKey: 'academy.courses.marketing' },
-  { id: 'streaming',  emoji: '📡', nameKey: 'academy.courses.streaming' },
-  { id: 'photo_cine', emoji: '🎞️', nameKey: 'academy.courses.photoCine' },
-  { id: 'production', emoji: '🎙️', nameKey: 'academy.courses.production' },
+  { id: 'video',      nameKey: 'academy.courses.video' },
+  { id: 'photo',      nameKey: 'academy.courses.photo' },
+  { id: 'audio',      nameKey: 'academy.courses.audio' },
+  { id: 'direction',  nameKey: 'academy.courses.direction' },
+  { id: 'marketing',  nameKey: 'academy.courses.marketing' },
+  { id: 'streaming',  nameKey: 'academy.courses.streaming' },
+  { id: 'photo_cine', nameKey: 'academy.courses.photoCine' },
+  { id: 'production', nameKey: 'academy.courses.production' },
 ] as const;
 
 // ── Destinos del Fondo Solidario ────────────────────────────────
@@ -153,9 +153,9 @@ export const DONATION_CATEGORIES = [
       'category.academy.impact2',
       'category.academy.impact3',
     ],
-    colorClass:   'text-brand-accent',
-    borderActive: 'border-brand-accent',
-    bgActive:     'bg-brand-accent/10',
+    colorClass:   'text-brand-amber',
+    borderActive: 'border-brand-amber',
+    bgActive:     'bg-brand-amber/10',
   },
   {
     id:           'solidarity' as const,

@@ -20,7 +20,7 @@ const EspacioCard: React.FC<EspacioCardProps> = ({
   tag,
   objectPosition = 'center',
 }) => (
-  <article className="group overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-black/5 transition-shadow duration-300 hover:shadow-md">
+  <article className="group overflow-hidden rounded-2xl bg-white dark:bg-dark shadow-sm ring-1 ring-black/5 transition-shadow duration-300 hover:shadow-md">
     <div className="relative h-48 overflow-hidden sm:h-52">
       <img
         src={imagen}
@@ -37,8 +37,8 @@ const EspacioCard: React.FC<EspacioCardProps> = ({
       )}
     </div>
     <div className="p-5">
-      <h3 className="type-h3 mb-1.5 text-base text-dark">{nombre}</h3>
-      <p className="type-body-sm text-dark-soft">{descripcion}</p>
+      <h3 className="type-h3 mb-1.5 text-base text-dark dark:text-white">{nombre}</h3>
+      <p className="type-body-sm text-dark-soft dark:text-surface-cream">{descripcion}</p>
     </div>
   </article>
 )
@@ -52,23 +52,23 @@ export const FeaturedSpaces: React.FC = () => {
 
   return (
     <section
-      className="bg-surface-cream px-4 py-20 sm:px-6 lg:px-8"
+      className="bg-surface-cream dark:bg-dark-soft px-4 py-20 sm:px-6 lg:px-8"
       aria-labelledby="espacios-heading"
     >
       <div className="mx-auto max-w-7xl">
 
         {/* Encabezado */}
         <div className="mb-12 text-center">
-          <p className="type-kicker mb-3 text-brand-amber">
+          <p className="type-kicker mb-3 text-brand-amber dark:text-brand-accent">
             {t('spaces.kicker')}
           </p>
           <h2
             id="espacios-heading"
-            className="type-h2 text-dark sm:text-4xl"
+            className="type-h2 text-dark dark:text-white sm:text-4xl"
           >
             {t('spaces.title')}
           </h2>
-          <p className="type-body mx-auto mt-4 max-w-2xl text-dark-soft">
+          <p className="type-body mx-auto mt-4 max-w-2xl text-dark-soft dark:text-surface-cream">
             {t('spaces.subtitle')}
           </p>
           <div className="mx-auto mt-4 h-px w-16 bg-brand-accent" aria-hidden="true" />
@@ -99,7 +99,7 @@ export const FeaturedSpaces: React.FC = () => {
 
           {/* Contacto estudio jurídico */}
           <div className="mt-6 text-center">
-            <p className="type-body-sm font-medium text-dark-soft">
+            <p className="type-body-sm font-medium text-dark-soft dark:text-surface-cream">
               {t('spaces.legalContact')}
             </p>
             <a

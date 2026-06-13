@@ -32,7 +32,11 @@ export const LangSelector = ({
           aria-expanded={openDropdown === 'lang'}
           aria-label={t('navbar.language')}
         >
-          <span className="text-xs font-bold uppercase tracking-wider">{selected}</span>
+          {/*
+            CORRECCIÓN: type-caption + uppercase reemplaza text-xs font-bold uppercase tracking-wider.
+            type-caption = 12px, 500 — correcto para un código de idioma en navbar.
+          */}
+          <span className="type-caption uppercase">{selected}</span>
         </button>
 
         {openDropdown === 'lang' && (

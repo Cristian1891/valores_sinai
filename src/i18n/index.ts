@@ -44,8 +44,8 @@ i18n
       en: { common: enCommon, home: enHome, 'about-us': enAboutUs, 'academy': enAcademy, 'what-we-offer': enOffer, 'contact': enContact, 'donations': enDonations},
       pt: { common: ptCommon, home: ptHome, 'about-us': ptAboutUs, 'academy': ptAcademy, 'what-we-offer': ptOffer, 'contact': ptContact, 'donations': ptDonations},
     },
-    ns: ['home', 'about-us', 'academy', 'what-we-offer', 'contact', 'donations'],  // ← todos los namespaces
-    defaultNS: 'home',                             // ← el que se usa si no especificás
+    ns: ['common', 'home', 'about-us', 'academy', 'what-we-offer', 'contact', 'donations'],  // ← todos los namespaces
+    defaultNS: 'common',                             // ← el que se usa si no especificás
     supportedLngs: ['es', 'en', 'pt'],  // ← lista explícita de idiomas válidos
     fallbackLng: 'es',
     load: 'languageOnly', 

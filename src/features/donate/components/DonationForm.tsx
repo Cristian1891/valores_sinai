@@ -1,5 +1,3 @@
-// src/features/donate/components/DonationForm.tsx
-//
 // Este componente es puramente declarativo: solo renderiza.
 // Toda la lógica de estado vive en hooks/useDonationForm.ts
 // Todas las constantes de datos viven en constants/donationConstants.ts
@@ -24,11 +22,59 @@ const IconCheck = ({ className = 'h-4 w-4' }: { className?: string }) => (
   </svg>
 );
 
-const IconMercadoPago = () => (
-  <svg viewBox="0 0 32 32" fill="none" className="h-5 w-5" aria-hidden="true">
-    <circle cx="16" cy="16" r="16" fill="#009EE3" />
-    <path d="M16 7C10.477 7 6 11.477 6 17c0 5.523 4.477 10 10 10 2.394 0 4.595-.843 6.325-2.244l-2.42-2.42A6.474 6.474 0 0 1 16 23.5c-3.59 0-6.5-2.91-6.5-6.5s2.91-6.5 6.5-6.5c2.19 0 4.127 1.086 5.301 2.75L24.5 10.5A9.956 9.956 0 0 0 16 7z" fill="white" />
-    <path d="M24.5 17c0 .51-.046 1.01-.133 1.494l3.463 1.006A10 10 0 0 0 26 17c0-1.116-.182-2.19-.518-3.194l-3.3 1.914A6.515 6.515 0 0 1 22.5 17z" fill="white" />
+const IconBulb = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"
+    className="inline h-4 w-4 shrink-0 align-middle" aria-hidden="true">
+    <path d="M9 21h6M12 3a7 7 0 0 1 4 12.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-1.26A7 7 0 0 1 12 3z" />
+    <path d="M9.5 18h5" />
+  </svg>
+);
+
+const IconClipboard = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"
+    className="inline h-4 w-4 shrink-0 align-middle" aria-hidden="true">
+    <path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2" />
+    <rect x="9" y="3" width="6" height="4" rx="1" />
+    <path d="M9 12h6M9 16h4" />
+  </svg>
+);
+
+const IconPin = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"
+    className="inline h-4 w-4 shrink-0 align-middle" aria-hidden="true">
+    <path d="M12 2a7 7 0 0 1 7 7c0 5.25-7 13-7 13S5 14.25 5 9a7 7 0 0 1 7-7z" />
+    <circle cx="12" cy="9" r="2.5" />
+  </svg>
+);
+
+const IconInfo = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"
+    className="inline h-4 w-4 shrink-0 align-middle" aria-hidden="true">
+    <circle cx="12" cy="12" r="10" />
+    <path d="M12 16v-4M12 8h.01" />
+  </svg>
+);
+
+const IconLock = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"
+    className="inline h-4 w-4 shrink-0 align-middle" aria-hidden="true">
+    <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+    <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+  </svg>
+);
+
+const IconExternalLink = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"
+    className="inline h-4 w-4 shrink-0 align-middle" aria-hidden="true">
+    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+    <polyline points="15 3 21 3 21 9" />
+    <line x1="10" y1="14" x2="21" y2="3" />
   </svg>
 );
 
@@ -62,20 +108,38 @@ export const DonationForm = ({ category, accentColor = 'yellow', paymentLinks, o
     formatARS,
   } = useDonationForm({ onMessage });
 
-  // ── Estilos derivados del accentColor ─────────────────────────
-  const isAmber       = accentColor === 'amber';
-  const btnBase       = isAmber ? 'bg-brand-amber hover:bg-brand-accent text-dark' : 'bg-brand-accent hover:bg-brand-amber text-dark';
-  const ringColor     = isAmber ? 'focus-visible:ring-brand-amber' : 'focus-visible:ring-brand-accent';
-  const activePreset  = isAmber ? 'border-brand-amber bg-brand-amber text-dark shadow-sm' : 'border-brand-accent bg-brand-accent text-dark shadow-sm';
-  const highlightText = isAmber ? 'text-brand-amber' : 'text-brand-accent';
+  // ── Token de color unificado: amber para ambas categorías
+  //    accentColor='yellow' (academia) y 'amber' (solidario) reciben
+  //    el mismo tratamiento visual — brand-amber — para coherencia de marca.
+  //    La diferencia entre categorías la da el contexto (panel, fondo, kicker),
+  //    no el color del formulario en sí.
+  const highlightText  = 'text-brand-amber';
+  const ringColor      = 'focus-visible:ring-brand-amber';
+  const activePreset   = 'border-brand-amber bg-brand-amber text-dark dark:text-surface-cream shadow-sm';
+  const btnBase        = 'bg-brand-amber hover:bg-brand-accent text-dark';
+
+  // Tokens para los botones de tipo de pago activos (imagen 6)
+  const paymentBtnActive   = 'border-brand-amber bg-brand-amber/10';
+  const paymentBtnInactive = 'border-black/10 bg-surface-cream hover:border-brand-amber/40 dark:border-white/10 dark:bg-dark';
+
+  // Tokens para el resumen de monto con comisión (imagen 6)
+  const summaryBorder = 'border-brand-amber/30 bg-brand-amber/5';
+
+  // Fondo del bloque CTA inferior:
+  //   - Academia: panel bg-white → necesitamos surface-warm para contrastar
+  //   - Solidario: panel bg-surface-cream → surface-warm también contrasta bien
+  //   surface-warm (#DBCDB7) es el token más cálido disponible y da el mismo
+  //   "peso" visual que surface-cream da sobre fondo blanco.
+  const ctaBg = accentColor === 'amber'
+    ? 'bg-surface-warm dark:bg-dark'
+    : 'bg-surface-warm dark:bg-dark';
 
   const paymentTypeOptions: { id: PaymentType; hint: string }[] = [
-    { id: 'creditCard', hint: `~${(countryFee.creditCard * 100).toFixed(1)}%` },
-    { id: 'debitCard',  hint: `~${(countryFee.debitCard  * 100).toFixed(1)}%` },
-    { id: 'wallet',     hint: `~${(countryFee.wallet     * 100).toFixed(1)}%` },
+    { id: 'creditCard', hint: `${(countryFee.creditCard * 100).toFixed(1)}%` },
+    { id: 'debitCard',  hint: `${(countryFee.debitCard  * 100).toFixed(1)}%` },
+    { id: 'wallet',     hint: `${(countryFee.wallet     * 100).toFixed(1)}%` },
   ];
 
-  // Clave de impacto según el monto seleccionado
   const impactKey = baseAmount
     ? baseAmount >= 50000
       ? 'form.impact.event'
@@ -108,7 +172,7 @@ export const DonationForm = ({ category, accentColor = 'yellow', paymentLinks, o
                 focus-visible:outline-none focus-visible:ring-2 ${ringColor}
                 ${selectedAmount === amount && !customMode
                   ? activePreset
-                  : 'border-black/10 bg-white text-dark hover:border-brand-accent dark:border-white/10 dark:bg-dark-soft dark:text-white'}
+                  : 'border-black/10 bg-white text-dark hover:border-brand-amber dark:border-white/10 dark:bg-dark dark:text-white'}
               `}
             >
               {formatARS(amount)}
@@ -125,7 +189,7 @@ export const DonationForm = ({ category, accentColor = 'yellow', paymentLinks, o
               focus-visible:outline-none focus-visible:ring-2 ${ringColor}
               ${customMode
                 ? activePreset
-                : 'border-black/10 bg-white text-dark hover:border-brand-accent dark:border-white/10 dark:bg-dark-soft dark:text-white'}
+                : 'border-black/10 bg-white text-dark hover:border-brand-amber dark:border-white/10 dark:bg-dark dark:text-white'}
             `}
           >
             {t('form.customAmount')}
@@ -145,11 +209,11 @@ export const DonationForm = ({ category, accentColor = 'yellow', paymentLinks, o
               placeholder={String(MIN_DONATION_AMOUNT)}
               aria-label={t('form.customAmountLabel')}
               className="
-                w-full rounded-xl border border-black/10 bg-white py-3 pl-8 pr-4
+                w-full rounded-xl border border-black/10 bg-white dark:bg-dark py-3 pl-8 pr-4
                 text-sm text-dark placeholder-dark-soft/40
                 transition-colors duration-200
-                focus:border-brand-accent focus:outline-none focus:ring-2 focus:ring-brand-accent/30
-                dark:border-white/10 dark:bg-dark-soft dark:text-white
+                focus:border-brand-amber focus:outline-none focus:ring-2 focus:ring-brand-amber/30
+                dark:border-white/10  dark:text-white
               "
             />
             {customAmount !== '' && parseInt(customAmount, 10) < MIN_DONATION_AMOUNT && (
@@ -160,11 +224,11 @@ export const DonationForm = ({ category, accentColor = 'yellow', paymentLinks, o
           </div>
         )}
 
-        {/* Referencia de impacto */}
         {baseAmount && impactKey && (
           <div className="mt-3 rounded-lg border border-black/5 bg-surface-cream px-3 py-2 dark:border-white/5 dark:bg-dark">
-            <p className="text-xs text-dark-soft dark:text-gray-mid">
-              💡 {t('form.impactPrefix')}{' '}
+            <p className="flex items-center gap-1.5 text-xs text-dark-soft dark:text-gray-mid">
+              <IconBulb />
+              {t('form.impactPrefix')}{' '}
               <span className={`font-bold ${highlightText}`}>{formatARS(baseAmount)}</span>{' '}
               {t(impactKey)}
             </p>
@@ -173,13 +237,13 @@ export const DonationForm = ({ category, accentColor = 'yellow', paymentLinks, o
       </div>
 
       {/* ── Cubrir comisión ────────────────────────────────────── */}
-      <div className="rounded-xl border border-black/10 bg-white p-4 dark:border-white/10 dark:bg-dark-soft">
+      <div className="rounded-xl border border-black/10 bg-white p-4 dark:border-white/10 dark:bg-dark">
         <label className="flex cursor-pointer items-start gap-3">
           <input
             type="checkbox"
             checked={coverFee}
             onChange={(e) => handleCoverFeeChange(e.target.checked)}
-            className="mt-0.5 h-4 w-4 accent-brand-accent"
+            className="mt-0.5 h-4 w-4 accent-brand-amber"
           />
           <div className="flex-1">
             <p className="text-sm font-semibold text-dark dark:text-white">
@@ -214,10 +278,8 @@ export const DonationForm = ({ category, accentColor = 'yellow', paymentLinks, o
                     className={`
                       flex flex-1 flex-col items-center rounded-xl border px-3 py-2.5 text-center
                       transition-all duration-150
-                      focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent
-                      ${paymentType === opt.id
-                        ? 'border-brand-accent bg-brand-accent/10'
-                        : 'border-black/10 bg-surface-cream hover:border-brand-accent/40 dark:border-white/10 dark:bg-dark'}
+                      focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-amber
+                      ${paymentType === opt.id ? paymentBtnActive : paymentBtnInactive}
                     `}
                   >
                     <span className="text-xs font-semibold text-dark dark:text-white">
@@ -232,15 +294,17 @@ export const DonationForm = ({ category, accentColor = 'yellow', paymentLinks, o
             )}
 
             {!loadingCountry && countryCode === 'AR' && (
-              <p className="mt-2 text-[10px] leading-4 text-dark-soft/70 dark:text-gray-mid/70">
-                ℹ️ {t('form.arRateNote')}
+              <p className="mt-2 flex items-center gap-1 text-[10px] leading-4 text-dark-soft/70 dark:text-gray-mid/70">
+                <IconInfo />
+                {t('form.arRateNote')}
               </p>
             )}
 
             {!loadingCountry && baseAmount && amountWithFee && (
-              <div className="mt-3 rounded-xl border border-brand-accent/30 bg-brand-accent/5 p-4">
-                <p className="text-xs font-semibold text-dark dark:text-white">
-                  📋 {t('form.amountSummaryTitle')}
+              <div className={`mt-3 rounded-xl border p-4 ${summaryBorder}`}>
+                <p className="flex items-center gap-1.5 text-xs font-semibold text-dark dark:text-white">
+                  <IconClipboard />
+                  {t('form.amountSummaryTitle')}
                 </p>
                 <div className="mt-2 flex items-center justify-between gap-3">
                   <div>
@@ -264,10 +328,10 @@ export const DonationForm = ({ category, accentColor = 'yellow', paymentLinks, o
                     type="button"
                     onClick={handleCopyAmount}
                     className="
-                      flex shrink-0 items-center gap-1.5 rounded-xl border border-brand-accent
-                      bg-white px-3 py-2 text-xs font-bold text-brand-accent
-                      transition-colors hover:bg-brand-accent hover:text-dark
-                      focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent
+                      flex shrink-0 items-center gap-1.5 rounded-xl border border-brand-amber
+                      bg-white px-3 py-2 text-xs font-bold text-brand-amber
+                      transition-colors hover:bg-brand-amber hover:text-dark
+                      focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-amber
                       dark:bg-dark
                     "
                   >
@@ -314,8 +378,8 @@ export const DonationForm = ({ category, accentColor = 'yellow', paymentLinks, o
             w-full resize-none rounded-xl border border-black/10 bg-white px-4 py-3
             text-sm text-dark placeholder-dark-soft/40
             transition-colors duration-200
-            focus:border-brand-accent focus:outline-none focus:ring-2 focus:ring-brand-accent/30
-            dark:border-white/10 dark:bg-dark-soft dark:text-white dark:placeholder-gray-mid/40
+            focus:border-brand-amber focus:outline-none focus:ring-2 focus:ring-brand-amber/30
+            dark:border-white/10 dark:bg-dark dark:text-white dark:placeholder-gray-mid/40
           "
         />
         <div className="mt-1 flex items-center justify-between gap-2">
@@ -329,11 +393,18 @@ export const DonationForm = ({ category, accentColor = 'yellow', paymentLinks, o
       </div>
 
       {/* ── CTA — MercadoPago ──────────────────────────────────── */}
-      <div className="rounded-2xl bg-surface-cream p-5 dark:bg-dark">
+      {/*
+        * ctaBg usa surface-warm (#DBCDB7) en ambos casos:
+        *   - Academia (bg-white): surface-warm contrasta claramente
+        *   - Solidario (bg-surface-cream): surface-warm es levemente más oscuro,
+        *     suficiente para delimitar el bloque sin romper la armonía cálida
+      */}
+      <div className={`rounded-2xl p-5 ${ctaBg}`}>
         {coverFee && amountWithFee && baseAmount && (
-          <div className="mb-4 rounded-xl border border-brand-accent/20 bg-white p-3 dark:border-white/10 dark:bg-dark-soft">
-            <p className="text-xs font-semibold text-dark dark:text-white">
-              📌 {t('form.amountReminderTitle')}
+          <div className="mb-4 rounded-xl border border-brand-amber/20 bg-white p-3 dark:border-white/10 dark:bg-dark-soft">
+            <p className="flex items-center gap-1.5 text-xs font-semibold text-dark dark:text-white">
+              <IconPin />
+              {t('form.amountReminderTitle')}
             </p>
             <p className={`mt-1 text-lg font-bold ${highlightText}`}>
               {formatARS(amountWithFee)}
@@ -347,7 +418,8 @@ export const DonationForm = ({ category, accentColor = 'yellow', paymentLinks, o
         )}
 
         <div className="mb-4 rounded-xl border border-black/5 bg-white p-3 dark:border-white/5 dark:bg-dark-soft">
-          <p className="text-xs font-semibold text-dark dark:text-white">
+          <p className="flex items-center gap-1.5 text-xs font-semibold text-dark dark:text-white">
+            <IconInfo />
             {t('form.howItWorksTitle')}
           </p>
           <ol className="mt-1.5 space-y-1 text-xs leading-5 text-dark-soft dark:text-gray-mid">
@@ -364,6 +436,19 @@ export const DonationForm = ({ category, accentColor = 'yellow', paymentLinks, o
           </ol>
         </div>
 
+
+
+        {/* Nota: MercadoPago solo Argentina */}
+        <p className="mb-5 flex flex-wrap items-center justify-center gap-6 text-center text-xs text-dark-soft dark:text-gray-mid">
+          <IconInfo />
+          {t('form.mpArgentinaOnly')}{' '}
+          <a
+            href="#bank-transfer-info"
+            className="underline underline-offset-2 transition-colors hover:text-brand-accent focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-accent"
+          >
+          {t('form.mpExternalAlt')}
+          </a>
+        </p>
         <a
           href={paymentLinks.mp}
           target="_blank"
@@ -373,18 +458,27 @@ export const DonationForm = ({ category, accentColor = 'yellow', paymentLinks, o
             inline-flex w-full items-center justify-center gap-2
             rounded-xl px-6 py-3.5 text-sm font-bold
             transition-all duration-200 active:scale-95
-            focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent
+            focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-amber
             ${btnBase}
           `}
         >
-          <IconMercadoPago />
+        
+          <img
+            src="/img/logos/logo.svg"
+            alt="Mercado Pago"
+            className="h-10 w-auto object-contain"
+          />
           {t('form.donateButton')}
         </a>
+        
+
+
 
         {mpOpened && (
-          <div className="mt-3 rounded-xl border border-brand-accent/30 bg-brand-accent/5 px-4 py-3">
-            <p className="text-xs font-semibold text-dark dark:text-white">
-              🔗 {t('form.mpOpenedTitle')}
+          <div className="mt-3 rounded-xl border border-brand-amber/30 bg-brand-amber/5 px-4 py-3">
+            <p className="flex items-center gap-1.5 text-xs font-semibold text-dark dark:text-white">
+              <IconExternalLink />
+              {t('form.mpOpenedTitle')}
             </p>
             <p className="mt-0.5 text-xs leading-5 text-dark-soft dark:text-gray-mid">
               {t('form.mpOpenedDesc')}
@@ -397,8 +491,9 @@ export const DonationForm = ({ category, accentColor = 'yellow', paymentLinks, o
           </div>
         )}
 
-        <p className="mt-3 text-center text-xs text-dark-soft dark:text-gray-mid">
-          🔒 {t('form.securityNote')}
+        <p className="mt-3 flex items-center justify-center gap-1.5 text-center text-xs text-dark-soft dark:text-gray-mid">
+          <IconLock />
+          {t('form.securityNote')}
         </p>
       </div>
     </div>

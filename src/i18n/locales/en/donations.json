@@ -31,9 +31,9 @@
   "academy": {
     "kicker": "Valores Sinaí Academy",
     "title": "Fund scholarships for youth",
-    "desc": "Your donation goes to the Academy's general scholarship fund. The association distributes resources based on each student's and course's needs.",
+    "desc": "Your donation goes to the Academy's general scholarship fund. The organization distributes resources based on the needs of each student and course.",
     "notice": "About fund distribution",
-    "noticeText": "Your donation is directed to the Academy in general. The courses below are for informational purposes only: the Valores Sinaí board assigns scholarships based on current criteria and needs.",
+    "noticeText": "Your donation is directed to the Academy in general. The courses below are for informational purposes only: the board of Valores Sinaí  assigns scholarships based on current criteria and needs.",
     "coursesTitle": "Courses your donation supports",
     "courses": {
       "video": "Video Editing",
@@ -49,7 +49,7 @@
   "solidarity": {
     "kicker": "Solidarity Fund",
     "title": "Support the community directly",
-    "desc": "The Solidarity Fund finances campus maintenance, infrastructure improvements, and community events, camps, and retreats. The association decides distribution based on the most urgent needs.",
+    "desc": "The Solidarity Fund finances campus maintenance, infrastructure improvements, and community events, camps, and retreats. The organization decides distribution based on the most urgent needs.",
     "destinationsTitle": "Where can your contribution go?",
     "dest": {
       "events": {
@@ -62,7 +62,7 @@
       },
       "infrastructure": {
         "title": "Improvement works",
-        "desc": "We expand and renovate the complex to keep welcoming more people comfortably and safely."
+        "desc": "We expand and renovate the property to keep welcoming more people and they feel comfortably and safely."
       }
     },
     "quote": "\"Each of you should use whatever gift you have received to serve others.\" — 1 Peter 4:10"
@@ -76,7 +76,7 @@
     "impact": {
       "scholarship": "you cover a student's materials for one month.",
       "materials": "you fund equipment for an Academy student.",
-      "family": "you provide assistance to a vulnerable family.",
+      "family": "goes to the solidarity fund and helps the property maintenance and infrastructure improvements.",
       "event": "you help organize a community event or retreat."
     },
     "coverFeeLabel": "Cover the processing fee",
@@ -109,7 +109,9 @@
     "mpOpenedTitle": "MercadoPago opened",
     "mpOpenedDesc": "Complete the payment in the window that just opened.",
     "mpOpenedReminder": "Remember to enter",
-    "securityNote": "You'll be redirected to MercadoPago. You enter the amount there securely."
+    "securityNote": "You'll be redirected to MercadoPago. You enter the amount there securely.",
+    "mpArgentinaOnly": "MercadoPago is available for donors in Argentina only.",
+    "mpExternalAlt": "Donating from outside Argentina? You can wire transfer in USD to our Supervielle account."
   },
   "payment": {
     "label": "Payment method",
@@ -141,7 +143,9 @@
     "afterTransfer": "After transferring",
     "afterTransferText": "Send the receipt to valoressinai@gmail.com or via WhatsApp at +54 9 11 6012-2363 with your name and destination (Academy / Solidarity Fund). Your donation will be registered and we'll send you a confirmation.",
     "sendEmail": "Send by email",
-    "sendWhatsapp": "Send via WhatsApp"
+    "sendWhatsapp": "Send via WhatsApp",
+    "usdHint": "For international donors. Transfer in USD from any country.",
+    "usdOnlyExternal": "The USD account is the only available option for donors outside Argentina."
   },
   "panel": {
     "sendReceiptTitle": "Your message will be sent with the receipt",

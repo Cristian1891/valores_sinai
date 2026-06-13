@@ -7,24 +7,24 @@ export const OrganizationalValues = () => {
 
   return (
     <section
-      className="bg-surface-cream px-4 py-16 sm:px-6 sm:py-20 lg:px-8"
+      className="bg-surface-cream dark:bg-dark-soft px-4 py-16 sm:px-6 sm:py-20 lg:px-8"
       aria-labelledby="valores-heading"
     >
       <div className="mx-auto max-w-6xl">
 
         {/* Encabezado */}
         <div className="mb-12">
-          <p className="type-kicker text-brand-amber">
+          <p className="type-kicker text-brand-amber dark:text-brand-accent">
             {t('values.kicker')}
           </p>
           <h2
             id="valores-heading"
-            className="mt-2 type-h2 text-dark"
+            className="mt-2 type-h2 text-dark dark:text-white"
           >
             {t('values.title')}
           </h2>
           <div className="mt-3 h-0.5 w-10 bg-brand-accent" aria-hidden="true" />
-          <p className="mt-5 max-w-xl type-body-sm text-dark-soft">
+          <p className="mt-5 max-w-xl type-body-sm text-dark-soft dark:text-surface-cream">
             {t('values.description')}
           </p>
         </div>

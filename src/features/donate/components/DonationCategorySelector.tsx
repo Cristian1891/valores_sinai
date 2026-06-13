@@ -35,7 +35,7 @@ export const DonationCategorySelector = ({ selected, onSelect }: Props) => {
             className={`
               group relative w-full cursor-pointer rounded-3xl border-2 p-7 text-left
               transition-all duration-200
-              focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent
+              focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-amber
               ${
                 isActive
                   ? `${cat.borderActive} ${cat.bgActive} scale-[1.01] shadow-lg`
@@ -46,7 +46,7 @@ export const DonationCategorySelector = ({ selected, onSelect }: Props) => {
             `}
           >
             {isActive && (
-              <span className="absolute right-4 top-4 flex h-6 w-6 items-center justify-center rounded-full bg-brand-accent">
+              <span className="absolute right-4 top-4 flex h-6 w-6 items-center justify-center rounded-full bg-brand-amber">
                 <CircleCheck className="h-3.5 w-3.5 text-dark" aria-hidden="true" strokeWidth={2.4} />
               </span>
             )}

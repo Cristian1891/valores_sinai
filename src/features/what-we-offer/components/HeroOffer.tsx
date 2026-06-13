@@ -76,7 +76,7 @@ export const HeroOffer = () => {
 
             {/* Eyebrow */}
             <div className="mb-6 flex items-center gap-3" aria-hidden="true">
-              <span className="h-px w-5 shrink-0 bg-brand-amber" />
+              {/* <span className="h-px w-5 shrink-0 bg-brand-amber" /> */}
               <span className="type-kicker text-brand-amber">
                 {t('hero.eyebrow')}
               </span>

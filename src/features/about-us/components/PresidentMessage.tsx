@@ -1,5 +1,4 @@
 import { useTranslation } from 'react-i18next';
-import { InitialsAvatar } from './InitialsAvatar';
 
 export const PresidentMessage = () => {
 
@@ -20,7 +19,7 @@ export const PresidentMessage = () => {
         {/* H2 */}
         <h2
           id="president-heading"
-          className="mb-10 text-center type-h2 text-white sm:text-4xl"
+          className="mb-10 text-center type-h2 text-white sm:text-4xl lg:text-[2.75rem]" 
         >
           {t('president.title')}
         </h2>
@@ -30,12 +29,18 @@ export const PresidentMessage = () => {
 
           {/* Header de la card */}
           <div className="flex items-center gap-5 border-b border-white/10 px-8 py-6">
-            <InitialsAvatar initials="HA" size="lg" />
+            <img
+              src="/img/logo_sinai.png"
+              alt="Logo Valores Sinaí"
+              className="h-24 w-24 shrink-0 object-contain scale-[2]"
+              loading="lazy"
+              decoding="async"
+            />
             <div>
               {/* <p className="type-h3 text-white">
                 {t('president.name')}
               </p> */}
-              <p className="type-body-sm text-white/60">
+              <p className="type-h3 text-brand-amber lg:text-2xl">
                 {t('president.role')}
               </p>
             </div>
@@ -56,23 +61,23 @@ export const PresidentMessage = () => {
               {t('president.messageLabel')}
             </p> */}
 
-            <p className="mt-4 type-body text-white/80">
+            <p className="mt-4 type-body text-white/80 lg:text-lg">
               {t('president.greeting')}
             </p>
-            <p className="mt-4 type-body text-white/80">
+            <p className="mt-4 type-body text-white/80 lg:text-lg">
               {t('president.message1')}
             </p>
-            <p className="mt-4 type-body text-white/80">
+            <p className="mt-4 type-body text-white/80 lg:text-lg">
               {t('president.message2')}
             </p>
-            <p className="mt-4 type-body text-white/80">
+            <p className="mt-4 type-body text-white/80 lg:text-lg">
               {t('president.message3')}
             </p>
 
             {/* Firma */}
             <div className="mt-8 flex items-center gap-3 border-t border-white/10 pt-6">
-              <div className="h-px w-8 bg-brand-accent" aria-hidden="true" />
-              <p className="type-verse text-white/60">
+              <div className="h-px w-8 bg-brand-amber" aria-hidden="true" />
+              <p className="type-verse text-brand-amber lg:text-lg">
                 {t('president.signature')}
               </p>
             </div>
@@ -80,7 +85,7 @@ export const PresidentMessage = () => {
         </div>
 
         {/* Versículo de cierre */}
-        <p className="mt-10 text-center type-verse text-white/50">
+        <p className="mt-10 text-center type-verse text-brand-accent lg:text-lg">
           {t('president.closingVerse')}
         </p>
 

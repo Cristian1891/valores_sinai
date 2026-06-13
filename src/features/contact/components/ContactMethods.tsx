@@ -25,7 +25,7 @@ export const ContactMethods: React.FC = () => {
           {t('methods.heading')}
         </h2>
 
-        <p className="mb-10 max-w-xl font-sans text-base leading-7 text-dark-soft dark:text-gray-mid">
+        <p className="mb-10 max-w-xl font-sans text-base leading-7 text-dark-soft dark:text-surface-cream">
           {t('methods.subheading')}
         </p>
 

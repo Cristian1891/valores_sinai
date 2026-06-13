@@ -85,7 +85,7 @@ function CopyButton({
           ? `${label} copiado`
           : `${t('bank.copy', 'Copiar')} ${label}`
       }
-      className="rounded p-1 text-dark-soft transition-colors hover:text-brand-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent dark:text-gray-mid"
+      className="rounded p-1 text-dark-soft transition-colors hover:text-brand-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent dark:text-brand-amber"
     >
       {copied ? (
         <Check
@@ -115,7 +115,7 @@ export const BankTransferInfo = () => {
   return (
     <section
       id="bank-transfer-info"
-      className="border-t border-black/5 bg-white px-4 py-14 dark:border-white/5 dark:bg-dark sm:px-6 lg:px-8"
+      className="border-t border-black/5 bg-white px-4 py-14 dark:border-white/5 dark:bg-dark-soft/50 sm:px-6 lg:px-8"
     >
       <div className="mx-auto max-w-3xl">
         <div className="mb-8">
@@ -127,7 +127,7 @@ export const BankTransferInfo = () => {
             {t('bank.title', 'Transferencia bancaria')}
           </h2>
 
-          <p className="mt-3 text-sm leading-7 text-dark-soft dark:text-gray-mid">
+          <p className="mt-3 text-sm leading-7 text-dark-soft dark:text-surface-cream">
             {t(
               'bank.desc',
               'Si preferís transferir directamente, el 100% de tu donación llega a Valores Sinaí sin comisiones. Envianos el comprobante por email o WhatsApp para registrar tu aporte.',
@@ -159,7 +159,7 @@ export const BankTransferInfo = () => {
                   ${
                     isActive
                       ? 'bg-brand-accent text-dark shadow-sm'
-                      : 'border border-black/10 bg-surface-cream text-dark-soft hover:border-brand-accent/50 dark:border-white/10 dark:bg-dark-soft dark:text-gray-mid'
+                      : 'border border-black/10 bg-surface-cream text-dark-soft hover:border-brand-accent/50 dark:border-white/10 dark:bg-dark-soft dark:text-brand-accent'
                   }
                 `}
               >
@@ -206,7 +206,7 @@ export const BankTransferInfo = () => {
             {t('bank.afterTransfer', 'Después de transferir')}
           </p>
 
-          <p className="mt-1.5 text-xs leading-6 text-dark-soft dark:text-gray-mid">
+          <p className="mt-1.5 text-xs leading-6 text-dark-soft dark:text-surface-cream">
             {t(
               'bank.afterTransferText',
               'Envianos el comprobante a valoressinai@gmail.com o por WhatsApp al +54 9 11 6012-2363 con tu nombre y el destino (Academia / Fondo Solidario). Tu donación quedará registrada y te enviaremos acuse de recibo.',

@@ -90,6 +90,6 @@ export const INPUT_CLASS = [
   'transition-colors duration-150',
   'hover:border-brand-amber/60',
   'focus:border-brand-accent focus:outline-none focus:ring-2 focus:ring-brand-accent/20',
-  'dark:border-white/10 dark:bg-dark-soft dark:text-white dark:placeholder:text-gray-mid',
+  'dark:border-white/10 dark:bg-dark dark:text-white dark:placeholder:text-gray-mid',
   'dark:hover:border-brand-amber/40 dark:focus:border-brand-accent',
 ].join(' ')

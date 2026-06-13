@@ -33,8 +33,8 @@ export const HeroAcademia: React.FC = () => {
 
           {/* Eyebrow — type-kicker: 11px, sans, uppercase, tracking 0.22em */}
           <div className="mb-5 flex items-center gap-2.5" aria-hidden="true">
-            <div className="h-px w-5 shrink-0 bg-brand-accent" />
-            <span className="type-kicker text-gray-mid/70">
+            {/* <div className="h-px w-5 shrink-0 bg-brand-accent" /> */}
+            <span className="type-kicker text-brand-amber/90">
               {t('hero.eyebrow')}
             </span>
           </div>
@@ -83,7 +83,7 @@ export const HeroAcademia: React.FC = () => {
               Es la clase del sistema exactamente pensada para este uso:
               "blockquotes sobre imágenes, descripciones misionales".
               max-w limita la línea a ~42ch para legibilidad óptima. */}
-          <p className="type-verse max-w-[42ch] text-surface-cream/40">
+          <p className="type-verse max-w-[42ch] text-white">
             {t('hero.subtitle')}
           </p>
 
@@ -97,7 +97,7 @@ export const HeroAcademia: React.FC = () => {
         >
           {/* Header de la lista — type-kicker */}
           <p
-            className="mb-1 type-kicker text-surface-cream/25"
+            className="mb-1 type-kicker text-brand-accent"
             aria-hidden="true"
           >
             {t('hero.areasHeader')}

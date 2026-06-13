@@ -24,7 +24,7 @@ export const AreaCard: React.FC<AreaCardProps> = ({ area, t }) => {
     >
       {/* Número índice — type-caption base + font-serif para sabor editorial */}
       <span
-        className="type-caption w-5 shrink-0 font-serif font-bold tracking-wider text-brand-accent/30 transition-colors duration-200 group-hover:text-brand-accent/70"
+        className="type-caption w-5 shrink-0 font-serif font-bold tracking-wider text-brand-accent/70 transition-colors duration-200 group-hover:text-brand-accent/70"
         aria-hidden="true"
       >
         {area.index}
@@ -40,12 +40,12 @@ export const AreaCard: React.FC<AreaCardProps> = ({ area, t }) => {
 
       <div className="min-w-0 flex-1">
         {/* Nombre del área — type-label: texto interactivo, peso 600 */}
-        <p className="type-label text-surface-cream/75 transition-colors duration-200 group-hover:text-surface-cream">
+        <p className="type-label text-white transition-colors duration-200 group-hover:text-surface-cream">
           {t(area.nameKey)}
         </p>
 
         {/* Tag / descripción corta — type-caption: meta-info secundaria */}
-        <p className="type-caption mt-0.5 text-surface-cream/25 transition-colors duration-200 group-hover:text-surface-cream/50">
+        <p className="type-caption mt-0.5 text-surface-cream transition-colors duration-200 group-hover:text-surface-cream/50">
           {t(area.tagKey)}
         </p>
       </div>

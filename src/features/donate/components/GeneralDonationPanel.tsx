@@ -38,6 +38,36 @@ const DEST_ICONS = {
   ),
 } as const;
 
+// ── Íconos semánticos que reemplazan emojis ───────────────────────────────────
+
+/** 💬 → Burbuja de mensaje / dedicatoria del donante */
+const IconMessage = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round"
+    className="inline h-4 w-4 shrink-0 align-middle" aria-hidden="true">
+    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+  </svg>
+);
+
+/** 💬 → WhatsApp / envío por chat */
+const IconWhatsApp = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round"
+    className="inline h-3.5 w-3.5 shrink-0 align-middle" aria-hidden="true">
+    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+  </svg>
+);
+
+/** ✉️ → Email */
+const IconMail = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round"
+    className="inline h-3.5 w-3.5 shrink-0 align-middle" aria-hidden="true">
+    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+    <polyline points="22,6 12,13 2,6" />
+  </svg>
+);
+
 export const GeneralDonationPanel = () => {
   const { t } = useTranslation('donations');
   const [activeDestination, setActiveDestination] = useState<string | null>(null);
@@ -116,14 +146,15 @@ export const GeneralDonationPanel = () => {
             </div>
 
             <blockquote className="mt-8 rounded-2xl border-l-4 border-brand-amber bg-white py-4 pl-5 pr-4 dark:bg-dark">
-              <p className="font-serif text-sm italic leading-7 text-dark-soft dark:text-gray-mid">
+              <p className="font-serif text-sm italic leading-7 text-dark-soft dark:text-white">
                 {t('solidarity.quote')}
               </p>
             </blockquote>
 
             {donorMessage.trim().length > 0 && (
               <div className="mt-6 rounded-xl border border-brand-amber/20 bg-white p-4 dark:border-white/10 dark:bg-dark">
-                <p className="text-xs font-semibold text-dark dark:text-white">
+                <p className="flex items-center gap-1.5 text-xs font-semibold text-dark dark:text-white">
+                  <IconMessage />
                   {t('panel.sendReceiptTitle')}
                 </p>
                 <p className="mt-1 text-xs italic text-dark-soft dark:text-gray-mid">
@@ -136,13 +167,15 @@ export const GeneralDonationPanel = () => {
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1.5 rounded-lg bg-brand-amber px-3 py-1.5 text-xs font-bold text-dark transition-colors hover:bg-brand-accent"
                   >
-                    💬 {t('panel.sendWhatsApp')}
+                    <IconWhatsApp />
+                    {t('panel.sendWhatsApp')}
                   </a>
                   <a
                     href={`mailto:valoressinai@gmail.com?subject=${encodeURIComponent(t('panel.emailSubjectSolidarity'))}&body=${encodeURIComponent(t('panel.emailBody', { message: donorMessage, category: t('solidarity.kicker') }))}`}
                     className="inline-flex items-center gap-1.5 rounded-lg border border-black/10 bg-surface-cream px-3 py-1.5 text-xs font-bold text-dark transition-colors hover:border-brand-amber dark:border-white/10 dark:bg-dark-soft dark:text-white"
                   >
-                    ✉️ {t('panel.sendEmail')}
+                    <IconMail />
+                    {t('panel.sendEmail')}
                   </a>
                 </div>
               </div>

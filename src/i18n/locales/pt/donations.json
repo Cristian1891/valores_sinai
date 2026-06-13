@@ -76,7 +76,7 @@
     "impact": {
       "scholarship": "você cobre os materiais de um estudante por um mês.",
       "materials": "você financia equipamentos para um estudante da Academia.",
-      "family": "você oferece assistência a uma família em situação vulnerável.",
+      "family": "você apoia o Fundo Solidário e ajuda a manter o espaço e a realizar melhorias na infraestrutura.",
       "event": "você contribui para organizar um evento ou retiro comunitário."
     },
     "coverFeeLabel": "Cobrir o custo de processamento",
@@ -109,7 +109,9 @@
     "mpOpenedTitle": "MercadoPago aberto",
     "mpOpenedDesc": "Conclua o pagamento na janela que foi aberta.",
     "mpOpenedReminder": "Lembre-se de inserir",
-    "securityNote": "Você será redirecionado ao MercadoPago. O valor é inserido lá com segurança."
+    "securityNote": "Você será redirecionado ao MercadoPago. O valor é inserido lá com segurança.",
+    "mpArgentinaOnly": "MercadoPago disponível apenas para doadores na Argentina.",
+    "mpExternalAlt": "Doando de fora da Argentina? Você pode fazer uma transferência em dólares para nossa conta no Supervielle."
   },
   "payment": {
     "label": "Método de pagamento",
@@ -141,7 +143,9 @@
     "afterTransfer": "Após transferir",
     "afterTransferText": "Envie o comprovante para valoressinai@gmail.com ou via WhatsApp para +54 9 11 6012-2363 com seu nome e destino (Academia / Fundo Solidário). Sua doação será registrada e enviaremos uma confirmação.",
     "sendEmail": "Enviar por e-mail",
-    "sendWhatsapp": "Enviar via WhatsApp"
+    "sendWhatsapp": "Enviar via WhatsApp",
+    "usdHint": "Para doadores internacionais. Transfira em dólares de qualquer país.",
+    "usdOnlyExternal": "A conta em dólares é a única opção disponível para doadores fora da Argentina."
   },
   "panel": {
     "sendReceiptTitle": "Sua mensagem será enviada junto com o comprovante",

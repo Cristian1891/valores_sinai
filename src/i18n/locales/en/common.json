@@ -16,7 +16,8 @@
   "footer": {
     "verse": "\"Never let loyalty and kindness leave you\" Prov. 3:3 NLT",
     "copyright": "© {{year}} Valores Sinaí. All rights reserved.",
-    "followUs": "Follow us on social media"
+    "followUs": "Follow us on social media",
+    "navigation": "Navigation"
   },
   "buttons": {
     "learnMore": "Learn More",

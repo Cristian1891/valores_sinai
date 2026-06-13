@@ -53,11 +53,11 @@ export const FormRegister: React.FC = () => {
   // ── Formulario ─────────────────────────────────────────────────────────────
   return (
     <section
-      className="bg-surface-cream px-4 py-16 sm:px-6 lg:px-8"
+      className="bg-surface-cream dark:bg-dark-soft px-4 py-16 sm:px-6 lg:px-8"
       aria-labelledby="form-heading"
     >
       <div className="mx-auto max-w-2xl">
-        <div className="overflow-hidden rounded-3xl bg-linear-to-br from-dark to-dark-soft p-8 sm:p-10 shadow-2xl ring-1 ring-white/10">
+        <div className="overflow-hidden rounded-3xl bg-linear-to-br from-dark to-dark-soft dark:from-dark dark:to-black p-8 sm:p-10 shadow-2xl ring-1 ring-white/10">
 
           {/* Error de red */}
           {submitState === 'error' && (
@@ -157,7 +157,7 @@ export const FormRegister: React.FC = () => {
                 aria-invalid={Boolean(errors.area)}
                 aria-describedby={errors.area ? 'area-error' : undefined}
                 className={[
-                  'w-full rounded-xl border bg-white/5 px-4 py-3',
+                  'w-full rounded-xl border bg-white/5 dark:bg-dark-soft px-4 py-3',
                   'type-body-sm text-white backdrop-blur-sm outline-none',
                   'transition-all duration-200',
                   'focus:bg-white/10 focus:ring-2 focus:ring-brand-blue',
@@ -170,7 +170,7 @@ export const FormRegister: React.FC = () => {
                   {t('form.areaPlaceholder')}
                 </option>
                 {FORM_AREAS.map((areaValue) => (
-                  <option key={areaValue} value={areaValue} className="bg-dark text-white">
+                  <option key={areaValue} value={areaValue} className="bg-dark dark:bg-dark-soft text-white">
                     {t(`form.areaOptions.${areaValue}`)}
                   </option>
                 ))}

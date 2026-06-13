@@ -6,7 +6,7 @@ export const Team = () => {
 
   return (
     <section
-      className="bg-surface-warm px-4 py-20 sm:px-6 lg:px-8"
+      className="bg-surface-warm dark:bg-dark px-4 py-20 sm:px-6 lg:px-8"
       aria-labelledby="team-heading"
     >
       <div className="mx-auto max-w-7xl">
@@ -37,18 +37,18 @@ export const Team = () => {
             {/* H2 */}
             <h2
               id="team-heading"
-              className="type-h2 text-dark sm:text-4xl"
+              className="type-h2 text-dark dark:text-white sm:text-4xl"
             >
               {t('team.title')}
             </h2>
 
-            <div className="mt-3 h-px w-12 bg-brand-accent" aria-hidden="true" />
+            <div className="mt-3 h-px w-12 bg-brand-amber" aria-hidden="true" />
 
             {/* Párrafos */}
-            <p className="mt-6 type-body text-dark-soft">
+            <p className="mt-6 type-body text-dark-soft dark:text-surface-cream">
               {t('team.description1')}
             </p>
-            <p className="mt-4 type-body text-dark-soft">
+            <p className="mt-4 type-body text-dark-soft dark:text-surface-cream">
               {t('team.description2')}
             </p>
 

@@ -49,7 +49,7 @@ export const Field: React.FC<FieldProps & { onBlur?: () => void }> = ({
         aria-invalid={hasError}
         aria-describedby={hasError ? errorId : undefined}
         className={[
-          'w-full rounded-xl border bg-white/5 px-4 py-3',
+          'w-full rounded-xl border bg-white/5 dark:bg-dark-soft dark:placeholder-white/60 px-4 py-3',
           'type-body-sm text-white placeholder-white/35',
           'backdrop-blur-sm outline-none transition-all duration-200',
           'focus:bg-white/10 focus:ring-2 focus:ring-brand-blue focus:ring-offset-0',

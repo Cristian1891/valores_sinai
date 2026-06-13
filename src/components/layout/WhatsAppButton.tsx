@@ -18,7 +18,7 @@ export const WhatsAppButton: React.FC = () => {
     <div className={`fixed bottom-6 right-6 z-50 transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
       <button
         onClick={handleWhatsAppClick}
-        className="group relative bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110"
+        className="group relative bg-whatsapp text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110"
       >
         {/* Ícono WhatsApp SVG */}
         <div className="w-6 h-6 fill-current">
@@ -33,7 +33,7 @@ export const WhatsAppButton: React.FC = () => {
         </div>
         
         {/* Pulso animado */}
-        <div className="absolute inset-0 bg-[#25D366] rounded-full animate-ping opacity-75"></div>
+        <div className="absolute inset-0 bg-whatsapp rounded-full animate-ping opacity-75"></div>
       </button>
     </div>
   );

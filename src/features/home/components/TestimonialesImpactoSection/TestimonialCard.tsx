@@ -12,7 +12,15 @@ export function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
         >
           "
         </span>
-        <p className="mt-1 text-sm leading-7 text-white/80 sm:text-base">
+        {/*
+          CORRECCIÓN: type-body-sm reemplaza text-sm leading-7.
+          leading-7 (28px) sobre text-sm (14px) = interlineado de 2×, demasiado abierto.
+          type-body-sm usa leading-[1.65] = 23px sobre 14px, que es correcto
+          para texto pequeño en tarjetas.
+          Se mantiene sm:text-base para que en pantallas más grandes
+          el texto crezca a 16px con el leading apropiado.
+        */}
+        <p className="mt-1 type-body-sm text-white/80 sm:text-base">
           {testimonial.quote}
         </p>
       </div>
@@ -26,10 +34,14 @@ export function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
         </div>
 
         <div className="min-w-0">
-          <p className="truncate text-sm font-semibold text-white">
+          {/* CORRECCIÓN: type-label-sm reemplaza text-sm font-semibold */}
+          <p className="truncate type-label-sm text-white">
             {testimonial.name}
           </p>
-          <p className="truncate text-xs text-white/50">{testimonial.location}</p>
+          {/* CORRECCIÓN: type-caption reemplaza text-xs */}
+          <p className="truncate type-caption text-white/50">
+            {testimonial.location}
+          </p>
         </div>
 
         <div

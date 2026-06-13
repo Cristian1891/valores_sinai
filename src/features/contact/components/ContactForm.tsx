@@ -68,22 +68,22 @@ export const ContactForm: React.FC = () => {
     <section
       id="contact-form"
       aria-labelledby="contact-form-heading"
-      className="bg-white px-4 py-16 dark:bg-surface-warm sm:px-6 lg:px-8"
+      className="bg-white px-4 py-16 dark:bg-dark sm:px-6 lg:px-8"
     >
       <div className="mx-auto max-w-7xl">
 
         {/* Encabezado */}
         <div className="mb-10 max-w-2xl">
-          <p className="font-sans text-sm font-semibold uppercase tracking-[0.2em] text-brand-amber">
+          <p className="font-sans text-sm font-semibold uppercase tracking-[0.2em] text-brand-accent">
             {t('form.kicker')}
           </p>
           <h2
             id="contact-form-heading"
-            className="mt-3 font-sans text-3xl font-bold tracking-tight text-dark dark:text-dark sm:text-4xl"
+            className="mt-3 font-sans text-3xl font-bold tracking-tight text-dark dark:text-white sm:text-4xl"
           >
             {t('form.title')}
           </h2>
-          <p className="mt-4 font-sans text-base leading-7 text-dark-soft dark:text-dark">
+          <p className="mt-4 font-sans text-base leading-7 text-dark-soft dark:text-surface-cream">
             {t('form.subtitle')}
           </p>
         </div>

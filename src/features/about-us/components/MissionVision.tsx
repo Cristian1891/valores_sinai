@@ -7,7 +7,7 @@ export const MissionVision = () => {
 
   return (
     <section
-      className="bg-white px-4 py-20 sm:px-6 lg:px-8"
+      className="bg-white px-4 py-20 sm:px-6 lg:px-8 dark:bg-dark"
       aria-labelledby="historia-heading"
     >
       <div className="mx-auto max-w-5xl">
@@ -19,7 +19,7 @@ export const MissionVision = () => {
           </p>
           <h2
             id="historia-heading"
-            className="type-h2 text-dark sm:text-4xl"
+            className="type-h2 text-dark sm:text-4xl dark:text-white"
           >
             {t('mission.title')}
           </h2>
@@ -27,7 +27,7 @@ export const MissionVision = () => {
         </div>
 
         {/* Historia */}
-        <p className="mx-auto mb-14 max-w-3xl text-center type-body text-dark-soft sm:text-lg">
+        <p className="mx-auto mb-14 max-w-3xl text-center type-body text-dark-soft dark:text-surface-cream sm:text-lg">
           {t('mission.history')}
         </p>
 
@@ -35,33 +35,33 @@ export const MissionVision = () => {
         <div className="mb-14 grid gap-6 sm:grid-cols-2">
 
           {/* Misión */}
-          <div className="rounded-3xl bg-surface-cream p-8 ring-1 ring-black/5">
+          <div className="rounded-3xl bg-surface-cream dark:bg-dark-soft p-8 ring-1 ring-black/5">
             <div
               className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-accent"
               aria-hidden="true"
             >
               <HeartHandshake className="h-6 w-6 text-dark" strokeWidth={1.75} />
             </div>
-            <h3 className="mb-1 type-kicker text-brand-amber">
+            <h3 className="mb-1 type-kicker text-brand-accent">
               {t('mission.missionLabel')}
             </h3>
-            <p className="mt-2 type-body-sm text-dark-soft">
+            <p className="mt-2 type-body-sm text-dark-soft dark:dark:text-white">
               {t('mission.missionText')}
             </p>
           </div>
 
           {/* Visión */}
-          <div className="rounded-3xl bg-surface-cream p-8 ring-1 ring-black/5">
+          <div className="rounded-3xl bg-surface-cream dark:bg-dark-soft p-8 ring-1 ring-black/5">
             <div
               className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-accent"
               aria-hidden="true"
             >
               <Eye className="h-6 w-6 text-dark" strokeWidth={1.75} />
             </div>
-            <h3 className="mb-1 type-kicker text-brand-amber">
+            <h3 className="mb-1 type-kicker text-brand-accent">
               {t('mission.visionLabel')}
             </h3>
-            <p className="mt-2 type-body-sm text-dark-soft">
+            <p className="mt-2 type-body-sm text-dark-soft dark:dark:text-white">
               {t('mission.visionText')}
             </p>
           </div>
@@ -69,9 +69,9 @@ export const MissionVision = () => {
         </div>
 
         {/* Frase institucional */}
-        <figure className="relative overflow-hidden rounded-3xl bg-dark px-8 py-12 text-center sm:px-14">
+        <figure className="relative overflow-hidden rounded-3xl bg-dark dark:bg-dark-soft px-8 py-12 text-center sm:px-14">
           <span
-            className="pointer-events-none absolute -top-4 left-6 select-none font-serif text-[8rem] leading-none text-brand-accent/10"
+            className="pointer-events-none absolute -top-4 left-6 select-none font-serif text-[8rem] leading-none text-brand-accent/60"
             aria-hidden="true"
           >
             "

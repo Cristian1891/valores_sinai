@@ -14,7 +14,7 @@ export const Beneficiaries: React.FC = () => {
 
   return (
     <section
-      className="bg-white px-4 py-20 sm:px-6 lg:px-8"
+      className="bg-white dark:bg-black px-4 py-20 sm:px-6 lg:px-8"
       aria-labelledby="paraquien-heading"
     >
       <div className="mx-auto max-w-7xl">
@@ -26,11 +26,11 @@ export const Beneficiaries: React.FC = () => {
           </p>
           <h2
             id="paraquien-heading"
-            className="type-h2 text-dark sm:text-4xl"
+            className="type-h2 text-dark dark:text-white sm:text-4xl"
           >
             {t('beneficiaries.title')}
           </h2>
-          <p className="type-body mx-auto mt-4 max-w-xl text-dark-soft">
+          <p className="type-body mx-auto mt-4 max-w-xl text-dark-soft dark:text-surface-cream">
             {t('beneficiaries.subtitle')}
           </p>
           <div className="mx-auto mt-4 h-px w-16 bg-brand-accent" aria-hidden="true" />
@@ -41,7 +41,7 @@ export const Beneficiaries: React.FC = () => {
           {groups.map((tipo) => (
             <div
               key={tipo.titulo}
-              className="flex gap-4 rounded-2xl bg-surface-cream p-6 ring-1 ring-black/5"
+              className="flex gap-4 rounded-2xl bg-surface-cream dark:bg-dark-soft dark:border-white/5 p-6 ring-1 ring-black/5"
             >
               <div
                 className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-accent"
@@ -51,8 +51,8 @@ export const Beneficiaries: React.FC = () => {
               </div>
 
               <div>
-                <h3 className="type-label mb-1.5 text-dark">{tipo.titulo}</h3>
-                <p className="type-body-sm text-dark-soft">{tipo.descripcion}</p>
+                <h3 className="type-label mb-1.5 text-dark dark:text-brand-accent">{tipo.titulo}</h3>
+                <p className="type-body-sm text-dark-soft dark:text-white">{tipo.descripcion}</p>
               </div>
             </div>
           ))}

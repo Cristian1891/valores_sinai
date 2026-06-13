@@ -23,9 +23,9 @@ export const HeroAbout = () => {
           <p className="mb-4 type-kicker text-brand-accent">
             {t('hero.kicker')}
           </p>
-
+ 
           {/* H1 */}
-          <h1 className="type-display sm:text-5xl lg:text-6xl">
+          <h1 className="type-display sm:text-5xl lg:text-[3.2rem]">
             {t('hero.title')}
             <span className="mt-1 block text-brand-accent">
               {t('hero.titleAccent')}
@@ -41,12 +41,12 @@ export const HeroAbout = () => {
       </div>
 
       {/* Indicador de scroll */}
-      <div
+      {/* <div
         className="absolute bottom-6 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-1 lg:flex"
         aria-hidden="true"
       >
         <span className="h-8 w-px animate-pulse bg-white/40" />
-      </div>
+      </div> */}
     </section>
   );
 };
