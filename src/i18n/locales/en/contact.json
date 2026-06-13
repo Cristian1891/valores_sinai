@@ -81,7 +81,20 @@
       "organizationMax": "Organization name is too long.",
       "queryTypeRequired": "Please select a query type.",
       "messageMin": "Message must be at least 10 characters.",
-      "messageMax": "Message cannot exceed 1000 characters."
+      "messageMax": "Message cannot exceed 1000 characters.",
+      "fullNameLettersRequired": "Full name can only contain letters and spaces.",
+      "phoneOnlyNumbers": "Phone number can only contain numbers.",
+      "phoneRequired": "Please enter a phone number.",
+      "fullNameNoNumbers": "Name cannot contain numbers.",
+      "fullNameRequired": "Please enter your full name.",
+      "fullNameOnlyLetters": "Only letters and spaces are allowed.",
+      "emailRequired": "Please enter your email address.",
+      "emailFormat": "This email doesn't appear to be valid. Make sure it includes @ and a domain.",
+      "phoneMinDigits": "The number is too short. Minimum ${TELEFONO_MIN_DIGITS} digits.",
+      "phoneMaxDigits": "The number is too long. Maximum ${TELEFONO_MAX_DIGITS} digits.",
+      "phoneAllowedChars": "Only numbers, spaces, hyphens, and parentheses are allowed.",
+      "queryTypeRequiredArea": "Choose an area so we can guide you better.",
+      "privacyConsentRequired": "We need your consent to send you information."
     }
   },
   "email": {

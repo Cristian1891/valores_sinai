@@ -99,7 +99,7 @@ export function validateForm(data: FormData): FormErrors {
 
   // Teléfono
   if (!data.telefono.trim()) {
-    errors.telefono = 'Ingresá tu número de teléfono o WhatsApp.'
+    errors.telefono = 'Ingresá tu número de teléfono.'
   } else if (!isTelefonoValido(data.telefono)) {
     const soloDigitos = data.telefono.replace(/\D/g, '')
     if (soloDigitos.length < TELEFONO_MIN_DIGITS) {

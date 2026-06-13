@@ -13,16 +13,13 @@ import { INPUT_CLASS } from '../constants/contact'
 import { QUERY_TYPE_VALUES } from '../types/contact'
 
 // ── Sub-componente Field ──────────────────────────────────────────────────────
-// Se mantiene en este archivo porque:
-//   1. Solo lo usa ContactForm — no está compartido con otras features.
-//   2. Es un wrapper de accesibilidad (<label> + children + error), no lógica.
 
 interface FieldProps {
-  id:       string
-  label:    string
+  id:        string
+  label:     string
   required?: boolean
-  error?:   string
-  children: React.ReactNode
+  error?:    string
+  children:  React.ReactNode
 }
 
 const Field: React.FC<FieldProps> = ({ id, label, required, error, children }) => (
@@ -60,9 +57,17 @@ export const ContactForm: React.FC = () => {
     submitState,
     onSubmit,
     handleResetError,
+    handleNameChange,
+    handlePhoneChange,
   } = useContactForm()
 
   const isLoading = isSubmitting || submitState === 'loading'
+
+  // Desacoplamos onChange de RHF para fullName y phone para usar nuestros
+  // handlers con lógica de trigger condicional. El resto del registration
+  // (ref, name, onBlur) se conserva íntegro mediante el spread.
+  const { onChange: _nameOnChange,  ...nameReg }  = register('fullName')
+  const { onChange: _phoneOnChange, ...phoneReg } = register('phone')
 
   return (
     <section
@@ -93,7 +98,7 @@ export const ContactForm: React.FC = () => {
           {/* Columna principal: formulario */}
           <div className="lg:col-span-3">
 
-            {/* Banner de error — visible solo cuando submitState === 'error' */}
+            {/* Banner de error global */}
             {submitState === 'error' && (
               <div
                 role="alert"
@@ -139,7 +144,10 @@ export const ContactForm: React.FC = () => {
                       aria-invalid={!!errors.fullName}
                       aria-describedby={errors.fullName ? 'fullName-error' : undefined}
                       className={INPUT_CLASS}
-                      {...register('fullName')}
+                      // onChange propio: trigger condicional por contenido.
+                      // onBlur, ref y name vienen del spread de nameReg.
+                      onChange={handleNameChange}
+                      {...nameReg}
                     />
                   </Field>
 
@@ -167,6 +175,7 @@ export const ContactForm: React.FC = () => {
                   <Field
                     id="phone"
                     label={t('form.fields.phone')}
+                    required                          // ← ahora obligatorio
                     error={errors.phone?.message}
                   >
                     <input
@@ -177,7 +186,9 @@ export const ContactForm: React.FC = () => {
                       aria-invalid={!!errors.phone}
                       aria-describedby={errors.phone ? 'phone-error' : undefined}
                       className={INPUT_CLASS}
-                      {...register('phone')}
+                      // onChange propio: trigger condicional por contenido.
+                      onChange={handlePhoneChange}
+                      {...phoneReg}
                     />
                   </Field>
 
@@ -242,10 +253,6 @@ export const ContactForm: React.FC = () => {
                       className={`${INPUT_CLASS} resize-none`}
                       {...register('message')}
                     />
-                    {/*
-                     * Contador accesible: aria-live anuncia el recuento a lectores de pantalla.
-                     * Se usa t() con interpolación para evitar texto hardcodeado.
-                     */}
                     <span
                       aria-live="polite"
                       aria-label={t('form.charCount', {

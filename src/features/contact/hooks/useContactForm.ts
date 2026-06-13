@@ -2,28 +2,24 @@
 //
 // Custom hook que encapsula la lógica del formulario de contacto.
 // ─────────────────────────────────────────────────────────────────────────────
-// QUÉ VIVE ACÁ:
-//   - Instancia de react-hook-form con zodResolver
-//   - Estado del ciclo de envío (SubmitState)
-//   - onSubmit: construcción del payload + fetch a FormSubmit + toast
-//   - handleResetError: limpia el estado de error para reintentar
+// ESTRATEGIA DE VALIDACIÓN (tres capas):
 //
-// QUÉ NO VIVE ACÁ:
-//   - JSX / renderizado → siempre en el componente
-//   - Clases CSS → constants/contact.ts
-//   - Constantes de datos → constants/contact.ts
-//   - Schema de validación → utils/contactSchema.ts
+//   1. mode: 'onSubmit'
+//      Los errores de campos vacíos nunca aparecen por hacer click-y-salir.
+//      El usuario puede explorar el formulario libremente sin ser interrumpido.
 //
-// POR QUÉ UN CUSTOM HOOK Y NO useState INLINE:
-//   ContactForm tenía 3 useState (submitState implícito en isSubmitting + estado
-//   propio), lógica de fetch, manejo de errores y toasts mezclados con JSX.
-//   Extraerlo permite:
-//     1. Testear la lógica de envío sin montar el componente.
-//     2. Que el componente sea puramente declarativo.
-//     3. Reutilizar el hook si hay más puntos de entrada al mismo formulario.
+//   2. reValidateMode: 'onChange'
+//      Después del primer intento de envío fallido, todos los campos con error
+//      revalidan en tiempo real mientras el usuario corrige.
+//
+//   3. trigger condicional en handleNameChange / handlePhoneChange
+//      Para fullName y phone se dispara trigger() solo cuando value.length > 0.
+//      Esto habilita feedback inmediato de formato (ej: "solo ingresaste números")
+//      mientras el usuario escribe — sin mostrar nada si el campo está vacío.
+//      El blur de un campo vacío sigue sin mostrar nada (cubierto por capa 1).
 // ─────────────────────────────────────────────────────────────────────────────
 
-import { useMemo, useState } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 import { useForm, type UseFormHandleSubmit } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { toast } from 'react-toastify'
@@ -36,24 +32,22 @@ import type { ContactFormData, SubmitState } from '../types/contact'
 type ContactOnSubmit = ReturnType<UseFormHandleSubmit<ContactFormData>>
 
 export interface UseContactFormReturn {
-  // — react-hook-form
-  register:     ReturnType<typeof useForm<ContactFormData>>['register']
-  handleSubmit: ReturnType<typeof useForm<ContactFormData>>['handleSubmit']
-  errors:       ReturnType<typeof useForm<ContactFormData>>['formState']['errors']
-  isSubmitting: boolean
-  messageValue: string
-  // — estado de envío
-  submitState:      SubmitState
-  onSubmit: ContactOnSubmit
-  handleResetError: () => void
+  register:          ReturnType<typeof useForm<ContactFormData>>['register']
+  handleSubmit:      ReturnType<typeof useForm<ContactFormData>>['handleSubmit']
+  errors:            ReturnType<typeof useForm<ContactFormData>>['formState']['errors']
+  isSubmitting:      boolean
+  messageValue:      string
+  handleNameChange:  (e: React.ChangeEvent<HTMLInputElement>) => void
+  handlePhoneChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+  submitState:       SubmitState
+  onSubmit:          ContactOnSubmit
+  handleResetError:  () => void
 }
 
-export function useContactForm() {
+export function useContactForm(): UseContactFormReturn {
   const { t, i18n } = useTranslation('contact')
   const [submitState, setSubmitState] = useState<SubmitState>('idle')
 
-  // El schema se reconstruye solo cuando cambia el idioma (t cambia de referencia
-  // al cambiar de locale). useMemo evita recrearlo en cada render.
   const schema = useMemo(() => getContactSchema(t), [t])
 
   const {
@@ -61,10 +55,13 @@ export function useContactForm() {
     handleSubmit,
     reset,
     watch,
+    setValue,
+    trigger,
     formState: { errors, isSubmitting },
   } = useForm<ContactFormData>({
     resolver: zodResolver(schema),
-    mode: 'onTouched',
+    mode:           'onSubmit',
+    reValidateMode: 'onChange',
     defaultValues: {
       fullName:     '',
       email:        '',
@@ -77,14 +74,43 @@ export function useContactForm() {
 
   const messageValue = watch('message') ?? ''
 
+  // ── Handlers con validación condicional por contenido ─────────────────────
+  //
+  // El patrón es: el usuario puede escribir lo que quiera (no filtramos nada).
+  // Si tiene contenido, le damos feedback de formato en tiempo real.
+  // Si borró todo o nunca escribió nada, silencio total — no interrumpir.
+
+  const handleNameChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      // RHF necesita conocer el valor actualizado antes de que llamemos a trigger.
+      // setValue con shouldValidate:false actualiza el store sin disparar validación
+      // propia de RHF — nosotros controlamos cuándo validar.
+      setValue('fullName', e.target.value, { shouldDirty: true, shouldValidate: false })
+      if (e.target.value.length > 0) {
+        trigger('fullName')
+      }
+    },
+    [setValue, trigger],
+  )
+
+  const handlePhoneChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      setValue('phone', e.target.value, { shouldDirty: true, shouldValidate: false })
+      if (e.target.value.length > 0) {
+        trigger('phone')
+      }
+    },
+    [setValue, trigger],
+  )
+
+  // ── Submit ────────────────────────────────────────────────────────────────
+
   const onSubmit = handleSubmit(async (data: ContactFormData) => {
     setSubmitState('loading')
 
     try {
       const destinationEmail = DESTINATION_MAP[data.queryType]
 
-      // La fecha se formatea con el locale activo de i18n para consistencia
-      // con el idioma seleccionado por el usuario.
       const sentAt = new Date().toLocaleString(i18n.language, {
         dateStyle: 'full',
         timeStyle: 'medium',
@@ -101,12 +127,11 @@ export function useContactForm() {
           body: JSON.stringify({
             [t('email.fields.fullName')]:     data.fullName,
             [t('email.fields.email')]:        data.email,
-            [t('email.fields.phone')]:        data.phone || t('email.fields.notProvided'),
+            [t('email.fields.phone')]:        data.phone,
             [t('email.fields.organization')]: data.organization || t('email.fields.notProvided'),
             [t('email.fields.queryType')]:    data.queryType,
             [t('email.fields.message')]:      data.message,
             [t('email.fields.sentAt')]:       sentAt,
-            // Opciones de FormSubmit — estas claves son de la API, no se traducen
             _subject:  t('email.subject', {
               queryType: data.queryType,
               fullName:  data.fullName,
@@ -140,6 +165,8 @@ export function useContactForm() {
     errors,
     isSubmitting,
     messageValue,
+    handleNameChange,
+    handlePhoneChange,
     submitState,
     onSubmit,
     handleResetError,

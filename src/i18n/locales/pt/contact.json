@@ -81,7 +81,20 @@
       "organizationMax": "O nome da organização é muito longo.",
       "queryTypeRequired": "Selecione um tipo de consulta.",
       "messageMin": "A mensagem deve ter pelo menos 10 caracteres.",
-      "messageMax": "A mensagem não pode ter mais de 1000 caracteres."
+      "messageMax": "A mensagem não pode ter mais de 1000 caracteres.",
+      "fullNameLettersRequired": "O nome completo pode conter apenas letras e espaços.",
+      "phoneOnlyNumbers": "O telefone pode conter apenas números.",
+      "phoneRequired": "Por favor, insira um número de telefone.",
+      "fullNameNoNumbers": "O nome não pode conter números.",
+      "fullNameRequired": "Informe seu nome completo.",
+      "fullNameOnlyLetters": "São permitidas apenas letras e espaços.",
+      "emailRequired": "Informe seu e-mail.",
+      "emailFormat": "Este e-mail não parece válido. Verifique se contém @ e um domínio.",
+      "phoneMinDigits": "O número é muito curto. Mínimo de ${TELEFONO_MIN_DIGITS} dígitos.",
+      "phoneMaxDigits": "O número é muito longo. Máximo de ${TELEFONO_MAX_DIGITS} dígitos.",
+      "phoneAllowedChars": "São permitidos apenas números, espaços, hífens e parênteses.",
+      "queryTypeRequiredArea": "Escolha uma área para que possamos orientá-lo melhor.",
+      "privacyConsentRequired": "Precisamos do seu consentimento para enviar informações."
     }
   },
   "email": {
