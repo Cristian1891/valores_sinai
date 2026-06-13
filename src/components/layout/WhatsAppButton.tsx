@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 // Botón WhatsApp Flotante
 export const WhatsAppButton: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const { t } = useTranslation('common');
 
   useEffect(() => {
     const timer = setTimeout(() => setIsVisible(true), 1000);
@@ -29,9 +31,9 @@ export const WhatsAppButton: React.FC = () => {
         
         {/* Tooltip */}
         <div className="absolute bottom-full right-0 mb-2 px-3 py-1 bg-gray-800 text-white text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
-          ¡Escríbenos por WhatsApp!
+          {t('buttons.message-whatsapp')}
         </div>
-        
+         
         {/* Pulso animado */}
         <div className="absolute inset-0 bg-whatsapp rounded-full animate-ping opacity-75"></div>
       </button>
