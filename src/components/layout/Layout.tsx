@@ -54,7 +54,7 @@ export const Layout = () => {
 
       <Navbar />
 
-      <main className="grow pt-2 lg:pt-10 bg-dark">
+      <main className="grow pt-2 lg:pt-10 bg-dark overflow-x-hidden">
         <ErrorBoundary>
           <Outlet />
         </ErrorBoundary>

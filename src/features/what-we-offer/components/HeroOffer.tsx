@@ -77,7 +77,7 @@ export const HeroOffer = () => {
             {/* Eyebrow */}
             <div className="mb-6 flex items-center gap-3" aria-hidden="true">
               {/* <span className="h-px w-5 shrink-0 bg-brand-amber" /> */}
-              <span className="type-kicker text-brand-amber">
+              <span className="type-kicker text-brand-accent">
                 {t('hero.eyebrow')}
               </span>
             </div>
@@ -89,7 +89,7 @@ export const HeroOffer = () => {
             */}
             <h1
               id="ofrece-hero-heading"
-              className="type-display sm:text-5xl"
+              className="type-display sm:text-5xl lg:text-[3.2rem]"
             >
               {t('hero.titleLine1')}<br />
               {t('hero.titleLine2')}{' '}
@@ -99,7 +99,7 @@ export const HeroOffer = () => {
             </h1>
 
             {/* Descripción */}
-            <p className="type-body-sm mt-5 text-white/70 lg:text-[13.5px]">
+            <p className="type-body mt-5 text-white/70 lg:text-lg">
               {t('hero.description')}
             </p>
 
@@ -110,32 +110,32 @@ export const HeroOffer = () => {
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="2"
-                className="h-3.5 w-3.5 shrink-0 text-brand-accent/60"
+                className="h-3.5 w-3.5 shrink-0 text-brand-amber/90"
                 aria-hidden="true"
               >
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
                 <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0z" />
               </svg>
-              <span className="type-caption text-white/40 tracking-[0.06em]">
+              <span className="type-body text-brand-amber/90 tracking-[0.06em]">
                 {t('hero.location')}
-              </span>
+              </span> 
             </div>
 
             {/* Claims */}
             <div
-              className="mt-8 border-t border-white/[0.12] pt-6"
+              className="mt-8 border-t border-white/12 pt-6"
               role="list"
               aria-label={t('hero.claimsAriaLabel')}
             >
               <div className="flex flex-col gap-5">
                 {claims.map((claim) => (
                   <div key={claim.key} className="flex gap-3" role="listitem">
-                    <span
-                      className="mt-[6px] h-1.5 w-1.5 shrink-0 rounded-full bg-brand-accent"
+                    {/* <span
+                      className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-accent"
                       aria-hidden="true"
-                    />
+                    /> */}
                     <div>
-                      <p className="type-kicker mb-1 text-white/40">
+                      <p className="type-kicker mb-1 text-brand-amber/90">
                         {claim.label}
                       </p>
                       <p className="type-body-sm text-white/65">
@@ -156,7 +156,7 @@ export const HeroOffer = () => {
           onClick={togglePlayback}
           aria-label={isPlaying ? t('hero.video.pauseAriaLabel') : t('hero.video.playAriaLabel')}
           aria-pressed={!isPlaying}
-          className="absolute bottom-5 left-5 z-20 flex items-center gap-1.5 rounded-full border border-dark/15 bg-white/40 px-3 py-1.5 backdrop-blur-sm transition-colors hover:border-dark/25 hover:text-dark/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-amber type-caption text-dark/55 font-medium tracking-[0.08em]"
+          className="absolute bottom-5 left-5 z-20 flex items-center gap-1.5 rounded-full border border-dark/15 bg-white/40 px-3 py-1.5 backdrop-blur-sm transition-colors hover:border-dark/25 hover:text-dark/80 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-amber type-caption text-dark/55 font-medium tracking-[0.08em]"
         >
           {isPlaying ? <IconPause /> : <IconPlay />}
           <span>{isPlaying ? t('hero.video.pauseLabel') : t('hero.video.playLabel')}</span>
@@ -164,7 +164,7 @@ export const HeroOffer = () => {
       </section>
 
       {/* Caption bar */}
-      <div className="flex items-center justify-between border-t border-white/[0.05] bg-[#0e0e0d] px-6 py-2.5 sm:px-10">
+      <div className="flex items-center justify-between border-t border-white/5 bg-[#0e0e0d] px-6 py-2.5 sm:px-10">
         <span className="type-caption text-white/25 tracking-[0.02em]">
           {t('hero.captionBar.description')}
         </span>

@@ -106,6 +106,16 @@
   letter-spacing: -0.01em;
 }
 
+/* H4 */
+@utility type-h4 {
+  font-family: var(--font-sans);
+  font-size: 1.125rem;        /* 20px mobile → sm:text-2xl en componente */
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+}
+
+
 /* Kicker — etiqueta pequeña sobre el título. SIEMPRE mayúsculas, tracking amplio. */
 @utility type-kicker {
   font-family: var(--font-sans);

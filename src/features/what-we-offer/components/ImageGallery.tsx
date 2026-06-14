@@ -42,11 +42,11 @@ export const ImageGallery: React.FC = () => {
           </p>
           <h2
             id="galeria-heading"
-            className="type-h2 text-white sm:text-4xl"
+            className="type-h2 text-white sm:text-4xl lg:text-[2.75rem]"
           >
             {t('gallery.title')}
           </h2>
-          <p className="type-body mx-auto mt-4 max-w-xl text-white/70">
+          <p className="type-body mx-auto mt-4 max-w-xl text-white/70 sm:text-lg">
             {t('gallery.subtitle')}
           </p>
           <div className="mx-auto mt-4 h-px w-16 bg-brand-accent" aria-hidden="true" />

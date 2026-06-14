@@ -20,12 +20,12 @@ export const ContactMethods: React.FC = () => {
       <div className="mx-auto max-w-7xl">
         <h2
           id="contact-methods-heading"
-          className="mb-8 font-sans text-sm font-semibold uppercase tracking-[0.2em] text-brand-amber"
+          className="mb-8 type-h2 text-bg-dark dark:text-white sm:text-4xl lg:text-[2.75rem]"
         >
           {t('methods.heading')}
         </h2>
 
-        <p className="mb-10 max-w-xl font-sans text-base leading-7 text-dark-soft dark:text-surface-cream">
+        <p className="mb-10 type-body leading-7 text-dark-soft dark:text-surface-cream sm:text-lg">
           {t('methods.subheading')}
         </p>
 
@@ -53,23 +53,23 @@ export const ContactMethods: React.FC = () => {
                   <Icon className="h-6 w-6" strokeWidth={1.9} aria-hidden="true" />
                 </div>
 
-                <p className="font-sans text-sm font-bold uppercase tracking-wider text-dark dark:text-white">
+                <p className="type-caption font-bold uppercase tracking-wider text-dark dark:text-white">
                   {t(method.labelKey)}
                 </p>
 
-                <p className="font-sans text-sm font-semibold text-brand-amber transition-colors duration-200 group-hover:text-brand-accent">
+                <p className="type-caption font-semibold text-brand-amber transition-colors duration-200 group-hover:text-brand-accent">
                   {t(method.valueKey)}
                 </p>
 
                 {method.descriptionKey && (
-                  <p className="font-sans text-xs leading-5 text-dark-soft dark:text-gray-mid">
+                  <p className="type-caption text-sm leading-5 text-dark-soft dark:text-gray-mid">
                     {t(method.descriptionKey)}
                   </p>
                 )}
 
                 <span
                   aria-hidden="true"
-                  className="mt-auto inline-flex items-center gap-1.5 rounded-xl bg-dark px-4 py-2 font-sans text-xs font-bold text-white ring-2 ring-transparent transition-all duration-200 group-hover:bg-brand-accent group-hover:text-dark group-hover:ring-brand-amber dark:bg-dark-soft dark:group-hover:bg-brand-accent dark:group-hover:text-dark dark:group-hover:ring-brand-amber"
+                  className="mt-auto inline-flex items-center gap-1.5 rounded-xl bg-dark px-4 py-2 type-cta font-bold text-white ring-2 ring-transparent transition-all duration-200 group-hover:bg-brand-accent group-hover:text-dark group-hover:ring-brand-amber dark:bg-dark-soft dark:group-hover:bg-brand-accent dark:group-hover:text-dark dark:group-hover:ring-brand-amber"
                 >
                   {t('methods.ctaLabel')}
                   <ChevronRight

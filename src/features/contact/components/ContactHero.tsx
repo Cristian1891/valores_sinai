@@ -48,7 +48,7 @@ export const ContactHero: React.FC = () => {
       <div className="relative z-10 mx-auto max-w-3xl">
         <h1
           id="contact-hero-heading"
-          className="font-sans text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl"
+          className="type-display sm:text-5xl lg:text-[3.2rem] text-white"
         >
           {t('hero.title')}
         </h1>

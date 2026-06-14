@@ -27,12 +27,12 @@ export const AboutPreview = () => {
         </div>
 
         {/* Texto */}
-        <div className="order-2">
+        <div className="order-2"> 
           {/* CORRECCIÓN: type-kicker reemplaza la combinación hardcodeada */}
           <p className="type-kicker text-brand-amber">
             {t('aboutPreview.kicker')}
           </p>
-
+ 
           {/*
             CORRECCIÓN: type-h2 reemplaza la combinación hardcodeada.
             Los breakpoints sm: y lg: se siguen aplicando aquí porque el

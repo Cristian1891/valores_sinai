@@ -17,9 +17,9 @@ export const MissionVision = () => {
           <p className="mb-3 type-kicker text-brand-amber">
             {t('mission.kicker')}
           </p>
-          <h2
-            id="historia-heading"
-            className="type-h2 text-dark sm:text-4xl dark:text-white"
+          <h2 
+            id="historia-heading" 
+            className="type-h2 text-dark sm:text-4xl dark:text-white lg:text-[2.75rem]"
           >
             {t('mission.title')}
           </h2>
@@ -34,7 +34,7 @@ export const MissionVision = () => {
         {/* Misión y Visión */}
         <div className="mb-14 grid gap-6 sm:grid-cols-2">
 
-          {/* Misión */}
+          {/* Misión */} 
           <div className="rounded-3xl bg-surface-cream dark:bg-dark-soft p-8 ring-1 ring-black/5">
             <div
               className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-accent"

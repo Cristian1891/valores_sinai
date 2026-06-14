@@ -1,49 +1,61 @@
-// src/features/academia/utils/form-validation.ts
+// src/features/academy/utils/form-validation.ts
 //
-// Validaciones del formulario de registro — lógica pura, sin dependencias de UI.
-// ─────────────────────────────────────────────────────────────────────────────
+// RESPONSABILIDAD ÚNICA:
+//   Validación pura del formulario de registro de Academia.
+//   Recibe los datos del formulario y la función `t` de i18next,
+//   retorna un objeto de errores (vacío si todo es válido).
+//
 // DISEÑO:
 //   • Cada función `is*` testea UNA sola regla → facilita unit tests.
 //   • `validateForm` compone las reglas y devuelve todos los errores juntos
 //     (no detiene en el primero) para que el usuario vea todos a la vez.
-//   • Los mensajes están en español rioplatense, tono directo y sin culpa.
-//     Principio UX: el error describe QUÉ corregir, no QUÉ hizo mal el usuario.
-// ─────────────────────────────────────────────────────────────────────────────
+//   • Los mensajes salen de i18next → sin strings hardcodeados.
+//     La lógica de QUÉ error mostrar sigue viviendo acá; el texto
+//     de cada mensaje vive en los archivos JSON de traducción.
+//
+// POR QUÉ `t` COMO PARÁMETRO Y NO HOOK:
+//   Esta función es una utilidad pura — mismos inputs → mismos outputs.
+//   Pasar `t` como argumento mantiene la función testeable sin mocks
+//   de React y desacoplada del árbol de componentes.
+//   El hook useFormRegister es el único responsable de proveer `t`.
 
-import type { FormData, FormErrors } from '../types/academy'
+import type { TFunction } from 'i18next';
+import type { FormData, FormErrors } from '../types/academy';
+
+// ── Constantes ────────────────────────────────────────────────────────────────
+
+const NOMBRE_REGEX       = /^[\p{L}\s'-]+$/u
+const EMAIL_REGEX        = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*\.[a-zA-Z]{2,}$/
+const TELEFONO_CHARS     = /^[0-9+\-() ]+$/
+const TELEFONO_MIN       = 8
+const TELEFONO_MAX       = 15
 
 // ── Helpers de validación atómica ────────────────────────────────────────────
 
 /**
  * Nombre completo:
- *   - Solo letras (incluyendo tildes, ñ, diéresis) y espacios.
- *   - Mínimo 2 palabras (nombre + apellido).
- *   - Mínimo 3 caracteres por palabra (evita iniciales sueltas).
+ *   - Solo letras (incluyendo tildes, ñ, diéresis), espacios, apóstrofes y guiones.
+ *   - Mínimo 2 palabras de al menos 2 caracteres cada una.
  *   - Máximo 80 caracteres totales.
  */
-const NOMBRE_REGEX = /^[\p{L}\s'-]+$/u
-
 export function isNombreValido(nombre: string): boolean {
-  const trimmed = nombre.trim()
-  if (!trimmed || trimmed.length > 80) return false
-  if (!NOMBRE_REGEX.test(trimmed)) return false
+  const trimmed = nombre.trim();
+  if (!trimmed || trimmed.length > 80) return false;
+  if (!NOMBRE_REGEX.test(trimmed)) return false;
 
-  const palabras = trimmed.split(/\s+/).filter((p) => p.length >= 2)
-  return palabras.length >= 2
+  const palabras = trimmed.split(/\s+/).filter((p) => p.length >= 2);
+  return palabras.length >= 2;
 }
 
 /**
  * Email:
  *   - Formato RFC-5321 simplificado.
- *   - Se valida con la regex más robusta razonablemente usable en frontend;
- *     la validación definitiva ocurre en el servidor.
  *   - Máximo 254 caracteres (límite del estándar).
+ *   - La validación definitiva ocurre en el servidor.
  */
-const EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*\.[a-zA-Z]{2,}$/
-
 export function isEmailValido(email: string): boolean {
-  const trimmed = email.trim()
-  return trimmed.length <= 254 && EMAIL_REGEX.test(trimmed)
+  const trimmed = email.trim();
+  return trimmed.length <= 254 && EMAIL_REGEX.test(trimmed);
 }
 
 /**
@@ -51,83 +63,83 @@ export function isEmailValido(email: string): boolean {
  *   - Acepta formatos comunes: +54 9 11 1234-5678, 011 1234-5678, 15-1234-5678.
  *   - Permite espacios, guiones y paréntesis como separadores visuales.
  *   - Mínimo 8 dígitos, máximo 15 (estándar E.164).
- *   - No acepta letras ni caracteres especiales salvo +, -, (, ), espacio.
  */
-const TELEFONO_VALIDOS_CHARS = /^[0-9+\-() ]+$/
-const TELEFONO_MIN_DIGITS    = 8
-const TELEFONO_MAX_DIGITS    = 15
-
 export function isTelefonoValido(telefono: string): boolean {
-  const trimmed = telefono.trim()
-  if (!TELEFONO_VALIDOS_CHARS.test(trimmed)) return false
+  const trimmed = telefono.trim();
+  if (!TELEFONO_CHARS.test(trimmed)) return false;
 
-  const soloDigitos = trimmed.replace(/\D/g, '')
-  return soloDigitos.length >= TELEFONO_MIN_DIGITS && soloDigitos.length <= TELEFONO_MAX_DIGITS
+  const soloDigitos = trimmed.replace(/\D/g, '');
+  return soloDigitos.length >= TELEFONO_MIN && soloDigitos.length <= TELEFONO_MAX;
 }
 
 // ── Validador principal ───────────────────────────────────────────────────────
 
 /**
- * Valida todos los campos del formulario y devuelve un objeto con los errores.
+ * Valida todos los campos y devuelve un objeto con los errores.
  * Si el objeto resultante está vacío (`{}`), el formulario es válido.
  *
- * Mensajes de error: específicos, accionables, en tono rioplatense.
- * No empezar con "Error:" — el contexto visual ya indica que es un error.
+ * Los mensajes son específicos y accionables: describen QUÉ corregir,
+ * no QUÉ hizo mal el usuario.
  */
-export function validateForm(data: FormData): FormErrors {
-  const errors: FormErrors = {}
+export function validateForm(
+  data: FormData,
+  t: TFunction<'academy'>,
+): FormErrors {
+  const errors: FormErrors = {};
 
-  // Nombre completo
+  // ── Nombre ──────────────────────────────────────────────────────────────
   if (!data.nombre.trim()) {
-    errors.nombre = 'Ingresá tu nombre y apellido.'
+    errors.nombre = t('form.errors.nombreRequired');
   } else if (!isNombreValido(data.nombre)) {
     if (/\d/.test(data.nombre)) {
-      errors.nombre = 'El nombre no puede contener números.'
+      errors.nombre = t('form.errors.nombreConNumeros');
     } else if (data.nombre.trim().split(/\s+/).filter((p) => p.length >= 2).length < 2) {
-      errors.nombre = 'Ingresá tu nombre y apellido completos.'
+      errors.nombre = t('form.errors.nombreIncompleto');
     } else {
-      errors.nombre = 'Solo se permiten letras y espacios.'
+      errors.nombre = t('form.errors.nombreCaracteresInvalidos');
     }
   }
 
-  // Email
+  // ── Email ────────────────────────────────────────────────────────────────
   if (!data.email.trim()) {
-    errors.email = 'Ingresá tu email.'
+    errors.email = t('form.errors.emailRequired');
   } else if (!isEmailValido(data.email)) {
-    errors.email = 'El email no parece válido. Revisá que tenga @ y un dominio.'
+    errors.email = t('form.errors.emailInvalid');
   }
 
-  // Teléfono
+  // ── Teléfono ─────────────────────────────────────────────────────────────
   if (!data.telefono.trim()) {
-    errors.telefono = 'Ingresá tu número de teléfono.'
+    errors.telefono = t('form.errors.telefonoRequired');
   } else if (!isTelefonoValido(data.telefono)) {
-    const soloDigitos = data.telefono.replace(/\D/g, '')
-    if (soloDigitos.length < TELEFONO_MIN_DIGITS) {
-      errors.telefono = `El número es muy corto. Mínimo ${TELEFONO_MIN_DIGITS} dígitos.`
-    } else if (soloDigitos.length > TELEFONO_MAX_DIGITS) {
-      errors.telefono = `El número es muy largo. Máximo ${TELEFONO_MAX_DIGITS} dígitos.`
+    const soloDigitos = data.telefono.replace(/\D/g, '');
+    if (soloDigitos.length < TELEFONO_MIN) {
+      errors.telefono = t('form.errors.telefonoMuyCorto', { min: TELEFONO_MIN });
+    } else if (soloDigitos.length > TELEFONO_MAX) {
+      errors.telefono = t('form.errors.telefonoMuyLargo', { max: TELEFONO_MAX });
     } else {
-      errors.telefono = 'Solo se permiten números, espacios, guiones y paréntesis.'
+      errors.telefono = t('form.errors.telefonoCaracteresInvalidos');
     }
   }
 
-  // Área de interés
+  // ── Área ─────────────────────────────────────────────────────────────────
   if (!data.area) {
-    errors.area = 'Elegí un área para que podamos orientarte mejor.'
+    errors.area = t('form.errors.areaRequired');
   }
 
-  // Consentimiento
+  // ── Consentimiento ────────────────────────────────────────────────────────
   if (!data.consentimiento) {
-    errors.consentimiento = 'Necesitamos tu consentimiento para enviarte información.'
+    errors.consentimiento = t('form.errors.consentimientoRequired');
   }
 
-  return errors
+  return errors;
 }
 
+// ── Utilidad ──────────────────────────────────────────────────────────────────
+
 /**
- * Retorna `true` si el formulario tiene errores.
- * Útil para deshabilitar el botón de envío después del primer intento.
+ * Retorna `true` si el objeto de errores tiene al menos una clave.
+ * Útil para saber si bloquear el submit después del primer intento.
  */
 export function hasErrors(errors: FormErrors): boolean {
-  return Object.keys(errors).length > 0
+  return Object.keys(errors).length > 0;
 }

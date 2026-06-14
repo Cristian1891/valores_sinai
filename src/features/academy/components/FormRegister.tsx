@@ -83,15 +83,15 @@ export const FormRegister: React.FC = () => {
                 sm:text-3xl sobreescribe el tamaño base del utility para
                 escalar levemente en pantallas más anchas — el utility
                 define el mínimo mobile, el componente decide cuánto crece. */}
-            <h2
+            <h2 
               id="form-heading"
-              className="type-h2 text-white sm:text-3xl"
+              className="type-h2 text-white sm:text-4xl lg:text-[2.75rem]"
             >
               {t('form.title')}
             </h2>
 
             {/* Subtítulo — type-body-sm: 14px, 400, line-height 1.65 */}
-            <p className="type-body-sm mt-2 text-white/80">
+            <p className="type-body mt-2 text-white/80 sm:text-lg">
               {t('form.subtitle')}
             </p>
 

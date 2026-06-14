@@ -62,7 +62,7 @@ export const Hero = () => {
             </Link>
             <Link
               to="/quienes-somos"
-              className="inline-flex items-center justify-center rounded-xl border border-white/15 bg-white/5 px-6 py-3.5 type-cta font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/10 sm:text-base"
+              className="inline-flex items-center justify-center rounded-xl border border-white/15 bg-black/40 px-6 py-3.5 type-cta font-semibold text-white backdrop-blur-sm transition-colors hover:bg-brand-amber/50 sm:text-base"
             >
               {t('hero.secondaryCta')}
             </Link>
@@ -76,7 +76,7 @@ export const Hero = () => {
             ].map(({ title, text }) => (
               <div
                 key={title}
-                className="rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm"
+                className="rounded-2xl border border-white/15 bg-black/40 p-4 backdrop-blur-sm"
               >
                 <p className="type-body-sm font-bold text-brand-accent">{title}</p>
                 <p className="mt-1.5 type-body-sm text-white/60">{text}</p>

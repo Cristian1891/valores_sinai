@@ -64,6 +64,20 @@
       "streaming-medios": "Streaming y Medios",
       "gestion-cultural": "Gestión Cultural",
       "no-seguro": "Todavía no estoy seguro/a"
+    },
+    "errors": {
+      "nombreRequired":         "Ingresá tu nombre y apellido.",
+      "nombreConNumeros":       "El nombre no puede contener números.",
+      "nombreIncompleto":       "Ingresá tu nombre y apellido completos.",
+      "nombreCaracteresInvalidos": "Solo se permiten letras y espacios.",
+      "emailRequired":          "Ingresá tu email.",
+      "emailInvalid":           "El email no parece válido. Revisá que tenga @ y un dominio.",
+      "telefonoRequired":       "Ingresá tu número de teléfono.",
+      "telefonoMuyCorto":       "El número es muy corto. Mínimo {{min}} dígitos.",
+      "telefonoMuyLargo":       "El número es muy largo. Máximo {{max}} dígitos.",
+      "telefonoCaracteresInvalidos": "Solo se permiten números, espacios, guiones y paréntesis.",
+      "areaRequired":           "Elegí un área para que podamos orientarte mejor.",
+      "consentimientoRequired": "Necesitamos tu consentimiento para enviarte información."
     }
   }
 }

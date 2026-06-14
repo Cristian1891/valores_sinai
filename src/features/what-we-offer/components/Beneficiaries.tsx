@@ -26,17 +26,17 @@ export const Beneficiaries: React.FC = () => {
           </p>
           <h2
             id="paraquien-heading"
-            className="type-h2 text-dark dark:text-white sm:text-4xl"
+            className="type-h2 text-dark dark:text-white sm:text-4xl lg:text-[2.75rem]"
           >
             {t('beneficiaries.title')}
           </h2>
-          <p className="type-body mx-auto mt-4 max-w-xl text-dark-soft dark:text-surface-cream">
+          <p className="type-body mx-auto mt-4 max-w-xl text-dark-soft dark:text-surface-cream sm:text-lg">
             {t('beneficiaries.subtitle')}
           </p>
           <div className="mx-auto mt-4 h-px w-16 bg-brand-accent" aria-hidden="true" />
         </div>
 
-        {/* Grilla de grupos */}
+        {/* Grilla de grupos */} 
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {groups.map((tipo) => (
             <div
@@ -51,7 +51,7 @@ export const Beneficiaries: React.FC = () => {
               </div>
 
               <div>
-                <h3 className="type-label mb-1.5 text-dark dark:text-brand-accent">{tipo.titulo}</h3>
+                <h3 className="type-body mb-1.5 text-dark font-bold dark:text-brand-accent sm:text-lg">{tipo.titulo}</h3>
                 <p className="type-body-sm text-dark-soft dark:text-white">{tipo.descripcion}</p>
               </div>
             </div>

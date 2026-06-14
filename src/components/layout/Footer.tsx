@@ -38,25 +38,23 @@ export const Footer = () => {
               <img
                 src="/img/logo_sinai.png"
                 alt="Logo Valores Sinaí"
-                className="h-16 w-16 object-contain"
-                loading="lazy"
+                className="h-16 w-16 object-contain scale-[1.7]"
+                loading="lazy" 
                 decoding="async"
               />
             </Link>
-            {/*
-              CORRECCIÓN: se elimina leading-relaxed — override innecesario.
-              type-body-sm ya define leading-[1.65], que es correcto.
-              Agregar leading-relaxed (1.625) encima no produce diferencia
-              visual perceptible y rompe la trazabilidad del sistema.
-            */}
             <p className="max-w-45 text-center type-body-sm text-gray-mid sm:text-left">
-              Asociación Civil Valores Sinaí - Av Juan Domingo Perón 3251 Presidente Derqui, Buenos Aires
+              {t('footer.address')}
             </p>
           </div>
 
-          <nav aria-label="Navegación del footer">
-            <p className="mb-3 type-kicker text-brand-accent/70 text-center sm:text-left">
-              Navegación
+          <nav aria-label={t('footer.navigation')}>
+            {/*
+             * text-center en mobile, sm:text-left en desktop.
+             * Consistente con la columna del logo.
+             */}
+            <p className="mb-3 type-kicker text-brand-accent text-center sm:text-left">
+              {t('footer.navigation')}
             </p>
             <ul className="flex flex-col items-center gap-2.5 sm:items-start">
               {FOOTER_NAV_LINKS.map(({ key, to }) => (
@@ -73,10 +71,22 @@ export const Footer = () => {
           </nav>
 
           <div className="flex flex-col items-center gap-4 sm:items-start">
-            <p className="type-kicker text-brand-accent">
+            {/*
+             * CORRECCIÓN: "Seguinos en nuestras redes sociales" se cortaba en mobile
+             * porque type-kicker tiene letter-spacing: 0.25em — en 300-360px de
+             * viewport ese tracking hace que el texto exceda el ancho disponible.
+             *
+             * Solución: text-balance (text-wrap: balance) distribuye el texto en
+             * múltiples líneas de forma equilibrada cuando no entra en una sola.
+             * Es superior a overflow-wrap: break-word porque mantiene la legibilidad
+             * visual con líneas de ancho similar en lugar de cortar palabras.
+             * text-center en mobile centra ambas líneas uniformemente.
+             * sm:text-left restaura la alineación original en desktop.
+             */}
+            <p className="type-kicker text-brand-accent text-center text-balance sm:text-left">
               {t('footer.followUs')}
             </p>
-            <ul className="flex flex-col items-start gap-2.5" aria-label="Redes sociales de Valores Sinaí">
+            <ul className="flex flex-col items-center gap-2.5 sm:items-start" aria-label="Redes sociales de Valores Sinaí">
               {SOCIAL_LINKS_CONFIG.map(({ key, href, label }) => (
                 <li key={key}>
                   <a

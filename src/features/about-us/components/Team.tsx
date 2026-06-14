@@ -27,7 +27,7 @@ export const Team = () => {
           </div>
 
           {/* Texto */}
-          <div className="order-1 lg:order-2">
+          <div className="order-1 lg:order-2"> 
 
             {/* Kicker */}
             <p className="mb-3 type-kicker text-brand-amber">
@@ -37,7 +37,7 @@ export const Team = () => {
             {/* H2 */}
             <h2
               id="team-heading"
-              className="type-h2 text-dark dark:text-white sm:text-4xl"
+              className="type-h2 text-dark dark:text-white sm:text-4xl lg:text-[2.75rem]"
             >
               {t('team.title')}
             </h2>
@@ -45,10 +45,10 @@ export const Team = () => {
             <div className="mt-3 h-px w-12 bg-brand-amber" aria-hidden="true" />
 
             {/* Párrafos */}
-            <p className="mt-6 type-body text-dark-soft dark:text-surface-cream">
+            <p className="mt-6 type-body text-dark-soft dark:text-surface-cream sm:text-lg">
               {t('team.description1')}
             </p>
-            <p className="mt-4 type-body text-dark-soft dark:text-surface-cream">
+            <p className="mt-4 type-body text-dark-soft dark:text-surface-cream sm:text-lg">
               {t('team.description2')}
             </p>
 

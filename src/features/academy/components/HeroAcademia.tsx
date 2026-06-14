@@ -30,11 +30,11 @@ export const HeroAcademia: React.FC = () => {
 
         {/* ── Columna izquierda: texto ── */}
         <div className="flex flex-col justify-center px-8 py-16 sm:px-12 sm:py-20 lg:border-r lg:border-white/5 lg:px-14 lg:py-24">
-
+ 
           {/* Eyebrow — type-kicker: 11px, sans, uppercase, tracking 0.22em */}
           <div className="mb-5 flex items-center gap-2.5" aria-hidden="true">
             {/* <div className="h-px w-5 shrink-0 bg-brand-accent" /> */}
-            <span className="type-kicker text-brand-amber/90">
+            <span className="type-kicker text-brand-accent/90">
               {t('hero.eyebrow')}
             </span>
           </div>
@@ -52,7 +52,7 @@ export const HeroAcademia: React.FC = () => {
               style={{ boxShadow: '0 0 4px var(--color-brand-accent)' }}
               aria-hidden="true"
             />
-            <span className="type-kicker text-brand-accent/70">
+            <span className="type-kicker text-brand-amber/90">
               {t('hero.badge')}
             </span>
           </div>
@@ -64,14 +64,14 @@ export const HeroAcademia: React.FC = () => {
               text-surface-cream. La em con el acento dorado sigue igual. */}
           <h1
             id="academia-hero-heading"
-            className="type-display text-surface-cream sm:text-5xl xl:text-5xl lg:text-[2.75rem] tracking-tight font-extrabold"
+            className="type-display text-surface-cream sm:text-5xl lg:text-[3.2rem] tracking-tight font-extrabold"
           >
             {t('hero.titleLine1')}<br />
             {t('hero.titleLine2')}{' '}
             <em className="not-italic text-brand-accent">
               {t('hero.titleLine3')}
             </em>
-          </h1>
+          </h1> 
 
           {/* Separador decorativo */}
           <div
@@ -83,7 +83,7 @@ export const HeroAcademia: React.FC = () => {
               Es la clase del sistema exactamente pensada para este uso:
               "blockquotes sobre imágenes, descripciones misionales".
               max-w limita la línea a ~42ch para legibilidad óptima. */}
-          <p className="type-verse max-w-[42ch] text-white">
+          <p className="type-body max-w-[42ch] text-white lg:text-lg">
             {t('hero.subtitle')}
           </p>
 

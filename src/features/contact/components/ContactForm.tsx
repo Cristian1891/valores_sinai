@@ -26,7 +26,7 @@ const Field: React.FC<FieldProps> = ({ id, label, required, error, children }) =
   <div className="flex flex-col gap-1.5">
     <label
       htmlFor={id}
-      className="font-sans text-sm font-semibold text-dark dark:text-white"
+      className="type-label font-semibold text-dark dark:text-white"
     >
       {label}
       {required && (
@@ -78,17 +78,17 @@ export const ContactForm: React.FC = () => {
       <div className="mx-auto max-w-7xl">
 
         {/* Encabezado */}
-        <div className="mb-10 max-w-2xl">
-          <p className="font-sans text-sm font-semibold uppercase tracking-[0.2em] text-brand-accent">
+        <div className="mb-10 max-w-2xl"> 
+          <p className="type-kicker tracking-[0.2em] text-brand-amber">
             {t('form.kicker')}
           </p>
           <h2
             id="contact-form-heading"
-            className="mt-3 font-sans text-3xl font-bold tracking-tight text-dark dark:text-white sm:text-4xl"
+            className="mt-3 type-h2 tracking-tight text-dark dark:text-white sm:text-4xl lg:text-[2.75rem]"
           >
             {t('form.title')}
           </h2>
-          <p className="mt-4 font-sans text-base leading-7 text-dark-soft dark:text-surface-cream">
+          <p className="mt-4 type-body text-base leading-7 text-dark-soft dark:text-surface-cream sm:text-lg">
             {t('form.subtitle')}
           </p>
         </div>
@@ -269,7 +269,7 @@ export const ContactForm: React.FC = () => {
                 </Field>
 
                 {/* Aviso de privacidad */}
-                <p className="font-sans text-xs leading-5 text-dark-soft dark:text-gray-mid">
+                <p className="type-caption text-sm leading-5 text-dark-soft dark:text-gray-mid">
                   {t('form.privacy')}
                 </p>
 

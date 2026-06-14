@@ -37,7 +37,7 @@ const EspacioCard: React.FC<EspacioCardProps> = ({
       )}
     </div>
     <div className="p-5">
-      <h3 className="type-h3 mb-1.5 text-base text-dark dark:text-white">{nombre}</h3>
+      <h3 className="type-h4 mb-1.5 font-bold text-base text-dark dark:text-white sm:text-lg">{nombre}</h3>
       <p className="type-body-sm text-dark-soft dark:text-surface-cream">{descripcion}</p>
     </div>
   </article>
@@ -64,11 +64,11 @@ export const FeaturedSpaces: React.FC = () => {
           </p>
           <h2
             id="espacios-heading"
-            className="type-h2 text-dark dark:text-white sm:text-4xl"
+            className="type-h2 text-dark dark:text-white sm:text-4xl lg:text-[2.75rem]"
           >
             {t('spaces.title')}
           </h2>
-          <p className="type-body mx-auto mt-4 max-w-2xl text-dark-soft dark:text-surface-cream">
+          <p className="type-body mx-auto mt-4 max-w-2xl text-dark-soft dark:text-surface-cream sm:text-lg">
             {t('spaces.subtitle')}
           </p>
           <div className="mx-auto mt-4 h-px w-16 bg-brand-accent" aria-hidden="true" />

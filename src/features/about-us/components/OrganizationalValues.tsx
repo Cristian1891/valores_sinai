@@ -19,12 +19,12 @@ export const OrganizationalValues = () => {
           </p>
           <h2
             id="valores-heading"
-            className="mt-2 type-h2 text-dark dark:text-white"
+            className="mt-2 type-h2 text-dark dark:text-white sm:text-4xl lg:text-[2.75rem]"
           >
             {t('values.title')}
           </h2>
           <div className="mt-3 h-0.5 w-10 bg-brand-accent" aria-hidden="true" />
-          <p className="mt-5 max-w-xl type-body-sm text-dark-soft dark:text-surface-cream">
+          <p className="mt-5 max-w-xl type-body-sm text-dark-soft dark:text-surface-cream sm:text-lg">
             {t('values.description')}
           </p>
         </div>
@@ -69,11 +69,11 @@ export const OrganizationalValues = () => {
 
               {/* Texto */}
               <div className="absolute inset-0 flex flex-col justify-end p-4 sm:p-5">
-                <p className="type-h3 text-base text-white transition-all duration-300 group-hover:-translate-y-1 group-hover:mb-2 sm:text-[17px]">
+                <p className="type-h3 text-base text-white transition-all duration-300 group-hover:-translate-y-1 group-hover:mb-2 sm:text-[18px]">
                   {t(`values.items.${valor.id}.name`)}
                 </p>
-                <p className="max-h-0 overflow-hidden type-body-sm text-[11.5px] text-white/80 opacity-0 transition-all duration-300 ease-out group-hover:max-h-28 group-hover:opacity-100 sm:text-xs">
-                  {t(`values.items.${valor.id}.description`)}
+                <p className="max-h-0 overflow-hidden type-body-sm text-[11.5px] text-white/80 opacity-0 transition-all duration-300 ease-out group-hover:max-h-28 group-hover:opacity-100 sm:text-base">
+                  {t(`values.items.${valor.id}.description`)} 
                 </p>
               </div>
             </li>

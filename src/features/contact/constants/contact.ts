@@ -23,7 +23,7 @@ export const DESTINATION_MAP: Record<QueryType, string> = {
   'Información general':   'valoressinai@gmail.com',
   'Retiros y campamentos': 'valoressinai@gmail.com',
   'Eventos y salones':     'valoressinai@gmail.com',
-  'REC Pilar':             'valoressinai@gmail.com',
+  'REC Pilar':             'info@recpilar.com',
   'Administración':        'estudioalegrevaldez@yahoo.com.ar',
   'Donaciones':            'cp.erika.contreras@gmail.com',
   'Consultas legales':     'Dra.danielaaramberri@gmail.com',

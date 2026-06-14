@@ -64,6 +64,20 @@
       "streaming-medios": "Streaming & Media",
       "gestion-cultural": "Cultural Management",
       "no-seguro": "I’m not sure yet"
+    },
+    "errors": {
+      "nombreRequired":            "Please enter your full name.",
+      "nombreConNumeros":          "Name cannot contain numbers.",
+      "nombreIncompleto":          "Please enter both your first and last name.",
+      "nombreCaracteresInvalidos": "Only letters and spaces are allowed.",
+      "emailRequired":             "Please enter your email address.",
+      "emailInvalid":              "This email doesn't look valid. Make sure it has an @ and a domain.",
+      "telefonoRequired":          "Please enter your phone number.",
+      "telefonoMuyCorto":          "Number is too short. Minimum {{min}} digits.",
+      "telefonoMuyLargo":          "Number is too long. Maximum {{max}} digits.",
+      "telefonoCaracteresInvalidos": "Only numbers, spaces, dashes and parentheses are allowed.",
+      "areaRequired":              "Please select an area so we can guide you better.",
+      "consentimientoRequired":    "We need your consent to send you information."
     }
   }
 }

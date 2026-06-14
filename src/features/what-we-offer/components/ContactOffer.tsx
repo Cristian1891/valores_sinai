@@ -29,12 +29,12 @@ export const ContactOffer: React.FC = () => {
 
         <h2
           id="cta-ofrece-heading"
-          className="type-h2 text-white sm:text-4xl"
+          className="type-h2 text-white sm:text-4xl lg:text-[2.75rem]"
         >
           {t('contact.title')}
         </h2>
 
-        <p className="type-body mx-auto mt-5 max-w-xl text-white/75">
+        <p className="type-body mx-auto mt-5 max-w-xl text-white/75 sm:text-lg">
           {t('contact.subtitle')}
         </p>
 

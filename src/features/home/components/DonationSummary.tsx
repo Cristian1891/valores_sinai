@@ -100,8 +100,8 @@ export const DonationSummary = () => {
                       Es un título de dato, no un párrafo de body.
                       type-h3 = sans, 20px, 600, line-height 1.35
                     */}
-                    <p className="type-h3 text-dark dark:text-white">
-                      {t(statKey)}
+                    <p className="type-h4 text-dark dark:text-white sm:text-[18px] text-base">
+                      {t(statKey)} 
                     </p>
                     {/* CORRECCIÓN: type-body-sm para la descripción del stat */}
                     <p className="mt-0.5 type-body-sm text-dark-soft dark:text-surface-cream">
