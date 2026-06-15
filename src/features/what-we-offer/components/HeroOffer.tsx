@@ -50,10 +50,11 @@ export const HeroOffer = () => {
           loop
           playsInline
           preload="metadata"
-          poster="/img/mejores_fotos_canchas/cancha_futbol_vacia_2.jpg"
+          poster="/img/poster/video_sinai_poster.jpg"
           aria-label={t('hero.video.ariaLabel')}
         >
-          <source src="/img/video_sinai.mp4" type="video/mp4" />
+          <source src="/img/videos/video_sinai.webm" type="video/webm" />
+          <source src="/img/videos/video_sinai.mp4" type="video/mp4" />
         </video>
 
         {/* Overlay */}

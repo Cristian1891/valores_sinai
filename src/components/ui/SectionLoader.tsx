@@ -67,14 +67,14 @@ export const SectionLoader = ({
         </div>
 
         {/* Label visible — el AppLoader lo tiene solo para screen readers */}
-        <p className="mt-4 font-sans text-xs font-bold uppercase tracking-[0.25em] text-gray-mid animate-pulse">
+        {/* <p className="mt-4 font-sans text-xs font-bold uppercase tracking-[0.25em] text-gray-mid animate-pulse">
           {label}
-        </p>
+        </p> */}
 
       </div>
 
       {/* Texto accesible para screen readers */}
-      <span className="sr-only">{label}</span>
+      {/* <span className="sr-only">{label}</span> */}
     </div>
   );
 };

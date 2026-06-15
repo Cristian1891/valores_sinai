@@ -74,7 +74,7 @@
     "minAmountError": "O valor mínimo é {{min}}",
     "impactPrefix": "Com",
     "impact": {
-      "scholarship": "você cobre os materiais de um estudante por um mês.",
+      "scholarship": "vocês cobrem alguns dos materiais de um aluno.",
       "materials": "você financia equipamentos para um estudante da Academia.",
       "family": "você apoia o Fundo Solidário e ajuda a manter o espaço e a realizar melhorias na infraestrutura.",
       "event": "você contribui para organizar um evento ou retiro comunitário."
@@ -148,13 +148,13 @@
     "usdOnlyExternal": "A conta em dólares é a única opção disponível para doadores fora da Argentina."
   },
   "panel": {
-    "sendReceiptTitle": "Sua mensagem será enviada junto com o comprovante",
+    "sendReceiptTitle": "Envie-nos sua mensagem juntamente com o comprovante de pagamento",
     "sendWhatsApp": "Enviar via WhatsApp",
     "sendEmail": "Enviar por e-mail",
     "emailSubjectAcademy": "Doação para a Academia Valores Sinaí",
     "emailSubjectSolidarity": "Doação para o Fundo Solidário",
-    "emailBody": "Olá! Acabei de fazer uma doação para {{category}}.\n\nMinha mensagem: {{message}}\n\nSegue em anexo o comprovante de pagamento.",
-    "whatsappMessage": "Olá! Acabei de doar para {{category}}. Minha mensagem: {{message}}"
+    "emailBody": "Olá! Acabei de fazer uma doação para {{category}}.\n\n{{message}}\n\nSegue em anexo o comprovante de pagamento.",
+    "whatsappMessage": "Olá! Acabei de doar para {{category}}.\n\n{{message}}\n\nSegue em anexo o comprovante de pagamento."
   },
   "impact": {
     "kicker": "O que você conquista com sua contribuição",

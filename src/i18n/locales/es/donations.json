@@ -148,13 +148,13 @@
     "usdOnlyExternal": "La cuenta en dólares es la única opción disponible para donantes fuera de Argentina."
   },
   "panel": {
-    "sendReceiptTitle": "Tu mensaje se enviará junto con el comprobante",
+    "sendReceiptTitle": "Envianos tu mensaje junto con el comprobante de pago",
     "sendWhatsApp": "Enviar por WhatsApp",
     "sendEmail": "Enviar por email",
     "emailSubjectAcademy": "Donación a la Academia Valores Sinaí",
     "emailSubjectSolidarity": "Donación al Fondo Solidario",
-    "emailBody": "Hola! Acabo de donar a {{category}}.\n\nMi mensaje: {{message}}\n\nAdjunto el comprobante de pago.",
-    "whatsappMessage": "Hola! Acabo de donar a {{category}}. Mi mensaje: {{message}}"
+    "emailBody": "Hola! Acabo de donar a {{category}}.\n\n{{message}}\n\nAdjunto el comprobante de pago.",
+    "whatsappMessage": "Hola! Acabo de donar a {{category}}.\n\n{{message}}\n\nAdjunto el comprobante de pago."
   },
   "impact": {
     "kicker": "Lo que lográs con tu aporte",

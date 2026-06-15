@@ -12,5 +12,5 @@ export const sponsors = [
   { name: 'Ingeniería Mega S.A',          logo: '/img/logos/Ingenieria-MEGA.png' },
   { name: 'Bracco',                       logo: '/img/logos/Bracco_Logo.png' },
   { name: 'Agrícola Noroeste S.R.L',     logo: '/img/logos/agricola_noroeste_1.jpg' },
-  { name: 'SH Metalúrgica',              logo: '/img/logos/SH Metalúrgica.jpeg' },
+  { name: 'SH Metalúrgica',              logo: '/img/logos/SH Metalúrgica.jpeg' }
 ];
