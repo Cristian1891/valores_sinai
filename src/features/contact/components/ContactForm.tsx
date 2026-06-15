@@ -343,7 +343,7 @@ export const ContactForm: React.FC = () => {
                   {t('form.address')}
                 </p>
                 <a
-                  href="https://maps.google.com/?q=Avenida+Juan+Domingo+Peron+3251+Derqui"
+                  href="https://maps.app.goo.gl/KYuG84yqx3tkrJ6W6"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-3 inline-flex items-center gap-1.5 type-label text-brand-amber transition-colors duration-200 hover:text-brand-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"

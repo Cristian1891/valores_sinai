@@ -61,7 +61,7 @@ export const CONTACT_METHODS: ContactMethod[] = [
     labelKey:       'methods.location.label',
     valueKey:       'methods.location.value',
     descriptionKey: 'methods.location.description',
-    href:           'https://maps.google.com/?q=Avenida+Juan+Domingo+Peron+3251+Derqui',
+    href:           'https://maps.app.goo.gl/KYuG84yqx3tkrJ6W6',
     external:       true,
     icon:           MapPin,
   },
