@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 export const DonationHero = () => {
   const { t } = useTranslation('donations');
 
-  return (
+  return ( 
     <section
       className="relative isolate flex min-h-svh items-center overflow-hidden bg-dark"
       aria-labelledby="donation-hero-heading"
@@ -16,7 +16,7 @@ export const DonationHero = () => {
         role="presentation"
       />
       {/* Overlay */}
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-black/55 via-black/68 to-black/88" />
+      <div className="absolute inset-0 -z-10 bg-linear-to-b from-black/55 via-black/68 to-black/88" />
 
       <div className="mx-auto max-w-3xl px-6 py-20 text-center sm:px-8 sm:py-28">
         <div
@@ -26,7 +26,7 @@ export const DonationHero = () => {
 
         <h1
           id="donation-hero-heading"
-          className="font-serif text-4xl font-bold leading-[1.15] tracking-tight text-white sm:text-5xl"
+          className="type-display font-bold sm:text-5xl lg:text-[3.2rem]"
         >
           {t('hero.titleLine1')}<br />
           <em className="not-italic text-brand-accent">
@@ -34,14 +34,14 @@ export const DonationHero = () => {
           </em>
         </h1>
 
-        <p className="mx-auto mt-5 max-w-xl text-base leading-[1.8] text-white/65 sm:text-lg">
+        <p className="mx-auto mt-5 max-w-xl type-body text-white/65 lg:text-lg">
           {t('hero.subtitle')}
         </p>
 
         <div className="mt-8">
           <a
             href="#donation-selector"
-            className="inline-flex items-center gap-2 rounded-xl bg-brand-accent px-7 py-3.5 text-sm font-extrabold text-dark transition-colors hover:bg-brand-amber focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
+            className="inline-flex items-center gap-2 type-label rounded-xl bg-brand-accent px-7 py-3.5 text-dark transition-colors hover:bg-brand-amber focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
           >
             {t('hero.cta')}
             <svg

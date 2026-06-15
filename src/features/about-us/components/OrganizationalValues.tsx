@@ -24,7 +24,7 @@ export const OrganizationalValues = () => {
             {t('values.title')}
           </h2>
           <div className="mt-3 h-0.5 w-10 bg-brand-accent" aria-hidden="true" />
-          <p className="mt-5 max-w-xl type-body-sm text-dark-soft dark:text-surface-cream sm:text-lg">
+          <p className="mt-5 max-w-5xl type-body-sm text-dark-soft dark:text-surface-cream sm:text-lg">
             {t('values.description')}
           </p>
         </div>

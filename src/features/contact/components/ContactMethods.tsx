@@ -20,7 +20,7 @@ export const ContactMethods: React.FC = () => {
       <div className="mx-auto max-w-7xl">
         <h2
           id="contact-methods-heading"
-          className="mb-8 type-h2 text-bg-dark dark:text-white sm:text-4xl lg:text-[2.75rem]"
+          className="mb-8 type-kicker text-brand-amber dark:text-white"
         >
           {t('methods.heading')}
         </h2>

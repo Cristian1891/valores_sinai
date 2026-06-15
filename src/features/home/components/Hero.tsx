@@ -41,7 +41,7 @@ export const Hero = () => {
             <em className="not-italic text-brand-accent">
               {t('hero.titleAccent')}
             </em>
-          </h1>
+          </h1> 
 
           {/*
             CORRECCIÓN: se elimina sm:leading-[1.8] — override innecesario

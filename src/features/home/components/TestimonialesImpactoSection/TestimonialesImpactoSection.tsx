@@ -1,9 +1,10 @@
 // src/features/home/components/TestimonialesImpactoSection/TestimonialesImpactoSection.tsx
+
 import { Star } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { useTestimonials } from '../../hooks/useTestimonials';
 import { TestimonialCard } from './TestimonialCard';
-import { TestimonialSkeleton } from './TestimonialSkeleton';
+import { SectionLoader } from '../../../../components/ui/SectionLoader';
 
 export const TestimonialesImpactoSection = () => {
   const { t } = useTranslation('home');
@@ -14,18 +15,34 @@ export const TestimonialesImpactoSection = () => {
       <div className="mx-auto max-w-7xl">
 
         <div className="mb-10 max-w-2xl">
-          {/* CORRECCIÓN: type-kicker */}
           <p className="type-kicker text-brand-amber">
             {t('testimonials.kicker')}
           </p>
-          {/* CORRECCIÓN: type-h2 + breakpoints */}
           <h2 className="mt-3 type-h2 text-dark dark:text-white sm:text-4xl lg:text-[2.75rem]">
             {t('testimonials.title')}
           </h2>
         </div>
 
         {loading ? (
-          <TestimonialSkeleton />
+          /*
+           * SectionLoader reemplaza al TestimonialSkeleton cuando se prefiere
+           * una experiencia de carga con identidad visual de marca.
+           *
+           * minHeight="420px": aproxima la altura de 3 cards de testimoniales
+           * en mobile (1 columna) para evitar layout shift cuando llegan los datos.
+           * En sm/lg las cards son más compactas en grid — 420px es un buen
+           * promedio que funciona en todos los breakpoints sin sobredimensionar.
+           *
+           * Si preferís el skeleton (más fiel a la estructura final),
+           * podés usar <TestimonialSkeleton /> en lugar de <SectionLoader />.
+           * Ambos son válidos — la elección es de criterio de diseño:
+           *   Skeleton → más contexto de qué va a aparecer.
+           *   SectionLoader → más identidad de marca, más simple visualmente.
+           */
+          <SectionLoader
+            minHeight="420px"
+            label={t('testimonials.loading')}
+          />
         ) : (
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {testimonials.map((testimonial, i) => (

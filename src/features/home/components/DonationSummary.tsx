@@ -139,7 +139,7 @@ export const DonationSummary = () => {
 
               <Link
                 to="/que-ofrecemos"
-                className="inline-flex items-center gap-2 rounded-xl border dark:border-brand-amber dark:text-brand-amber dark:hover:border-brand-accent dark:hover:text-brand-accent border-dark/25 px-7 py-3.5 type-label text-dark transition-colors duration-200 hover:border-brand-amber hover:text-brand-amber focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
+                className="inline-flex items-center gap-2 rounded-xl border dark:border-brand-amber dark:text-brand-amber dark:hover:border-brand-accent dark:hover:text-brand-accent border-dark/25 px-7 py-3.5 type-cta text-dark transition-colors duration-200 hover:border-brand-amber hover:text-brand-amber focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
               >
                 {t('donation.secondaryButton')} 
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
