@@ -15,7 +15,7 @@ function lazyPage<T extends ComponentType<any>>(
   return lazy(importFn);
 }
 
-//hola mundo
+//hola mundo nuevo
 
 const Home = lazyPage(() =>
   import('../features/home/Home').then((m) => ({ default: m.Home }))
