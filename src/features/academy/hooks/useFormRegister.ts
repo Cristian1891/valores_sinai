@@ -23,9 +23,12 @@
 //     handleSubmit). Esto garantiza que si el idioma cambia mid-session
 //     los mensajes de error se actualicen correctamente.
 //   - `t` se agrega a las deps de los `useCallback` que llaman a validateForm.
+//   - Se agrega `useEffect` sobre `i18n.language`: re-traduce los errores
+//     ya visibles cuando el usuario cambia de idioma después de haber
+//     intentado enviar el formulario al menos una vez.
 // ─────────────────────────────────────────────────────────────────────────────
 
-import { useCallback, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import {
@@ -56,7 +59,7 @@ export interface UseFormRegisterReturn {
 // ── Hook ──────────────────────────────────────────────────────────────────────
 
 export function useFormRegister(): UseFormRegisterReturn {
-  const { t } = useTranslation('academy');
+  const { t, i18n } = useTranslation('academy');
 
   const [formData,    setFormData]    = useState<FormData>({ ...FORM_INITIAL_STATE });
   const [errors,      setErrors]      = useState<FormErrors>({});
@@ -101,6 +104,22 @@ export function useFormRegister(): UseFormRegisterReturn {
     },
     [formData, t],
   );
+
+  // ── Re-traducción de errores ya visibles al cambiar de idioma ──────────────
+  //
+  // `validateForm` resuelve los mensajes con `t()` al momento de llamarse,
+  // pero el resultado queda "congelado" como string dentro de `errors`.
+  // Si el usuario ya hizo submit (hay errores en pantalla) y cambia el
+  // idioma desde el selector de i18n, este efecto recalcula esos mensajes
+  // con el `t` ya apuntando al idioma nuevo.
+  //
+  // No revalida nada que el usuario no haya tocado todavía: solo refresca
+  // el idioma de los errores que ya estaban siendo mostrados.
+  useEffect(() => {
+    if (!hasSubmittedOnce.current) return;
+    setErrors(validateForm(formData, t));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [i18n.language]);
 
   // ── Submit ────────────────────────────────────────────────────────────────
 

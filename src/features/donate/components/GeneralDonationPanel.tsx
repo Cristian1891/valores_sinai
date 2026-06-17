@@ -7,8 +7,6 @@ import { DonationForm }            from './DonationForm';
 import { SOLIDARITY_DESTINATIONS } from '../constants/donationConstants';
 import { PAYMENT_LINKS }           from '../constants/paymentLinks';
 
-// ── Íconos SVG para los destinos del Fondo Solidario ─────────────────────────
-// Se mantienen en este archivo porque solo los usa este panel.
 const DEST_ICONS = {
   calendar: () => (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
@@ -38,63 +36,35 @@ const DEST_ICONS = {
   ),
 } as const;
 
-// ── Íconos semánticos que reemplazan emojis ───────────────────────────────────
-
-/** 💬 → Burbuja de mensaje / dedicatoria del donante */
-const IconMessage = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-    stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round"
-    className="inline h-4 w-4 shrink-0 align-middle" aria-hidden="true">
-    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-  </svg>
-);
-
-/** 💬 → WhatsApp / envío por chat */
-const IconWhatsApp = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-    stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round"
-    className="inline h-3.5 w-3.5 shrink-0 align-middle" aria-hidden="true">
-    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
-  </svg>
-);
-
-/** ✉️ → Email */
-const IconMail = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-    stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round"
-    className="inline h-3.5 w-3.5 shrink-0 align-middle" aria-hidden="true">
-    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-    <polyline points="22,6 12,13 2,6" />
-  </svg>
-);
-
+// ── Componente principal ──────────────────────────────────────────────────────
+// donorMessage ya no se gestiona aquí: el cuadro de mensaje/WhatsApp/email
+// vive dentro de DonationForm, debajo del textarea, más cerca del contexto.
 export const GeneralDonationPanel = () => {
   const { t } = useTranslation('donations');
   const [activeDestination, setActiveDestination] = useState<string | null>(null);
-  const [donorMessage,      setDonorMessage]      = useState('');
 
   return (
     <section
       id="solidarity-panel"
-      className="border-t border-black/5 bg-surface-cream px-4 py-14 dark:border-white/5 dark:bg-dark-soft sm:px-6 lg:px-8"
+      className="border-t border-black/5 bg-white px-4 py-14 dark:border-white/5 dark:bg-dark-soft sm:px-6 lg:px-8"
     >
       <div className="mx-auto max-w-5xl">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
 
           {/* ── Columna izquierda ── */}
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand-amber">
+            <p className="type-kicker text-brand-amber">
               {t('solidarity.kicker')}
             </p>
-            <h2 className="mt-3 text-2xl font-bold tracking-tight text-dark dark:text-white sm:text-3xl">
+            <h2 className="mt-3 text-dark type-donate dark:text-white lg:text-3xl">
               {t('solidarity.title')}
             </h2>
-            <p className="mt-4 text-sm leading-7 text-dark-soft dark:text-gray-mid">
+            <p className="mt-4 type-body text-dark-soft dark:text-gray-mid sm:text-lg">
               {t('solidarity.desc')}
             </p>
 
             <div className="mt-6 space-y-3">
-              <p className="text-sm font-semibold text-dark dark:text-white">
+              <p className="type-label text-dark dark:text-white">
                 {t('solidarity.destinationsTitle')}
               </p>
               {SOLIDARITY_DESTINATIONS.map((dest) => {
@@ -109,7 +79,7 @@ export const GeneralDonationPanel = () => {
                     aria-expanded={isActive}
                     className={`
                       w-full rounded-2xl border p-4 text-left transition-all duration-200
-                      focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-amber
+                      focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-amber 
                       ${isActive
                         ? 'border-brand-amber bg-brand-amber/10'
                         : 'border-black/10 bg-white hover:border-brand-amber/50 dark:border-white/10 dark:bg-dark'}
@@ -117,12 +87,12 @@ export const GeneralDonationPanel = () => {
                   >
                     <div className="flex items-center gap-3">
                       <span
-                        className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-amber/10 text-brand-amber"
+                        className="flex h-10 w-10 shrink-0 type-label items-center justify-center rounded-xl bg-brand-amber/10 text-brand-amber"
                         aria-hidden="true"
                       >
                         <Icon />
                       </span>
-                      <p className="flex-1 text-sm font-semibold text-dark dark:text-white">
+                      <p className="flex-1 type-label text-dark dark:text-white">
                         {t(dest.titleKey)}
                       </p>
                       <svg
@@ -136,7 +106,7 @@ export const GeneralDonationPanel = () => {
                       </svg>
                     </div>
                     {isActive && (
-                      <p className="mt-3 text-xs leading-5 text-dark-soft dark:text-gray-mid">
+                      <p className="mt-3 type-body-sm text-dark-soft dark:text-gray-mid">
                         {t(dest.descKey)}
                       </p>
                     )}
@@ -145,41 +115,11 @@ export const GeneralDonationPanel = () => {
               })}
             </div>
 
-            <blockquote className="mt-8 rounded-2xl border-l-4 border-brand-amber bg-white py-4 pl-5 pr-4 dark:bg-dark">
-              <p className="font-serif text-sm italic leading-7 text-dark-soft dark:text-white">
+            <blockquote className="mt-8 rounded-2xl border-l-4 border-brand-amber bg-surface-cream py-4 pl-5 pr-4 dark:bg-dark">
+              <p className="type-verse text-brand-amber dark:text-white">
                 {t('solidarity.quote')}
               </p>
             </blockquote>
-
-            {donorMessage.trim().length > 0 && (
-              <div className="mt-6 rounded-xl border border-brand-amber/20 bg-white p-4 dark:border-white/10 dark:bg-dark">
-                <p className="flex items-center gap-1.5 text-xs font-semibold text-dark dark:text-white">
-                  <IconMessage />
-                  {t('panel.sendReceiptTitle')}
-                </p>
-                <p className="mt-1 text-xs italic text-dark-soft dark:text-gray-mid">
-                  "{donorMessage}"
-                </p>
-                <div className="mt-3 flex flex-wrap gap-2">
-                  <a
-                    href={`https://wa.me/5491160122363?text=${encodeURIComponent(t('panel.whatsappMessage', { message: donorMessage, category: t('solidarity.kicker') }))}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 rounded-lg bg-brand-amber px-3 py-1.5 text-xs font-bold text-dark transition-colors hover:bg-brand-accent"
-                  >
-                    <IconWhatsApp />
-                    {t('panel.sendWhatsApp')}
-                  </a>
-                  <a
-                    href={`mailto:valoressinai@gmail.com?subject=${encodeURIComponent(t('panel.emailSubjectSolidarity'))}&body=${encodeURIComponent(t('panel.emailBody', { message: donorMessage, category: t('solidarity.kicker') }))}`}
-                    className="inline-flex items-center gap-1.5 rounded-lg border border-black/10 bg-surface-cream px-3 py-1.5 text-xs font-bold text-dark transition-colors hover:border-brand-amber dark:border-white/10 dark:bg-dark-soft dark:text-white"
-                  >
-                    <IconMail />
-                    {t('panel.sendEmail')}
-                  </a>
-                </div>
-              </div>
-            )}
           </div>
 
           {/* ── Columna derecha ── */}
@@ -188,7 +128,6 @@ export const GeneralDonationPanel = () => {
               category="solidarity"
               accentColor="amber"
               paymentLinks={{ mp: PAYMENT_LINKS.solidarity.mp }}
-              onMessage={setDonorMessage}
             />
           </div>
         </div>

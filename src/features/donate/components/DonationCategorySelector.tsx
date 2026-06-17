@@ -10,7 +10,7 @@ import type { DonationCategory } from '../types/donations';
 const ICON_MAP = {
   graduationCap: GraduationCap,
   handHeart:     HandHeart,
-} as const;
+} as const; 
 
 interface Props {
   selected: DonationCategory;
@@ -58,39 +58,39 @@ export const DonationCategorySelector = ({ selected, onSelect }: Props) => {
                 text-brand-amber transition-all duration-200
                 group-hover:scale-110
               "
-              aria-hidden="true"
+              aria-hidden="true" 
             >
               <Icon className="h-7 w-7" strokeWidth={1.9} />
             </span>
 
-            <h3 className={`mt-4 text-xl font-bold tracking-tight ${isActive ? cat.colorClass : 'text-dark dark:text-white'}`}>
+            <h3 className={`mt-4 type-kicker ${isActive ? cat.colorClass : 'text-dark dark:text-white'}`}>
               {t(cat.titleKey)}
             </h3>
 
-            <p className="mt-2 text-sm leading-6 text-dark-soft dark:text-gray-mid">
+            <p className="mt-2 type-body text-dark-soft dark:text-gray-mid lg:text-lg">
               {t(cat.descKey)}
             </p>
 
             <ul className="mt-4 space-y-1.5">
               {cat.impactKeys.map((key) => (
-                <li key={key} className="flex items-center gap-2 text-sm text-dark-soft dark:text-gray-mid">
+                <li key={key} className="flex items-center gap-2 type-body-sm text-dark-soft dark:text-gray-mid">
                   <Check className={`h-4 w-4 shrink-0 ${cat.colorClass}`} aria-hidden="true" strokeWidth={2.25} />
                   {t(key)}
                 </li>
-              ))}
+              ))} 
             </ul>
 
             <div className="mt-5">
               {isActive ? (
-                <span className={`inline-flex items-center gap-1.5 text-sm font-semibold ${cat.colorClass}`}>
+                <span className={`inline-flex items-center gap-1.5 type-label ${cat.colorClass}`}>
                   <CircleCheck className="h-4 w-4" aria-hidden="true" strokeWidth={2.25} />
                   {t('category.selected')}
                 </span>
               ) : (
                 <span className="
-                  inline-flex items-center gap-1.5 rounded-full
+                  inline-flex items-center gap-1.5 rounded-full type-label
                   border border-brand-amber/40 bg-brand-accent/10
-                  px-4 py-1.5 text-sm font-semibold text-brand-amber
+                  px-4 py-1.5 text-brand-amber
                   transition-all duration-200
                   group-hover:border-brand-accent group-hover:bg-brand-accent group-hover:text-dark
                 ">

@@ -45,7 +45,7 @@ export const AboutPreview = () => {
           {/* CORRECCIÓN: type-body reemplaza la combinación manual */}
           <p className="mt-5 max-w-prose type-body text-dark-soft dark:text-white/70 sm:text-lg">
             {t('aboutPreview.text')}
-          </p>
+          </p> 
 
           <div className="mt-8">
             <a

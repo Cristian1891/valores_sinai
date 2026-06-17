@@ -3,7 +3,7 @@ import type { ReactNode } from 'react';
 import type { ThemeContextType } from '../types/global';
 
 // Extendemos la interfaz para soportar la carga global
-
+//Hola mundo
 // Tenemos que exportar el Contexto para que el hook lo pueda importar
 export const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 

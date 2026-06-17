@@ -269,7 +269,7 @@ export const ContactForm: React.FC = () => {
                 </Field>
 
                 {/* Aviso de privacidad */}
-                <p className="type-caption text-sm leading-5 text-dark-soft dark:text-gray-mid">
+                <p className="type-caption text-dark-soft dark:text-gray-mid">
                   {t('form.privacy')}
                 </p>
 
@@ -278,7 +278,7 @@ export const ContactForm: React.FC = () => {
                   type="submit"
                   disabled={isLoading}
                   aria-busy={isLoading}
-                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-brand-accent px-6 py-3.5 font-sans text-sm font-bold text-dark transition-all duration-200 hover:bg-brand-amber hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-brand-accent px-6 py-3.5 type-label text-dark transition-all duration-200 hover:bg-brand-amber hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60"
                 >
                   {isLoading ? (
                     <>
@@ -336,17 +336,17 @@ export const ContactForm: React.FC = () => {
                 referrerPolicy="no-referrer-when-downgrade"
               />
               <div className="border-t border-black/5 bg-surface-cream p-4 dark:border-white/5 dark:bg-dark-soft">
-                <p className="font-sans text-xs font-semibold uppercase tracking-wider text-brand-amber">
+                <p className="font-sans type-label text-brand-amber">
                   {t('form.addressLabel')}
                 </p>
-                <p className="mt-1 font-sans text-sm text-dark-soft dark:text-gray-mid">
+                <p className="mt-1 type-caption text-dark-soft dark:text-gray-mid">
                   {t('form.address')}
                 </p>
                 <a
-                  href="https://maps.google.com/?q=Avenida+Juan+Domingo+Peron+3251+Derqui"
+                  href="https://maps.app.goo.gl/KYuG84yqx3tkrJ6W6"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-3 inline-flex items-center gap-1.5 font-sans text-xs font-semibold text-brand-amber transition-colors duration-200 hover:text-brand-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
+                  className="mt-3 inline-flex items-center gap-1.5 type-label text-brand-amber transition-colors duration-200 hover:text-brand-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
                 >
                   {t('form.openInMaps')}
                   <svg

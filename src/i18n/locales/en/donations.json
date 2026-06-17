@@ -74,7 +74,7 @@
     "minAmountError": "The minimum amount is {{min}}",
     "impactPrefix": "With",
     "impact": {
-      "scholarship": "you cover a student's materials for one month.",
+      "scholarship": "you cover some of a student's materials.",
       "materials": "you fund equipment for an Academy student.",
       "family": "goes to the solidarity fund and helps the property maintenance and infrastructure improvements.",
       "event": "you help organize a community event or retreat."
@@ -148,13 +148,13 @@
     "usdOnlyExternal": "The USD account is the only available option for donors outside Argentina."
   },
   "panel": {
-    "sendReceiptTitle": "Your message will be sent with the receipt",
+    "sendReceiptTitle": "Send us your message along with proof of payment",
     "sendWhatsApp": "Send via WhatsApp",
     "sendEmail": "Send by email",
     "emailSubjectAcademy": "Donation to Valores Sinaí Academy",
     "emailSubjectSolidarity": "Donation to the Solidarity Fund",
-    "emailBody": "Hi! I just donated to {{category}}.\n\nMy message: {{message}}\n\nPlease find the payment receipt attached.",
-    "whatsappMessage": "Hi! I just donated to {{category}}. My message: {{message}}"
+    "emailBody": "Hi! I just donated to {{category}}.\n\n{{message}}\n\nPlease find the payment receipt attached.",
+    "whatsappMessage": "Hi! I just donated to {{category}}.\n\n{{message}}\n\nPlease find the payment receipt attached."
   },
   "impact": {
     "kicker": "What you achieve with your contribution",

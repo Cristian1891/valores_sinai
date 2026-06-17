@@ -15,7 +15,7 @@
 import type { CountryFee, PaymentType } from '../types/donations';
 
 // ── Monto mínimo de donación (ARS) ─────────────────────────────
-export const MIN_DONATION_AMOUNT = 500;
+export const MIN_DONATION_AMOUNT = 100;
 
 // ── Montos sugeridos (ARS) ──────────────────────────────────────
 export const PRESET_AMOUNTS = [5000, 10000, 20000, 50000] as const;

@@ -91,7 +91,7 @@ export const Contact = () => {
 
           <div className="overflow-hidden rounded-3xl ring-1 ring-black/5 lg:col-span-3">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3289.00885192582!2d-58.85255979999999!3d-34.47729969999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bc9b8caf5bdb71%3A0x54d80dea5c4c0762!2sAv.%20Pres.%20Juan%20Domingo%20Peron%203251%2C%20B1635%20Pres.%20Derqui%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1746035437303!5m2!1ses!2sar"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3289.4716942953283!2d-58.8358485!3d-34.4655458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bc9da20db05ebb%3A0x6bba847df51373ea!2sAv.%20Pres.%20Juan%20Domingo%20Per%C3%B3n%203251%2C%20B1635%20Derqui%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1718468000000!5m2!1ses-419!2sar"
               title={t('contact.mapTitle')}
               className="h-72 w-full sm:h-96 lg:h-full"
               style={{ border: 0, minHeight: '320px' }}
