@@ -56,7 +56,7 @@ export const TestimonialesImpactoSection = () => {
 
         <div className="mt-10 text-center">
           <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLSeBCzYgvGlnjlfbJRv8anlemhJcE7scxif_sh0ggfBvXuzHNA/viewform?usp=dialog"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSdc-7Byxz5_ok3vnM6Y8_eW90pvZdWrIKBT6BahU7z7Vb1Uag/viewform"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-xl border border-black/10 bg-white px-5 py-2.5 type-label text-dark transition-colors hover:border-brand-accent dark:border-white/10 dark:bg-dark dark:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
