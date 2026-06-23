@@ -6,17 +6,17 @@ export const DonationSummary = () => {
   const { t } = useTranslation('home');
 
   return (
-    <section className="bg-surface-warm dark:bg-dark-soft px-4 py-16 sm:px-6 lg:px-8">
+    <section className="bg-gray-mid dark:bg-gray-50/50 px-4 py-16 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-7xl">
 
         <div className="max-w-2xl">
-          <p className="type-kicker text-brand-amber dark:text-brand-accent">
+          <p className="type-kicker text-brand-accent dark:text-brand-accent">
             {t('donation.kicker')} 
           </p>
           <h2 className="mt-3 type-h2 text-dark dark:text-white sm:text-4xl lg:text-[2.75rem]">
             {t('donation.title')}
           </h2>
-          <p className="mt-4 type-body text-dark-soft dark:text-surface-cream sm:text-lg">
+          <p className="mt-4 type-body text-dark dark:text-surface-cream sm:text-lg">
             {t('donation.text')}
           </p>
         </div>
@@ -75,7 +75,7 @@ export const DonationSummary = () => {
               </div>
             </div>
 
-            <p className="type-body text-dark-soft dark:text-surface-cream">
+            <p className="type-body text-dark dark:text-surface-cream">
               {t('donation.ctaText')}
             </p>
 
@@ -92,7 +92,7 @@ export const DonationSummary = () => {
 
               <Link
                 to="/que-ofrecemos"
-                className="inline-flex items-center gap-2 rounded-xl border dark:border-brand-amber dark:text-brand-amber dark:hover:border-brand-accent dark:hover:text-brand-accent border-dark/25 px-7 py-3.5 type-cta text-dark transition-colors duration-200 hover:border-brand-amber hover:text-brand-amber focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
+                className="inline-flex items-center gap-2 rounded-xl border dark:border-white dark:text-white dark:hover:border-brand-accent dark:hover:text-brand-accent border-dark/25 px-7 py-3.5 type-cta text-dark transition-colors duration-200 hover:border-brand-accent hover:text-brand-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
               >
                 {t('donation.secondaryButton')} 
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
