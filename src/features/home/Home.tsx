@@ -3,7 +3,7 @@ import { AboutPreview } from './components/AboutPreview';
 import { DonationSummary } from './components/DonationSummary';
 import { CommunitySummary } from './components/CommunitySummary';
 import { TestimonialesImpactoSection } from './components/TestimonialesImpactoSection/TestimonialesImpactoSection';
-import { SponsorsSlider } from './components/SponsorsSlider';
+// import { SponsorsSlider } from './components/SponsorsSlider';
 import { SocialMediaSection } from './components/SocialMediaSection';
 import { Contact } from './components/Contact';
 
@@ -14,7 +14,7 @@ export const Home = () => {
       <AboutPreview />
       <CommunitySummary />
       <TestimonialesImpactoSection />
-      <SponsorsSlider />
+      {/* <SponsorsSlider /> */}
       <DonationSummary />
       <SocialMediaSection />
       <Contact />
