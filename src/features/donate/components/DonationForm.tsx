@@ -1,110 +1,10 @@
-// src/features/donate/components/DonationForm.tsx
-// Este componente es puramente declarativo: solo renderiza.
-// Toda la lógica de estado vive en hooks/useDonationForm.ts
-// Todas las constantes de datos viven en constants/donationConstants.ts
-
 import { useTranslation } from 'react-i18next';
-
 import { useDonationForm }          from '../hooks/useDonationForm';
 import { PRESET_AMOUNTS, MIN_DONATION_AMOUNT, PAYMENT_TYPE_I18N_KEYS } from '../constants/donationConstants';
 import type { DonationFormProps, PaymentType } from '../types/donations';
+import { IconBulb, IconCheck, IconClipboard, IconCopy, IconExternalLink, IconInfo, IconLock, IconMail, IconMessage, IconPin, IconWhatsApp } from '../constants/icons';
 
-// ── Íconos inline ─────────────────────────────────────────────────────────────
-const IconCopy = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-4 w-4" aria-hidden="true">
-    <path d="M7 3.5A1.5 1.5 0 018.5 2h3.879a1.5 1.5 0 011.06.44l3.122 3.12A1.5 1.5 0 0117 6.622V12.5a1.5 1.5 0 01-1.5 1.5h-1v-3.379a3 3 0 00-.879-2.121L10.5 5.379A3 3 0 008.379 4.5H7v-1z" />
-    <path d="M4.5 6A1.5 1.5 0 003 7.5v9A1.5 1.5 0 004.5 18h7a1.5 1.5 0 001.5-1.5v-5.879a1.5 1.5 0 00-.44-1.06L9.44 6.439A1.5 1.5 0 008.378 6H4.5z" />
-  </svg>
-);
 
-const IconCheck = ({ className = 'h-4 w-4' }: { className?: string }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className={className} aria-hidden="true">
-    <path fillRule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clipRule="evenodd" />
-  </svg>
-);
-
-const IconBulb = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-    stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"
-    className="h-4 w-4 shrink-0" aria-hidden="true">
-    <path d="M9 21h6M12 3a7 7 0 0 1 4 12.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-1.26A7 7 0 0 1 12 3z" />
-    <path d="M9.5 18h5" />
-  </svg>
-);
-
-const IconClipboard = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-    stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"
-    className="inline h-4 w-4 shrink-0 align-middle" aria-hidden="true">
-    <path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2" />
-    <rect x="9" y="3" width="6" height="4" rx="1" />
-    <path d="M9 12h6M9 16h4" />
-  </svg>
-);
-
-const IconPin = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-    stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"
-    className="inline h-4 w-4 shrink-0 align-middle" aria-hidden="true">
-    <path d="M12 2a7 7 0 0 1 7 7c0 5.25-7 13-7 13S5 14.25 5 9a7 7 0 0 1 7-7z" />
-    <circle cx="12" cy="9" r="2.5" />
-  </svg>
-);
-
-const IconInfo = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-    stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"
-    className="h-4 w-4 shrink-0" aria-hidden="true">
-    <circle cx="12" cy="12" r="10" />
-    <path d="M12 16v-4M12 8h.01" />
-  </svg>
-);
-
-const IconLock = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-    stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"
-    className="inline h-4 w-4 shrink-0 align-middle" aria-hidden="true">
-    <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
-    <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-  </svg>
-);
-
-const IconExternalLink = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-    stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"
-    className="inline h-4 w-4 shrink-0 align-middle" aria-hidden="true">
-    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-    <polyline points="15 3 21 3 21 9" />
-    <line x1="10" y1="14" x2="21" y2="3" />
-  </svg>
-);
-
-const IconMessage = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-    stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round"
-    className="inline h-4 w-4 shrink-0 align-middle" aria-hidden="true">
-    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-  </svg>
-);
-
-const IconWhatsApp = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-    stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round"
-    className="inline h-3.5 w-3.5 shrink-0 align-middle" aria-hidden="true">
-    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
-  </svg>
-);
-
-const IconMail = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-    stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round"
-    className="inline h-3.5 w-3.5 shrink-0 align-middle" aria-hidden="true">
-    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-    <polyline points="22,6 12,13 2,6" />
-  </svg>
-);
-
-// ── Componente principal ──────────────────────────────────────────────────────
 export const DonationForm = ({ category, accentColor = 'yellow', paymentLinks, onMessage }: DonationFormProps) => {
   const { t } = useTranslation('donations');
 
@@ -164,7 +64,6 @@ export const DonationForm = ({ category, accentColor = 'yellow', paymentLinks, o
           : 'form.impact.scholarship'
     : null;
 
-  // Claves i18n para los links de categoría en el cuadro de mensaje
   const categoryKicker = category === 'academy'
     ? t('academy.kicker')
     : t('solidarity.kicker');
@@ -176,7 +75,6 @@ export const DonationForm = ({ category, accentColor = 'yellow', paymentLinks, o
   return (
     <div className="space-y-6">
 
-      {/* ── Selector de monto ─────────────────────────────────── */}
       <div>
         <p className="mb-3 type-label text-dark dark:text-white">
           {t('form.amountLabel')}
@@ -221,12 +119,6 @@ export const DonationForm = ({ category, accentColor = 'yellow', paymentLinks, o
 
         {customMode && (
           <div className="mt-3">
-            {/*
-              Input group con flex: el $ y el <input> comparten el mismo
-              contexto de línea → alineación vertical garantizada en cualquier
-              fuente, tamaño o viewport sin depender de top/translate.
-              Patrón estándar en shadcn/ui, Radix Themes y Headless UI (2024-2026).
-            */}
             <div
               className={`
                 flex items-center gap-1.5
@@ -266,8 +158,6 @@ export const DonationForm = ({ category, accentColor = 'yellow', paymentLinks, o
           </div>
         )}
 
-        {/* FIX #1 — Impact hint: flex items-start para que el ícono quede
-            alineado al inicio y el texto fluya en su propio bloque */}
         {baseAmount && impactKey && (
           <div className="mt-3 rounded-lg border border-black/5 bg-surface-cream px-3 py-2.5 dark:border-white/5 dark:bg-dark">
             <p className="flex items-start gap-1.5 type-caption text-dark-soft dark:text-gray-mid">
@@ -284,7 +174,6 @@ export const DonationForm = ({ category, accentColor = 'yellow', paymentLinks, o
         )}
       </div>
 
-      {/* ── Cubrir comisión ────────────────────────────────────── */}
       <div className="rounded-xl border border-black/10 bg-white p-4 dark:border-white/10 dark:bg-dark">
         <label className="flex cursor-pointer items-start gap-3">
           <input
@@ -348,8 +237,6 @@ export const DonationForm = ({ category, accentColor = 'yellow', paymentLinks, o
               </p>
             )}
 
-            {/* FIX #2 — Summary box: padding interno más generoso para
-                que los textos no queden tan pegados entre sí */}
             {!loadingCountry && baseAmount && amountWithFee && (
               <div className={`mt-3 rounded-xl border p-5 ${summaryBorder}`}>
                 <p className="flex items-center gap-1.5 type-label text-dark dark:text-white">
@@ -406,7 +293,6 @@ export const DonationForm = ({ category, accentColor = 'yellow', paymentLinks, o
         )}
       </div>
 
-      {/* ── Mensaje / dedicatoria ──────────────────────────────── */}
       <div>
         <label
           htmlFor={`message-${category}`}
@@ -441,10 +327,6 @@ export const DonationForm = ({ category, accentColor = 'yellow', paymentLinks, o
           </p>
         </div>
 
-        {/* FIX #3 — Cuadro de mensaje movido al form, debajo del hint.
-            Antes vivía en AcademyDonationPanel / GeneralDonationPanel
-            (columna izquierda), ahora vive aquí, debajo del contador,
-            que es donde el usuario escribió el mensaje. */}
         {message.trim().length > 0 && (
           <div className="mt-3 rounded-xl border border-brand-accent/20 bg-surface-cream p-4 dark:border-white/10 dark:bg-dark">
             <p className="flex items-center gap-1.5 type-label text-dark dark:text-white">
@@ -482,7 +364,6 @@ export const DonationForm = ({ category, accentColor = 'yellow', paymentLinks, o
         )}
       </div>
 
-      {/* ── CTA — MercadoPago ──────────────────────────────────── */}
       <div className={`rounded-2xl p-5 ${ctaBg}`}>
         {coverFee && amountWithFee && baseAmount && (
           <div className="mb-4 rounded-xl border border-brand-amber/20 bg-white p-4 dark:border-white/10 dark:bg-dark-soft">
@@ -520,12 +401,6 @@ export const DonationForm = ({ category, accentColor = 'yellow', paymentLinks, o
           </ol>
         </div>
 
-        {/*
-          Nota Argentina: ícono al costado (inline), no arriba.
-          UX: notas de una línea siempre inline; "arriba" es para callouts
-          con título + descripción. items-start + mt-px en el ícono lo
-          ancla a la primera línea aunque el texto rompa en mobile.
-        */}
         <p className="mb-5 flex items-start gap-1.5 type-caption text-dark-soft dark:text-gray-mid">
           <span className="mt-px shrink-0">
             <IconInfo />

@@ -1,15 +1,6 @@
-// src/components/layout/Navbar/ThemeToggle.tsx
 import { Sun, Moon } from 'lucide-react';
-import type { TFunction } from 'i18next';
+import type { ThemeToggleProps } from '../../../types/global';
 
-type Variant = 'desktop' | 'mobile';
-
-interface ThemeToggleProps {
-  variant: Variant;
-  isDark: boolean;
-  onToggle: () => void;
-  t: TFunction;
-}
 
 export const ThemeToggle = ({ variant, isDark, onToggle, t }: ThemeToggleProps) => {
   const icon = isDark

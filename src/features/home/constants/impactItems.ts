@@ -1,10 +1,4 @@
 export const IMPACT_ITEMS = [
-//   {
-//     id: 'families',
-//     emoji: '👨‍👩‍👧',
-//     statKey: 'donation.stat1',
-//     labelKey: 'donation.stat1Label',
-//   },
   {
     id: 'campus',
     emoji: '🏡',

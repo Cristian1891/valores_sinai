@@ -1,5 +1,3 @@
-// src/features/home/components/TestimonialesImpactoSection/TestimonialesImpactoSection.tsx
-
 import { Star } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { useTestimonials } from '../../hooks/useTestimonials';
@@ -24,21 +22,6 @@ export const TestimonialesImpactoSection = () => {
         </div>
 
         {loading ? (
-          /*
-           * SectionLoader reemplaza al TestimonialSkeleton cuando se prefiere
-           * una experiencia de carga con identidad visual de marca.
-           *
-           * minHeight="420px": aproxima la altura de 3 cards de testimoniales
-           * en mobile (1 columna) para evitar layout shift cuando llegan los datos.
-           * En sm/lg las cards son más compactas en grid — 420px es un buen
-           * promedio que funciona en todos los breakpoints sin sobredimensionar.
-           *
-           * Si preferís el skeleton (más fiel a la estructura final),
-           * podés usar <TestimonialSkeleton /> en lugar de <SectionLoader />.
-           * Ambos son válidos — la elección es de criterio de diseño:
-           *   Skeleton → más contexto de qué va a aparecer.
-           *   SectionLoader → más identidad de marca, más simple visualmente.
-           */
           <SectionLoader
             minHeight="420px"
             label={t('testimonials.loading')}

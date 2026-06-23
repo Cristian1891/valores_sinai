@@ -1,13 +1,5 @@
-// src/components/layout/Navbar/DonateButton.tsx
 import { Link } from 'react-router';
-
-type Variant = 'desktop' | 'mobile';
-
-interface DonateButtonProps {
-  variant: Variant;
-  label: string;
-  onClick?: () => void;
-}
+import type { DonateButtonProps } from '../../../types/global';
 
 export const DonateButton = ({ variant, label, onClick }: DonateButtonProps) => (
   <Link

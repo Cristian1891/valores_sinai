@@ -1,7 +1,5 @@
-// src/components/icons/InstagramIcon.tsx
-interface IconProps {
-  className?: string;
-}
+import type { IconProps } from "../../../types/global";
+
 
 export const InstagramIcon = ({ className = 'h-5 w-5' }: IconProps) => (
   <svg

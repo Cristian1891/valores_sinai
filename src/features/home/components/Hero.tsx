@@ -1,4 +1,3 @@
-// src/features/home/components/Hero.tsx
 import { Link } from 'react-router';
 import { useTranslation } from 'react-i18next';
 
@@ -24,15 +23,13 @@ export const Hero = () => {
       <div className="mx-auto flex min-h-[calc(100svh-4rem)] max-w-7xl items-center px-6 py-20 sm:px-8 lg:px-10">
         <div className="max-w-2xl">
 
-          {/* Kicker */}
+  
           <div className="mb-6 flex items-center gap-3">
-            {/* <span className="h-0.5 w-6 rounded-full bg-brand-accent" aria-hidden="true" /> */}
             <span className="type-kicker text-brand-accent">
               {t('hero.kicker')}
             </span>
           </div>
 
-          {/* H1 */}
           <h1
             id="hero-heading"
             className="type-display sm:text-5xl lg:text-[3.2rem]"
@@ -43,15 +40,10 @@ export const Hero = () => {
             </em>
           </h1> 
 
-          {/*
-            CORRECCIÓN: se elimina sm:leading-[1.8] — override innecesario
-            que contradice el line-height: 1.75 ya definido en type-body.
-          */}
           <p className="mt-5 max-w-xl type-body text-white/70 lg:text-lg">
             {t('hero.subtitle')}
           </p>
 
-          {/* CTAs */}
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link
               to="/que-ofrecemos"
@@ -68,7 +60,6 @@ export const Hero = () => {
             </Link>
           </div>
 
-          {/* Point cards */}
           <div className="mt-10 grid gap-3 sm:grid-cols-2">
             {[
               { title: t('hero.points.point1Title'), text: t('hero.points.point1Text') },

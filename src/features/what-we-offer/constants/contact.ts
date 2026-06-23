@@ -1,4 +1,3 @@
-// src/features/what-we-offer/constants/contact.ts
 import { Mail, MapPin } from 'lucide-react'
 import type { QuickContactItem } from '../types/what-we-offer'
 

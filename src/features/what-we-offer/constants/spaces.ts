@@ -1,18 +1,3 @@
-// src/features/what-we-offer/constants/spaces.ts
-//
-// PATRÓN FACTORY CON t():
-//   Los datos de espacios y servicios contienen texto traducible (nombre,
-//   descripcion, alt, tag). Las factory functions reciben t y devuelven
-//   el array listo para usar, garantizando que el texto siempre refleja
-//   el idioma activo al momento del render.
-//
-// SEPARACIÓN DE RESPONSABILIDADES (sin cambios):
-//   spaces.ts     → espacios físicos y servicios (FeaturedSpaces)
-//   gallery.ts    → fotos para la galería (ImageGallery)
-//   hero.ts       → claims del hero (HeroOffer)
-//   contact.ts    → items de contacto rápido (ContactOffer)
-//   beneficiaries → tipos de grupo (Beneficiaries)
-
 import type { TFunction } from 'i18next'
 import type { EspacioCardProps } from '../types/what-we-offer'
 
@@ -84,7 +69,7 @@ export function getEspacios(t: TFunction): EspacioCardProps[] {
     {
       nombre:      t('spaces.items.paintball.nombre'),
       descripcion: t('spaces.items.paintball.descripcion'),
-      imagen: '/img/area_paintball_2.png',
+      imagen: '/img/mejores_fotos_paintball/IMG_4747.jpg',
       alt:    t('spaces.items.paintball.alt'),
       tag:    t('spaces.tags.sport'),
     },

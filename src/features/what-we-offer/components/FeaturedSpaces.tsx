@@ -1,49 +1,8 @@
-// src/features/what-we-offer/components/FeaturedSpaces.tsx
-//
-// Datos (ESPACIOS, SERVICIOS) → construidos desde i18n con getEspacios/getServicios(t)
-// Tipos (EspacioCardProps)    → types/what-we-offer.ts
-// Este componente solo renderiza.
-
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { getEspacios, getServicios } from '../constants/spaces'
-import type { EspacioCardProps } from '../types/what-we-offer'
+import { EspacioCard } from './EspacioCard'
 
-// ── Subcomponente EspacioCard ─────────────────────────────────────────────────
-// Se mantiene en este archivo porque solo lo usa FeaturedSpaces.
-
-const EspacioCard: React.FC<EspacioCardProps> = ({
-  nombre,
-  descripcion,
-  imagen,
-  alt,
-  tag,
-  objectPosition = 'center',
-}) => (
-  <article className="group overflow-hidden rounded-2xl bg-white dark:bg-dark shadow-sm ring-1 ring-black/5 transition-shadow duration-300 hover:shadow-md">
-    <div className="relative h-48 overflow-hidden sm:h-52">
-      <img
-        src={imagen}
-        alt={alt}
-        loading="lazy"
-        decoding="async"
-        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-        style={{ objectPosition }}
-      />
-      {tag && (
-        <span className="type-caption absolute left-3 top-3 rounded-full bg-brand-accent px-3 py-1 font-bold text-dark">
-          {tag}
-        </span>
-      )}
-    </div>
-    <div className="p-5">
-      <h3 className="type-h4 mb-1.5 font-bold text-base text-dark dark:text-white sm:text-lg">{nombre}</h3>
-      <p className="type-body-sm text-dark-soft dark:text-surface-cream">{descripcion}</p>
-    </div>
-  </article>
-)
-
-// ── Componente principal ──────────────────────────────────────────────────────
 
 export const FeaturedSpaces: React.FC = () => {
   const { t } = useTranslation('what-we-offer')
@@ -57,7 +16,6 @@ export const FeaturedSpaces: React.FC = () => {
     >
       <div className="mx-auto max-w-7xl">
 
-        {/* Encabezado */}
         <div className="mb-12 text-center">
           <p className="type-kicker mb-3 text-brand-amber dark:text-brand-accent">
             {t('spaces.kicker')}
@@ -74,14 +32,12 @@ export const FeaturedSpaces: React.FC = () => {
           <div className="mx-auto mt-4 h-px w-16 bg-brand-accent" aria-hidden="true" />
         </div>
 
-        {/* Grilla de espacios físicos */}
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {espacios.map((espacio) => (
             <EspacioCard key={espacio.nombre} {...espacio} />
           ))}
         </div>
 
-        {/* Servicios del predio */}
         <div className="mt-10">
           <div className="mb-6 flex items-center gap-4">
             <div className="h-px flex-1 bg-dark/10" aria-hidden="true" />
@@ -97,7 +53,6 @@ export const FeaturedSpaces: React.FC = () => {
             ))}
           </div>
 
-          {/* Contacto estudio jurídico */}
           <div className="mt-6 text-center">
             <p className="type-body-sm font-medium text-dark-soft dark:text-surface-cream">
               {t('spaces.legalContact')}

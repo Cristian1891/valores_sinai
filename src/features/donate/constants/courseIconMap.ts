@@ -1,4 +1,3 @@
-
 import { PhotographyIcon } from '../../academy/icons/PhotographyIcon';
 import { AudioIcon } from '../../academy/icons/AudioIcon';
 import { MarketingIcon } from '../../academy/icons/MarketingIcon';

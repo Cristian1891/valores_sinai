@@ -1,7 +1,3 @@
-// src/features/home/components/TestimonialesImpactoSection/testimonials.utils.ts
-// Helpers de presentación exclusivos de la sección de testimoniales.
-// No son utilidades globales — no mover a src/utils/.
-
 const AVATAR_PALETTE = [
   'bg-brand-blue/30 text-brand-blue',
   'bg-brand-accent/25 text-brand-amber',

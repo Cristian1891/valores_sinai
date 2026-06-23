@@ -1,5 +1,3 @@
-// src/features/academia/constants/areas-form.ts
-
 export const FORM_DESTINATION_EMAIL = 'valoressinai@gmail.com';
 
 export const FORM_AREAS: string[] = [
@@ -12,7 +10,7 @@ export const FORM_AREAS: string[] = [
   'no-seguro',
 ];
 
-// Mapa usado exclusivamente para el envío del email (notificación al admin)
+
 export const FORM_AREA_LABEL_MAP: Record<string, string> = {
   'produccion-audiovisual': 'Producción Audiovisual',
   'audio-sonido':           'Audio y Sonido',

@@ -1,9 +1,6 @@
-// src/components/ui/AppLoader.tsx
 import { useEffect, useState } from 'react';
+import type { AppLoaderProps } from '../../types/global';
 
-type AppLoaderProps = {
-  overlay?: boolean;
-};
 
 export const AppLoader = ({ overlay = true }: AppLoaderProps) => {
   const [mounted, setMounted] = useState(false);

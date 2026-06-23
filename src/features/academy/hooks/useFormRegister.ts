@@ -1,62 +1,13 @@
-// src/features/academy/hooks/useFormRegister.ts
-//
-// Hook personalizado — lógica del formulario de registro de Academia.
-// ─────────────────────────────────────────────────────────────────────────────
-// RESPONSABILIDAD ÚNICA:
-//   Este hook es el único lugar donde viven el estado, las validaciones
-//   y el submit del formulario. FormRegister.tsx solo consume lo que
-//   este hook expone y se dedica exclusivamente a renderizar.
-//
-// PATRÓN:
-//   Se sigue el patrón "stateful hook + dumb component":
-//   el hook contiene TODO el comportamiento; el componente contiene
-//   TODO el markup. La separación es total y sin fugas en ninguna dirección.
-//
-// POR QUÉ UN HOOK Y NO UN STORE (Zustand / Context):
-//   El estado del formulario es efímero y local a una sola pantalla.
-//   Un store global sería over-engineering. El hook es la capa correcta
-//   para estado complejo local — reusable, testeable, sin acoplamiento.
-//
-// CAMBIOS RESPECTO A LA VERSIÓN ANTERIOR:
-//   - Se incorpora `useTranslation` para obtener `t`.
-//   - `t` se pasa a `validateForm` en cada llamada (setField, handleBlur,
-//     handleSubmit). Esto garantiza que si el idioma cambia mid-session
-//     los mensajes de error se actualicen correctamente.
-//   - `t` se agrega a las deps de los `useCallback` que llaman a validateForm.
-//   - Se agrega `useEffect` sobre `i18n.language`: re-traduce los errores
-//     ya visibles cuando el usuario cambia de idioma después de haber
-//     intentado enviar el formulario al menos una vez.
-// ─────────────────────────────────────────────────────────────────────────────
-
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-
 import {
   FORM_DESTINATION_EMAIL,
   FORM_INITIAL_STATE,
   FORM_AREA_LABEL_MAP,
 } from '../constants/areas-form';
-import type { FormData, FormErrors, SubmitState } from '../types/academy';
+import type { FormData, FormErrors, SubmitState, UseFormRegisterReturn } from '../types/academy';
 import { hasErrors, validateForm } from '../utils/form-validation';
 
-// ── Tipos del hook ────────────────────────────────────────────────────────────
-
-export interface UseFormRegisterReturn {
-  // Estado
-  formData:    FormData;
-  errors:      FormErrors;
-  submitState: SubmitState;
-
-  // Handlers de campo
-  setField:   <K extends keyof FormData>(field: K) => (val: FormData[K]) => void;
-  handleBlur: (field: keyof FormData) => () => void;
-
-  // Acciones
-  handleSubmit: () => Promise<void>;
-  handleRetry:  () => void;
-}
-
-// ── Hook ──────────────────────────────────────────────────────────────────────
 
 export function useFormRegister(): UseFormRegisterReturn {
   const { t, i18n } = useTranslation('academy');
@@ -66,8 +17,6 @@ export function useFormRegister(): UseFormRegisterReturn {
   const [submitState, setSubmitState] = useState<SubmitState>('idle');
 
   const hasSubmittedOnce = useRef(false);
-
-  // ── Setters ──────────────────────────────────────────────────────────────
 
   const setField = useCallback(
     <K extends keyof FormData>(field: K) =>
@@ -105,23 +54,10 @@ export function useFormRegister(): UseFormRegisterReturn {
     [formData, t],
   );
 
-  // ── Re-traducción de errores ya visibles al cambiar de idioma ──────────────
-  //
-  // `validateForm` resuelve los mensajes con `t()` al momento de llamarse,
-  // pero el resultado queda "congelado" como string dentro de `errors`.
-  // Si el usuario ya hizo submit (hay errores en pantalla) y cambia el
-  // idioma desde el selector de i18n, este efecto recalcula esos mensajes
-  // con el `t` ya apuntando al idioma nuevo.
-  //
-  // No revalida nada que el usuario no haya tocado todavía: solo refresca
-  // el idioma de los errores que ya estaban siendo mostrados.
   useEffect(() => {
     if (!hasSubmittedOnce.current) return;
     setErrors(validateForm(formData, t));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [i18n.language]);
-
-  // ── Submit ────────────────────────────────────────────────────────────────
 
   const handleSubmit = useCallback(async () => {
     hasSubmittedOnce.current = true;
@@ -137,8 +73,6 @@ export function useFormRegister(): UseFormRegisterReturn {
 
     setSubmitState('loading');
 
-    // Obtenemos la etiqueta legible desde el mapa estático (español),
-    // sin depender de i18next en el hook.
     const areaLabel = FORM_AREA_LABEL_MAP[formData.area] ?? formData.area;
 
     try {
@@ -178,13 +112,10 @@ export function useFormRegister(): UseFormRegisterReturn {
     }
   }, [formData, t]);
 
-  // ── Retry ─────────────────────────────────────────────────────────────────
-
   const handleRetry = useCallback(() => {
     setSubmitState('idle');
   }, []);
 
-  // ── Return ────────────────────────────────────────────────────────────────
 
   return {
     formData,

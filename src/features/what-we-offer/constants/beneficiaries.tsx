@@ -1,12 +1,3 @@
-// src/features/what-we-offer/constants/beneficiaries.tsx
-//
-// EXTENSIÓN .tsx — obligatorio porque contiene JSX (los íconos Lucide).
-//
-// PATRÓN FACTORY CON t():
-//   Misma razón que hero.ts — t() no puede llamarse en el nivel de módulo.
-//   getBeneficiaryGroups(t) se llama en el cuerpo del componente Beneficiaries,
-//   garantizando que siempre refleja el idioma activo.
-
 import { Church, UsersRound, Zap, AudioLines, Ticket, HeartHandshake } from 'lucide-react'
 import type { TFunction } from 'i18next'
 import type { TipoGrupoItem } from '../types/what-we-offer'

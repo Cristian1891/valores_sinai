@@ -1,21 +1,11 @@
-// src/features/donate/types/donations.ts
-//
-// Tipos centralizados de la feature Donate.
-// ─────────────────────────────────────────────────────────────────────────────
-// Regla: ningún componente define sus propios tipos de dominio inline.
-// Si un tipo lo usan ≥2 archivos, vive aquí.
-// ─────────────────────────────────────────────────────────────────────────────
+import type { LucideIcon } from "lucide-react";
+import type { formatARS } from "../constants/donationConstants";
 
-// ── Categorías de donación ────────────────────────────────────────────────────
 export type DonationCategory = 'academy' | 'solidarity' | null;
 
-// ── Métodos de pago ───────────────────────────────────────────────────────────
 export type PaymentMethod = 'mercadopago' | 'paypal' | 'bank';
 
-// ── Tipos de pago (para cálculo de comisiones) ────────────────────────────────
 export type PaymentType = 'creditCard' | 'debitCard' | 'wallet';
-
-// ── Estructura de comisión por país ───────────────────────────────────────────
 export interface CountryFee {
   creditCard:  number;
   debitCard:   number;
@@ -24,7 +14,6 @@ export interface CountryFee {
   disclaimer:  string;
 }
 
-// ── Cuenta bancaria ───────────────────────────────────────────────────────────
 export interface BankAccountField {
   labelKey: string;
   value:    string;
@@ -32,16 +21,58 @@ export interface BankAccountField {
 
 export interface BankAccount {
   id:         string;
-  iconName:   'landmark' | 'banknote'; // nombre para lookup en el componente
+  Icon:   LucideIcon;
   countryKey: string;
   fields:     BankAccountField[];
 }
 
-// ── Props compartidas ─────────────────────────────────────────────────────────
 export interface DonationFormProps {
   category:     Exclude<DonationCategory, null>;
   accentColor?: 'yellow' | 'amber';
   paymentLinks: { mp: string };
-  /** Propaga el mensaje del donante al panel padre para el CTA post-pago */
   onMessage?:   (msg: string) => void;
 }
+
+export interface UseDonationFormOptions {
+  onMessage?: (msg: string) => void;
+}
+
+export interface UseDonationFormReturn {
+  selectedAmount: number | null;
+  customAmount:   string;
+  customMode:     boolean;
+  baseAmount:     number | null;
+  coverFee:       boolean;
+  paymentType:    PaymentType;
+  countryFee:     CountryFee;
+  loadingCountry: boolean;
+  countryCode:    string | null;
+  amountWithFee:  number | null;
+  feeAmount:      number;
+  message:        string;
+  mpOpened:       boolean;
+  copied:         boolean;
+  handleSelectPreset:    (amount: number) => void;
+  handleCustomAmountChange: (raw: string) => void;
+  handleEnableCustomMode: () => void;
+  handleCoverFeeChange:  (checked: boolean) => void;
+  handlePaymentTypeChange: (type: PaymentType) => void;
+  handleMessageChange:   (msg: string) => void;
+  handleMpOpen:          () => void;
+  handleCopyAmount:      () => Promise<void>;
+  formatARS:             typeof formatARS;
+}
+
+export interface Props {
+  value: PaymentMethod;
+  onChange: (method: PaymentMethod) => void;
+}
+
+export interface Props {
+  selected: DonationCategory;
+  onSelect: (category: DonationCategory) => void;
+}
+
+export type IconProps = { className?: string }
+
+

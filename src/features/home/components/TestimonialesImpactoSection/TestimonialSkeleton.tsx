@@ -1,5 +1,3 @@
-// src/features/home/components/TestimonialesImpactoSection/TestimonialSkeleton.tsx
-
 export function TestimonialSkeleton() {
   return (
     <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">

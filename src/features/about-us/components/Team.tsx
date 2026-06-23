@@ -1,4 +1,3 @@
-// src/features/about-us/components/Team.tsx
 import { useTranslation } from 'react-i18next';
 
 export const Team = () => {
@@ -12,7 +11,6 @@ export const Team = () => {
       <div className="mx-auto max-w-7xl">
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
 
-          {/* Imagen */}
           <div className="order-2 lg:order-1">
             <div className="relative overflow-hidden rounded-[2.5rem] bg-dark shadow-xl ring-1 ring-black/5">
               <img
@@ -26,15 +24,12 @@ export const Team = () => {
             </div>
           </div>
 
-          {/* Texto */}
           <div className="order-1 lg:order-2"> 
 
-            {/* Kicker */}
             <p className="mb-3 type-kicker text-brand-amber">
               {t('team.kicker')}
             </p>
 
-            {/* H2 */}
             <h2
               id="team-heading"
               className="type-h2 text-dark dark:text-white sm:text-4xl lg:text-[2.75rem]"
@@ -44,7 +39,6 @@ export const Team = () => {
 
             <div className="mt-3 h-px w-12 bg-brand-amber" aria-hidden="true" />
 
-            {/* Párrafos */}
             <p className="mt-6 type-body text-dark-soft dark:text-surface-cream sm:text-lg">
               {t('team.description1')}
             </p>

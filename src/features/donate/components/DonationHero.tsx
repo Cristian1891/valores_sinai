@@ -1,4 +1,3 @@
-// src/features/donate/components/DonationHero.tsx
 import { useTranslation } from 'react-i18next';
 
 export const DonationHero = () => {
@@ -9,13 +8,13 @@ export const DonationHero = () => {
       className="relative isolate flex min-h-svh items-center overflow-hidden bg-dark"
       aria-labelledby="donation-hero-heading"
     >
-      {/* Imagen de fondo */}
+
       <div
         className="absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: 'url(/img/mejores_fotos_salon/salon_gente_opcional.jpg)' }}
         role="presentation"
       />
-      {/* Overlay */}
+
       <div className="absolute inset-0 -z-10 bg-linear-to-b from-black/55 via-black/68 to-black/88" />
 
       <div className="mx-auto max-w-3xl px-6 py-20 text-center sm:px-8 sm:py-28">

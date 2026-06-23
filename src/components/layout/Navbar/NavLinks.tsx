@@ -1,29 +1,8 @@
-// src/components/layout/Navbar/NavLinks.tsx
 import { NavLink } from 'react-router';
-import type { TFunction } from 'i18next';
 import { MENU_ITEMS } from '../../../constants/navigation';
+import type { NavLinksProps } from '../../../types/global';
+import { SoonBadge } from './SoonBadge';
 
-type Variant = 'desktop' | 'mobile';
-
-interface NavLinksProps {
-  variant: Variant;
-  t: TFunction;
-  onLinkClick?: () => void;
-}
-
-const SoonBadge = ({ variant }: { variant: Variant }) => (
-  /*
-    CORRECCIÓN: type-caption (12px, 500) reemplaza text-[10px] hardcodeado.
-    10px viola el mínimo de legibilidad WCAG 2.2 (11px).
-    12px es el tamaño mínimo recomendado para texto interactivo.
-  */
-  <span className={[
-    'type-caption font-bold uppercase tracking-wider text-brand-amber bg-brand-accent/20',
-    variant === 'desktop' ? 'rounded-full px-1.5 py-0.5' : 'rounded-md px-2 py-0.5',
-  ].join(' ')}>
-    Pronto
-  </span>
-);
 
 export const NavLinks = ({ variant, t, onLinkClick }: NavLinksProps) => {
   const isDesktop = variant === 'desktop';

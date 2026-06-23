@@ -143,13 +143,13 @@
     "afterTransfer": "Após transferir",
     "afterTransferText": "Envie o comprovante para valoressinai@gmail.com ou via WhatsApp para +54 9 11 6012-2363 com seu nome e destino (Academia / Fundo Solidário). Sua doação será registrada e enviaremos uma confirmação.",
     "sendEmail": "Enviar por e-mail",
-    "sendWhatsapp": "Enviar via WhatsApp",
+    "sendWhatsapp": "Enviar pelo WhatsApp",
     "usdHint": "Para doadores internacionais. Transfira em dólares de qualquer país.",
     "usdOnlyExternal": "A conta em dólares é a única opção disponível para doadores fora da Argentina."
   },
   "panel": {
     "sendReceiptTitle": "Envie-nos sua mensagem juntamente com o comprovante de pagamento",
-    "sendWhatsApp": "Enviar via WhatsApp",
+    "sendWhatsApp": "Enviar pelo WhatsApp",
     "sendEmail": "Enviar por e-mail",
     "emailSubjectAcademy": "Doação para a Academia Valores Sinaí",
     "emailSubjectSolidarity": "Doação para o Fundo Solidário",

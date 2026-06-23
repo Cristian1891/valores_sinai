@@ -1,108 +1,13 @@
-// src/features/donations/components/BankTransferInfo.tsx
-
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import {
-  Landmark,
-  Banknote,
   Mail,
-  MessageCircle,
-  Copy,
-  Check,
+  MessageCircle
 } from 'lucide-react';
-import type { LucideIcon } from 'lucide-react';
+import { BANK_ACCOUNTS } from '../constants/bank-account';
+import { CopyButton } from './CopyButton';
 
-interface BankAccount {
-  id: string;
-  Icon: LucideIcon;
-  countryKey: string;
-  fields: { labelKey: string; value: string }[];
-}
 
-const BANK_ACCOUNTS: BankAccount[] = [
-  {
-    id: 'ar',
-    Icon: Landmark,
-    countryKey: 'bank.argentina',
-    fields: [
-      { labelKey: 'bank.alias', value: 'valores.sinai' },
-      { labelKey: 'bank.cbu', value: '0270246110058404770028' },
-      { labelKey: 'bank.cuit', value: '30-71871290-0' },
-      { labelKey: 'bank.bank', value: 'Banco Supervielle' },
-      {
-        labelKey: 'bank.account',
-        value: 'VALORES SINAI ASOCIACION CIVIL',
-      },
-    ],
-  },
-  {
-    id: 'usd',
-    Icon: Banknote,
-    countryKey: 'bank.usd',
-    fields: [
-      { labelKey: 'bank.alias', value: 'valores.sinai.usd' },
-      { labelKey: 'bank.cbu', value: '0270246140058404770012' },
-      { labelKey: 'bank.cuit', value: '30-71871290-0' },
-      { labelKey: 'bank.bank', value: 'Banco Supervielle' },
-      {
-        labelKey: 'bank.account',
-        value: 'VALORES SINAI ASOCIACION CIVIL',
-      },
-    ],
-  },
-];
-
-function CopyButton({
-  text,
-  label,
-}: {
-  text: string;
-  label: string;
-}) {
-  const [copied, setCopied] = useState(false);
-  const { t } = useTranslation('donations');
-
-  const handleCopy = async () => {
-    try {
-      await navigator.clipboard.writeText(text);
-
-      setCopied(true);
-
-      setTimeout(() => {
-        setCopied(false);
-      }, 2000);
-    } catch (error) {
-      console.error('Error al copiar:', error);
-    }
-  };
-
-  return (
-    <button
-      type="button"
-      onClick={handleCopy}
-      aria-label={
-        copied
-          ? `${label} copiado`
-          : `${t('bank.copy', 'Copiar')} ${label}`
-      }
-      className="rounded p-1 text-dark-soft transition-colors hover:text-brand-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent dark:text-brand-amber"
-    >
-      {copied ? (
-        <Check
-          className="h-4 w-4 text-success"
-          strokeWidth={2.25}
-          aria-hidden="true"
-        />
-      ) : (
-        <Copy
-          className="h-4 w-4"
-          strokeWidth={2}
-          aria-hidden="true"
-        />
-      )}
-    </button> 
-  );
-}
 
 export const BankTransferInfo = () => {
   const { t } = useTranslation('donations');

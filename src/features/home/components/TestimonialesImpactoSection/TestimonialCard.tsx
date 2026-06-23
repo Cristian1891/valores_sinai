@@ -1,4 +1,3 @@
-// src/features/home/components/TestimonialesImpactoSection/TestimonialCard.tsx
 import type { Testimonial } from '../../types/home';
 import { avatarColor, initials } from '../../utils/testimonials.utils';
 
@@ -12,14 +11,6 @@ export function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
         >
           "
         </span>
-        {/*
-          CORRECCIÓN: type-body-sm reemplaza text-sm leading-7.
-          leading-7 (28px) sobre text-sm (14px) = interlineado de 2×, demasiado abierto.
-          type-body-sm usa leading-[1.65] = 23px sobre 14px, que es correcto
-          para texto pequeño en tarjetas.
-          Se mantiene sm:text-base para que en pantallas más grandes
-          el texto crezca a 16px con el leading apropiado.
-        */}
         <p className="mt-1 type-body-sm text-white/80 sm:text-base">
           {testimonial.quote}
         </p>
@@ -34,11 +25,9 @@ export function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
         </div>
 
         <div className="min-w-0">
-          {/* CORRECCIÓN: type-label-sm reemplaza text-sm font-semibold */}
           <p className="truncate type-label-sm text-white">
             {testimonial.name}
           </p>
-          {/* CORRECCIÓN: type-caption reemplaza text-xs */}
           <p className="truncate type-caption text-white/50">
             {testimonial.location}
           </p>

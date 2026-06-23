@@ -1,15 +1,3 @@
-// src/features/academy/components/Field.tsx
-//
-// TIPOGRAFÍA — decisiones tomadas:
-//
-//   <label>          → type-label    (14px, 600) — label de formulario,
-//                       uso exacto documentado en el sistema tipográfico.
-//   <input>          → type-body-sm  (14px, 400) — texto que el usuario escribe;
-//                       mismo tamaño que el label pero weight normal,
-//                       crea jerarquía sin cambiar tamaño.
-//   Mensaje de error → type-caption  (12px, 500) — meta-info de estado,
-//                       menor que el campo para no competir visualmente.
-
 import type { FieldProps } from '../types/academy';
 
 export const Field: React.FC<FieldProps & { onBlur?: () => void }> = ({
@@ -30,13 +18,11 @@ export const Field: React.FC<FieldProps & { onBlur?: () => void }> = ({
   return (
     <div className="flex flex-col gap-1.5">
 
-      {/* Label — type-label: 14px, sans, 600 */}
       <label htmlFor={inputId} className="type-label text-white">
         {label}{' '}
         <span className="text-brand-accent" aria-hidden="true">*</span>
       </label>
 
-      {/* Input — type-body-sm: 14px, sans, 400, line-height 1.65 */}
       <input
         id={inputId}
         type={type}
@@ -59,9 +45,6 @@ export const Field: React.FC<FieldProps & { onBlur?: () => void }> = ({
         ].join(' ')}
       />
 
-      {/* Error — type-caption: 12px, 500.
-          Siempre en el DOM para evitar layout shifts — se oculta con sr-only
-          cuando no hay error activo. */}
       <p
         id={errorId}
         role={hasError ? 'alert' : undefined}

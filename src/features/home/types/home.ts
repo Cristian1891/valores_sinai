@@ -1,14 +1,4 @@
-export interface HomeStat {
-  value: string;
-  label: string;
-}
-
-export interface HomeCard {
-  title: string;
-  description: string;
-  to: string;
-  cta: string;
-}
+import type { LucideIcon } from "lucide-react";
 
 export interface Testimonial {
   name: string;
@@ -28,3 +18,12 @@ export interface UseTestimonialsResult {
   testimonials: Testimonial[];
   loading: boolean;
 }
+
+export type ContactItem = {
+  key: string;
+  labelKey: string;
+  valueKey: string;
+  hrefKey: string;
+  icon: LucideIcon;
+  external: boolean;
+};

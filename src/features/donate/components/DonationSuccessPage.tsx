@@ -1,124 +1,17 @@
-// src/features/donations/DonationSuccessPage.tsx
-//
-// Se renderiza automáticamente cuando la URL contiene ?success=true
-// Stripe agrega este parámetro al redirigir al usuario después del pago.
-//
-// Integración en DonationsPage.tsx:
-//
-//   import { useSearchParams } from 'react-router';
-//   import { DonationSuccessPage } from './DonationSuccessPage';
-//
-//   export const DonationsPage = () => {
-//     const [searchParams] = useSearchParams();
-//     const isSuccess = searchParams.get('success') === 'true';
-//
-//     if (isSuccess) return <DonationSuccessPage />;
-//     return ( ... tu página normal ... );
-//   };
-
 import { useEffect, useRef } from 'react';
 import { Link, useSearchParams } from 'react-router';
 import { useTranslation } from 'react-i18next';
-import { SUCCESS_NEXT_STEPS, CONFETTI_COLORS, CONFETTI_COUNT } from '../constants/donationConstants';
+import { SUCCESS_NEXT_STEPS } from '../constants/donationConstants';
+import { Confetti } from './Confetti';
+import { AnimatedCheck } from './AnimatedCheck';
 
-// ─── Componente de confetti liviano (CSS puro, sin dependencias) ───────────
-function Confetti() {
-  return (
-    <div
-      aria-hidden="true"
-      className="pointer-events-none fixed inset-0 z-0 overflow-hidden"
-    >
-      {Array.from({ length: CONFETTI_COUNT }).map((_, i) => {
-        const color    = CONFETTI_COLORS[i % CONFETTI_COLORS.length];
-        const left     = `${Math.random() * 100}%`;
-        const delay    = `${Math.random() * 3}s`;
-        const duration = `${3 + Math.random() * 4}s`;
-        const size     = `${6 + Math.random() * 8}px`;
-        const rotate   = `${Math.random() * 360}deg`;
 
-        return (
-          <span
-            key={i}
-            style={{
-              position:        'absolute',
-              top:             '-20px',
-              left,
-              width:           size,
-              height:          size,
-              backgroundColor: color,
-              borderRadius:    Math.random() > 0.5 ? '50%' : '2px',
-              opacity:         0,
-              transform:       `rotate(${rotate})`,
-              animation:       `confettiFall ${duration} ${delay} ease-in forwards`,
-            }}
-          />
-        );
-      })}
-
-      <style>{`
-        @keyframes confettiFall {
-          0%   { transform: translateY(0)   rotate(0deg)   scaleX(1); opacity: 1; }
-          50%  { opacity: 1; }
-          100% { transform: translateY(100vh) rotate(720deg) scaleX(0.5); opacity: 0; }
-        }
-        @media (prefers-reduced-motion: reduce) {
-          * { animation-duration: 0.01ms !important; }
-        }
-      `}</style>
-    </div>
-  );
-}
-
-// ─── Ícono de check animado ────────────────────────────────────────────────
-function AnimatedCheck() {
-  return (
-    <div className="relative flex h-24 w-24 items-center justify-center">
-      {/* Anillo pulsante */}
-      <span
-        aria-hidden="true"
-        className="absolute inset-0 animate-ping rounded-full bg-brand-accent/30"
-        style={{ animationDuration: '1.5s', animationIterationCount: 3 }}
-      />
-      {/* Círculo de fondo */}
-      <span className="absolute inset-0 rounded-full bg-brand-accent/20" />
-      {/* Check */}
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth={2.5}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className="relative z-10 h-12 w-12 text-brand-accent"
-        aria-hidden="true"
-        style={{
-          strokeDasharray:  100,
-          strokeDashoffset: 0,
-          animation:        'drawCheck 0.6s 0.3s ease-out both',
-        }}
-      >
-        <style>{`
-          @keyframes drawCheck {
-            from { stroke-dashoffset: 100; opacity: 0; }
-            to   { stroke-dashoffset: 0;   opacity: 1; }
-          }
-        `}</style>
-        <polyline points="20 6 9 17 4 12" />
-      </svg>
-    </div>
-  );
-}
-
-// ─── Componente principal ──────────────────────────────────────────────────
 export const DonationSuccessPage = () => {
   const { t } = useTranslation('donations');
   const [searchParams] = useSearchParams();
 
-  // Detectar categoría desde URL (ej: ?success=true&category=academy)
   const category = searchParams.get('category') as 'academy' | 'solidarity' | null;
 
-  // Scroll al top al montar
   const topRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     topRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -133,10 +26,9 @@ export const DonationSuccessPage = () => {
 
   return (
     <div ref={topRef} className="relative min-h-screen bg-dark overflow-hidden">
-      {/* Confetti */}
+
       <Confetti />
 
-      {/* Fondo decorativo radial */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0"
@@ -149,7 +41,6 @@ export const DonationSuccessPage = () => {
       <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-4 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto w-full max-w-2xl">
 
-          {/* ── Sección principal ── */}
           <div
             className="rounded-3xl border border-white/10 bg-dark-soft p-8 text-center shadow-2xl sm:p-12"
             style={{ animation: 'fadeUp 0.5s ease-out both' }}
@@ -161,29 +52,24 @@ export const DonationSuccessPage = () => {
               }
             `}</style>
 
-            {/* Check animado */}
             <div className="flex justify-center">
               <AnimatedCheck />
             </div>
 
-            {/* Título */}
             <h1 className="mt-6 text-3xl font-bold tracking-tight text-white sm:text-4xl">
               {t('success.title')}
             </h1>
 
-            {/* Subtítulo con categoría */}
             <p className="mt-3 text-base leading-7 text-white/70">
               {t('success.subtitle', { category: categoryLabel })}
             </p>
 
-            {/* Versículo */}
             <blockquote className="mx-auto mt-6 max-w-md rounded-2xl border border-brand-accent/20 bg-brand-accent/5 px-6 py-4">
               <p className="font-serif text-sm italic leading-7 text-brand-accent">
                 {t('success.verse')}
               </p>
             </blockquote>
 
-            {/* Compartir en redes */}
             <div className="mt-8">
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-white/50">
                 {t('success.shareLabel')}
@@ -231,7 +117,6 @@ export const DonationSuccessPage = () => {
             </div>
           </div>
 
-          {/* ── Próximos pasos ── */}
           <div
             className="mt-6 grid gap-4 sm:grid-cols-3"
             style={{ animation: 'fadeUp 0.5s 0.2s ease-out both' }}
@@ -255,7 +140,6 @@ export const DonationSuccessPage = () => {
             ))}
           </div>
 
-          {/* ── CTAs finales ── */}
           <div
             className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center"
             style={{ animation: 'fadeUp 0.4s 0.6s ease-out both' }}
@@ -275,7 +159,6 @@ export const DonationSuccessPage = () => {
             </Link>
           </div>
 
-          {/* ── Contacto de soporte ── */}
           <p
             className="mt-8 text-center text-xs text-white/40"
             style={{ animation: 'fadeUp 0.4s 0.7s ease-out both' }}

@@ -1,4 +1,3 @@
-// src/features/about-us/components/MissionVision.tsx
 import { HeartHandshake, Eye } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
@@ -12,7 +11,6 @@ export const MissionVision = () => {
     >
       <div className="mx-auto max-w-5xl">
 
-        {/* Encabezado */}
         <div className="mb-14 text-center">
           <p className="mb-3 type-kicker text-brand-amber">
             {t('mission.kicker')}
@@ -26,15 +24,12 @@ export const MissionVision = () => {
           <div className="mx-auto mt-4 h-px w-16 bg-brand-accent" aria-hidden="true" />
         </div>
 
-        {/* Historia */}
         <p className="mx-auto mb-14 max-w-3xl text-center type-body text-dark-soft dark:text-surface-cream sm:text-lg">
           {t('mission.history')}
         </p>
 
-        {/* Misión y Visión */}
         <div className="mb-14 grid gap-6 sm:grid-cols-2">
 
-          {/* Misión */} 
           <div className="rounded-3xl bg-surface-cream dark:bg-dark-soft p-8 ring-1 ring-black/5">
             <div
               className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-accent"
@@ -50,7 +45,6 @@ export const MissionVision = () => {
             </p>
           </div>
 
-          {/* Visión */}
           <div className="rounded-3xl bg-surface-cream dark:bg-dark-soft p-8 ring-1 ring-black/5">
             <div
               className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-accent"
@@ -68,7 +62,6 @@ export const MissionVision = () => {
 
         </div>
 
-        {/* Frase institucional */}
         <figure className="relative overflow-hidden rounded-3xl bg-dark dark:bg-dark-soft px-8 py-12 text-center sm:px-14">
           <span
             className="pointer-events-none absolute -top-4 left-6 select-none font-serif text-[8rem] leading-none text-brand-accent/60"

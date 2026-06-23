@@ -1,4 +1,3 @@
-// src/features/home/components/SocialMediaSection.tsx
 import { useTranslation } from 'react-i18next';
 import { SOCIAL_LINKS_CONFIG } from '../constants/socialLinks';
 import { InstagramIcon, FacebookIcon, XIcon } from '../../../components/ui/icons';
@@ -17,15 +16,15 @@ export const SocialMediaSection = () => {
       <div className="mx-auto max-w-7xl">
 
         <div className="mb-10 max-w-2xl">
-          {/* CORRECCIÓN: type-kicker */}
+          
           <p className="type-kicker text-brand-amber">
             {t('social.kicker')}
           </p>
-          {/* CORRECCIÓN: type-h2 + breakpoints */}
+          
           <h2 className="mt-3 type-h2 text-dark dark:text-white sm:text-4xl lg:text-[2.75rem]">
             {t('social.title')}
           </h2>
-          {/* CORRECCIÓN: type-body */}
+          
           <p className="mt-4 type-body text-dark-soft dark:text-gray-mid sm:text-lg">
             {t('social.subtitle')}
           </p>
@@ -48,10 +47,6 @@ export const SocialMediaSection = () => {
                   {ICON_MAP[key]}
                 </span>
 
-                {/*
-                  CORRECCIÓN: type-label-sm reemplaza font-sans text-sm font-semibold.
-                  13px, 500 — adecuado para el label de un botón de red social.
-                */}
                 <span className="type-label-sm text-dark-soft transition-colors duration-300 group-hover:text-dark dark:text-gray-mid dark:group-hover:text-white">
                   {t(`social.${key}`)}
                 </span>

@@ -1,7 +1,4 @@
-// src/components/icons/XIcon.tsx
-interface IconProps {
-  className?: string;
-}
+import type { IconProps } from "../../../types/global";
 
 export const XIcon = ({ className = 'h-5 w-5' }: IconProps) => (
   <svg

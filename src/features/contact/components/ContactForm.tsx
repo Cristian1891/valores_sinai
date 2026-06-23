@@ -1,48 +1,10 @@
-// src/features/contact/components/ContactForm.tsx
-//
-// Lógica de formulario → hooks/useContactForm.ts
-// Schema de validación → utils/contactSchema.ts
-// Constantes (QUERY_TYPE_VALUES, INPUT_CLASS) → types/contact.ts / constants/contact.ts
-// Este componente solo renderiza.
-
 import React from 'react'
 import { useTranslation } from 'react-i18next'
-
 import { useContactForm } from '../hooks/useContactForm'
 import { INPUT_CLASS } from '../constants/contact'
 import { QUERY_TYPE_VALUES } from '../types/contact'
+import { Field } from './Field'
 
-// ── Sub-componente Field ──────────────────────────────────────────────────────
-
-interface FieldProps {
-  id:        string
-  label:     string
-  required?: boolean
-  error?:    string
-  children:  React.ReactNode
-}
-
-const Field: React.FC<FieldProps> = ({ id, label, required, error, children }) => (
-  <div className="flex flex-col gap-1.5">
-    <label
-      htmlFor={id}
-      className="type-label font-semibold text-dark dark:text-white"
-    >
-      {label}
-      {required && (
-        <span className="ml-1 text-brand-accent" aria-hidden="true">*</span>
-      )}
-    </label>
-    {children}
-    {error && (
-      <p role="alert" id={`${id}-error`} className="font-sans text-xs text-red-500">
-        {error}
-      </p>
-    )}
-  </div>
-)
-
-// ── Componente principal ──────────────────────────────────────────────────────
 
 const MESSAGE_MAX_LENGTH = 1000
 
@@ -63,9 +25,6 @@ export const ContactForm: React.FC = () => {
 
   const isLoading = isSubmitting || submitState === 'loading'
 
-  // Desacoplamos onChange de RHF para fullName y phone para usar nuestros
-  // handlers con lógica de trigger condicional. El resto del registration
-  // (ref, name, onBlur) se conserva íntegro mediante el spread.
   const { onChange: _nameOnChange,  ...nameReg }  = register('fullName')
   const { onChange: _phoneOnChange, ...phoneReg } = register('phone')
 
@@ -77,7 +36,6 @@ export const ContactForm: React.FC = () => {
     >
       <div className="mx-auto max-w-7xl">
 
-        {/* Encabezado */}
         <div className="mb-10 max-w-2xl"> 
           <p className="type-kicker tracking-[0.2em] text-brand-amber">
             {t('form.kicker')}
@@ -95,10 +53,8 @@ export const ContactForm: React.FC = () => {
 
         <div className="grid gap-10 lg:grid-cols-5 lg:gap-12">
 
-          {/* Columna principal: formulario */}
           <div className="lg:col-span-3">
 
-            {/* Banner de error global */}
             {submitState === 'error' && (
               <div
                 role="alert"
@@ -128,7 +84,6 @@ export const ContactForm: React.FC = () => {
             >
               <div className="flex flex-col gap-5">
 
-                {/* Fila 1: nombre + email */}
                 <div className="grid gap-5 sm:grid-cols-2">
                   <Field
                     id="fullName"
@@ -144,8 +99,6 @@ export const ContactForm: React.FC = () => {
                       aria-invalid={!!errors.fullName}
                       aria-describedby={errors.fullName ? 'fullName-error' : undefined}
                       className={INPUT_CLASS}
-                      // onChange propio: trigger condicional por contenido.
-                      // onBlur, ref y name vienen del spread de nameReg.
                       onChange={handleNameChange}
                       {...nameReg}
                     />
@@ -170,12 +123,11 @@ export const ContactForm: React.FC = () => {
                   </Field>
                 </div>
 
-                {/* Fila 2: teléfono + organización */}
                 <div className="grid gap-5 sm:grid-cols-2">
                   <Field
                     id="phone"
                     label={t('form.fields.phone')}
-                    required                          // ← ahora obligatorio
+                    required                        
                     error={errors.phone?.message}
                   >
                     <input
@@ -186,7 +138,6 @@ export const ContactForm: React.FC = () => {
                       aria-invalid={!!errors.phone}
                       aria-describedby={errors.phone ? 'phone-error' : undefined}
                       className={INPUT_CLASS}
-                      // onChange propio: trigger condicional por contenido.
                       onChange={handlePhoneChange}
                       {...phoneReg}
                     />
@@ -210,7 +161,6 @@ export const ContactForm: React.FC = () => {
                   </Field>
                 </div>
 
-                {/* Tipo de consulta */}
                 <Field
                   id="queryType"
                   label={t('form.fields.queryType')}
@@ -236,7 +186,6 @@ export const ContactForm: React.FC = () => {
                   </select>
                 </Field>
 
-                {/* Mensaje con contador de caracteres */}
                 <Field
                   id="message"
                   label={t('form.fields.message')}
@@ -268,12 +217,10 @@ export const ContactForm: React.FC = () => {
                   </div>
                 </Field>
 
-                {/* Aviso de privacidad */}
                 <p className="type-caption text-dark-soft dark:text-gray-mid">
                   {t('form.privacy')}
                 </p>
 
-                {/* Botón de envío */}
                 <button
                   type="submit"
                   disabled={isLoading}
@@ -323,7 +270,6 @@ export const ContactForm: React.FC = () => {
             </form>
           </div>
 
-          {/* Columna lateral: mapa */}
           <div className="lg:col-span-2">
             <div className="sticky top-24 overflow-hidden rounded-3xl ring-1 ring-black/5 dark:ring-white/5">
               <iframe

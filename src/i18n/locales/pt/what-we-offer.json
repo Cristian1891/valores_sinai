@@ -237,6 +237,11 @@
         "titulo": "Espaços verdes",
         "descripcion": "Áreas de lazer e encontro ao ar livre, em um ambiente natural pensado para o descanso e a comunidade.",
         "alt": "Área verde e espaços de encontro ao ar livre do terreno"
+      },
+      "paintball": {
+        "alt": "Jovens jogando paintball no espaço de Valores Sinaí",
+        "titulo": "Paintball",
+        "descripcion": "Espaço equipado para teambuilding, dinâmicas de grupo e recreação para jovens e adultos."
       }
     }
   },

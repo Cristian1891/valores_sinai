@@ -1,4 +1,3 @@
-// src/components/layout/Navbar/NavLogo.tsx
 import { Link } from 'react-router';
 
 export const NavLogo = () => (

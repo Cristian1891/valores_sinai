@@ -1,12 +1,3 @@
-// src/features/what-we-offer/components/ContactOffer.tsx
-//
-// Datos (QUICK_CONTACT_ITEMS) → constants/contact.ts
-//   Los hrefs y íconos son invariantes de idioma; solo los labels se traducen.
-//   Por eso contact.ts no necesita convertirse a factory: los labels se
-//   sobreescriben directamente desde t() en el render.
-// Tipos (QuickContactItem)    → types/what-we-offer.ts
-// Este componente solo renderiza.
-
 import { Fragment } from 'react'
 import { Link } from 'react-router'
 import { ArrowRight } from 'lucide-react'
@@ -38,9 +29,6 @@ export const ContactOffer: React.FC = () => {
           {t('contact.subtitle')}
         </p>
 
-        {/* Links de contacto rápido
-            Los labels vienen del JSON; los hrefs e íconos son invariantes
-            de idioma y se mantienen en la constante. */}
         <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-6">
           {QUICK_CONTACT_ITEMS.map((item, index) => {
             const Icon = item.icon
@@ -67,7 +55,6 @@ export const ContactOffer: React.FC = () => {
           })}
         </div>
 
-        {/* CTA principal */}
         <div className="mt-10">
           <Link
             to="/contacto"

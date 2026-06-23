@@ -1,13 +1,6 @@
-// src/features/contact/components/ContactHero.tsx
-//
-// Datos (BACKGROUND_WORDS) → constants/contact.ts
-// Este componente solo renderiza.
-
 import { useTranslation } from 'react-i18next'
 import { BACKGROUND_WORDS } from '../constants/contact'
 
-// Número de repeticiones del patrón tipográfico de fondo.
-// Lo suficiente para cubrir cualquier viewport sin coste perceptible de render.
 const PATTERN_REPEAT = 6
 
 export const ContactHero: React.FC = () => {
@@ -18,7 +11,7 @@ export const ContactHero: React.FC = () => {
       aria-labelledby="contact-hero-heading"
       className="relative isolate flex min-h-[55svh] flex-col items-center justify-center overflow-hidden border-t border-white/5 bg-[#0A0A0A] px-4 py-24 text-center sm:px-6 lg:px-8"
     >
-      {/* Gradiente radial de fondo */}
+
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 -z-10 opacity-15"
@@ -28,7 +21,6 @@ export const ContactHero: React.FC = () => {
         }}
       />
 
-      {/* Patrón tipográfico de valores — textura visual institucional */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 -z-10 flex select-none flex-wrap items-center justify-center gap-x-10 gap-y-6 overflow-hidden opacity-[0.025]"

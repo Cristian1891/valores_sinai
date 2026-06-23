@@ -1,31 +1,8 @@
-// src/features/home/components/Contact.tsx
-//
-// DECISIÓN: Se eliminaron todas las animaciones de @react-spring/web.
-// Motivo: las animaciones de entrada (fade + slide) en secciones de contacto
-// añaden latencia perceptible antes de que el usuario pueda leer la información
-// (email, teléfono, dirección). En secciones de conversión y contacto, el
-// contenido debe estar disponible inmediatamente — la animación compite con
-// la intención del usuario. Best practice 2026: animar decoración, no contenido funcional.
-
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router';
-import { Mail, Phone, MapPin, ArrowRight } from 'lucide-react';
-import type { LucideIcon } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+import { CONTACT_ITEMS } from '../constants/contactItem';
 
-type ContactItem = {
-  key: string;
-  labelKey: string;
-  valueKey: string;
-  hrefKey: string;
-  icon: LucideIcon;
-  external: boolean;
-};
-
-const CONTACT_ITEMS: ContactItem[] = [
-  { key: 'email',   labelKey: 'contact.subtitle1', valueKey: 'contact.text1', hrefKey: 'contact.href1', icon: Mail,   external: false },
-  { key: 'phone',   labelKey: 'contact.subtitle2', valueKey: 'contact.text2', hrefKey: 'contact.href2', icon: Phone,  external: false },
-  { key: 'address', labelKey: 'contact.subtitle3', valueKey: 'contact.text3', hrefKey: 'contact.href3', icon: MapPin, external: true  },
-];
 
 export const Contact = () => {
   const { t } = useTranslation('home');

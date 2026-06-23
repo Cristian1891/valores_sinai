@@ -1,30 +1,17 @@
-// src/features/what-we-offer/components/ImageGallery.tsx
-//
-// Datos (GALLERY_PHOTOS) → construidos desde i18n con getGalleryPhotos(t)
-// Transformación SLIDES  → utils/gallery.ts
-// Tipos (FotoItem)       → types/what-we-offer.ts
-// Estado (lightboxIndex) → local: solo 1 useState, no amerita hook propio.
-// Este componente solo renderiza + un useState simple.
-
 import { useState, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import Lightbox from 'yet-another-react-lightbox'
 import Captions from 'yet-another-react-lightbox/plugins/captions'
 import 'yet-another-react-lightbox/styles.css'
 import 'yet-another-react-lightbox/plugins/captions.css'
-
 import { getGalleryPhotos } from '../constants/gallery'
 import { toSlides } from '../utils/gallery'
 
 export const ImageGallery: React.FC = () => {
   const { t } = useTranslation('what-we-offer')
   const [lightboxIndex, setLightboxIndex] = useState<number>(-1)
-
-  // Se reconstruyen al cambiar de idioma. toSlides es O(n) sobre ~14 items:
-  // el costo es despreciable y evita la complejidad de un useMemo con t como dep.
   const photos = getGalleryPhotos(t)
   const slides = toSlides(photos)
-
   const abrirLightbox  = useCallback((index: number) => setLightboxIndex(index), [])
   const cerrarLightbox = useCallback(() => setLightboxIndex(-1), [])
 
@@ -35,7 +22,6 @@ export const ImageGallery: React.FC = () => {
     >
       <div className="mx-auto max-w-7xl">
 
-        {/* Encabezado */}
         <div className="mb-12 text-center">
           <p className="type-kicker mb-3 text-brand-accent">
             {t('gallery.kicker')}
@@ -52,12 +38,6 @@ export const ImageGallery: React.FC = () => {
           <div className="mx-auto mt-4 h-px w-16 bg-brand-accent" aria-hidden="true" />
         </div>
 
-        {/*
-          Grilla:
-          Mobile:  1 col, altura fija 220px por tile.
-          Tablet:  2 cols.
-          Desktop: 3 cols. Foto 0 ocupa 2×2 (lg:col-span-2 lg:row-span-2).
-        */}
         <div className="grid auto-rows-[220px] gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {photos.map((foto, i) => (
             <button
@@ -67,7 +47,7 @@ export const ImageGallery: React.FC = () => {
               aria-label={t('gallery.expandAriaLabel', { titulo: foto.titulo })}
               className={[
                 'group relative overflow-hidden rounded-2xl bg-dark-soft',
-                'cursor-pointer focus-visible:outline focus-visible:outline-2',
+                'cursor-pointer focus-visible:outline-2',
                 'focus-visible:outline-offset-2 focus-visible:outline-brand-accent',
                 foto.className ?? '',
               ].join(' ')}
@@ -80,11 +60,10 @@ export const ImageGallery: React.FC = () => {
                 className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
 
-              {/* Overlay — siempre visible en mobile, solo en hover en desktop */}
               <div
                 className={[
                   'absolute inset-0 flex flex-col items-start justify-end',
-                  'bg-gradient-to-t from-black/70 via-black/20 to-transparent',
+                  'bg-linear-to-t from-black/70 via-black/20 to-transparent',
                   'p-4 opacity-100 transition-opacity duration-300',
                   'sm:opacity-0 sm:group-hover:opacity-100',
                 ].join(' ')}
@@ -109,7 +88,6 @@ export const ImageGallery: React.FC = () => {
           ))}
         </div>
 
-        {/* CTA secundario */}
         <div className="mt-8 flex justify-center">
           <button
             type="button"
@@ -117,7 +95,7 @@ export const ImageGallery: React.FC = () => {
             className={[
               'type-label inline-flex items-center gap-2 rounded-full border border-white/20',
               'bg-white/10 px-6 py-3 text-white backdrop-blur-sm transition-colors duration-200',
-              'hover:bg-white/20 focus-visible:outline focus-visible:outline-2',
+              'hover:bg-white/20 focus-visible:outline-2',
               'focus-visible:outline-offset-2 focus-visible:outline-brand-accent',
             ].join(' ')}
           >

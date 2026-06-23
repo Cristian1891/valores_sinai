@@ -237,7 +237,12 @@
         "titulo": "Green spaces",
         "descripcion": "Outdoor recreation and meeting areas, in a natural environment designed for rest and community.",
         "alt": "Green area and outdoor meeting spaces at the grounds"
-      }
+      },
+      "paintball": {
+        "alt": "Young people playing paintball at Valores Sinaí",
+        "titulo": "Paintball",
+        "descripcion": "Fully equipped space for team building, group activities and recreation for youth and adults."
+    }
     }
   },
   "contact": {

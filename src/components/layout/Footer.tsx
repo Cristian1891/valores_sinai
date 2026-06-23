@@ -1,15 +1,9 @@
-// src/components/layout/Footer.tsx
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router';
 import { FOOTER_NAV_LINKS } from '../../constants/navigation';
 import { SOCIAL_LINKS_CONFIG } from '../../features/home/constants/socialLinks';
-import { InstagramIcon, FacebookIcon, XIcon } from '../ui/icons/index';
+import { ICON_MAP } from '../../constants/icon-map';
 
-const ICON_MAP: Record<string, React.ReactNode> = {
-  instagram: <InstagramIcon />,
-  facebook:  <FacebookIcon />,
-  x:         <XIcon />,
-};
 
 export const Footer = () => {
   const { t } = useTranslation('common');
@@ -49,10 +43,6 @@ export const Footer = () => {
           </div>
 
           <nav aria-label={t('footer.navigation')}>
-            {/*
-             * text-center en mobile, sm:text-left en desktop.
-             * Consistente con la columna del logo.
-             */}
             <p className="mb-3 type-kicker text-brand-accent text-center sm:text-left">
               {t('footer.navigation')}
             </p>
@@ -71,18 +61,6 @@ export const Footer = () => {
           </nav>
 
           <div className="flex flex-col items-center gap-4 sm:items-start">
-            {/*
-             * CORRECCIÓN: "Seguinos en nuestras redes sociales" se cortaba en mobile
-             * porque type-kicker tiene letter-spacing: 0.25em — en 300-360px de
-             * viewport ese tracking hace que el texto exceda el ancho disponible.
-             *
-             * Solución: text-balance (text-wrap: balance) distribuye el texto en
-             * múltiples líneas de forma equilibrada cuando no entra en una sola.
-             * Es superior a overflow-wrap: break-word porque mantiene la legibilidad
-             * visual con líneas de ancho similar en lugar de cortar palabras.
-             * text-center en mobile centra ambas líneas uniformemente.
-             * sm:text-left restaura la alineación original en desktop.
-             */}
             <p className="type-kicker text-brand-accent text-center text-balance sm:text-left">
               {t('footer.followUs')}
             </p>

@@ -1,4 +1,3 @@
-// src/features/about-us/components/HeroAbout.tsx
 import { useTranslation } from 'react-i18next';
 
 export const HeroAbout = () => {
@@ -19,12 +18,10 @@ export const HeroAbout = () => {
       <div className="mx-auto flex min-h-[calc(100svh-4rem)] max-w-7xl items-center px-4 py-24 sm:px-6 lg:px-8">
         <div className="max-w-2xl"> 
 
-          {/* Kicker */}
           <p className="mb-4 type-kicker text-brand-accent">
             {t('hero.kicker')}
           </p>
- 
-          {/* H1 */}
+
           <h1 className="type-display sm:text-5xl lg:text-[3.2rem]">
             {t('hero.title')}
             <span className="mt-1 block text-brand-accent">
@@ -32,7 +29,6 @@ export const HeroAbout = () => {
             </span>
           </h1>
 
-          {/* Subtítulo */}
           <p className="mt-6 max-w-xl type-body text-white/80 sm:text-lg sm:leading-8">
             {t('hero.subtitle')}
           </p>
@@ -40,13 +36,6 @@ export const HeroAbout = () => {
         </div>
       </div>
 
-      {/* Indicador de scroll */}
-      {/* <div
-        className="absolute bottom-6 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-1 lg:flex"
-        aria-hidden="true"
-      >
-        <span className="h-8 w-px animate-pulse bg-white/40" />
-      </div> */}
     </section>
   );
 };

@@ -1,4 +1,3 @@
-// src/components/layout/Navbar/Navbar.tsx
 import { Menu, X } from 'lucide-react';
 import { useNavbar } from '../../../hooks/useNavbar';
 import { LANGUAGES } from '../../../constants/languages';
@@ -28,7 +27,6 @@ export const Navbar = () => {
 
           <NavLogo />
 
-          {/* Desktop nav */}
           <div className="hidden items-center gap-0.5 lg:flex">
             <NavLinks variant="desktop" t={t} />
             <DonateButton variant="desktop" label={t('navbar.donate')} />
@@ -44,7 +42,6 @@ export const Navbar = () => {
             <ThemeToggle variant="desktop" isDark={isDark} onToggle={toggleTheme} t={t} />
           </div>
 
-          {/* Hamburger */}
           <button
             type="button"
             onClick={() => setIsMobileOpen((prev) => !prev)}
@@ -62,7 +59,6 @@ export const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile menu */}
       {isMobileOpen && (
         <div
           id="mobile-menu"

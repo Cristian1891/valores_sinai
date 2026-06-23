@@ -7,7 +7,6 @@ function App() {
 
   return (
     <>
-    // Ahora el Provider envuelve a toda la lógica de navegación
       <ThemeProvider>
         <RouterProvider router={router} />
       </ThemeProvider>

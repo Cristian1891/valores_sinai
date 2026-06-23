@@ -1,9 +1,3 @@
-// src/features/what-we-offer/components/Beneficiaries.tsx
-//
-// Datos (BENEFICIARY_GROUPS) → construidos desde i18n con getBeneficiaryGroups(t)
-// Tipos (TipoGrupoItem)      → types/what-we-offer.ts
-// Este componente solo renderiza.
-
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { getBeneficiaryGroups } from '../constants/beneficiaries'
@@ -19,7 +13,6 @@ export const Beneficiaries: React.FC = () => {
     >
       <div className="mx-auto max-w-7xl">
 
-        {/* Encabezado */}
         <div className="mb-12 text-center">
           <p className="type-kicker mb-3 text-brand-amber">
             {t('beneficiaries.kicker')}
@@ -36,7 +29,6 @@ export const Beneficiaries: React.FC = () => {
           <div className="mx-auto mt-4 h-px w-16 bg-brand-accent" aria-hidden="true" />
         </div>
 
-        {/* Grilla de grupos */} 
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {groups.map((tipo) => (
             <div

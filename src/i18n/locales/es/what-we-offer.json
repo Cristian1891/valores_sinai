@@ -240,6 +240,11 @@
         "titulo": "Espacios verdes",
         "descripcion": "Áreas de esparcimiento y reunión al aire libre, en un entorno natural pensado para el descanso y la comunidad.",
         "alt": "Área verde y espacios de reunión al aire libre del predio"
+      },
+      "paintball": {
+        "alt": "Jóvenes jugando paintball en el predio de Valores Sinaí",
+        "titulo": "Paintball",
+        "descripcion": "Espacio equipado para teambuilding, dinámicas grupales y recreación para jóvenes y adultos."
       }
     }
   },

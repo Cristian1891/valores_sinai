@@ -1,51 +1,12 @@
-// src/features/contact/hooks/useContactForm.ts
-//
-// Custom hook que encapsula la lógica del formulario de contacto.
-// ─────────────────────────────────────────────────────────────────────────────
-// ESTRATEGIA DE VALIDACIÓN (tres capas):
-//
-//   1. mode: 'onSubmit'
-//      Los errores de campos vacíos nunca aparecen por hacer click-y-salir.
-//      El usuario puede explorar el formulario libremente sin ser interrumpido.
-//
-//   2. reValidateMode: 'onChange'
-//      Después del primer intento de envío fallido, todos los campos con error
-//      revalidan en tiempo real mientras el usuario corrige.
-//
-//   3. trigger condicional en handleNameChange / handlePhoneChange
-//      Para fullName y phone se dispara trigger() solo cuando value.length > 0.
-//      Esto habilita feedback inmediato de formato (ej: "solo ingresaste números")
-//      mientras el usuario escribe — sin mostrar nada si el campo está vacío.
-//      El blur de un campo vacío sigue sin mostrar nada (cubierto por capa 1).
-//
-// ─────────────────────────────────────────────────────────────────────────────
-// FIX MULTIIDIOMA:
-//
-// El bug original era usar useMemo(() => getContactSchema(t), [t]) con
-// zodResolver(schema). Zod internaliza los strings de error al construir el
-// schema: una vez construido en español, los mensajes quedan en español aunque
-// t() cambie. useMemo no ayuda porque Zod ya copió los strings.
-//
-// Solución: createContactResolver(t) es un Resolver<ContactFormData> que llama
-// a getValidationMessages(t) en cada invocación del resolver — es decir, cada
-// vez que RHF valida (submit, onChange, trigger). El t() que recibe siempre es
-// el del idioma activo en ese momento.
-//
-// Para que RHF use el resolver actualizado cuando cambia el idioma, recreamos
-// el resolver memoizado con i18n.language como dependencia. Como el resolver
-// es solo una función (no un objeto de estado), esto es barato.
-// ─────────────────────────────────────────────────────────────────────────────
-
 import { useCallback, useEffect, useMemo, useState } from 'react'
-import { useForm, type UseFormHandleSubmit } from 'react-hook-form'
+import { useForm } from 'react-hook-form'
 import { toast } from 'react-toastify'
 import { useTranslation } from 'react-i18next'
 
 import { DESTINATION_MAP } from '../constants/contact'
 import { createContactResolver } from '../utils/contactSchema'
-import type { ContactFormData, SubmitState } from '../types/contact'
+import type { ContactFormData, ContactOnSubmit, SubmitState } from '../types/contact'
 
-type ContactOnSubmit = ReturnType<UseFormHandleSubmit<ContactFormData>>
 
 export interface UseContactFormReturn {
   register:          ReturnType<typeof useForm<ContactFormData>>['register']
@@ -64,16 +25,10 @@ export function useContactForm(): UseContactFormReturn {
   const { t, i18n } = useTranslation('contact')
   const [submitState, setSubmitState] = useState<SubmitState>('idle')
 
-  // El resolver se recrea solo cuando cambia el idioma activo.
-  // createContactResolver(t) devuelve una función que, al ser llamada por RHF,
-  // llama a getValidationMessages(t) con el t() del closure — que en ese momento
-  // ya refleja el idioma actual gracias a la dependencia en i18n.language.
+
   const resolver = useMemo(
     () => createContactResolver(t),
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [i18n.language], // t cambia con el idioma pero su referencia no es estable;
-                     // i18n.language sí es un string primitivo estable que cambia
-                     // exactamente cuando el idioma cambia. Es la dependencia correcta.
+    [i18n.language], 
   )
 
   const {
@@ -100,31 +55,14 @@ export function useContactForm(): UseContactFormReturn {
 
   const messageValue = watch('message') ?? ''
 
-  // ── Re-validar errores visibles al cambiar de idioma ─────────────────────
-  //
-  // Cuando el resolver cambia (nuevo idioma), los errores que ya están en
-  // pantalla siguen mostrando el texto del idioma anterior porque RHF no
-  // re-valida automáticamente al cambiar el resolver.
-  //
-  // Este efecto detecta qué campos tienen errores visibles y los re-valida,
-  // produciendo mensajes en el idioma nuevo. Solo se ejecuta si hay errores
-  // (Object.keys check evita work innecesario en el caso feliz).
+
   useEffect(() => {
     const fieldsWithErrors = Object.keys(errors) as Array<keyof ContactFormData>
     if (fieldsWithErrors.length > 0) {
       trigger(fieldsWithErrors)
     }
-    // Solo depende del idioma activo, no de `errors` ni `trigger`
-    // (ambos son estables o tienen identidad nueva en cada render de RHF,
-    // lo que causaría un loop). El efecto de idioma es suficiente.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [i18n.language])
 
-  // ── Handlers con validación condicional por contenido ─────────────────────
-  //
-  // El patrón es: el usuario puede escribir lo que quiera (no filtramos nada).
-  // Si tiene contenido, le damos feedback de formato en tiempo real.
-  // Si borró todo o nunca escribió nada, silencio total — no interrumpir.
 
   const handleNameChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -146,7 +84,6 @@ export function useContactForm(): UseContactFormReturn {
     [setValue, trigger],
   )
 
-  // ── Submit ────────────────────────────────────────────────────────────────
 
   const onSubmit = handleSubmit(async (data: ContactFormData) => {
     setSubmitState('loading')

@@ -1,10 +1,6 @@
-// src/i18n/index.ts
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector'
-/* import en from './locales/en.json';
-import es from './locales/es.json';
-import pt from './locales/pt.json'; */
 
 // ES
 import esCommon from './locales/es/common.json';
@@ -36,7 +32,7 @@ import ptDonations from './locales/pt/donations.json';
 
 
 i18n
-  .use(LanguageDetector)        // ← reemplaza tu función manual
+  .use(LanguageDetector)     
   .use(initReactI18next)
   .init({
     resources: {
@@ -44,15 +40,15 @@ i18n
       en: { common: enCommon, home: enHome, 'about-us': enAboutUs, 'academy': enAcademy, 'what-we-offer': enOffer, 'contact': enContact, 'donations': enDonations},
       pt: { common: ptCommon, home: ptHome, 'about-us': ptAboutUs, 'academy': ptAcademy, 'what-we-offer': ptOffer, 'contact': ptContact, 'donations': ptDonations},
     },
-    ns: ['common', 'home', 'about-us', 'academy', 'what-we-offer', 'contact', 'donations'],  // ← todos los namespaces
-    defaultNS: 'common',                             // ← el que se usa si no especificás
-    supportedLngs: ['es', 'en', 'pt'],  // ← lista explícita de idiomas válidos
+    ns: ['common', 'home', 'about-us', 'academy', 'what-we-offer', 'contact', 'donations'],  
+    defaultNS: 'common',                           
+    supportedLngs: ['es', 'en', 'pt'], 
     fallbackLng: 'es',
     load: 'languageOnly', 
     detection: {
-      order: ['localStorage', 'navigator'],  // mismo orden que tenías
-      caches: ['localStorage'],              // guarda automáticamente la elección
-      lookupLocalStorage: 'app-language'     // mismo key que usabas
+      order: ['localStorage', 'navigator'],  
+      caches: ['localStorage'],             
+      lookupLocalStorage: 'app-language'   
     },
     interpolation: { escapeValue: false },
     react: { useSuspense: true }

@@ -1,33 +1,9 @@
-// src/features/donate/constants/donationConstants.ts
-//
-// ═══════════════════════════════════════════════════════════════
-//  FUENTE DE VERDAD ÚNICA — Configuración de donaciones
-//  Todos los componentes leen desde aquí. Cambiar aquí = cambia en
-//  toda la feature sin riesgo de desincronización.
-// ═══════════════════════════════════════════════════════════════
-//
-// NOTA SOBRE CARPETAS:
-//   Este archivo vive en constants/ (no en config/) porque contiene
-//   lógica de negocio y constantes que no son configuración de entorno.
-//   La configuración de entorno (links de pago) vive en constants/paymentLinks.ts
-// ═══════════════════════════════════════════════════════════════
-
 import type { CountryFee, PaymentType } from '../types/donations';
 
-// ── Monto mínimo de donación (ARS) ─────────────────────────────
 export const MIN_DONATION_AMOUNT = 100;
 
-// ── Montos sugeridos (ARS) ──────────────────────────────────────
 export const PRESET_AMOUNTS = [5000, 10000, 20000, 50000] as const;
 
-// ── Comisiones de MercadoPago por Link de pago ──────────────────
-//
-//  IMPORTANTE: Para "Link de pago" en Argentina:
-//    → 6,60% de comisión base + 21% IVA = 7,986% efectivo real
-//    → Igual para TODOS los medios en Link de pago estático
-//  Verificado con simulador MP (jun 2026):
-//    $10.000 → costo $799 → recibís $9.196
-//
 export const MP_FEES: Record<string, CountryFee> = {
   AR: {
     creditCard: 0.07986,
@@ -36,51 +12,8 @@ export const MP_FEES: Record<string, CountryFee> = {
     label: 'Argentina',
     disclaimer: 'Incluye 6,60% de comisión + IVA. Puede variar levemente según tu provincia.',
   }
-  // BR: {
-  //   creditCard: 0.0499,
-  //   debitCard:  0.0,
-  //   wallet:     0.0,
-  //   label: 'Brasil',
-  //   disclaimer: 'Pix no tiene comisión para quien paga.',
-  // },
-  // MX: {
-  //   creditCard: 0.0399,
-  //   debitCard:  0.0399,
-  //   wallet:     0.0,
-  //   label: 'México',
-  //   disclaimer: 'Más IVA según corresponda.',
-  // },
-  // CO: {
-  //   creditCard: 0.0499,
-  //   debitCard:  0.0299,
-  //   wallet:     0.0,
-  //   label: 'Colombia',
-  //   disclaimer: '',
-  // },
-  // CL: {
-  //   creditCard: 0.0399,
-  //   debitCard:  0.0399,
-  //   wallet:     0.0,
-  //   label: 'Chile',
-  //   disclaimer: '',
-  // },
-  // UY: {
-  //   creditCard: 0.0499,
-  //   debitCard:  0.0299,
-  //   wallet:     0.0,
-  //   label: 'Uruguay',
-  //   disclaimer: '',
-  // },
-  // PE: {
-  //   creditCard: 0.0499,
-  //   debitCard:  0.0299,
-  //   wallet:     0.0,
-  //   label: 'Perú',
-  //   disclaimer: '',
-  // },
 };
 
-// Fallback para países no detectados (usa tasa AR por ser el 99% de donantes)
 export const DEFAULT_FEE: CountryFee = {
   creditCard: 0.07986,
   debitCard:  0.07986,
@@ -89,15 +22,13 @@ export const DEFAULT_FEE: CountryFee = {
   disclaimer: 'Estimación orientativa. El costo real puede variar según tu país.',
 };
 
-// ── Claves i18n para tipos de pago ─────────────────────────────
-// Los labels en español se resuelven en el JSON de traducciones.
+
 export const PAYMENT_TYPE_I18N_KEYS: Record<PaymentType, string> = {
   creditCard: 'form.paymentType.creditCard',
   debitCard:  'form.paymentType.debitCard',
   wallet:     'form.paymentType.wallet',
 };
 
-// ── Formateo de moneda ──────────────────────────────────────────
 export function formatARS(n: number): string {
   return new Intl.NumberFormat('es-AR', {
     style:                 'currency',
@@ -107,7 +38,6 @@ export function formatARS(n: number): string {
   }).format(n);
 }
 
-// ── Cursos de la Academia ───────────────────────────────────────
 export const ACADEMY_COURSES = [
   { id: 'video',      nameKey: 'academy.courses.video' },
   { id: 'photo',      nameKey: 'academy.courses.photo' },
@@ -119,7 +49,7 @@ export const ACADEMY_COURSES = [
   { id: 'production', nameKey: 'academy.courses.production' },
 ] as const;
 
-// ── Destinos del Fondo Solidario ────────────────────────────────
+
 export const SOLIDARITY_DESTINATIONS = [
   {
     id:       'events',
@@ -141,7 +71,7 @@ export const SOLIDARITY_DESTINATIONS = [
   },
 ] as const;
 
-// ── Categorías de donación con metadata de UI ───────────────────
+
 export const DONATION_CATEGORIES = [
   {
     id:           'academy' as const,
@@ -173,14 +103,13 @@ export const DONATION_CATEGORIES = [
   },
 ] as const;
 
-// ── Items del resumen de impacto ────────────────────────────────
 export const IMPACT_ITEMS = [
   { id: 'student', emoji: '🎓', amountKey: 'impact.student.amount', descKey: 'impact.student.desc' },
   { id: 'family',  emoji: '🏠', amountKey: 'impact.family.amount',  descKey: 'impact.family.desc'  },
   { id: 'event',   emoji: '🎪', amountKey: 'impact.event.amount',   descKey: 'impact.event.desc'   },
 ] as const;
 
-// ── Cuentas bancarias ───────────────────────────────────────────
+
 export const BANK_ACCOUNTS = [
   {
     id:         'ar',
@@ -208,7 +137,7 @@ export const BANK_ACCOUNTS = [
   },
 ] as const;
 
-// ── Próximos pasos de la página de éxito ───────────────────────
+
 export const SUCCESS_NEXT_STEPS = [
   {
     id:       'email',
@@ -230,6 +159,6 @@ export const SUCCESS_NEXT_STEPS = [
   },
 ] as const;
 
-// ── Colores del confetti ────────────────────────────────────────
+
 export const CONFETTI_COLORS = ['#FEC40D', '#D28A2B', '#FFFFFF', '#010101'] as const;
 export const CONFETTI_COUNT  = 48;

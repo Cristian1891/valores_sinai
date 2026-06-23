@@ -1,34 +1,6 @@
-// src/features/home/components/DonationSummary.tsx
 import { Link } from 'react-router';
 import { useTranslation } from 'react-i18next';
-
-const IconMapPin = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5" aria-hidden="true">
-    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z" />
-    <circle cx="12" cy="10" r="3" />
-  </svg>
-);
-
-const IconHeartHandshake = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5" aria-hidden="true">
-    <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
-    <path d="M12 5 9.04 7.96a2.17 2.17 0 0 0 0 3.08v0c.82.82 2.13.85 3 .07l2.07-1.95" />
-  </svg>
-);
-
-const IconMicrophone = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5" aria-hidden="true">
-    <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z" />
-    <path d="M19 10v1a7 7 0 0 1-14 0v-1" />
-    <line x1="12" y1="19" x2="12" y2="22" />
-  </svg>
-);
-
-const IMPACT_ITEMS = [
-  { id: 'predio',     Icon: IconMapPin,         statKey: 'donation.stat1', labelKey: 'donation.stat1Label' },
-  { id: 'nonprofit',  Icon: IconHeartHandshake, statKey: 'donation.stat2', labelKey: 'donation.stat2Label' },
-  { id: 'multimedia', Icon: IconMicrophone,     statKey: 'donation.stat3', labelKey: 'donation.stat3Label' },
-] as const;
+import { IMPACT_ITEMS } from '../constants/donationImpact';
 
 export const DonationSummary = () => {
   const { t } = useTranslation('home');
@@ -38,15 +10,12 @@ export const DonationSummary = () => {
       <div className="mx-auto max-w-7xl">
 
         <div className="max-w-2xl">
-          {/* CORRECCIÓN: type-kicker */}
           <p className="type-kicker text-brand-amber dark:text-brand-accent">
             {t('donation.kicker')} 
           </p>
-          {/* CORRECCIÓN: type-h2 + breakpoints */}
           <h2 className="mt-3 type-h2 text-dark dark:text-white sm:text-4xl lg:text-[2.75rem]">
             {t('donation.title')}
           </h2>
-          {/* CORRECCIÓN: type-body */}
           <p className="mt-4 type-body text-dark-soft dark:text-surface-cream sm:text-lg">
             {t('donation.text')}
           </p>
@@ -54,7 +23,6 @@ export const DonationSummary = () => {
 
         <div className="mt-12 grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
 
-          {/* Columna izquierda — fotografía */}
           <div className="relative order-1">
             <div aria-hidden="true" className="absolute -left-4 -top-4 hidden h-32 w-32 rounded-3xl bg-brand-accent/15 blur-2xl lg:block" />
             <div className="relative overflow-hidden rounded-4xl shadow-md ring-1 ring-black/5">
@@ -68,11 +36,6 @@ export const DonationSummary = () => {
               />
               <div className="absolute inset-0 bg-linear-to-t from-black/50 via-black/5 to-transparent" />
               <blockquote className="absolute bottom-5 left-5 right-5">
-                {/*
-                  CORRECCIÓN: type-verse reemplaza font-serif text-sm italic leading-6.
-                  type-verse = serif, 14px, italic, weight 400, leading-[1.6] — idéntico
-                  al resultado visual, pero usando el token del sistema.
-                */}
                 <p className="type-verse text-white drop-shadow-md">
                   {t('donation.photoQuote')}
                 </p>
@@ -80,7 +43,6 @@ export const DonationSummary = () => {
             </div>
           </div>
 
-          {/* Columna derecha */}
           <div className="order-2 flex flex-col gap-6">
 
             <div className="overflow-hidden rounded-2xl border border-black/5 bg-white dark:bg-dark shadow-sm">
@@ -95,15 +57,9 @@ export const DonationSummary = () => {
                     <Icon />
                   </span>
                   <div className="min-w-0">
-                    {/*
-                      CORRECCIÓN: type-h3 para el valor del stat.
-                      Es un título de dato, no un párrafo de body.
-                      type-h3 = sans, 20px, 600, line-height 1.35
-                    */}
                     <p className="type-h4 text-dark dark:text-white sm:text-[18px] text-base">
                       {t(statKey)} 
                     </p>
-                    {/* CORRECCIÓN: type-body-sm para la descripción del stat */}
                     <p className="mt-0.5 type-body-sm text-dark-soft dark:text-surface-cream">
                       {t(labelKey)}
                     </p>
@@ -111,17 +67,14 @@ export const DonationSummary = () => {
                 </div>
               ))}
 
-              {/* Badge de confianza */}
               <div className="flex items-center gap-2.5 border-t border-black/5 bg-surface-cream/60 px-6 py-3">
                 <span className="h-2 w-2 shrink-0 rounded-full bg-success" aria-hidden="true" />
-                {/* CORRECCIÓN: type-caption */}
                 <p className="type-caption text-dark-soft dark:text-black">
                   {t('donation.trustBadge')}
                 </p>
               </div>
             </div>
 
-            {/* CORRECCIÓN: type-body */}
             <p className="type-body text-dark-soft dark:text-surface-cream">
               {t('donation.ctaText')}
             </p>

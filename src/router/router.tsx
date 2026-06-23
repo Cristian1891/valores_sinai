@@ -1,21 +1,14 @@
 import { createBrowserRouter } from 'react-router'
 import { Layout } from '../components/layout/Layout'
-// import { Home } from '../features/home/Home'
-// import { AboutUs } from '../features/about-us/AboutUs'
-// import { Academy } from '../features/academy/Academy'
-// import { Contact } from '../features/contact/Contact'
-// import { WhatWeOffer } from '../features/what-we-offer/WhatWeOffer'
-// import { DonationsPage } from '../features/donate/DonationsPage'
-
 import { lazy, type ComponentType } from 'react'
 import { NotFound } from '../components/errors/NotFound';
+
+
 function lazyPage<T extends ComponentType<any>>(
   importFn: () => Promise<{ default: T }>
 ): React.LazyExoticComponent<T> {
   return lazy(importFn);
 }
-
-//hola mundo nuevo
 
 const Home = lazyPage(() =>
   import('../features/home/Home').then((m) => ({ default: m.Home }))

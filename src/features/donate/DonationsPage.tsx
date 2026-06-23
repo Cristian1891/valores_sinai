@@ -1,5 +1,3 @@
-// src/features/donate/DonationsPage.tsx
-
 import { useState } from 'react';
 import { useSearchParams } from 'react-router';
 import { useTranslation } from 'react-i18next';
@@ -11,8 +9,6 @@ import { GeneralDonationPanel }     from './components/GeneralDonationPanel';
 import { BankTransferInfo }         from './components/BankTransferInfo';
 import { DonationSuccessPage }      from './components/DonationSuccessPage';
 
-// DonationCategory vive en types/ — se re-exporta desde aquí para
-// que los componentes hijos puedan importarlo desde un único punto.
 export type { DonationCategory } from './types/donations';
 
 export const DonationsPage = () => {

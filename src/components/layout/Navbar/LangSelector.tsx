@@ -1,18 +1,5 @@
-// src/components/layout/Navbar/LangSelector.tsx
-import type { TFunction } from 'i18next';
-import { LANGUAGES } from '../../../constants/languages';
+import type { LangSelectorProps } from '../../../types/global';
 
-type Variant = 'desktop' | 'mobile';
-
-interface LangSelectorProps {
-  variant: Variant;
-  currentLang: string;
-  languages: typeof LANGUAGES;
-  t: TFunction;
-  openDropdown: string | null;
-  toggleDropdown: (key: string) => void;
-  changeLang: (lng: string) => void;
-}
 
 export const LangSelector = ({
   variant, currentLang, languages, t,
@@ -32,10 +19,6 @@ export const LangSelector = ({
           aria-expanded={openDropdown === 'lang'}
           aria-label={t('navbar.language')}
         >
-          {/*
-            CORRECCIÓN: type-caption + uppercase reemplaza text-xs font-bold uppercase tracking-wider.
-            type-caption = 12px, 500 — correcto para un código de idioma en navbar.
-          */}
           <span className="type-caption uppercase">{selected}</span>
         </button>
 

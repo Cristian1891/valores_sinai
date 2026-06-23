@@ -1,23 +1,7 @@
-// src/features/contact/constants/contact.ts
-//
-// Constantes de la feature Contacto.
-// ─────────────────────────────────────────────────────────────────────────────
-// SEPARACIÓN DE RESPONSABILIDADES:
-//   DESTINATION_MAP  → mapeo queryType → email de destino para FormSubmit
-//   CONTACT_METHODS  → datos de los métodos de contacto (ContactMethods)
-//   BACKGROUND_WORDS → palabras del patrón tipográfico del hero (ContactHero)
-//   INPUT_CLASS      → clase base de todos los inputs del formulario
-//
-// Las claves i18n de CONTACT_METHODS viven acá porque son datos de
-// configuración, no texto inline — el componente solo llama t(method.labelKey).
-// ─────────────────────────────────────────────────────────────────────────────
-
 import { Mail, Phone, MessageCircle, MapPin } from 'lucide-react'
 import type { ContactMethod } from '../types/contact'
 import type { QueryType } from '../types/contact'
 
-// ── Mapeo tipo de consulta → email institucional ──────────────────────────────
-// Si en el futuro esto viene de una API o CMS, este objeto actúa como fallback.
 
 export const DESTINATION_MAP: Record<QueryType, string> = {
   'Información general':   'valoressinai@gmail.com',
@@ -30,7 +14,6 @@ export const DESTINATION_MAP: Record<QueryType, string> = {
   'Otro':                  'valoressinai@gmail.com',
 }
 
-// ── Métodos de contacto rápido ────────────────────────────────────────────────
 
 export const CONTACT_METHODS: ContactMethod[] = [
   {
@@ -67,10 +50,6 @@ export const CONTACT_METHODS: ContactMethod[] = [
   },
 ]
 
-// ── Patrón tipográfico del hero ───────────────────────────────────────────────
-// Palabras institucionales que forman la textura visual de fondo.
-// Si el idioma varía en el futuro, esto puede convertirse en getBackgroundWords(t).
-
 export const BACKGROUND_WORDS = [
   'Amor',
   'Servicio',
@@ -80,9 +59,6 @@ export const BACKGROUND_WORDS = [
   'Excelencia',
 ] as const
 
-// ── Clases base de inputs ─────────────────────────────────────────────────────
-// Centralizado para garantizar coherencia visual entre todos los campos.
-// Si en el futuro se usa un design system externo, este es el único lugar a cambiar.
 
 export const INPUT_CLASS = [
   'w-full rounded-xl border border-black/10 bg-white px-4 py-3',

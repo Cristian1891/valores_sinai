@@ -1,15 +1,6 @@
-// src/features/what-we-offer/hooks/useVideoPlayback.ts
-
 import { useEffect, useRef, useState } from 'react'
+import type { UseVideoPlaybackReturn } from '../types/what-we-offer'
 
-export interface UseVideoPlaybackReturn {
-  // React 19: useRef<T>(null) retorna RefObject<T | null>.
-  // Se declara con null explícito para reflejar el tipo real del hook
-  // y evitar el error de asignación en TypeScript estricto.
-  videoRef:       React.RefObject<HTMLVideoElement | null>
-  isPlaying:      boolean
-  togglePlayback: () => void
-}
 
 export function useVideoPlayback(): UseVideoPlaybackReturn {
   const videoRef   = useRef<HTMLVideoElement>(null)

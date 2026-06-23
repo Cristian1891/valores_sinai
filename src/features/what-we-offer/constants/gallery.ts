@@ -1,18 +1,3 @@
-// src/features/what-we-offer/constants/gallery.ts
-//
-// PATRÓN FACTORY CON t():
-//   Las rutas de imagen (src) y className son invariantes de idioma y se
-//   mantienen hardcodeadas. Solo los campos de texto (titulo, descripcion, alt)
-//   se resuelven via t().
-//
-// CRITERIO DE ORDEN (sin cambios):
-//   0.    Foto panorámica destacada (lg:col-span-2 lg:row-span-2)
-//   1–3.  Alojamiento
-//   4–5.  Alimentación
-//   6–9.  Deporte y recreación
-//   10–12. Eventos y formación
-//   13.   Espacios verdes
-
 import type { TFunction } from 'i18next'
 import type { FotoItem } from '../types/what-we-offer'
 
@@ -103,5 +88,11 @@ export function getGalleryPhotos(t: TFunction): FotoItem[] {
       titulo:      t('gallery.photos.verdes.titulo'),
       descripcion: t('gallery.photos.verdes.descripcion'),
     },
+    {
+      src:         '/img/mejores_fotos_paintball/paintball_gallery.png',
+      alt:         t('gallery.photos.paintball.alt'),
+      titulo:      t('gallery.photos.paintball.titulo'),
+      descripcion: t('gallery.photos.paintball.descripcion'),
+    }
   ]
 }

@@ -1,4 +1,3 @@
-// src/features/home/components/AboutPreview.tsx
 import { useTranslation } from 'react-i18next';
 
 export const AboutPreview = () => {
@@ -8,7 +7,6 @@ export const AboutPreview = () => {
     <section className="bg-surface-cream px-4 py-16 dark:bg-dark-soft sm:px-6 lg:px-8">
       <div className="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-2 lg:gap-14">
 
-        {/* Imagen */}
         <div className="relative order-1">
           <div
             aria-hidden="true"
@@ -26,23 +24,16 @@ export const AboutPreview = () => {
           </div>
         </div>
 
-        {/* Texto */}
         <div className="order-2"> 
-          {/* CORRECCIÓN: type-kicker reemplaza la combinación hardcodeada */}
+
           <p className="type-kicker text-brand-amber">
             {t('aboutPreview.kicker')}
           </p>
- 
-          {/*
-            CORRECCIÓN: type-h2 reemplaza la combinación hardcodeada.
-            Los breakpoints sm: y lg: se siguen aplicando aquí porque el
-            contexto de esta sección los necesita explícitamente.
-          */}
+
           <h2 className="mt-3 type-h2 text-dark dark:text-white sm:text-4xl lg:text-[2.75rem]">
             {t('aboutPreview.title')}
           </h2>
 
-          {/* CORRECCIÓN: type-body reemplaza la combinación manual */}
           <p className="mt-5 max-w-prose type-body text-dark-soft dark:text-white/70 sm:text-lg">
             {t('aboutPreview.text')}
           </p> 

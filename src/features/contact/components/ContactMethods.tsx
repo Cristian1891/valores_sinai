@@ -1,9 +1,3 @@
-// src/features/contact/components/ContactMethods.tsx
-//
-// Datos (CONTACT_METHODS) → constants/contact.ts
-// Tipos (ContactMethod)   → types/contact.ts
-// Este componente solo renderiza.
-
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { ChevronRight } from 'lucide-react'

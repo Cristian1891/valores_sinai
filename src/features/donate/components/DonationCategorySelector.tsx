@@ -1,21 +1,10 @@
-// src/features/donate/components/DonationCategorySelector.tsx
-
 import { useTranslation } from 'react-i18next';
-import { GraduationCap, HandHeart, CircleCheck, Check, ChevronRight } from 'lucide-react';
-
+import { CircleCheck, Check, ChevronRight } from 'lucide-react';
 import { DONATION_CATEGORIES } from '../constants/donationConstants';
-import type { DonationCategory } from '../types/donations';
+import type { Props } from '../types/donations';
+import { ICON_MAP } from '../constants/icon-map';
 
-// Mapa de nombre de ícono → componente (evita switch/if inline en el render)
-const ICON_MAP = {
-  graduationCap: GraduationCap,
-  handHeart:     HandHeart,
-} as const; 
 
-interface Props {
-  selected: DonationCategory;
-  onSelect: (category: DonationCategory) => void;
-}
 
 export const DonationCategorySelector = ({ selected, onSelect }: Props) => {
   const { t } = useTranslation('donations');
