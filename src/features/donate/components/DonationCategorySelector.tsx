@@ -6,7 +6,7 @@ import { ICON_MAP } from '../constants/icon-map';
 
 
 
-export const DonationCategorySelector = ({ selected, onSelect }: Props) => {
+export const DonationCategorySelector = ({ selected, onSelect }: Props) => { 
   const { t } = useTranslation('donations');
 
   return (

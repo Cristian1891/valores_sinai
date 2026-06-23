@@ -40,8 +40,9 @@ export const DonationsPage = () => {
 
           <DonationCategorySelector
             selected={selectedCategory}
-            onSelect={setSelectedCategory}
-          />
+            onSelect={setSelectedCategory} value={'mercadopago'} onChange={function (): void {
+              throw new Error('Function not implemented.');
+            } }          />
         </div>
       </section>
 
