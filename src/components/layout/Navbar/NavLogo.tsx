@@ -7,9 +7,9 @@ export const NavLogo = () => (
     aria-label="Ir al inicio — Valores Sinaí"
   >
     <img
-      src="/img/logo_sinai.png"
+      src="/favicon-96x96.png"
       alt="Logo Valores Sinaí"
-      className="h-18 w-auto object-contain lg:h-28"
+      className="h-12 w-auto object-contain lg:h-16"
     />
   </Link>
 );
