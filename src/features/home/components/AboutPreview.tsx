@@ -40,7 +40,7 @@ export const AboutPreview = () => {
 
           <div className="mt-8">
             <a
-              href="https://recpilar.com/"
+              href="https://recpilar.valoresinai.org/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-xl bg-dark px-5 py-3 type-label text-white transition-colors hover:bg-dark-soft dark:bg-brand-accent dark:text-dark dark:hover:bg-brand-amber"
